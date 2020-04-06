@@ -1,0 +1,937 @@
+<!DOCTYPE HTML>
+<html lang="ko" >
+    
+    <head>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-161001174-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-161001174-3');
+</script>
+
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Subquery | Introduction</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="./index2.html" />
+    
+    
+    <link rel="prev" href="./JOIN.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="9.4"
+        data-chapter-title="Subquery"
+        data-filepath="subquery.md"
+        data-basepath="."
+
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="bug_reports.html">
+            
+                
+                    <a href="./bug_reports.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Bug reports
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="basics.html">
+            
+                
+                    <a href="./basics.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Basics
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="data_types.html">
+            
+                
+                    <a href="./data_types.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        Data Types
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="variables.html">
+            
+                
+                    <a href="./variables.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Variables
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="regexp.html">
+            
+                
+                    <a href="./regexp.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        Regexp
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="functions.html">
+            
+                
+                    <a href="./functions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        Functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="escape_sequences.html">
+            
+                
+                    <a href="./escape_sequences.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        Escape sequences
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="begin_end.html">
+            
+                
+                    <a href="./begin_end.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.6.</b>
+                        
+                        BEGIN, END
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="builtin_variables.html">
+            
+                
+                    <a href="./builtin_variables.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Built-in Variables
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="record_sep.html">
+            
+                
+                    <a href="./record_sep.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Record 분리
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="field_sep.html">
+            
+                
+                    <a href="./field_sep.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        Field 분리
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="zero_one.html">
+            
+                
+                    <a href="./zero_one.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        $0=$0, $1=$1
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="redirection.html">
+            
+                
+                    <a href="./redirection.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        Redirection
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="getline.html">
+            
+                
+                    <a href="./getline.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        getline
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9" data-path="arrays.html">
+            
+                
+                    <a href="./arrays.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                        Arrays
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.1" data-path="sort.html">
+            
+                
+                    <a href="./sort.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.1.</b>
+                        
+                        Sort
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="GROUP_BY.html">
+            
+                
+                    <a href="./GROUP_BY.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.2.</b>
+                        
+                        GROUP BY
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="JOIN.html">
+            
+                
+                    <a href="./JOIN.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.3.</b>
+                        
+                        JOIN
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="9.4" data-path="subquery.html">
+            
+                
+                    <a href="./subquery.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.4.</b>
+                        
+                        Subquery
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.5" data-path="index2.html">
+            
+                
+                    <a href="./index2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.5.</b>
+                        
+                        Index
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="10" data-path="control_statements.html">
+            
+                
+                    <a href="./control_statements.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                        Control Statements
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11" data-path="operators.html">
+            
+                
+                    <a href="./operators.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.</b>
+                        
+                        Operators
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12" data-path="builtin_functions.html">
+            
+                
+                    <a href="./builtin_functions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.</b>
+                        
+                        Built-in Functions
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="12.1" data-path="builtin/numeric.html">
+            
+                
+                    <a href="./builtin/numeric.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.1.</b>
+                        
+                        Numeric Functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.2" data-path="builtin/string.html">
+            
+                
+                    <a href="./builtin/string.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.2.</b>
+                        
+                        String Functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.3" data-path="builtin/io.html">
+            
+                
+                    <a href="./builtin/io.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.3.</b>
+                        
+                        I/O Functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.4" data-path="builtin/time.html">
+            
+                
+                    <a href="./builtin/time.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.4.</b>
+                        
+                        Time Functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.5" data-path="builtin/bitwise.html">
+            
+                
+                    <a href="./builtin/bitwise.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.5.</b>
+                        
+                        Bitwise Functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.6" data-path="builtin/type.html">
+            
+                
+                    <a href="./builtin/type.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.6.</b>
+                        
+                        Type Functions
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="13" data-path="extensions.html">
+            
+                
+                    <a href="./extensions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.</b>
+                        
+                        Dynamic Extensions
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="13.1" data-path="example.html">
+            
+                
+                    <a href="./example.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.1.</b>
+                        
+                        예제
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="14" data-path="tcp_ip.html">
+            
+                
+                    <a href="./tcp_ip.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.</b>
+                        
+                        TCP/IP Internetworking
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="15" data-path="command_line_options.html">
+            
+                
+                    <a href="./command_line_options.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.</b>
+                        
+                        Command-line options
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="16" data-path="debugging.html">
+            
+                
+                    <a href="./debugging.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>16.</b>
+                        
+                        Debugging
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="17" data-path="tips.html">
+            
+                
+                    <a href="./tips.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>17.</b>
+                        
+                        Tips
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="18" data-path="closing.html">
+            
+                
+                    <a href="./closing.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>18.</b>
+                        
+                        맺음말
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >Introduction</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="subquery">Subquery</h1>
+<blockquote>
+<p>&#xCF54;&#xB4DC;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xB370;&#xC774;&#xD130; &#xD30C;&#xC77C; &#xB0B4;&#xC6A9;&#xC740; &#xD398;&#xC774;&#xC9C0; &#xC544;&#xB798;&#xCABD;&#xC5D0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.    </p>
+</blockquote>
+<p>Subquery &#xB294; <code>if ( idx in array )</code> &#xB97C; &#xC774;&#xC6A9;&#xD558;&#xC5EC; &#xAD6C;&#xD604;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash"><span class="hljs-comment">#####################  SQL &#xBB38;  #######################</span>
+
+SELECT ord_num, ord_amount, ord_date, cust_code, agent_code
+FROM orders
+WHERE agent_code IN (
+    SELECT agent_code FROM agents
+    WHERE working_area=<span class="hljs-string">&apos;Bangalore&apos;</span>);
+
+   ORD_NUM ORD_AMOUNT ORD_DATE  CUST_CODE  AGENT_CODE
+---------- ---------- --------- ---------- ----------
+    <span class="hljs-number">200130</span>       <span class="hljs-number">2500</span> <span class="hljs-number">30</span>-JUL-<span class="hljs-number">08</span> C00025     A011
+    <span class="hljs-number">200105</span>       <span class="hljs-number">2500</span> <span class="hljs-number">18</span>-JUL-<span class="hljs-number">08</span> C00025     A011
+    <span class="hljs-number">200117</span>        <span class="hljs-number">800</span> <span class="hljs-number">20</span>-OCT-<span class="hljs-number">08</span> C00014     A001
+    <span class="hljs-number">200124</span>        <span class="hljs-number">500</span> <span class="hljs-number">20</span>-JUN-<span class="hljs-number">08</span> C00017     A007
+    <span class="hljs-number">200112</span>       <span class="hljs-number">2000</span> <span class="hljs-number">30</span>-MAY-<span class="hljs-number">08</span> C00016     A007
+
+<span class="hljs-comment">######################  AWK  ##########################</span>
+
+<span class="hljs-comment"># $3 : agents.working_area</span>
+<span class="hljs-comment"># $1 : agents.agent_code</span>
+<span class="hljs-comment"># $6 : orders.agent_code</span>
+$ awk <span class="hljs-string">&apos;
+    NR == FNR { if ($3 == &quot;Bangalore&quot;) ac[$1]; next } 
+    { 
+        if ( $6 in ac ) 
+            printf &quot;%d %6d %11s %8s %6s\n&quot;, $1,$2,$4,$5,$6 
+    }
+&apos;</span> FS=<span class="hljs-string">&apos; *, *&apos;</span> agents FS=<span class="hljs-string">&apos; &apos;</span> orders
+
+<span class="hljs-number">200130</span>   <span class="hljs-number">2500</span>   <span class="hljs-number">30</span>-JUL-<span class="hljs-number">08</span>   C00025   A011
+<span class="hljs-number">200105</span>   <span class="hljs-number">2500</span>   <span class="hljs-number">18</span>-JUL-<span class="hljs-number">08</span>   C00025   A011
+<span class="hljs-number">200117</span>    <span class="hljs-number">800</span>   <span class="hljs-number">20</span>-OCT-<span class="hljs-number">08</span>   C00014   A001
+<span class="hljs-number">200124</span>    <span class="hljs-number">500</span>   <span class="hljs-number">20</span>-JUN-<span class="hljs-number">08</span>   C00017   A007
+<span class="hljs-number">200112</span>   <span class="hljs-number">2000</span>   <span class="hljs-number">30</span>-MAY-<span class="hljs-number">08</span>   C00016   A007
+</code></pre>
+<h4 id="multiple-column-subquery">Multiple Column Subquery</h4>
+<pre><code class="lang-bash">SELECT ord_num, agent_code, ord_date, ord_amount
+FROM orders
+WHERE (agent_code, ord_amount) IN
+    (SELECT agent_code, MIN(ord_amount)
+     FROM orders 
+     GROUP BY agent_code)
+ORDER BY agent_code    
+
+ ORD_NUM AGENT_CODE ORD_DATE  ORD_AMOUNT
+-------- ---------- --------- ----------
+  <span class="hljs-number">200117</span>   A001     <span class="hljs-number">20</span>-OCT-<span class="hljs-number">08</span>        <span class="hljs-number">800</span>
+  <span class="hljs-number">200120</span>   A002     <span class="hljs-number">20</span>-JUL-<span class="hljs-number">08</span>        <span class="hljs-number">500</span>
+  <span class="hljs-number">200126</span>   A002     <span class="hljs-number">24</span>-JUN-<span class="hljs-number">08</span>        <span class="hljs-number">500</span>
+  <span class="hljs-number">200123</span>   A002     <span class="hljs-number">16</span>-SEP-<span class="hljs-number">08</span>        <span class="hljs-number">500</span>
+  .....
+  .....
+
+<span class="hljs-comment">######################  AWK  ##########################</span>
+
+<span class="hljs-comment"># $6 : orders.agent_code</span>
+<span class="hljs-comment"># $2 : orders.ord_amount</span>
+$ awk <span class="hljs-operator">-f</span> - &lt;&lt;\EOF orders orders
+NR == FNR { 
+    <span class="hljs-keyword">if</span> (ac[<span class="hljs-variable">$6</span>]) { 
+        ac[<span class="hljs-variable">$6</span>] = ( <span class="hljs-variable">$2</span> &lt; ac[<span class="hljs-variable">$6</span>] ? <span class="hljs-variable">$2</span> : ac[<span class="hljs-variable">$6</span>] )   <span class="hljs-comment"># MIN(ord_amount) &#xC744; &#xC704;&#xD55C; &#xBD80;&#xBD84;</span>
+    } <span class="hljs-keyword">else</span> { ac[<span class="hljs-variable">$6</span>] = <span class="hljs-variable">$2</span> }
+    next 
+}{
+    <span class="hljs-keyword">if</span> ((<span class="hljs-variable">$6</span> <span class="hljs-keyword">in</span> ac) &amp;&amp; (ac[<span class="hljs-variable">$6</span>] == <span class="hljs-variable">$2</span>))
+       <span class="hljs-comment"># &#xCD9C;&#xB825;&#xB54C; $6 &#xAC00; group by &#xB418;&#xB294; &#xAC83;&#xC744; &#xBC29;&#xC9C0;&#xD558;&#xAE30; &#xC704;&#xD574; ++i &#xB97C; &#xCD94;&#xAC00;</span>
+       r[<span class="hljs-variable">$6</span>,++i] = sprintf(<span class="hljs-string">&quot;%d %6s %11s %6d&quot;</span>, <span class="hljs-variable">$1</span>, <span class="hljs-variable">$6</span>, <span class="hljs-variable">$4</span>, <span class="hljs-variable">$2</span>)
+} 
+END {
+    delete ac
+    PROCINFO[<span class="hljs-string">&quot;sorted_in&quot;</span>] = <span class="hljs-string">&quot;@ind_str_asc&quot;</span>
+    <span class="hljs-keyword">for</span> ( i <span class="hljs-keyword">in</span> r ) <span class="hljs-built_in">print</span> r[i]
+}
+EOF
+
+<span class="hljs-number">200117</span>   A001   <span class="hljs-number">20</span>-OCT-<span class="hljs-number">08</span>    <span class="hljs-number">800</span>
+<span class="hljs-number">200120</span>   A002   <span class="hljs-number">20</span>-JUL-<span class="hljs-number">08</span>    <span class="hljs-number">500</span>
+<span class="hljs-number">200126</span>   A002   <span class="hljs-number">24</span>-JUN-<span class="hljs-number">08</span>    <span class="hljs-number">500</span>
+<span class="hljs-number">200123</span>   A002   <span class="hljs-number">16</span>-SEP-<span class="hljs-number">08</span>    <span class="hljs-number">500</span>
+<span class="hljs-number">200100</span>   A003   <span class="hljs-number">08</span>-JAN-<span class="hljs-number">08</span>   <span class="hljs-number">1000</span>
+<span class="hljs-number">200121</span>   A004   <span class="hljs-number">23</span>-SEP-<span class="hljs-number">08</span>   <span class="hljs-number">1500</span>
+<span class="hljs-number">200104</span>   A004   <span class="hljs-number">13</span>-MAR-<span class="hljs-number">08</span>   <span class="hljs-number">1500</span>
+<span class="hljs-number">200103</span>   A005   <span class="hljs-number">15</span>-MAY-<span class="hljs-number">08</span>   <span class="hljs-number">1500</span>
+<span class="hljs-number">200118</span>   A006   <span class="hljs-number">20</span>-JUL-<span class="hljs-number">08</span>    <span class="hljs-number">500</span>
+<span class="hljs-number">200124</span>   A007   <span class="hljs-number">20</span>-JUN-<span class="hljs-number">08</span>    <span class="hljs-number">500</span>
+<span class="hljs-number">200111</span>   A008   <span class="hljs-number">10</span>-JUL-<span class="hljs-number">08</span>   <span class="hljs-number">1000</span>
+<span class="hljs-number">200116</span>   A009   <span class="hljs-number">13</span>-JUL-<span class="hljs-number">08</span>    <span class="hljs-number">500</span>
+<span class="hljs-number">200135</span>   A010   <span class="hljs-number">16</span>-SEP-<span class="hljs-number">08</span>   <span class="hljs-number">2000</span>
+<span class="hljs-number">200130</span>   A011   <span class="hljs-number">30</span>-JUL-<span class="hljs-number">08</span>   <span class="hljs-number">2500</span>
+<span class="hljs-number">200105</span>   A011   <span class="hljs-number">18</span>-JUL-<span class="hljs-number">08</span>   <span class="hljs-number">2500</span>
+<span class="hljs-number">200131</span>   A012   <span class="hljs-number">26</span>-AUG-<span class="hljs-number">08</span>    <span class="hljs-number">900</span>
+</code></pre>
+<h3 id="average">AVERAGE</h3>
+<p>&#xD3C9;&#xADE0;&#xAC12;&#xC744; &#xAD6C;&#xD558;&#xAE30; &#xC704;&#xD574; <code>ac[$6][&quot;AS&quot;]</code> &#xC5D0;&#xB294; sum &#xAC12;&#xC774; &#xC124;&#xC815;&#xB418;&#xACE0;
+<code>ac[$6][&quot;AC&quot;]</code> &#xC5D0;&#xB294; count &#xAC12;&#xC774; &#xC124;&#xC815;&#xB429;&#xB2C8;&#xB2E4;.
+ORDER BY DESC &#xC808;&#xC744; &#xAD6C;&#xD604;&#xD558;&#xAE30; &#xC704;&#xD574; compare() &#xD568;&#xC218;&#xC5D0;&#xC11C; &#xB4F1;&#xD638;&#xB85C; <code>&lt;</code> &#xB300;&#xC2E0; <code>&gt;</code> &#xAC00; &#xC0AC;&#xC6A9;&#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">SELECT agent_code, AVG(ord_amount) AS average
+FROM orders
+GROUP BY agent_code
+ORDER BY average DESC
+
+<span class="hljs-comment">######################  AWK  ##########################</span>
+
+<span class="hljs-comment"># $6 : orders.agent_code</span>
+<span class="hljs-comment"># $2 : orders.ord_amount</span>
+$ awk <span class="hljs-operator">-f</span> - &lt;&lt;\EOF orders 
+{ 
+    ac[<span class="hljs-variable">$6</span>][<span class="hljs-string">&quot;AS&quot;</span>] += <span class="hljs-variable">$2</span>
+    ac[<span class="hljs-variable">$6</span>][<span class="hljs-string">&quot;AC&quot;</span>]++
+}
+END {
+    PROCINFO[<span class="hljs-string">&quot;sorted_in&quot;</span>] = <span class="hljs-string">&quot;compare&quot;</span>
+    <span class="hljs-keyword">for</span> ( i <span class="hljs-keyword">in</span> ac ) <span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;%s %10d\n&quot;</span>, i, ac[i][<span class="hljs-string">&quot;AS&quot;</span>] / ac[i][<span class="hljs-string">&quot;AC&quot;</span>]
+}
+<span class="hljs-keyword">function</span> compare(i1, v1, i2, v2,    a1, a2)
+{ 
+    a1 = v1[<span class="hljs-string">&quot;AS&quot;</span>] / v1[<span class="hljs-string">&quot;AC&quot;</span>]
+    a2 = v2[<span class="hljs-string">&quot;AS&quot;</span>] / v2[<span class="hljs-string">&quot;AC&quot;</span>]
+    <span class="hljs-keyword">if</span> ( a1 &gt; a2 )       <span class="hljs-built_in">return</span> -<span class="hljs-number">1</span>   <span class="hljs-comment"># ORDER BY DESC &#xB97C; &#xC704;&#xD574; &apos;&gt;&apos; &#xC0AC;&#xC6A9;</span>
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> ( a1 == a2 ) <span class="hljs-built_in">return</span> <span class="hljs-number">0</span>
+    <span class="hljs-keyword">else</span>                 <span class="hljs-built_in">return</span> <span class="hljs-number">1</span>
+}
+EOF
+
+A010       <span class="hljs-number">3400</span>
+A005       <span class="hljs-number">2566</span>
+A011       <span class="hljs-number">2500</span>
+A008       <span class="hljs-number">2500</span>
+A004       <span class="hljs-number">2375</span>
+A002       <span class="hljs-number">1814</span>
+A003       <span class="hljs-number">1750</span>
+A006       <span class="hljs-number">1500</span>
+A012       <span class="hljs-number">1450</span>
+A007       <span class="hljs-number">1250</span>
+A001        <span class="hljs-number">800</span>
+A009        <span class="hljs-number">500</span>
+</code></pre>
+<h2 id="data-files">Data Files</h2>
+<p>awk &#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xB54C;&#xB294; &#xD5E4;&#xB354; &#xBD80;&#xBD84;&#xC744; &#xC81C;&#xC678;&#xD558;&#xACE0; &#xC0AC;&#xC6A9;&#xD558;&#xC2DC;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ cat agents
+  AGENT_CODE   AGENT_NAME      WORKING_AREA      COMMISSION     PHONE_NO
++------------+--------------+-----------------+------------+-----------------+
+A007     ,     Ramasundar   ,   Bangalore     ,       <span class="hljs-number">0.15</span>  ,  <span class="hljs-number">077</span>-<span class="hljs-number">25814763</span>
+A003     ,     Alex         ,   London        ,       <span class="hljs-number">0.13</span>  ,  <span class="hljs-number">075</span>-<span class="hljs-number">12458969</span>
+A008     ,     Alford       ,   New York      ,       <span class="hljs-number">0.12</span>  ,  <span class="hljs-number">044</span>-<span class="hljs-number">25874365</span>
+A011     ,     Ravi Kumar   ,   Bangalore     ,       <span class="hljs-number">0.15</span>  ,  <span class="hljs-number">077</span>-<span class="hljs-number">45625874</span>
+A010     ,     Santakumar   ,   Chennai       ,       <span class="hljs-number">0.14</span>  ,  <span class="hljs-number">007</span>-<span class="hljs-number">22388644</span>
+A012     ,     Lucida       ,   San Jose      ,       <span class="hljs-number">0.12</span>  ,  <span class="hljs-number">044</span>-<span class="hljs-number">52981425</span>
+A005     ,     Anderson     ,   Brisban       ,       <span class="hljs-number">0.13</span>  ,  <span class="hljs-number">045</span>-<span class="hljs-number">21447739</span>
+A001     ,     Subbarao     ,   Bangalore     ,       <span class="hljs-number">0.14</span>  ,  <span class="hljs-number">077</span>-<span class="hljs-number">12346674</span>
+A002     ,     Mukesh       ,   Mumbai        ,       <span class="hljs-number">0.11</span>  ,  <span class="hljs-number">029</span>-<span class="hljs-number">12358964</span>
+A006     ,     McDen        ,   London        ,       <span class="hljs-number">0.15</span>  ,  <span class="hljs-number">078</span>-<span class="hljs-number">22255588</span>
+A004     ,     Ivan         ,   Torento       ,       <span class="hljs-number">0.15</span>  ,  <span class="hljs-number">008</span>-<span class="hljs-number">22544166</span>
+A009     ,     Benjamin     ,   Hampshair     ,       <span class="hljs-number">0.11</span>  ,  <span class="hljs-number">008</span>-<span class="hljs-number">22536178</span>
+
+$ cat orders
+   ORD_NUM ORD_AMOUNT ADVANCE_AMOUNT ORD_DATE  CUST_CODE       AGENT_CODE      
+---------- ---------- -------------- --------- --------------- ------------
+    <span class="hljs-number">200114</span>       <span class="hljs-number">3500</span>           <span class="hljs-number">2000</span> <span class="hljs-number">15</span>-AUG-<span class="hljs-number">08</span> C00002          A008
+    <span class="hljs-number">200122</span>       <span class="hljs-number">2500</span>            <span class="hljs-number">400</span> <span class="hljs-number">16</span>-SEP-<span class="hljs-number">08</span> C00003          A004
+    <span class="hljs-number">200118</span>        <span class="hljs-number">500</span>            <span class="hljs-number">100</span> <span class="hljs-number">20</span>-JUL-<span class="hljs-number">08</span> C00023          A006
+    <span class="hljs-number">200119</span>       <span class="hljs-number">4000</span>            <span class="hljs-number">700</span> <span class="hljs-number">16</span>-SEP-<span class="hljs-number">08</span> C00007          A010
+    <span class="hljs-number">200121</span>       <span class="hljs-number">1500</span>            <span class="hljs-number">600</span> <span class="hljs-number">23</span>-SEP-<span class="hljs-number">08</span> C00008          A004
+    <span class="hljs-number">200130</span>       <span class="hljs-number">2500</span>            <span class="hljs-number">400</span> <span class="hljs-number">30</span>-JUL-<span class="hljs-number">08</span> C00025          A011
+    <span class="hljs-number">200134</span>       <span class="hljs-number">4200</span>           <span class="hljs-number">1800</span> <span class="hljs-number">25</span>-SEP-<span class="hljs-number">08</span> C00004          A005
+    <span class="hljs-number">200108</span>       <span class="hljs-number">4000</span>            <span class="hljs-number">600</span> <span class="hljs-number">15</span>-FEB-<span class="hljs-number">08</span> C00008          A004
+    <span class="hljs-number">200103</span>       <span class="hljs-number">1500</span>            <span class="hljs-number">700</span> <span class="hljs-number">15</span>-MAY-<span class="hljs-number">08</span> C00021          A005
+    <span class="hljs-number">200105</span>       <span class="hljs-number">2500</span>            <span class="hljs-number">500</span> <span class="hljs-number">18</span>-JUL-<span class="hljs-number">08</span> C00025          A011
+    <span class="hljs-number">200109</span>       <span class="hljs-number">3500</span>            <span class="hljs-number">800</span> <span class="hljs-number">30</span>-JUL-<span class="hljs-number">08</span> C00011          A010
+    <span class="hljs-number">200101</span>       <span class="hljs-number">3000</span>           <span class="hljs-number">1000</span> <span class="hljs-number">15</span>-JUL-<span class="hljs-number">08</span> C00001          A008
+    <span class="hljs-number">200111</span>       <span class="hljs-number">1000</span>            <span class="hljs-number">300</span> <span class="hljs-number">10</span>-JUL-<span class="hljs-number">08</span> C00020          A008
+    <span class="hljs-number">200104</span>       <span class="hljs-number">1500</span>            <span class="hljs-number">500</span> <span class="hljs-number">13</span>-MAR-<span class="hljs-number">08</span> C00006          A004
+    <span class="hljs-number">200106</span>       <span class="hljs-number">2500</span>            <span class="hljs-number">700</span> <span class="hljs-number">20</span>-APR-<span class="hljs-number">08</span> C00005          A002
+    <span class="hljs-number">200125</span>       <span class="hljs-number">2000</span>            <span class="hljs-number">600</span> <span class="hljs-number">10</span>-OCT-<span class="hljs-number">08</span> C00018          A005
+    <span class="hljs-number">200117</span>        <span class="hljs-number">800</span>            <span class="hljs-number">200</span> <span class="hljs-number">20</span>-OCT-<span class="hljs-number">08</span> C00014          A001
+    <span class="hljs-number">200123</span>        <span class="hljs-number">500</span>            <span class="hljs-number">100</span> <span class="hljs-number">16</span>-SEP-<span class="hljs-number">08</span> C00022          A002
+    <span class="hljs-number">200120</span>        <span class="hljs-number">500</span>            <span class="hljs-number">100</span> <span class="hljs-number">20</span>-JUL-<span class="hljs-number">08</span> C00009          A002
+    <span class="hljs-number">200116</span>        <span class="hljs-number">500</span>            <span class="hljs-number">100</span> <span class="hljs-number">13</span>-JUL-<span class="hljs-number">08</span> C00010          A009
+    <span class="hljs-number">200124</span>        <span class="hljs-number">500</span>            <span class="hljs-number">100</span> <span class="hljs-number">20</span>-JUN-<span class="hljs-number">08</span> C00017          A007
+    <span class="hljs-number">200126</span>        <span class="hljs-number">500</span>            <span class="hljs-number">100</span> <span class="hljs-number">24</span>-JUN-<span class="hljs-number">08</span> C00022          A002
+    <span class="hljs-number">200129</span>       <span class="hljs-number">2500</span>            <span class="hljs-number">500</span> <span class="hljs-number">20</span>-JUL-<span class="hljs-number">08</span> C00024          A006
+    <span class="hljs-number">200127</span>       <span class="hljs-number">2500</span>            <span class="hljs-number">400</span> <span class="hljs-number">20</span>-JUL-<span class="hljs-number">08</span> C00015          A003
+    <span class="hljs-number">200128</span>       <span class="hljs-number">3500</span>           <span class="hljs-number">1500</span> <span class="hljs-number">20</span>-JUL-<span class="hljs-number">08</span> C00009          A002
+    <span class="hljs-number">200135</span>       <span class="hljs-number">2000</span>            <span class="hljs-number">800</span> <span class="hljs-number">16</span>-SEP-<span class="hljs-number">08</span> C00007          A010
+    <span class="hljs-number">200131</span>        <span class="hljs-number">900</span>            <span class="hljs-number">150</span> <span class="hljs-number">26</span>-AUG-<span class="hljs-number">08</span> C00012          A012
+    <span class="hljs-number">200133</span>       <span class="hljs-number">1200</span>            <span class="hljs-number">400</span> <span class="hljs-number">29</span>-JUN-<span class="hljs-number">08</span> C00009          A002
+    <span class="hljs-number">200100</span>       <span class="hljs-number">1000</span>            <span class="hljs-number">600</span> <span class="hljs-number">08</span>-JAN-<span class="hljs-number">08</span> C00015          A003
+    <span class="hljs-number">200110</span>       <span class="hljs-number">3000</span>            <span class="hljs-number">500</span> <span class="hljs-number">15</span>-APR-<span class="hljs-number">08</span> C00019          A010
+    <span class="hljs-number">200107</span>       <span class="hljs-number">4500</span>            <span class="hljs-number">900</span> <span class="hljs-number">30</span>-AUG-<span class="hljs-number">08</span> C00007          A010
+    <span class="hljs-number">200112</span>       <span class="hljs-number">2000</span>            <span class="hljs-number">400</span> <span class="hljs-number">30</span>-MAY-<span class="hljs-number">08</span> C00016          A007
+    <span class="hljs-number">200113</span>       <span class="hljs-number">4000</span>            <span class="hljs-number">600</span> <span class="hljs-number">10</span>-JUN-<span class="hljs-number">08</span> C00022          A002
+    <span class="hljs-number">200102</span>       <span class="hljs-number">2000</span>            <span class="hljs-number">300</span> <span class="hljs-number">25</span>-MAY-<span class="hljs-number">08</span> C00012          A012
+</code></pre>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./JOIN.html" class="navigation navigation-prev " aria-label="Previous page: JOIN"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="./index2.html" class="navigation navigation-next " aria-label="Next page: Index"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/app.js"></script>
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

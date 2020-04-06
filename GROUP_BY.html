@@ -1,0 +1,986 @@
+<!DOCTYPE HTML>
+<html lang="ko" >
+    
+    <head>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-161001174-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-161001174-3');
+</script>
+
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>GROUP BY | Introduction</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="./JOIN.html" />
+    
+    
+    <link rel="prev" href="./sort.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="9.2"
+        data-chapter-title="GROUP BY"
+        data-filepath="GROUP_BY.md"
+        data-basepath="."
+
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="bug_reports.html">
+            
+                
+                    <a href="./bug_reports.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Bug reports
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="basics.html">
+            
+                
+                    <a href="./basics.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Basics
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="data_types.html">
+            
+                
+                    <a href="./data_types.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        Data Types
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="variables.html">
+            
+                
+                    <a href="./variables.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Variables
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="regexp.html">
+            
+                
+                    <a href="./regexp.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        Regexp
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="functions.html">
+            
+                
+                    <a href="./functions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        Functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="escape_sequences.html">
+            
+                
+                    <a href="./escape_sequences.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        Escape sequences
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="begin_end.html">
+            
+                
+                    <a href="./begin_end.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.6.</b>
+                        
+                        BEGIN, END
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="builtin_variables.html">
+            
+                
+                    <a href="./builtin_variables.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Built-in Variables
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="record_sep.html">
+            
+                
+                    <a href="./record_sep.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Record 분리
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="field_sep.html">
+            
+                
+                    <a href="./field_sep.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        Field 분리
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="zero_one.html">
+            
+                
+                    <a href="./zero_one.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        $0=$0, $1=$1
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="redirection.html">
+            
+                
+                    <a href="./redirection.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        Redirection
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="getline.html">
+            
+                
+                    <a href="./getline.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        getline
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9" data-path="arrays.html">
+            
+                
+                    <a href="./arrays.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                        Arrays
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.1" data-path="sort.html">
+            
+                
+                    <a href="./sort.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.1.</b>
+                        
+                        Sort
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="9.2" data-path="GROUP_BY.html">
+            
+                
+                    <a href="./GROUP_BY.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.2.</b>
+                        
+                        GROUP BY
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="JOIN.html">
+            
+                
+                    <a href="./JOIN.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.3.</b>
+                        
+                        JOIN
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.4" data-path="subquery.html">
+            
+                
+                    <a href="./subquery.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.4.</b>
+                        
+                        Subquery
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.5" data-path="index2.html">
+            
+                
+                    <a href="./index2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.5.</b>
+                        
+                        Index
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="10" data-path="control_statements.html">
+            
+                
+                    <a href="./control_statements.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                        Control Statements
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11" data-path="operators.html">
+            
+                
+                    <a href="./operators.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.</b>
+                        
+                        Operators
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12" data-path="builtin_functions.html">
+            
+                
+                    <a href="./builtin_functions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.</b>
+                        
+                        Built-in Functions
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="12.1" data-path="builtin/numeric.html">
+            
+                
+                    <a href="./builtin/numeric.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.1.</b>
+                        
+                        Numeric Functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.2" data-path="builtin/string.html">
+            
+                
+                    <a href="./builtin/string.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.2.</b>
+                        
+                        String Functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.3" data-path="builtin/io.html">
+            
+                
+                    <a href="./builtin/io.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.3.</b>
+                        
+                        I/O Functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.4" data-path="builtin/time.html">
+            
+                
+                    <a href="./builtin/time.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.4.</b>
+                        
+                        Time Functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.5" data-path="builtin/bitwise.html">
+            
+                
+                    <a href="./builtin/bitwise.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.5.</b>
+                        
+                        Bitwise Functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.6" data-path="builtin/type.html">
+            
+                
+                    <a href="./builtin/type.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.6.</b>
+                        
+                        Type Functions
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="13" data-path="extensions.html">
+            
+                
+                    <a href="./extensions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.</b>
+                        
+                        Dynamic Extensions
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="13.1" data-path="example.html">
+            
+                
+                    <a href="./example.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.1.</b>
+                        
+                        예제
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="14" data-path="tcp_ip.html">
+            
+                
+                    <a href="./tcp_ip.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.</b>
+                        
+                        TCP/IP Internetworking
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="15" data-path="command_line_options.html">
+            
+                
+                    <a href="./command_line_options.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.</b>
+                        
+                        Command-line options
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="16" data-path="debugging.html">
+            
+                
+                    <a href="./debugging.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>16.</b>
+                        
+                        Debugging
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="17" data-path="tips.html">
+            
+                
+                    <a href="./tips.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>17.</b>
+                        
+                        Tips
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="18" data-path="closing.html">
+            
+                
+                    <a href="./closing.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>18.</b>
+                        
+                        맺음말
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >Introduction</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="group-by">GROUP BY</h1>
+<p>array index &#xB97C; &#xD65C;&#xC6A9;&#xD558;&#xBA74; group by &#xC5F0;&#xC0B0;&#xC744; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC65C; &#xADF8;&#xB807;&#xAC8C; &#xB418;&#xB294;&#xC9C0; &#xC0B4;&#xD3B4;&#xBCF4;&#xBA74; array <code>a</code> &#xC758; index &#xAC12; $1 &#xC774; BBB &#xC77C; &#xACBD;&#xC6B0; a[BBB] &#xAC00; &#xB418;&#xB294;&#xB370;
+&#xC774;&#xB54C;&#xB294; index &#xAC12;&#xC73C;&#xB85C; BBB &#xB97C; &#xAC00;&#xC9C0;&#xB294; array &#xC6D0;&#xC18C;&#xAC00; &#xD558;&#xB098; &#xC0DD;&#xAE30;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.
+value &#xAC12;&#xC744; &#xB300;&#xC785;&#xD558;&#xC9C0; &#xC54A;&#xC558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; value &#xB294; null &#xC774; &#xB418;&#xAD6C;&#xC694;.
+&#xB2E4;&#xC74C;&#xC5D0; $1 &#xAC12;&#xC73C;&#xB85C; BBB &#xAC00; &#xB2E4;&#xC2DC; &#xB098;&#xD0C0;&#xB098;&#xBA74; a[BBB] &#xAC00; &#xB418;&#xC5B4;
+index &#xAC12;&#xC774; &#xC911;&#xBCF5;&#xB418;&#xBBC0;&#xB85C; &#xACB0;&#xACFC;&#xC801;&#xC73C;&#xB85C; &#xD558;&#xB098;&#xB9CC; &#xB0A8;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB450; &#xBC88;&#xC9F8; &#xC608;&#xC81C;&#xC5D0;&#xC11C;&#xCC98;&#xB7FC; <code>a[$1]++</code> &#xC744; &#xD558;&#xAC8C; &#xB418;&#xBA74; &#xC774;&#xB54C;&#xB294; a[BBB]++ &#xAC00;&#xB418;&#xC5B4;
+&#xCC98;&#xC74C;&#xC5D0; a[BBB] &#xC6D0;&#xC18C;&#xAC00; &#xC0DD;&#xC131;&#xB428;&#xACFC; &#xB3D9;&#xC2DC;&#xC5D0;  value &#xAC00; 1 &#xC774; &#xB429;&#xB2C8;&#xB2E4;.
+&#xB2E4;&#xC74C;&#xC5D0; $1 &#xAC12;&#xC73C;&#xB85C; BBB &#xAC00; &#xC911;&#xBCF5;&#xB418;&#xC5B4; &#xB098;&#xD0C0;&#xB098;&#xBA74; &#xB2E4;&#xC2DC; a[BBB]++ &#xAC00; &#xB418;&#xBBC0;&#xB85C;
+a[BBB] &#xC758; value &#xAC00; +1 &#xB418;&#xC5B4; 2 &#xAC00; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ cat file
+AAA
+EEE
+BBB
+CCC
+DDD
+DDD
+BBB
+BBB
+...................................................
+
+<span class="hljs-comment"># select $1 from file </span>
+<span class="hljs-comment">#     group by $1 </span>
+$ awk <span class="hljs-string">&apos;{ a[$1] } END { for (i in a) print i }&apos;</span> file
+AAA
+CCC
+EEE
+BBB
+DDD
+
+<span class="hljs-comment"># select $1, count($1) from file </span>
+<span class="hljs-comment">#     group by $1 </span>
+$ awk <span class="hljs-string">&apos;{ a[$1]++ } END { for (i in a) print i &quot; : &quot; a[i] }&apos;</span> file
+AAA : <span class="hljs-number">1</span>
+CCC : <span class="hljs-number">1</span>
+EEE : <span class="hljs-number">1</span>
+BBB : <span class="hljs-number">3</span>
+DDD : <span class="hljs-number">2</span>
+
+<span class="hljs-comment"># select distinct($1) from file</span>
+$ awk <span class="hljs-string">&apos;!a[$1]++&apos;</span> file
+AAA
+EEE
+BBB
+CCC
+DDD
+</code></pre>
+<p>&#xB0B1;&#xB9D0; &#xCD9C;&#xD604; &#xBE48;&#xB3C4; &#xACC4;&#xC0B0; &#xD6C4; &#xC815;&#xB82C;&#xD558;&#xAE30;</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># &apos;.&apos; &#xC640; &apos;,&apos; &#xBB38;&#xC790;&#xAC00; &#xB0B1;&#xB9D0;&#xC5D0; &#xD3EC;&#xD568;&#xB418;&#xB294; &#xAC83;&#xC744; &#xBC29;&#xC9C0;&#xD558;&#xAE30; &#xC704;&#xD574; RS &#xB85C; &#xC124;&#xC815;</span>
+$ LANG=ko_KR.UTF-<span class="hljs-number">8</span> awk <span class="hljs-operator">-f</span> - &lt;&lt;\EOF RS=<span class="hljs-string">&apos;\\.|,&apos;</span> song.txt
+{                                            
+    <span class="hljs-keyword">for</span> (i=<span class="hljs-number">1</span>; i&lt;=NF; i++)                    
+        words[<span class="hljs-variable">$i</span>]++                          
+}                                            
+END {                                        
+    PROCINFO[<span class="hljs-string">&quot;sorted_in&quot;</span>] = <span class="hljs-string">&quot;compare&quot;</span>        
+    <span class="hljs-keyword">for</span> (i <span class="hljs-keyword">in</span> words)                         
+        <span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;%s %s\n&quot;</span>,  i, words[i]       
+ }                                           
+<span class="hljs-comment"># &#xC774; &#xBE44;&#xAD50; &#xD568;&#xC218;&#xB294; awk &#xBA85;&#xB839; &#xCD9C;&#xB825;&#xC744; &quot;sort -k2,2r -k1,1&quot; &#xD55C; &#xAC83;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+<span class="hljs-comment"># ORDER BY count DESC, word ASC</span>
+<span class="hljs-keyword">function</span> compare(i1, v1, i2, v2)
+{                              
+    <span class="hljs-keyword">if</span> (v1 &gt; v2) <span class="hljs-built_in">return</span> -<span class="hljs-number">1</span>               <span class="hljs-comment"># &#xCD9C;&#xD604; &#xBE48;&#xB3C4;&#xB97C; DESC &#xC815;&#xB82C;&#xD558;&#xB294; &#xBD80;&#xBD84;</span>
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (v1 == v2)       
+    {                                    <span class="hljs-comment"># { ... } &#xBD80;&#xBD84;&#xC774; &#xB0B1;&#xB9D0;&#xC744; ASC &#xC815;&#xB82C;&#xD558;&#xB294; &#xBD80;&#xBD84;</span>
+        <span class="hljs-keyword">if</span> ( i1 &lt; i2 )       <span class="hljs-built_in">return</span> -<span class="hljs-number">1</span>   
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> ( i1 == i2 ) <span class="hljs-built_in">return</span> <span class="hljs-number">0</span>        
+        <span class="hljs-keyword">else</span>                 <span class="hljs-built_in">return</span> <span class="hljs-number">1</span>
+    }                                        
+    <span class="hljs-keyword">else</span> <span class="hljs-built_in">return</span> <span class="hljs-number">1</span>
+}
+EOF                                    
+                                      &lt; song.txt &#xD30C;&#xC77C; &#xB0B4;&#xC6A9; &gt;
+&#xAE38;&#xC774; <span class="hljs-number">4</span>                                                                     
+&#xB300;&#xD55C; <span class="hljs-number">4</span>                               &#xB3D9;&#xD574;&#xBB3C;&#xACFC; &#xBC31;&#xB450;&#xC0B0;&#xC774; &#xB9C8;&#xB974;&#xACE0; &#xB2F3;&#xB3C4;&#xB85D;  
+&#xB300;&#xD55C;&#xC73C;&#xB85C; <span class="hljs-number">4</span>                           &#xD558;&#xB290;&#xB2D8;&#xC774; &#xBCF4;&#xC6B0;&#xD558;&#xC0AC; &#xC6B0;&#xB9AC;&#xB098;&#xB77C; &#xB9CC;&#xC138;.  
+&#xBB34;&#xAD81;&#xD654; <span class="hljs-number">4</span>                             &#xBB34;&#xAD81;&#xD654; &#xC0BC;&#xCC9C;&#xB9AC; &#xD654;&#xB824;&#xAC15;&#xC0B0;  
+&#xBCF4;&#xC804;&#xD558;&#xC138; <span class="hljs-number">4</span>                           &#xB300;&#xD55C; &#xC0AC;&#xB78C;, &#xB300;&#xD55C;&#xC73C;&#xB85C; &#xAE38;&#xC774; &#xBCF4;&#xC804;&#xD558;&#xC138;.  
+&#xC0AC;&#xB78C; <span class="hljs-number">4</span>                                                                    
+&#xC0BC;&#xCC9C;&#xB9AC; <span class="hljs-number">4</span>                             &#xB0A8;&#xC0B0; &#xC704;&#xC5D0; &#xC800; &#xC18C;&#xB098;&#xBB34;, &#xCCA0;&#xAC11;&#xC744; &#xB450;&#xB978; &#xB4EF;  
+&#xD654;&#xB824;&#xAC15;&#xC0B0; <span class="hljs-number">4</span>                           &#xBC14;&#xB78C;&#xC11C;&#xB9AC; &#xBD88;&#xBCC0;&#xD568;&#xC740; &#xC6B0;&#xB9AC; &#xAE30;&#xC0C1;&#xC77C;&#xC138;.  
+&#xC6B0;&#xB9AC; <span class="hljs-number">2</span>                               &#xBB34;&#xAD81;&#xD654; &#xC0BC;&#xCC9C;&#xB9AC; &#xD654;&#xB824;&#xAC15;&#xC0B0;  
+&#xC774; <span class="hljs-number">2</span>                                 &#xB300;&#xD55C; &#xC0AC;&#xB78C;, &#xB300;&#xD55C;&#xC73C;&#xB85C; &#xAE38;&#xC774; &#xBCF4;&#xC804;&#xD558;&#xC138;.  
+&#xAC00;&#xC2B4; <span class="hljs-number">1</span>                                                                    
+&#xAC00;&#xC744; <span class="hljs-number">1</span>                               &#xAC00;&#xC744; &#xD558;&#xB298; &#xACF5;&#xD65C;&#xD55C;&#xB370; &#xB192;&#xACE0; &#xAD6C;&#xB984; &#xC5C6;&#xC774;  
+&#xACF5;&#xD65C;&#xD55C;&#xB370; <span class="hljs-number">1</span>                           &#xBC1D;&#xC740; &#xB2EC;&#xC740; &#xC6B0;&#xB9AC; &#xAC00;&#xC2B4; &#xC77C;&#xD3B8;&#xB2E8;&#xC2EC;&#xC77C;&#xC138;.  
+&#xAD34;&#xB85C;&#xC6B0;&#xB098; <span class="hljs-number">1</span>                           &#xBB34;&#xAD81;&#xD654; &#xC0BC;&#xCC9C;&#xB9AC; &#xD654;&#xB824;&#xAC15;&#xC0B0;  
+&#xAD6C;&#xB984; <span class="hljs-number">1</span>                               &#xB300;&#xD55C; &#xC0AC;&#xB78C;, &#xB300;&#xD55C;&#xC73C;&#xB85C; &#xAE38;&#xC774; &#xBCF4;&#xC804;&#xD558;&#xC138;.  
+&#xAE30;&#xC0C1;&#xACFC; <span class="hljs-number">1</span>                                                                  
+&#xAE30;&#xC0C1;&#xC77C;&#xC138; <span class="hljs-number">1</span>                           &#xC774; &#xAE30;&#xC0C1;&#xACFC; &#xC774; &#xB9D8;&#xC73C;&#xB85C; &#xCDA9;&#xC131;&#xC744; &#xB2E4;&#xD558;&#xC5EC;  
+&#xB098;&#xB77C; <span class="hljs-number">1</span>                               &#xAD34;&#xB85C;&#xC6B0;&#xB098; &#xC990;&#xAC70;&#xC6B0;&#xB098; &#xB098;&#xB77C; &#xC0AC;&#xB791;&#xD558;&#xC138;.  
+.....                                &#xBB34;&#xAD81;&#xD654; &#xC0BC;&#xCC9C;&#xB9AC; &#xD654;&#xB824;&#xAC15;&#xC0B0;  
+.....                                &#xB300;&#xD55C; &#xC0AC;&#xB78C;, &#xB300;&#xD55C;&#xC73C;&#xB85C; &#xAE38;&#xC774; &#xBCF4;&#xC804;&#xD558;&#xC138;.
+</code></pre>
+<p>&#xD604;&#xC7AC; &#xAC01; cpu core &#xC5D0; &#xBC14;&#xC6B4;&#xB4DC;&#xB41C; &#xC2A4;&#xB808;&#xB4DC; &#xAC1C;&#xC218; &#xCD9C;&#xB825;</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># ps &#xBA85;&#xB839;&#xC5D0;&#xC11C; psr &#xC740; &#xD604;&#xC7AC; &#xC2A4;&#xB808;&#xB4DC;&#xAC00; &#xBC14;&#xC6B4;&#xB4DC;&#xB41C; cpu core &#xB97C; &#xB9D0;&#xD558;&#xACE0;</span>
+<span class="hljs-comment"># &#xB4A4;&#xC5D0; &apos;=&apos; &#xB294; ps &#xBA85;&#xB839;&#xC774; &#xD0C0;&#xC774;&#xD2C0;&#xC744; &#xD45C;&#xC2DC;&#xD558;&#xC9C0; &#xC54A;&#xAC8C; &#xD569;&#xB2C8;&#xB2E4;.</span>
+<span class="hljs-comment"># &#xCD9C;&#xB825; &#xACB0;&#xACFC;&#xAC00; &#xC2E4;&#xC81C; &#xCF54;&#xC5B4; &#xC218; &#xBCF4;&#xB2E4; &#xB9CE;&#xAC8C; &#xB098;&#xC624;&#xB294; &#xC774;&#xC720;&#xB294; Hyper-Threading &#xB54C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;.</span>
+
+$ watch -td -n1 <span class="hljs-string">&quot;<span class="hljs-variable">$( cat &lt;&lt;\EOF
+ps axH -o psr= |
+awk &apos;{a[$1]++} END { 
+    for (i in a)</span> { printf &quot;</span>c%-<span class="hljs-number">6</span>d<span class="hljs-string">&quot;,i }; print &quot;</span><span class="hljs-string">&quot;;
+    for (i in a) { printf &quot;</span>%-<span class="hljs-number">7</span>d<span class="hljs-string">&quot;, a[i] }; print &quot;</span><span class="hljs-string">&quot; }&apos; 
+EOF
+)&quot;</span>
+
+c0     c1     c2     c3     c4     c5     c6     c7     
+<span class="hljs-number">155</span>    <span class="hljs-number">95</span>     <span class="hljs-number">153</span>    <span class="hljs-number">106</span>    <span class="hljs-number">128</span>    <span class="hljs-number">105</span>    <span class="hljs-number">139</span>    <span class="hljs-number">116</span>
+</code></pre>
+<h3 id="group-by-&#xB85C;-&#xB450;-&#xAC1C;-&#xC774;&#xC0C1;&#xC758;-&#xAC12;&#xC744;-&#xC0AC;&#xC6A9;">group by &#xB85C; &#xB450; &#xAC1C; &#xC774;&#xC0C1;&#xC758; &#xAC12;&#xC744; &#xC0AC;&#xC6A9;</h3>
+<p>SUBSEP &#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; <code>arr[$1,$3,$5]</code> &#xD615;&#xD0DC;&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xBA74; group by &#xB85C; &#xB450; &#xAC1C; &#xC774;&#xC0C1;&#xC758; &#xAC12;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC544;&#xB798;&#xC758; &#xACBD;&#xC6B0;&#xB294; A, B &#xB450; &#xAC12;&#xC744; group by &#xD558;&#xAE30; &#xC704;&#xD574; <code>a[$1,$2]</code> &#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC600;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>select &#xC808;&#xC5D0; <code>count(C)</code> &#xAC00; &#xC0AC;&#xC6A9;&#xB418;&#xC5C8;&#xB2E4;&#xBA74; &#xC785;&#xB825; &#xB54C;&#xB294; <code>a[$1,$2][&quot;C&quot;]++</code>, &#xCD9C;&#xB825; &#xB54C;&#xB294; <code>a[$1,$2][&quot;C&quot;]</code>
+&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xB418;&#xB294;&#xB370;&#xC694;.
+<code>count(distinct C)</code> &#xAC00; &#xC0AC;&#xC6A9;&#xB418;&#xC5C8;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; distinct &#xB97C; &#xAD6C;&#xD604;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC785;&#xB825; &#xB54C;&#xB294; <code>a[$1,$2][&quot;C&quot;][$3]</code>, &#xCD9C;&#xB825; &#xB54C;&#xB294; <code>length(a[$1,$2][&quot;C&quot;])</code> &#xAC00; &#xC0AC;&#xC6A9;&#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xB9CC;&#xC57D;&#xC5D0; <code>count(distinct C,D)</code> &#xB97C; &#xD55C;&#xB2E4;&#xACE0; &#xD558;&#xBA74; &#xC785;&#xB825; &#xB54C; <code>a[$1,$2][&quot;C&quot;][$3,$4]</code> &#xB85C; &#xD558;&#xBA74; &#xB418;&#xACA0;&#xC8E0;</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># &#xB370;&#xC774;&#xD130; &#xD30C;&#xC77C;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xB54C;&#xB294; &#xD5E4;&#xB354; &#xBD80;&#xBD84;&#xC740; &#xC81C;&#xC678;&#xD558;&#xC138;&#xC694;</span>
+<span class="hljs-comment">###################### &#xB370;&#xC774;&#xD130; &#xD30C;&#xC77C; &#xB0B4;&#xC6A9; #######################</span>
+A   B   C   D   E
+----------------------     <span class="hljs-comment">#  x x &#xC640; z o &#xB294; 2&#xBC88;&#xC529; &#xC911;&#xBCF5;&#xB418;&#xACE0; x x &#xB294; C &#xAC12;&#xC774; &#xAC19;&#xACE0; z o &#xB294; &#xB2E4;&#xB974;&#xB2E4;</span>
+x   x   e   <span class="hljs-number">2</span>   <span class="hljs-number">10</span>         <span class="hljs-comment">#  x   x   e</span>
+y   y   g   <span class="hljs-number">1</span>   <span class="hljs-number">8</span> 
+z   o   e   <span class="hljs-number">2</span>   <span class="hljs-number">9</span>          <span class="hljs-comment">#  z   o   e</span>
+o   o   q   <span class="hljs-number">1</span>   <span class="hljs-number">10</span>
+p   z   e   <span class="hljs-number">3</span>   <span class="hljs-number">22</span>
+x   x   e   <span class="hljs-number">1</span>   <span class="hljs-number">11</span>         <span class="hljs-comment">#  x   x   e</span>
+z   o   a   <span class="hljs-number">1</span>   <span class="hljs-number">24</span>         <span class="hljs-comment">#  z   o   a</span>
+y   z   b   <span class="hljs-number">1</span>   <span class="hljs-number">25</span>
+
+<span class="hljs-comment">#################### SQL &#xBB38;&#xC73C;&#xB85C; &#xB098;&#xD0C0;&#xB0B8; &#xACB0;&#xACFC; ####################</span>
+select A, 
+       B, 
+       count(distinct C), 
+       sum(D),
+       sum(<span class="hljs-keyword">case</span> when E&gt;<span class="hljs-number">20</span> <span class="hljs-keyword">then</span> E <span class="hljs-keyword">else</span> <span class="hljs-number">0</span> END) 
+from <span class="hljs-built_in">test</span> 
+group by A,B
+
+A   B  count(distinct C)   sum(D)   sum(<span class="hljs-keyword">case</span> when E&gt;<span class="hljs-number">20</span> <span class="hljs-keyword">then</span> E <span class="hljs-keyword">else</span> <span class="hljs-number">0</span> END) 
+-------------------------------------------------------
+o   o    <span class="hljs-number">1</span>       <span class="hljs-number">1</span>       <span class="hljs-number">0</span>
+p   z    <span class="hljs-number">1</span>       <span class="hljs-number">3</span>       <span class="hljs-number">22</span>
+x   x    <span class="hljs-number">1</span>       <span class="hljs-number">3</span>       <span class="hljs-number">0</span>
+y   y    <span class="hljs-number">1</span>       <span class="hljs-number">1</span>       <span class="hljs-number">0</span>
+y   z    <span class="hljs-number">1</span>       <span class="hljs-number">1</span>       <span class="hljs-number">25</span>
+z   o    <span class="hljs-number">2</span>       <span class="hljs-number">3</span>       <span class="hljs-number">24</span>
+
+<span class="hljs-comment">################################  AWK  ####################################</span>
+
+$ awk <span class="hljs-operator">-f</span> - &lt;&lt;\EOF OFS=<span class="hljs-string">&apos;\t&apos;</span> file
+{ a[<span class="hljs-variable">$1</span>,<span class="hljs-variable">$2</span>][<span class="hljs-string">&quot;C&quot;</span>][<span class="hljs-variable">$3</span>]; a[<span class="hljs-variable">$1</span>,<span class="hljs-variable">$2</span>][<span class="hljs-string">&quot;D&quot;</span>] += <span class="hljs-variable">$4</span>; a[<span class="hljs-variable">$1</span>,<span class="hljs-variable">$2</span>][<span class="hljs-string">&quot;E&quot;</span>] += (<span class="hljs-variable">$5</span>&gt;<span class="hljs-number">20</span> ? <span class="hljs-variable">$5</span>:<span class="hljs-number">0</span>) }
+END { 
+    PROCINFO[<span class="hljs-string">&quot;sorted_in&quot;</span>] = <span class="hljs-string">&quot;@ind_str_asc&quot;</span>
+    <span class="hljs-keyword">for</span> ( i <span class="hljs-keyword">in</span> a ) { 
+        split(i, b, SUBSEP) 
+        <span class="hljs-built_in">print</span> b[<span class="hljs-number">1</span>], b[<span class="hljs-number">2</span>], length(a[i][<span class="hljs-string">&quot;C&quot;</span>]), a[i][<span class="hljs-string">&quot;D&quot;</span>], a[i][<span class="hljs-string">&quot;E&quot;</span>] 
+    }
+}
+EOF
+o       o       <span class="hljs-number">1</span>       <span class="hljs-number">1</span>       <span class="hljs-number">0</span>
+p       z       <span class="hljs-number">1</span>       <span class="hljs-number">3</span>       <span class="hljs-number">22</span>
+x       x       <span class="hljs-number">1</span>       <span class="hljs-number">3</span>       <span class="hljs-number">0</span>
+y       y       <span class="hljs-number">1</span>       <span class="hljs-number">1</span>       <span class="hljs-number">0</span>
+y       z       <span class="hljs-number">1</span>       <span class="hljs-number">1</span>       <span class="hljs-number">25</span>
+z       o       <span class="hljs-number">2</span>       <span class="hljs-number">3</span>       <span class="hljs-number">24</span>
+</code></pre>
+<p><a name="ORDER_BY"></a></p>
+<h3 id="order-by">ORDER BY</h3>
+<p>array index &#xB85C; <code>a[$1,$2]</code> &#xAC00; &#xC0AC;&#xC6A9;&#xB418;&#xC5C8;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; <code>order by A, B</code> &#xB97C; &#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C;&#xB294;
+&#xAC04;&#xB2E8;&#xD788; awk &#xC5D0;&#xC11C; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xC81C;&#xACF5;&#xD558;&#xB294; <code>@ind_str_asc</code> &#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xB418;&#xC5C8;&#xB294;&#xB370;&#xC694;.
+&#xB9CC;&#xC57D;&#xC5D0; <code>order by E</code> &#xB97C; &#xD558;&#xB824;&#xBA74; &#xC5B4;&#xB5BB;&#xAC8C; &#xD574;&#xC57C; &#xB420;&#xAE4C;&#xC694;?
+&#xC774;&#xB807;&#xAC8C; &#xB2E4;&#xCC28;&#xC6D0; &#xBC30;&#xC5F4;&#xC774; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xD658;&#xACBD;&#xC5D0;&#xC11C;&#xB294; value &#xC5D0; &#xC801;&#xC6A9;&#xB418;&#xB294; <code>@val_num_asc</code> &#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC774;&#xB54C;&#xB294; &#xC0AC;&#xC6A9;&#xC790; &#xC815;&#xC758; &#xBE44;&#xAD50; &#xD568;&#xC218;&#xB97C; &#xC774;&#xC6A9;&#xD574; order by &#xC808;&#xC744; &#xAD6C;&#xD604;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xCD9C;&#xB825;&#xC5D0; <code>for ( i in a )</code> &#xBB38;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBBC0;&#xB85C; &#xBE44;&#xAD50; &#xD568;&#xC218;&#xC5D0; &#xC804;&#xB2EC;&#xB418;&#xB294; &#xC778;&#xC218; &#xAC12;&#xC740;
+index &#xC5D0; &#xD574;&#xB2F9;&#xD558;&#xB294; i1, i2 &#xAC12;&#xC774; <code>i</code> &#xC640; &#xAC19;&#xAC8C; &#xB418;&#xACE0; value &#xC5D0; &#xD574;&#xB2F9;&#xD558;&#xB294; v1, v2 &#xAC12;&#xC740; <code>a[i]</code> &#xC640; &#xAC19;&#xAC8C;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">select A, 
+       B, 
+       count(distinct C), 
+       sum(D),
+       sum(<span class="hljs-keyword">case</span> when E&gt;<span class="hljs-number">20</span> <span class="hljs-keyword">then</span> E <span class="hljs-keyword">else</span> <span class="hljs-number">0</span> END) as E
+from <span class="hljs-built_in">test</span> 
+group by A,B
+order by E
+.................................................
+
+$ awk <span class="hljs-operator">-f</span> - &lt;&lt;\EOF OFS=<span class="hljs-string">&apos;\t&apos;</span> file
+{ a[<span class="hljs-variable">$1</span>,<span class="hljs-variable">$2</span>][<span class="hljs-string">&quot;C&quot;</span>][<span class="hljs-variable">$3</span>]; a[<span class="hljs-variable">$1</span>,<span class="hljs-variable">$2</span>][<span class="hljs-string">&quot;D&quot;</span>] += <span class="hljs-variable">$4</span>; a[<span class="hljs-variable">$1</span>,<span class="hljs-variable">$2</span>][<span class="hljs-string">&quot;E&quot;</span>] += (<span class="hljs-variable">$5</span>&gt;<span class="hljs-number">20</span> ? <span class="hljs-variable">$5</span>:<span class="hljs-number">0</span>) }
+END { 
+    PROCINFO[<span class="hljs-string">&quot;sorted_in&quot;</span>] = <span class="hljs-string">&quot;compare&quot;</span>
+    <span class="hljs-keyword">for</span> ( i <span class="hljs-keyword">in</span> a ) { 
+        split(i, b, SUBSEP) 
+        <span class="hljs-built_in">print</span> b[<span class="hljs-number">1</span>], b[<span class="hljs-number">2</span>], length(a[i][<span class="hljs-string">&quot;C&quot;</span>]), a[i][<span class="hljs-string">&quot;D&quot;</span>], a[i][<span class="hljs-string">&quot;E&quot;</span>] 
+    }
+}
+<span class="hljs-keyword">function</span> compare(i1, v1, i2, v2)
+{ 
+    <span class="hljs-keyword">if</span> ( v1[<span class="hljs-string">&quot;E&quot;</span>] &lt; v2[<span class="hljs-string">&quot;E&quot;</span>] )       <span class="hljs-built_in">return</span> -<span class="hljs-number">1</span>
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> ( v1[<span class="hljs-string">&quot;E&quot;</span>] == v2[<span class="hljs-string">&quot;E&quot;</span>] ) <span class="hljs-built_in">return</span> <span class="hljs-number">0</span>
+    <span class="hljs-keyword">else</span>                           <span class="hljs-built_in">return</span> <span class="hljs-number">1</span>
+}
+EOF
+y       y       <span class="hljs-number">1</span>       <span class="hljs-number">1</span>       <span class="hljs-number">0</span>
+o       o       <span class="hljs-number">1</span>       <span class="hljs-number">1</span>       <span class="hljs-number">0</span>
+x       x       <span class="hljs-number">1</span>       <span class="hljs-number">3</span>       <span class="hljs-number">0</span>
+p       z       <span class="hljs-number">1</span>       <span class="hljs-number">3</span>       <span class="hljs-number">22</span>
+z       o       <span class="hljs-number">2</span>       <span class="hljs-number">3</span>       <span class="hljs-number">24</span>
+y       z       <span class="hljs-number">1</span>       <span class="hljs-number">1</span>       <span class="hljs-number">25</span>
+</code></pre>
+<h3 id="having">HAVING</h3>
+<p><code>having</code> &#xC808;&#xC744; &#xAD6C;&#xD604;&#xD558;&#xB294; &#xAC83;&#xC740; &#xBE44;&#xAD50;&#xC801; &#xAC04;&#xB2E8;&#xD569;&#xB2C8;&#xB2E4;.
+&#xC544;&#xB798;&#xC640; &#xAC19;&#xC774; if &#xBB38;&#xC744; &#xD558;&#xB098; &#xCD94;&#xAC00;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">select A, 
+       B, 
+       count(distinct C), 
+       sum(D) as D,
+       sum(<span class="hljs-keyword">case</span> when E&gt;<span class="hljs-number">20</span> <span class="hljs-keyword">then</span> E <span class="hljs-keyword">else</span> <span class="hljs-number">0</span> END) as E
+from <span class="hljs-built_in">test</span> 
+group by A,B
+having D &gt; <span class="hljs-number">1</span>
+order by E
+.................................................
+
+$ awk <span class="hljs-operator">-f</span> - &lt;&lt;\EOF OFS=<span class="hljs-string">&apos;\t&apos;</span> file
+{ a[<span class="hljs-variable">$1</span>,<span class="hljs-variable">$2</span>][<span class="hljs-string">&quot;C&quot;</span>][<span class="hljs-variable">$3</span>]; a[<span class="hljs-variable">$1</span>,<span class="hljs-variable">$2</span>][<span class="hljs-string">&quot;D&quot;</span>] += <span class="hljs-variable">$4</span>; a[<span class="hljs-variable">$1</span>,<span class="hljs-variable">$2</span>][<span class="hljs-string">&quot;E&quot;</span>] += (<span class="hljs-variable">$5</span>&gt;<span class="hljs-number">20</span> ? <span class="hljs-variable">$5</span>:<span class="hljs-number">0</span>) }
+END { 
+    PROCINFO[<span class="hljs-string">&quot;sorted_in&quot;</span>] = <span class="hljs-string">&quot;compare&quot;</span>
+    <span class="hljs-keyword">for</span> ( i <span class="hljs-keyword">in</span> a ) { 
+        <span class="hljs-keyword">if</span> ( a[i][<span class="hljs-string">&quot;D&quot;</span>] &gt; <span class="hljs-number">1</span> ) {        <span class="hljs-comment"># having &#xC808;&#xC744; &#xC704;&#xD574; &#xCD94;&#xAC00;&#xB41C; if &#xBB38;</span>
+            split(i, b, SUBSEP) 
+            <span class="hljs-built_in">print</span> b[<span class="hljs-number">1</span>], b[<span class="hljs-number">2</span>], length(a[i][<span class="hljs-string">&quot;C&quot;</span>]), a[i][<span class="hljs-string">&quot;D&quot;</span>], a[i][<span class="hljs-string">&quot;E&quot;</span>] 
+        }
+    }
+}
+<span class="hljs-keyword">function</span> compare(i1, v1, i2, v2)
+{ 
+    <span class="hljs-keyword">if</span> ( v1[<span class="hljs-string">&quot;E&quot;</span>] &lt; v2[<span class="hljs-string">&quot;E&quot;</span>] )       <span class="hljs-built_in">return</span> -<span class="hljs-number">1</span>
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> ( v1[<span class="hljs-string">&quot;E&quot;</span>] == v2[<span class="hljs-string">&quot;E&quot;</span>] ) <span class="hljs-built_in">return</span> <span class="hljs-number">0</span>
+    <span class="hljs-keyword">else</span>                           <span class="hljs-built_in">return</span> <span class="hljs-number">1</span>
+}
+EOF
+x       x       <span class="hljs-number">1</span>       <span class="hljs-number">3</span>       <span class="hljs-number">0</span>
+p       z       <span class="hljs-number">1</span>       <span class="hljs-number">3</span>       <span class="hljs-number">22</span>
+z       o       <span class="hljs-number">2</span>       <span class="hljs-number">3</span>       <span class="hljs-number">24</span>
+</code></pre>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./sort.html" class="navigation navigation-prev " aria-label="Previous page: Sort"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="./JOIN.html" class="navigation navigation-next " aria-label="Next page: JOIN"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/app.js"></script>
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

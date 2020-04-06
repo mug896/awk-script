@@ -1,0 +1,932 @@
+<!DOCTYPE HTML>
+<html lang="ko" >
+    
+    <head>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-161001174-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-161001174-3');
+</script>
+
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>TCP/IP Internetworking | Introduction</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="./command_line_options.html" />
+    
+    
+    <link rel="prev" href="./example.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="14"
+        data-chapter-title="TCP/IP Internetworking"
+        data-filepath="tcp_ip.md"
+        data-basepath="."
+
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="bug_reports.html">
+            
+                
+                    <a href="./bug_reports.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Bug reports
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="basics.html">
+            
+                
+                    <a href="./basics.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Basics
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="data_types.html">
+            
+                
+                    <a href="./data_types.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        Data Types
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="variables.html">
+            
+                
+                    <a href="./variables.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Variables
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="regexp.html">
+            
+                
+                    <a href="./regexp.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        Regexp
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="functions.html">
+            
+                
+                    <a href="./functions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        Functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="escape_sequences.html">
+            
+                
+                    <a href="./escape_sequences.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        Escape sequences
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="begin_end.html">
+            
+                
+                    <a href="./begin_end.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.6.</b>
+                        
+                        BEGIN, END
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="builtin_variables.html">
+            
+                
+                    <a href="./builtin_variables.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Built-in Variables
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="record_sep.html">
+            
+                
+                    <a href="./record_sep.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Record 분리
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="field_sep.html">
+            
+                
+                    <a href="./field_sep.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        Field 분리
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="zero_one.html">
+            
+                
+                    <a href="./zero_one.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        $0=$0, $1=$1
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="redirection.html">
+            
+                
+                    <a href="./redirection.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        Redirection
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="getline.html">
+            
+                
+                    <a href="./getline.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        getline
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9" data-path="arrays.html">
+            
+                
+                    <a href="./arrays.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                        Arrays
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.1" data-path="sort.html">
+            
+                
+                    <a href="./sort.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.1.</b>
+                        
+                        Sort
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="GROUP_BY.html">
+            
+                
+                    <a href="./GROUP_BY.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.2.</b>
+                        
+                        GROUP BY
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="JOIN.html">
+            
+                
+                    <a href="./JOIN.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.3.</b>
+                        
+                        JOIN
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.4" data-path="subquery.html">
+            
+                
+                    <a href="./subquery.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.4.</b>
+                        
+                        Subquery
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.5" data-path="index2.html">
+            
+                
+                    <a href="./index2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.5.</b>
+                        
+                        Index
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="10" data-path="control_statements.html">
+            
+                
+                    <a href="./control_statements.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                        Control Statements
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11" data-path="operators.html">
+            
+                
+                    <a href="./operators.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.</b>
+                        
+                        Operators
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12" data-path="builtin_functions.html">
+            
+                
+                    <a href="./builtin_functions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.</b>
+                        
+                        Built-in Functions
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="12.1" data-path="builtin/numeric.html">
+            
+                
+                    <a href="./builtin/numeric.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.1.</b>
+                        
+                        Numeric Functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.2" data-path="builtin/string.html">
+            
+                
+                    <a href="./builtin/string.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.2.</b>
+                        
+                        String Functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.3" data-path="builtin/io.html">
+            
+                
+                    <a href="./builtin/io.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.3.</b>
+                        
+                        I/O Functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.4" data-path="builtin/time.html">
+            
+                
+                    <a href="./builtin/time.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.4.</b>
+                        
+                        Time Functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.5" data-path="builtin/bitwise.html">
+            
+                
+                    <a href="./builtin/bitwise.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.5.</b>
+                        
+                        Bitwise Functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.6" data-path="builtin/type.html">
+            
+                
+                    <a href="./builtin/type.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.6.</b>
+                        
+                        Type Functions
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="13" data-path="extensions.html">
+            
+                
+                    <a href="./extensions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.</b>
+                        
+                        Dynamic Extensions
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="13.1" data-path="example.html">
+            
+                
+                    <a href="./example.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.1.</b>
+                        
+                        예제
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="14" data-path="tcp_ip.html">
+            
+                
+                    <a href="./tcp_ip.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.</b>
+                        
+                        TCP/IP Internetworking
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="15" data-path="command_line_options.html">
+            
+                
+                    <a href="./command_line_options.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.</b>
+                        
+                        Command-line options
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="16" data-path="debugging.html">
+            
+                
+                    <a href="./debugging.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>16.</b>
+                        
+                        Debugging
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="17" data-path="tips.html">
+            
+                
+                    <a href="./tips.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>17.</b>
+                        
+                        Tips
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="18" data-path="closing.html">
+            
+                
+                    <a href="./closing.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>18.</b>
+                        
+                        맺음말
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >Introduction</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="tcpip-internetworking">TCP/IP Internetworking</h1>
+<p>bash shell &#xC5D0;&#xC11C; &#xD2B9;&#xC815; &#xC8FC;&#xC18C; &#xD615;&#xC2DD;&#xC744; &#xC774;&#xC6A9;&#xD574; socket &#xC5F0;&#xACB0; &#xAE30;&#xB2A5;&#xC744; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xAC83;&#xCC98;&#xB7FC;
+awk &#xC5D0;&#xC11C;&#xB3C4; &#xC544;&#xB798;&#xC640; &#xAC19;&#xC740; &#xC8FC;&#xC18C; &#xD615;&#xC2DD;&#xC758; &#xC2A4;&#xD2B8;&#xB9C1;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xC790;&#xB3D9;&#xC73C;&#xB85C; socket &#xC5F0;&#xACB0;&#xB85C; &#xC778;&#xC2DD;&#xD569;&#xB2C8;&#xB2E4;.
+&#xC11C;&#xBC84;&#xCABD; &#xC8FC;&#xC18C;&#xB294; localport &#xB97C; &#xC54C;&#xB9DE;&#xC740; &#xAC12;&#xC73C;&#xB85C; &#xC801;&#xC5B4;&#xC8FC;&#xBA74; &#xB418;&#xACE0; hostname &#xACFC; remoteport &#xB294; 0
+&#xC73C;&#xB85C; &#xB450;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.
+&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8; &#xC8FC;&#xC18C;&#xB294; localport &#xB97C; 0 &#xC73C;&#xB85C; &#xB450;&#xACE0; &#xC5F0;&#xACB0;&#xD560; hostname &#xACFC; remoteport &#xB97C; &#xC54C;&#xB9DE;&#xAC8C; &#xC124;&#xC815;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.
+hostname &#xC740; ip &#xC8FC;&#xC18C;&#xB85C;&#xB3C4; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p><img src="images/tcp_ip_uri.png" alt=""></p>
+<blockquote>
+<ul>
+<li>net-type : /inet4/ &#xB294; IPv4, /inet6/ &#xB294; IPv6, /inet/ &#xB294; system default  </li>
+<li>protocol : tcp &#xB610;&#xB294; udp</li>
+</ul>
+</blockquote>
+<p>&#xC1A1;&#xC2E0;&#xB9CC; &#xD558;&#xAC70;&#xB098; &#xC218;&#xC2E0;&#xB9CC; &#xD558;&#xB294; &#xB2E8;&#xBC29;&#xD5A5;&#xC77C; &#xACBD;&#xC6B0;&#xB294; redirection ( <code>&lt;</code>, <code>&gt;</code> ) &#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC9C0;&#xB9CC;
+&#xC591;&#xBC29;&#xD5A5; &#xD1B5;&#xC2E0;&#xC77C; &#xACBD;&#xC6B0;&#xB294; coprocess ( <code>|&amp;</code> ) &#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.
+&#xD30C;&#xC774;&#xD504;&#xB85C; &#xB450; &#xAC1C;&#xC758; &#xC678;&#xBD80; &#xBA85;&#xB839;&#xC744; &#xC9C1;&#xC811; &#xC5F0;&#xACB0;&#xD574; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC5C6;&#xB4EF;&#xC774;
+socket &#xB3C4; &#xC9C1;&#xC811; &#xC678;&#xBD80; &#xBA85;&#xB839;&#xC744; &#xC5F0;&#xACB0;&#xD574; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ awk -b <span class="hljs-string">&apos;BEGIN{ 
+    &quot;cat file1&quot; |&amp; &quot;/inet/tcp/0/some.host.com/8080&quot;
+}&apos;</span>
+awk: cmd. line:<span class="hljs-number">2</span>:     <span class="hljs-string">&quot;cat file1&quot;</span> |&amp; <span class="hljs-string">&quot;/inet/tcp/0/some.host.com/8080&quot;</span>
+awk: cmd. line:<span class="hljs-number">2</span>:                    ^ syntax error
+</code></pre>
+<h3 id="&#xC784;&#xC2DC;-&#xC6F9;-&#xC11C;&#xBC84;">&#xC784;&#xC2DC; &#xC6F9; &#xC11C;&#xBC84;</h3>
+<p>&#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xC5D0; <a href="examples/webserver.awk">webserver.awk</a> &#xC640; <a href="examples/cat.jpg">cat.jpg</a> &#xD30C;&#xC77C;&#xC744; &#xBCF5;&#xC0AC;&#xD55C; &#xD6C4; 
+<code>awk -f webserver.awk</code> &#xB85C; &#xC2E4;&#xD589;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;. </p>
+<pre><code class="lang-bash">@load <span class="hljs-string">&quot;filefuncs&quot;</span>
+@load <span class="hljs-string">&quot;readfile&quot;</span>
+BEGIN {
+    RS = ORS = <span class="hljs-string">&quot;\r\n&quot;</span>
+    datefmt = <span class="hljs-string">&quot;Date: %a, %d %b %Y %H:%M:%S %Z&quot;</span>
+    socket = <span class="hljs-string">&quot;/inet/tcp/8080/0/0&quot;</span>
+    <span class="hljs-keyword">while</span> (socket |&amp; getline &gt; <span class="hljs-number">0</span>) {
+        <span class="hljs-keyword">if</span> ( <span class="hljs-variable">$1</span> == <span class="hljs-string">&quot;GET&quot;</span> ) { 
+            <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;GET : &quot;</span>, <span class="hljs-variable">$2</span> 
+            <span class="hljs-variable">$2</span> = substr(<span class="hljs-variable">$2</span>,<span class="hljs-number">2</span>)
+            switch (<span class="hljs-variable">$2</span>) {
+                <span class="hljs-keyword">case</span> /\.(jpg|gif|png)$/ :
+                    sendImage(<span class="hljs-variable">$2</span>)
+                    <span class="hljs-built_in">break</span>
+                default :
+                    sendHtml()
+            }
+        }
+    }
+}
+<span class="hljs-keyword">function</span> sendHtml(    a, arr) {
+    arr[<span class="hljs-string">&quot;type&quot;</span>] = <span class="hljs-string">&quot;text/html&quot;</span>
+    arr[<span class="hljs-string">&quot;content&quot;</span>] = <span class="hljs-string">&quot;\
+     &lt;HTML&gt;\n\
+     &lt;HEAD&gt;&lt;TITLE&gt;Out Of Service&lt;/TITLE&gt;&lt;/HEAD&gt;\n\
+     &lt;BODY&gt;\n\
+           &lt;H1&gt;This site is temporarily out of service.&lt;/H1&gt;\n\
+           &lt;P&gt;&lt;img src=cat.jpg&gt;&lt;/P&gt;\n\
+     &lt;/BODY&gt;\n\
+     &lt;/HTML&gt;\n\
+     &quot;</span>
+    arr[<span class="hljs-string">&quot;length&quot;</span>] = length(arr[<span class="hljs-string">&quot;content&quot;</span>])
+    arr[<span class="hljs-string">&quot;date&quot;</span>] = strftime(datefmt, systime(), <span class="hljs-number">1</span>)
+
+    send(arr)
+}
+<span class="hljs-keyword">function</span> sendImage(file,     cmd, a, arr, <span class="hljs-built_in">type</span>) {
+    RS=<span class="hljs-string">&quot;\n&quot;</span>
+    cmd = <span class="hljs-string">&quot;file -b --mime-type &apos;&quot;</span> file <span class="hljs-string">&quot;&apos;&quot;</span>
+    cmd | getline <span class="hljs-built_in">type</span>; close(cmd)
+    RS=<span class="hljs-string">&quot;\r\n&quot;</span>
+    arr[<span class="hljs-string">&quot;type&quot;</span>] = <span class="hljs-built_in">type</span>
+    <span class="hljs-built_in">stat</span>(file, a)
+    arr[<span class="hljs-string">&quot;length&quot;</span>] = a[<span class="hljs-string">&quot;size&quot;</span>]
+    arr[<span class="hljs-string">&quot;content&quot;</span>] = readfile(file)
+    arr[<span class="hljs-string">&quot;date&quot;</span>] = strftime(datefmt, systime(), <span class="hljs-number">1</span>)
+
+    send(arr)
+}
+<span class="hljs-keyword">function</span> send(arr) {
+    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;HTTP/1.0 200 OK&quot;</span>                    |&amp; socket
+    <span class="hljs-built_in">print</span> arr[<span class="hljs-string">&quot;date&quot;</span>]                          |&amp; socket
+    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;Server: AWK&quot;</span>                        |&amp; socket
+    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;Content-Length: &quot;</span> arr[<span class="hljs-string">&quot;length&quot;</span>]     |&amp; socket
+    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;Content-Type: &quot;</span> arr[<span class="hljs-string">&quot;type&quot;</span>]         |&amp; socket
+    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;&quot;</span>                                   |&amp; socket
+    <span class="hljs-built_in">print</span> arr[<span class="hljs-string">&quot;content&quot;</span>]                       |&amp; socket
+
+    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;close socket&quot;</span>
+    close(socket)
+}
+</code></pre>
+<p><a name="chat"></a></p>
+<h3 id="&#xC591;&#xBC29;&#xD5A5;-&#xCC44;&#xD305;">&#xC591;&#xBC29;&#xD5A5; &#xCC44;&#xD305;</h3>
+<p>&#xC704;&#xC5D0;&#xC11C; &#xC791;&#xC131;&#xD55C; &#xC6F9; &#xC11C;&#xBC84;&#xC758; &#xACBD;&#xC6B0;&#xB294; &#xBA54;&#xC2DC;&#xC9C0;&#xAC00; &#xC804;&#xC1A1;&#xB418;&#xB294; &#xC21C;&#xC11C;&#xAC00; request, response &#xB85C; &#xC77C;&#xC815;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;
+&#xD558;&#xB098;&#xC758; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xB85C;&#xB3C4; &#xCC98;&#xB9AC;&#xD560; &#xC218;&#xAC00; &#xC788;&#xC5C8;&#xB294;&#xB370;&#xC694;.
+&#xC591;&#xBC29;&#xD5A5; &#xCC44;&#xD305;&#xC758; &#xACBD;&#xC6B0;&#xB294; &#xC77C;&#xC815;&#xD55C; &#xC21C;&#xC11C; &#xC5C6;&#xC774; &#xC784;&#xC758;&#xB85C; &#xC804;&#xB2EC;&#xB418;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;
+&#xC785;&#xB825;&#xACFC; &#xCD9C;&#xB825;&#xC744; &#xB530;&#xB85C; &#xCC98;&#xB9AC;&#xD574;&#xC918;&#xC57C; &#xB418;&#xBBC0;&#xB85C; &#xB450; &#xAC1C;&#xC758; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xAC00; &#xD544;&#xC694;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>fork &#xD558;&#xAE30; &#xC804;&#xC5D0; server &#xC758; <code>socket |&amp; getline</code> &#xC640; client &#xC758; <code>print &quot;&quot; |&amp; socket</code> &#xB85C;
+&#xBA3C;&#xC800; socket &#xC744; &#xC5F0;&#xACB0;&#xD558;&#xB294; &#xAC83;&#xC740; child &#xC640; parent &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xAC00; &#xB3D9;&#xC77C;&#xD55C; socket &#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C;&#xC785;&#xB2C8;&#xB2E4;.
+&#xC0C1;&#xB300;&#xBC29;&#xC774; &#xC885;&#xB8CC;&#xD558;&#xAC8C; &#xB418;&#xBA74; socket &#xC5D0; &#xC5F0;&#xACB0; &#xC911;&#xC778; parent &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xB9CC; &#xC885;&#xB8CC;&#xB418;&#xACE0;
+child &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xB294; &#xB0A8;&#xAC8C; &#xB418;&#xBBC0;&#xB85C; &#xC885;&#xB8CC;&#xC804;&#xC5D0; &#xBA3C;&#xC800; kill &#xC678;&#xBD80; &#xBA85;&#xB839;&#xC73C;&#xB85C; child pid &#xB97C; &#xC885;&#xB8CC;&#xC2DC;&#xD0B5;&#xB2C8;&#xB2E4;.</p>
+<blockquote>
+<p>&#xD55C;&#xAC00;&#xC9C0; &#xCC38;&#xACE0;&#xD560; &#xAC83;&#xC740; heredoc &#xC73C;&#xB85C; &#xC791;&#xC131;&#xD558;&#xBA74; &#xC548;&#xB418;&#xACE0; quotes &#xC774;&#xB098; &#xD30C;&#xC77C;&#xB85C; &#xB9CC;&#xB4E4;&#xC5B4;&#xC11C; &#xC2E4;&#xD589;&#xD574;&#xC57C; &#xB429;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
+<p><img src="images/tcp_ip_fork.png" alt=""></p>
+<pre><code class="lang-bash"><span class="hljs-comment">############ &#xBA3C;&#xC800; server &#xB97C; &#xC2E4;&#xD589; ############</span>
+$ awk <span class="hljs-string">&apos;
+@load &quot;fork&quot;
+BEGIN{
+    socket = &quot;/inet/tcp/8080/0/0&quot;
+    socket |&amp; getline
+    if (( pid = fork() ) == 0 ) {
+        while (getline msg &lt; &quot;/dev/stdin&quot; &gt; 0)   # child
+            print msg |&amp; socket
+    } else {
+        while (socket |&amp; getline msg &gt; 0)        # parent
+            print msg
+        system(&quot;kill &quot; pid)
+    }
+}&apos;</span>
+
+<span class="hljs-comment">##############  chat client  ##############</span>
+$ awk <span class="hljs-string">&apos;
+@load &quot;fork&quot;
+BEGIN{
+    socket = &quot;/inet/tcp/0/some.host.com/8080&quot;    # localhost or 0.0.0.0
+    print &quot;&quot; |&amp; socket
+    if (( pid = fork() ) == 0 ) {
+        while (getline msg &lt; &quot;/dev/stdin&quot; &gt; 0)   # child
+            print msg |&amp; socket
+    } else {
+        while (socket |&amp; getline msg &gt; 0)        # parent
+            print msg
+        system(&quot;kill &quot; pid)
+    }
+}&apos;</span>
+</code></pre>
+<h3 id="&#xBC14;&#xC774;&#xB108;&#xB9AC;-&#xD30C;&#xC77C;-&#xC804;&#xC1A1;">&#xBC14;&#xC774;&#xB108;&#xB9AC; &#xD30C;&#xC77C; &#xC804;&#xC1A1;</h3>
+<p>awk &#xB294; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xD14D;&#xC2A4;&#xD2B8; &#xB370;&#xC774;&#xD130;&#xB97C; &#xB2E4;&#xB8E8;&#xB294; &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC774;&#xC9C0;&#xB9CC;
+&#xC57D;&#xAC04; &#xB2E4;&#xB978; &#xBC29;&#xC2DD;&#xC73C;&#xB85C; &#xD65C;&#xC6A9;&#xC744; &#xD558;&#xC5EC; &#xBC14;&#xC774;&#xB108;&#xB9AC; &#xD30C;&#xC77C; &#xC804;&#xC1A1;&#xC744; &#xAD6C;&#xD604;&#xD55C; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.
+&#xC774;&#xB54C;&#xB294; &#xC785;&#xCD9C;&#xB825; &#xB370;&#xC774;&#xD130;&#xB97C; byte &#xB85C; &#xB2E4;&#xB8E8;&#xB294; <code>-b</code> &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD558;&#xACE0;
+RS &#xC124;&#xC815;&#xACFC; RT &#xBCC0;&#xC218;&#xB97C; &#xD65C;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<blockquote>
+<p>&#xD14C;&#xC2A4;&#xD2B8;&#xC5D0; &#xC0AC;&#xC6A9;&#xD55C; gawk &#xBC84;&#xC804;&#xC774; 4.1.4 &#xC778;&#xB370; &#xAD6C;&#xBC84;&#xC804;&#xC758; &#xACBD;&#xC6B0; &#xC815;&#xC0C1; &#xC791;&#xB3D9;&#xD558;&#xC9C0; &#xC54A;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
+<p><code>RS=&quot;.{1,3}&quot;</code> &#xD615;&#xC2DD;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xC5EC; &#xC77C;&#xC815;&#xD55C; &#xD06C;&#xAE30;&#xB85C; &#xB370;&#xC774;&#xD130; &#xC77D;&#xC5B4;&#xB4E4;&#xC774;&#xAE30; &#xC608;&#xC81C;</p>
+<pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> -n <span class="hljs-number">0123456789</span> |
+awk <span class="hljs-string">&apos;{ printf &quot;NR:%s, NF:%s, $0:(%s), RT:(%s)\n&quot;, NR, NF, $0, RT  }&apos;</span> RS=<span class="hljs-string">&apos;.{1,3}&apos;</span>
+NR:<span class="hljs-number">1</span>, NF:<span class="hljs-number">0</span>, <span class="hljs-variable">$0</span>:(), RT:(<span class="hljs-number">012</span>)
+NR:<span class="hljs-number">2</span>, NF:<span class="hljs-number">0</span>, <span class="hljs-variable">$0</span>:(), RT:(<span class="hljs-number">345</span>)
+NR:<span class="hljs-number">3</span>, NF:<span class="hljs-number">0</span>, <span class="hljs-variable">$0</span>:(), RT:(<span class="hljs-number">678</span>)
+NR:<span class="hljs-number">4</span>, NF:<span class="hljs-number">0</span>, <span class="hljs-variable">$0</span>:(), RT:(<span class="hljs-number">9</span>)
+</code></pre>
+<p>&#xBC14;&#xC774;&#xB108;&#xB9AC; &#xD30C;&#xC77C; &#xC804;&#xC1A1;</p>
+<pre><code class="lang-bash"><span class="hljs-comment">#################  file receiver  #################</span>
+$ awk -b <span class="hljs-operator">-f</span> - &lt;&lt;\EOF
+BEGIN{ RS=<span class="hljs-string">&quot;.{1,300}&quot;</span>
+    <span class="hljs-keyword">while</span> ( getline &lt; <span class="hljs-string">&quot;/inet/tcp/8080/0/0&quot;</span> &gt; <span class="hljs-number">0</span> ) {
+        <span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;%s&quot;</span>, RT &gt; <span class="hljs-string">&quot;file1.jpg.copy&quot;</span> 
+        sum += length(RT)
+        <span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;\r%&apos;d bytes received&quot;</span>, sum
+    }
+    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;&quot;</span>
+}
+EOF
+<span class="hljs-number">1</span>,<span class="hljs-number">637</span>,<span class="hljs-number">568</span> bytes received
+
+<span class="hljs-comment">##################  file sender  ###################</span>
+$ awk -b <span class="hljs-operator">-f</span> - &lt;&lt;\EOF 
+BEGIN{ RS=<span class="hljs-string">&quot;.{1,300}&quot;</span> 
+    <span class="hljs-keyword">while</span> ( getline &lt; <span class="hljs-string">&quot;file1.jpg&quot;</span> &gt; <span class="hljs-number">0</span> ) {
+        <span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;%s&quot;</span>, RT &gt; <span class="hljs-string">&quot;/inet/tcp/0/some.host.com/8080&quot;</span>
+        sum += length(RT)
+        <span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;\r%&apos;d bytes sent&quot;</span>, sum
+    }
+    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;&quot;</span>
+}
+EOF
+<span class="hljs-number">1</span>,<span class="hljs-number">637</span>,<span class="hljs-number">568</span> bytes sent
+</code></pre>
+<p>tar &#xD30C;&#xC77C; &#xC804;&#xC1A1;</p>
+<pre><code class="lang-bash"><span class="hljs-comment">###############  tar receiver  ################</span>
+$ awk -b <span class="hljs-string">&apos;BEGIN{ RS=&quot;.{1,300}&quot;
+    while ( getline &lt; &quot;/inet/tcp/8080/0/0&quot; &gt; 0 ) {
+        printf &quot;%s&quot;, RT | &quot;tar xvz&quot;
+    }
+}&apos;</span>
+
+<span class="hljs-comment">###############  tar sender  ##################</span>
+$ awk -b <span class="hljs-string">&apos;BEGIN{ RS=&quot;.{1,300}&quot; 
+    while ( &quot;tar cvz ./mydir&quot; | getline ) {
+        printf &quot;%s&quot;, RT &gt; &quot;/inet/tcp/0/some.host.com/8080&quot;
+    }
+}&apos;</span>
+</code></pre>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./example.html" class="navigation navigation-prev " aria-label="Previous page: 예제"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="./command_line_options.html" class="navigation navigation-next " aria-label="Next page: Command-line options"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/app.js"></script>
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

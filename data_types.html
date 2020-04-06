@@ -1,0 +1,1157 @@
+<!DOCTYPE HTML>
+<html lang="ko" >
+    
+    <head>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-161001174-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-161001174-3');
+</script>
+
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Data Types | Introduction</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="./variables.html" />
+    
+    
+    <link rel="prev" href="./basics.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="2.1"
+        data-chapter-title="Data Types"
+        data-filepath="data_types.md"
+        data-basepath="."
+
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="bug_reports.html">
+            
+                
+                    <a href="./bug_reports.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Bug reports
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="basics.html">
+            
+                
+                    <a href="./basics.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Basics
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="2.1" data-path="data_types.html">
+            
+                
+                    <a href="./data_types.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        Data Types
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="variables.html">
+            
+                
+                    <a href="./variables.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Variables
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="regexp.html">
+            
+                
+                    <a href="./regexp.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        Regexp
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="functions.html">
+            
+                
+                    <a href="./functions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        Functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="escape_sequences.html">
+            
+                
+                    <a href="./escape_sequences.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        Escape sequences
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="begin_end.html">
+            
+                
+                    <a href="./begin_end.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.6.</b>
+                        
+                        BEGIN, END
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="builtin_variables.html">
+            
+                
+                    <a href="./builtin_variables.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Built-in Variables
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="record_sep.html">
+            
+                
+                    <a href="./record_sep.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Record 분리
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="field_sep.html">
+            
+                
+                    <a href="./field_sep.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        Field 분리
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="zero_one.html">
+            
+                
+                    <a href="./zero_one.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        $0=$0, $1=$1
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="redirection.html">
+            
+                
+                    <a href="./redirection.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        Redirection
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="getline.html">
+            
+                
+                    <a href="./getline.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        getline
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9" data-path="arrays.html">
+            
+                
+                    <a href="./arrays.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                        Arrays
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.1" data-path="sort.html">
+            
+                
+                    <a href="./sort.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.1.</b>
+                        
+                        Sort
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="GROUP_BY.html">
+            
+                
+                    <a href="./GROUP_BY.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.2.</b>
+                        
+                        GROUP BY
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="JOIN.html">
+            
+                
+                    <a href="./JOIN.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.3.</b>
+                        
+                        JOIN
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.4" data-path="subquery.html">
+            
+                
+                    <a href="./subquery.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.4.</b>
+                        
+                        Subquery
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.5" data-path="index2.html">
+            
+                
+                    <a href="./index2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.5.</b>
+                        
+                        Index
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="10" data-path="control_statements.html">
+            
+                
+                    <a href="./control_statements.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                        Control Statements
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11" data-path="operators.html">
+            
+                
+                    <a href="./operators.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.</b>
+                        
+                        Operators
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12" data-path="builtin_functions.html">
+            
+                
+                    <a href="./builtin_functions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.</b>
+                        
+                        Built-in Functions
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="12.1" data-path="builtin/numeric.html">
+            
+                
+                    <a href="./builtin/numeric.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.1.</b>
+                        
+                        Numeric Functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.2" data-path="builtin/string.html">
+            
+                
+                    <a href="./builtin/string.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.2.</b>
+                        
+                        String Functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.3" data-path="builtin/io.html">
+            
+                
+                    <a href="./builtin/io.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.3.</b>
+                        
+                        I/O Functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.4" data-path="builtin/time.html">
+            
+                
+                    <a href="./builtin/time.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.4.</b>
+                        
+                        Time Functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.5" data-path="builtin/bitwise.html">
+            
+                
+                    <a href="./builtin/bitwise.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.5.</b>
+                        
+                        Bitwise Functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.6" data-path="builtin/type.html">
+            
+                
+                    <a href="./builtin/type.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.6.</b>
+                        
+                        Type Functions
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="13" data-path="extensions.html">
+            
+                
+                    <a href="./extensions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.</b>
+                        
+                        Dynamic Extensions
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="13.1" data-path="example.html">
+            
+                
+                    <a href="./example.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.1.</b>
+                        
+                        예제
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="14" data-path="tcp_ip.html">
+            
+                
+                    <a href="./tcp_ip.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.</b>
+                        
+                        TCP/IP Internetworking
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="15" data-path="command_line_options.html">
+            
+                
+                    <a href="./command_line_options.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.</b>
+                        
+                        Command-line options
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="16" data-path="debugging.html">
+            
+                
+                    <a href="./debugging.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>16.</b>
+                        
+                        Debugging
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="17" data-path="tips.html">
+            
+                
+                    <a href="./tips.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>17.</b>
+                        
+                        Tips
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="18" data-path="closing.html">
+            
+                
+                    <a href="./closing.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>18.</b>
+                        
+                        맺음말
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >Introduction</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="data-types">Data Types</h1>
+<p>awk &#xC5D0;&#xC11C;&#xB294; number &#xC640; string &#xAD6C;&#xBD84;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xD558;&#xC9C0;&#xB9CC; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D; &#xC5B8;&#xC5B4;&#xC5D0;&#xC11C;&#xCC98;&#xB7FC; &#xC5C4;&#xACA9;&#xD55C; &#xAC83;&#xC740; &#xC544;&#xB2C8;&#xACE0;
+&#xC0B0;&#xC220;&#xC5F0;&#xC0B0;&#xC744; &#xD558;&#xB294; &#xACF3;&#xC5D0;&#xC11C;&#xB294; &#xC2A4;&#xD2B8;&#xB9C1; &quot;123&quot; &#xC774; &#xC22B;&#xC790;&#xB85C; &#xCDE8;&#xAE09;&#xB418;&#xACE0;,
+&#xC2A4;&#xD2B8;&#xB9C1; &#xC5F0;&#xC0B0;&#xC744; &#xD558;&#xB294; &#xACF3;&#xC5D0;&#xC11C;&#xB294; &#xC22B;&#xC790; 123 &#xC774; &#xC2A4;&#xD2B8;&#xB9C1;&#xC73C;&#xB85C; &#xCDE8;&#xAE09;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;BEGIN{ print ( 12 + 3 ) }&apos;</span>
+<span class="hljs-number">15</span>
+
+<span class="hljs-comment"># &#xC2A4;&#xD2B8;&#xB9C1;&#xACFC; &#xC22B;&#xC790;&#xB97C; &#xD63C;&#xC6A9;&#xD574;&#xB3C4; &#xB41C;&#xB2E4;.</span>
+$ awk <span class="hljs-string">&apos;BEGIN{ print ( &quot;12&quot; + 3 ) }&apos;</span>
+<span class="hljs-number">15</span>
+<span class="hljs-comment"># &#xBAA8;&#xB450; &#xC2A4;&#xD2B8;&#xB9C1;&#xC774;&#xC5B4;&#xB3C4; &#xC0C1;&#xAD00;&#xC5C6;&#xB2E4;.</span>
+<span class="hljs-comment"># &apos;+&apos; &#xB85C; &#xC0B0;&#xC220;&#xC5F0;&#xC0B0;&#xC744; &#xD558;&#xB294; context &#xC774;&#xBBC0;&#xB85C; &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xC22B;&#xC790;&#xB85C; &#xBCC0;&#xD658;&#xB41C;&#xB2E4;.</span>
+$ awk <span class="hljs-string">&apos;BEGIN{ print ( &quot;12&quot; + &quot;3&quot; ) }&apos;</span>
+<span class="hljs-number">15</span>
+
+<span class="hljs-comment"># 12345 &#xB294; &#xC22B;&#xC790;&#xC774;&#xC9C0;&#xB9CC; &#xC2A4;&#xD2B8;&#xB9C1; &#xC5F0;&#xC0B0;&#xC744; &#xD560; &#xC218; &#xC788;&#xB2E4;.</span>
+<span class="hljs-comment"># substr() &#xD568;&#xC218;&#xB85C; &#xC2A4;&#xD2B8;&#xB9C1; &#xC5F0;&#xC0B0;&#xC744; &#xD558;&#xB294; context &#xC774;&#xBBC0;&#xB85C; &#xC22B;&#xC790;&#xAC00; &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xC2A4;&#xD2B8;&#xB9C1;&#xC73C;&#xB85C; &#xBCC0;&#xD658;&#xB41C;&#xB2E4;.</span>
+$ awk <span class="hljs-string">&apos;BEGIN{ print ( substr(12345,1,2) ) }&apos;</span>
+<span class="hljs-number">12</span>
+$ awk <span class="hljs-string">&apos;BEGIN{ print ( substr(12345,1,2) + 3) }&apos;</span>
+<span class="hljs-number">15</span>
+</code></pre>
+<h3 id="string">String</h3>
+<p>awk &#xC5D0;&#xC11C;&#xB294; &#xCF54;&#xB4DC;&#xB97C; &#xC791;&#xC131;&#xD560; &#xB54C; single quotes &#xC774; &#xC0AC;&#xC6A9;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC2A4;&#xD2B8;&#xB9C1;&#xC744; &#xB9CC;&#xB4E4; &#xB54C;&#xB294; double quotes &#xC744; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.
+&#xC2A4;&#xD2B8;&#xB9C1;&#xC740; &#xB2E8;&#xC9C0; &#xD504;&#xB9B0;&#xD2B8;&#xBB38;&#xC5D0;&#xB9CC; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xAC83;&#xC774; &#xC544;&#xB2C8;&#xACE0; &#xD30C;&#xC77C;&#xC744; open &#xD560; &#xB54C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xD30C;&#xC77C;&#xBA85;,
+&#xC678;&#xBD80; &#xBA85;&#xB839;&#xC744; &#xC2E4;&#xD589;&#xC2DC;&#xD0AC; &#xB54C; &#xC791;&#xC131;&#xD558;&#xB294; &#xBA85;&#xB839; &#xB77C;&#xC778;&#xC5D0; &#xBAA8;&#xB450; &#xC2A4;&#xD2B8;&#xB9C1;&#xC774; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.
+double quotes &#xC774;&#xBBC0;&#xB85C; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; escape sequence &#xAC00; &#xCC98;&#xB9AC;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ awk <span class="hljs-operator">-f</span> - &lt;&lt;\EOF
+BEGIN {
+    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;hello&quot;</span>
+    <span class="hljs-built_in">print</span> <span class="hljs-string">&apos;world&apos;</span>      <span class="hljs-comment"># awk &#xC5D0;&#xC11C; single quotes &#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xC624;&#xB958; &#xBC1C;&#xC0DD;</span>
+}
+EOF
+
+awk: -:<span class="hljs-number">3</span>:     <span class="hljs-built_in">print</span> <span class="hljs-string">&apos;world&apos;</span>
+awk: -:<span class="hljs-number">3</span>:           ^ invalid char <span class="hljs-string">&apos;&apos;</span><span class="hljs-string">&apos; in expression
+awk: -:3:     print &apos;</span>world<span class="hljs-string">&apos;
+awk: -:3:           ^ syntax error
+</span></code></pre>
+<p>double quotes &#xC774;&#xBBC0;&#xB85C; escape sequence &#xAC00; &#xCC98;&#xB9AC;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># $1 == &quot;111\222&quot; &#xC5D0;&#xC11C; &apos;\&apos; &#xAC00; escape &#xBB38;&#xC790;&#xB85C; &#xCC98;&#xB9AC;&#xB418;&#xC5B4; &#xB9E4;&#xCE6D;&#xC774; &#xB418;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;.</span>
+$ <span class="hljs-built_in">printf</span> %s <span class="hljs-string">&apos;111\222,333\444&apos;</span> | awk -F, <span class="hljs-string">&apos;$1 == &quot;111\222&quot; { print $1 }&apos;</span> 
+
+<span class="hljs-comment"># &apos;\&apos; &#xBB38;&#xC790;&#xB97C; &apos;\\&apos; &#xB85C; escape &#xD558;&#xBA74; &#xC815;&#xC0C1;&#xC801;&#xC73C;&#xB85C; &#xB9E4;&#xCE6D;&#xC774; &#xB41C;&#xB2E4;.</span>
+$ <span class="hljs-built_in">printf</span> %s <span class="hljs-string">&apos;111\222,333\444&apos;</span> | awk -F, <span class="hljs-string">&apos;$1 == &quot;111\\222&quot; { print $1 }&apos;</span> 
+<span class="hljs-number">111</span>\<span class="hljs-number">222</span>
+</code></pre>
+<p>&#xC2A4;&#xD2B8;&#xB9C1; &#xAC12;&#xC740; &#xC0B0;&#xC220;&#xC5F0;&#xC0B0;&#xC5D0;&#xC11C;&#xB294; <code>0</code> &#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xD558;&#xC9C0;&#xB9CC; <code>&quot;123mb&quot;</code> &#xC640;&#xAC19;&#xC774; &#xC2A4;&#xD2B8;&#xB9C1;&#xC758; &#xC55E;&#xBD80;&#xBD84;&#xC5D0; &#xC22B;&#xC790;&#xAC00; &#xC788;&#xC744; &#xACBD;&#xC6B0;&#xB294; &#xC0B0;&#xC220;&#xC5F0;&#xC0B0;&#xC744; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;BEGIN { aa=&quot;xxx&quot;; bb=&quot;y123&quot;; cc = aa + bb; print cc }&apos;</span> 
+<span class="hljs-number">0</span>
+
+$ awk -v val=<span class="hljs-number">12</span>xx <span class="hljs-string">&apos;BEGIN { cc = val + 100; print cc }&apos;</span> 
+<span class="hljs-number">112</span>
+
+$ awk <span class="hljs-string">&apos;BEGIN{ print &quot;12.5m&quot; + &quot;3.2m&quot; }&apos;</span> 
+<span class="hljs-number">15.7</span>
+........................................
+
+<span class="hljs-comment"># top &#xBA85;&#xB839;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xC5EC; chrome &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC758; &#xBA54;&#xBAA8;&#xB9AC; &#xC0AC;&#xC6A9;&#xB7C9; &#xAD6C;&#xD558;&#xAE30;</span>
+<span class="hljs-comment"># RES &#xB294; Resident Memory Size, SHR &#xB294; &#xB2E4;&#xB978; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC640; Shared Memory Size &#xC774;&#xBBC0;&#xB85C;</span>
+<span class="hljs-comment"># chrome &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xB9CC; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xBA54;&#xBAA8;&#xB9AC;&#xB294; RES - SHR</span>
+$ top -bn1 | awk <span class="hljs-string">&apos;NR &gt; 7 &amp;&amp; $12 == &quot;chrome&quot; { res+=$6-$7 } END { print res &quot;m&quot; }&apos;</span> 
+<span class="hljs-number">3717.7</span>m
+</code></pre>
+<h3 id="string-concatenation">String Concatenation</h3>
+<p>awk &#xC5D0;&#xC11C; &#xACF5;&#xBC31;&#xC740; &#xBCC0;&#xC218;&#xC5D0; &#xAC12;&#xC744; &#xB300;&#xC785;&#xD560; &#xB54C;&#xAC74; &#xD504;&#xB9B0;&#xD2B8;&#xD560; &#xB54C;&#xAC74; &#xC0C1;&#xAD00;&#xC5C6;&#xC774; &#x7121; &#xC5D0; &#xD574;&#xB2F9;&#xD569;&#xB2C8;&#xB2E4;.
+( &#xB530;&#xB77C;&#xC11C; &#xACF5;&#xBC31;&#xC740; concatenation &#xD6A8;&#xACFC;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. )
+&#xADF8;&#xB7EC;&#xBBC0;&#xB85C; &#xACF5;&#xBC31;&#xC744; &#xB450;&#xAE30; &#xC704;&#xD574;&#xC11C;&#xB294; &#xC9C1;&#xC811; <code>&quot; &quot;</code> &#xC2A4;&#xD2B8;&#xB9C1;&#xC744; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;BEGIN{ AA=11      22  33; print AA }&apos;</span> 
+<span class="hljs-number">112233</span>
+
+$ awk <span class="hljs-string">&apos;BEGIN{ AA=11 22 33; print &quot;Number is: &quot;        AA }&apos;</span> 
+Number is: <span class="hljs-number">112233</span>
+
+$ awk <span class="hljs-string">&apos;BEGIN{ AA=11 &quot; &quot; 22 &quot;    &quot; 33; print AA }&apos;</span> 
+<span class="hljs-number">11</span> <span class="hljs-number">22</span>    <span class="hljs-number">33</span>
+
+<span class="hljs-comment"># ( two three ) &#xAC00; &quot;23&quot; &#xC774; &#xB418;&#xACE0; &#xC774;&#xD6C4;&#xC5D0; +4 &#xAC00; &#xB418;&#xC5B4; 27 &#xC774;&#xB41C;&#xB2E4;.</span>
+$ awk <span class="hljs-string">&apos;BEGIN{ two = 2; three = 3; print ( two three ) + 4 }&apos;</span>
+<span class="hljs-number">27</span>
+</code></pre>
+<p>Concatenation &#xC740; &#xACB0;&#xACFC;&#xAC00; &#xC2A4;&#xD2B8;&#xB9C1;&#xC774; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># &#xC22B;&#xC790; 11 &#xACFC; 1 &#xC744; &#xC5F0;&#xACB0;&#xD55C; &#xACB0;&#xACFC;&#xB294; &quot;111&quot; &#xC2A4;&#xD2B8;&#xB9C1;&#xC774; &#xB418;&#xBBC0;&#xB85C; &#xC2A4;&#xD2B8;&#xB9C1; &#xBE44;&#xAD50;&#xB97C; &#xD558;&#xAC8C; &#xB418;&#xC5B4; &#xACB0;&#xACFC;&#xAC12;&#xC774; 1 &#xC774; &#xB41C;&#xB2E4;.</span>
+$ awk <span class="hljs-string">&apos;BEGIN{ print (12 &gt; 11 1) }&apos;</span> 
+<span class="hljs-number">1</span>
+$ awk <span class="hljs-string">&apos;BEGIN{ print (12 &gt; 111) }&apos;</span> 
+<span class="hljs-number">0</span>
+</code></pre>
+<p><code>+=</code> &#xC5F0;&#xC0B0;&#xC790;&#xB294; &#xC0B0;&#xC220; &#xC5F0;&#xC0B0;&#xC790;&#xB85C; string concatenation &#xC5D0; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xB300;&#xC785; &#xC5F0;&#xC0B0;&#xC5D0;&#xC11C; string concatenation &#xC744; &#xD558;&#xB824;&#xBA74; &#xC624;&#xB978;&#xCABD;&#xACFC; &#xAC19;&#xC774; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;BEGIN {                         $ awk &apos;</span>BEGIN { 
+    res = <span class="hljs-string">&quot;foo&quot;</span>                            res = <span class="hljs-string">&quot;foo&quot;</span>
+    <span class="hljs-built_in">print</span> res                              <span class="hljs-built_in">print</span> res
+    res += <span class="hljs-string">&quot;bar&quot;</span>                           res = res <span class="hljs-string">&quot;bar&quot;</span>
+    <span class="hljs-built_in">print</span> res                              <span class="hljs-built_in">print</span> res
+}<span class="hljs-string">&apos;                                     }&apos;</span>
+foo                                    foo
+<span class="hljs-number">0</span>                                      foobar
+------------------------------------------------------------
+
+$ awk <span class="hljs-string">&apos;BEGIN {                         $ awk &apos;</span>BEGIN { 
+    res = sprintf( <span class="hljs-string">&quot;%s&quot;</span>, <span class="hljs-string">&quot;foo&quot;</span> )           res = sprintf( <span class="hljs-string">&quot;%s&quot;</span>, <span class="hljs-string">&quot;foo&quot;</span> )
+    <span class="hljs-built_in">print</span> res                              <span class="hljs-built_in">print</span> res
+    res += sprintf( <span class="hljs-string">&quot;%s&quot;</span>, <span class="hljs-string">&quot;bar&quot;</span> )          res = res sprintf( <span class="hljs-string">&quot;%s&quot;</span>, <span class="hljs-string">&quot;bar&quot;</span> )
+    <span class="hljs-built_in">print</span> res                              <span class="hljs-built_in">print</span> res
+}<span class="hljs-string">&apos;                                     }&apos;</span>
+foo                                    foo
+<span class="hljs-number">0</span>                                      foobar
+</code></pre>
+<h3 id="&#xC22B;&#xC790;&#xC640;-&#xC2A4;&#xD2B8;&#xB9C1;&#xC758;-&#xBD80;&#xB4F1;&#xD638;-&#xB4F1;&#xD638;-&#xC0AC;&#xC6A9;">&#xC22B;&#xC790;&#xC640; &#xC2A4;&#xD2B8;&#xB9C1;&#xC758; &#xBD80;&#xB4F1;&#xD638;, &#xB4F1;&#xD638; &#xC0AC;&#xC6A9;</h3>
+<p>awk &#xC5D0;&#xC11C;&#xB294; &#xC22B;&#xC790; 123 &#xC640; &#xC2A4;&#xD2B8;&#xB9C1; &quot;123&quot; &#xC774; &#xBB38;&#xB9E5;&#xC5D0; &#xB9DE;&#xCD94;&#xC5B4;&#xC11C; &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xD0C0;&#xC785;&#xC774; &#xBCC0;&#xACBD;&#xB418;&#xC9C0;&#xB9CC;
+&#xD55C;&#xAC00;&#xC9C0; &#xC8FC;&#xC758;&#xD560; &#xC810;&#xC740; &#xBD80;&#xB4F1;&#xD638;, &#xB4F1;&#xD638;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xACF3;&#xC5D0;&#xC11C;&#xB294; &#xB450; &#xD53C;&#xC5F0;&#xC0B0;&#xC790; &#xC911;&#xC5D0; &#xD558;&#xB098;&#xAC00; 
+&#xC2A4;&#xD2B8;&#xB9C1;&#xC774;&#xBA74; lexicographically  &#xC2A4;&#xD2B8;&#xB9C1; &#xBE44;&#xAD50;&#xB97C; &#xD55C;&#xB2E4;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<blockquote>
+<p>&#xC22B;&#xC790;&#xAC00; &#xC2A4;&#xD2B8;&#xB9C1;&#xC73C;&#xB85C; &#xBCC0;&#xACBD;&#xB420; &#xB54C;&#xB294; <code>printf &quot;%s&quot;, &#xC22B;&#xC790;</code> &#xAC00; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
+<pre><code class="lang-bash"><span class="hljs-comment"># printf &quot;%s&quot; 123.0  &#xAC12;&#xC740; &quot;123&quot; &#xC774;&#xB418;&#xBBC0;&#xB85C; &#xCC38;&#xC774;&#xB41C;&#xB2E4;.</span>
+$ awk <span class="hljs-string">&apos;BEGIN { print ( 123.0 == &quot;123&quot; ) }&apos;</span> 
+<span class="hljs-number">1</span>
+
+$ awk <span class="hljs-string">&apos;BEGIN{ print (12 &gt; 111) }&apos;</span> 
+<span class="hljs-number">0</span>
+
+<span class="hljs-comment"># &#xB450; &#xD53C;&#xC5F0;&#xC0B0;&#xC790; &#xC911;&#xC5D0; &#xD558;&#xB098;&#xAC00; &#xC2A4;&#xD2B8;&#xB9C1;&#xC774;&#xBA74; &#xC2A4;&#xD2B8;&#xB9C1; &#xBE44;&#xAD50;&#xB97C; &#xD558;&#xBBC0;&#xB85C; 12 &#xAC00; &#xD06C;&#xB2E4;&#xACE0; &#xB098;&#xC628;&#xB2E4;.</span>
+$ awk <span class="hljs-string">&apos;BEGIN{ print (12 &gt; &quot;111&quot;) }&apos;</span> 
+<span class="hljs-number">1</span>
+
+<span class="hljs-comment"># &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xB85C; substr &#xC2A4;&#xD2B8;&#xB9C1; &#xD568;&#xC218;&#xC758; &#xB9AC;&#xD134;&#xAC12;&#xC740; &#xC2A4;&#xD2B8;&#xB9C1;&#xC774;&#xB2E4;.</span>
+$ awk <span class="hljs-string">&apos;BEGIN{ print (substr(12345,1,2) &gt; 111) }&apos;</span>
+<span class="hljs-number">1</span>
+</code></pre>
+<h3 id="number">Number</h3>
+<p>&#xC22B;&#xC790;&#xC5D0;&#xB294; 8 &#xC9C4;&#xC218;, 16 &#xC9C4;&#xC218;, scientific notation &#xBAA8;&#xB450; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xD55C;&#xAC00;&#xC9C0; &#xC8FC;&#xC758;&#xD560; &#xC810;&#xC740; &#xC785;&#xB825; &#xC2A4;&#xD2B8;&#xB9BC;&#xC774;&#xB098; <code>-v</code> &#xC635;&#xC158;&#xC5D0; &#xC758;&#xD574; &#xC678;&#xBD80;&#xB85C;&#xBD80;&#xD130; &#xAC12;&#xC774; &#xC804;&#xB2EC;&#xB420; &#xACBD;&#xC6B0;&#xB294;
+&#xC22B;&#xC790; &#xB370;&#xC774;&#xD130; &#xB77C;&#xB3C4; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xBAA8;&#xB450; &#xC2A4;&#xD2B8;&#xB9C1;&#xC785;&#xB2C8;&#xB2E4;.
+10 &#xC9C4;&#xC218;&#xC758; &#xACBD;&#xC6B0;&#xB294; &#xC5F0;&#xC0B0;&#xC2DC; &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xC22B;&#xC790;&#xB85C; &#xBCC0;&#xD658;&#xC774; &#xB418;&#xC5B4; &#xCC98;&#xB9AC;&#xB418;&#xC9C0;&#xB9CC;
+8 &#xC9C4;&#xC218;, 16 &#xC9C4;&#xC218;&#xC758; &#xACBD;&#xC6B0;&#xB294; &#xADF8;&#xB807;&#xC9C0; &#xC54A;&#xC73C;&#xBBC0;&#xB85C;  &#xB530;&#xB85C; <a href="builtin/string.html#strtonum">strtonum &#xD568;&#xC218;</a> &#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash"><span class="hljs-number">11</span>       (<span class="hljs-number">10</span> &#xC9C4;&#xC218;)
+<span class="hljs-number">011</span>      (<span class="hljs-number">8</span>  &#xC9C4;&#xC218;, <span class="hljs-number">10</span> &#xC9C4;&#xC218;&#xB85C; <span class="hljs-number">9</span>)
+<span class="hljs-number">0</span>x11     (<span class="hljs-number">16</span> &#xC9C4;&#xC218;, <span class="hljs-number">10</span> &#xC9C4;&#xC218;&#xB85C; <span class="hljs-number">17</span>)
+
++<span class="hljs-number">3.14</span>    (+, - &#xAE30;&#xD638;&#xC758; &#xC0AC;&#xC6A9;)
+-<span class="hljs-number">3.14</span>
+
+<span class="hljs-number">105</span>
+<span class="hljs-number">1.05</span>e+<span class="hljs-number">2</span>  (scientific notation)
+<span class="hljs-number">1050</span>e-<span class="hljs-number">1</span>
+</code></pre>
+<p>&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xC678;&#xBD80;&#xC5D0;&#xC11C; &#xAC12;&#xC774; &#xC804;&#xB2EC;&#xB420; &#xACBD;&#xC6B0;&#xB294; &#xC22B;&#xC790; &#xB370;&#xC774;&#xD130; &#xB77C;&#xB3C4; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xC2A4;&#xD2B8;&#xB9C1;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xB0B4;&#xC5D0;&#xC11C; &#xC9C1;&#xC811; 8, 16 &#xC9C4;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xB54C;&#xB294; &#xC815;&#xC0C1;&#xC801;&#xC73C;&#xB85C; &#xC5F0;&#xC0B0;&#xC774; &#xB41C;&#xB2E4;.</span>
+$ awk <span class="hljs-string">&apos;BEGIN { print 011; print 011 + 1 }&apos;</span>
+<span class="hljs-number">9</span>
+<span class="hljs-number">10</span>
+
+$ awk <span class="hljs-string">&apos;BEGIN { print 0x11; print 0x11 + 1 }&apos;</span>
+<span class="hljs-number">17</span>
+<span class="hljs-number">18</span>
+
+<span class="hljs-comment"># &#xD558;&#xC9C0;&#xB9CC; &#xC678;&#xBD80;&#xC5D0;&#xC11C; &#xAC12;&#xC774; &#xC804;&#xB2EC;&#xB420; &#xB54C;&#xB294; &#xC2A4;&#xD2B8;&#xB9C1;&#xC774;&#xBBC0;&#xB85C; &#xC815;&#xC0C1;&#xC801;&#xC73C;&#xB85C; &#xC5F0;&#xC0B0;&#xC774; &#xB418;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;.</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-number">011</span> | awk <span class="hljs-string">&apos;{ print $1; print $1 + 1 }&apos;</span>
+<span class="hljs-number">011</span>
+<span class="hljs-number">12</span>
+
+$ <span class="hljs-built_in">echo</span> <span class="hljs-number">0</span>x11 | awk <span class="hljs-string">&apos;{ print $1; print $1 + 1 }&apos;</span>
+<span class="hljs-number">0</span>x11
+<span class="hljs-number">1</span>
+
+<span class="hljs-comment"># &#xC774;&#xB54C;&#xB294; &#xC5F0;&#xC0B0;&#xC804;&#xC5D0; strtonum &#xD568;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-number">011</span> <span class="hljs-number">0</span>x11 | awk <span class="hljs-string">&apos;{ print strtonum($1) + 1; print strtonum($2) + 1 }&apos;</span>
+<span class="hljs-number">10</span>
+<span class="hljs-number">18</span>
+
+<span class="hljs-comment"># 10 &#xC9C4;&#xC218;&#xB294; &#xC2A4;&#xD2B8;&#xB9C1;&#xC774; &#xB77C;&#xB3C4; &#xC815;&#xC0C1;&#xC801;&#xC73C;&#xB85C; &#xC5F0;&#xC0B0;&#xC774; &#xB429;&#xB2C8;&#xB2E4;.</span>
+$ <span class="hljs-built_in">echo</span> +<span class="hljs-number">10.1</span> -<span class="hljs-number">10.2</span> | awk <span class="hljs-string">&apos;{ print $1 + 1; print $2 + 1 }&apos;</span>
+<span class="hljs-number">11.1</span>
+-<span class="hljs-number">9.2</span>
+
+$ awk <span class="hljs-string">&apos;BEGIN { print 1.05e+2 }&apos;</span>            <span class="hljs-comment"># &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xB0B4;&#xC5D0;&#xC11C; 1.05e+2 &#xB294; &#xC22B;&#xC790;</span>
+<span class="hljs-number">105</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-number">1.05</span>e+<span class="hljs-number">2</span> | awk <span class="hljs-string">&apos;{ print $1 }&apos;</span>        <span class="hljs-comment"># &#xC5EC;&#xAE30;&#xC11C; $1 &#xAC12;&#xC740; &#xC2A4;&#xD2B8;&#xB9C1;</span>
+<span class="hljs-number">1.05</span>e+<span class="hljs-number">2</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-number">1.05</span>e+<span class="hljs-number">2</span> | awk <span class="hljs-string">&apos;{ print $1 + 1 }&apos;</span>    <span class="hljs-comment"># &apos;+&apos; &#xC5F0;&#xC0B0;&#xC790;&#xC5D0; &#xC758;&#xD574; &#xC22B;&#xC790;&#xB85C; &#xB428;</span>
+<span class="hljs-number">106</span>
+</code></pre>
+<p>awk &#xB294; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xC22B;&#xC790;&#xB97C; double floating point &#xB85C; &#xCC98;&#xB9AC;&#xD569;&#xB2C8;&#xB2E4;.
+&#xADF8;&#xB7EC;&#xBBC0;&#xB85C; &#xC815;&#xC218;&#xAC12;&#xC740; 53 bits &#xAE4C;&#xC9C0;&#xB9CC; &#xC815;&#xD655;&#xB3C4;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4; [<a href="builtin/bitwise.html#double">&#xCC38;&#xC870;</a>].
+&#xADF8;&#xC774;&#xC0C1;&#xC740; <code>-M</code> &#xC635;&#xC158;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xC5EC; arbitrary-precision &#xC5F0;&#xC0B0;&#xC744; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># 32 bits &#xC5F0;&#xC0B0;&#xC740; &#xC624;&#xB958;&#xAC00; &#xC5C6;&#xB2E4;.</span>
+$ awk <span class="hljs-string">&apos;BEGIN { print 0xaabbccdd + 1 }&apos;</span> 
+<span class="hljs-number">2864434398</span>
+
+$ bc &lt;&lt;&lt; <span class="hljs-string">&quot;ibase=16; AABBCCDD + 1&quot;</span>
+<span class="hljs-number">2864434398</span>     <span class="hljs-comment"># &#xC815;&#xD655;&#xD55C; &#xAC12;</span>
+.......................................................
+
+<span class="hljs-comment"># 64 bits &#xC5F0;&#xC0B0;&#xC740; &#xC5F0;&#xC0B0; &#xACB0;&#xACFC;&#xAC00; &#xC815;&#xD655;&#xD558;&#xC9C0; &#xC54A;&#xB2E4;.</span>
+$ awk <span class="hljs-string">&apos;BEGIN { print 0x66778899aabbccdd + 1 }&apos;</span> 
+<span class="hljs-number">7383520307673025536</span>
+
+$ bc &lt;&lt;&lt; <span class="hljs-string">&quot;ibase=16; 66778899AABBCCDD + 1&quot;</span>
+<span class="hljs-number">7383520307673025758</span>    <span class="hljs-comment"># &#xC815;&#xD655;&#xD55C; &#xAC12;</span>
+
+<span class="hljs-comment"># &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; -M &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</span>
+$ awk -M <span class="hljs-string">&apos;BEGIN { print 0x66778899aabbccdd + 1 }&apos;</span>
+<span class="hljs-number">7383520307673025758</span>
+</code></pre>
+<p>&#xC18C;&#xC218;&#xC810; &#xC5F0;&#xC0B0;&#xC2DC; &#xB192;&#xC740; &#xC218;&#xC900;&#xC758; &#xC815;&#xBC00;&#xB3C4;&#xAC00; &#xD544;&#xC694;&#xD560; &#xACBD;&#xC6B0; <code>-M</code> &#xC635;&#xC158;&#xACFC; <code>PREC</code> &#xBCC0;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. ( <a href="builtin_variables.html#PREC">&#xCC38;&#xC870;</a> ) </p>
+<h3 id="type-conversion">Type Conversion</h3>
+<p>&#xC2A4;&#xD2B8;&#xB9C1;&#xC744; &#xC22B;&#xC790;&#xB85C; &#xB9CC;&#xB4E4;&#xB824;&#xBA74; <code>+0</code> &#xC744; &#xD574;&#xC8FC;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;BEGIN{ print (12 &gt; &quot;111&quot;+0) }&apos;</span> 
+<span class="hljs-number">0</span>
+
+$ awk <span class="hljs-string">&apos;BEGIN{ print (substr(12345,1,2)+0 &gt; 111) }&apos;</span>
+<span class="hljs-number">0</span>
+</code></pre>
+<p>&#xC22B;&#xC790;&#xB97C; &#xC2A4;&#xD2B8;&#xB9C1;&#xC73C;&#xB85C; &#xB9CC;&#xB4E4;&#xB824;&#xBA74; <code>&quot;&quot;</code> &#xB85C; concatenation &#xC744; &#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;BEGIN{ print (12 &gt; 111) }&apos;</span> 
+<span class="hljs-number">0</span>
+
+$ awk <span class="hljs-string">&apos;BEGIN{ print (12 &gt; 111&quot;&quot;) }&apos;</span> 
+<span class="hljs-number">1</span>
+</code></pre>
+<p><a name="conversion"></a></p>
+<h5 id=""><img src="images/buttons/ofmt.png" alt=""> <img src="images/buttons/convfmt.png" alt=""></h5>
+<p>&#xC18C;&#xC218;&#xB97C; <code>print</code> &#xBB38;&#xC73C;&#xB85C; &#xCD9C;&#xB825;&#xD560; &#xB54C;&#xB294; <code>OFMT</code> &#xD3EC;&#xBA67; &#xAC12;&#xC774; &#xC801;&#xC6A9;&#xB418;&#xACE0; &#xC22B;&#xC790;&#xC5D0;&#xC11C; &#xC2A4;&#xD2B8;&#xB9C1;&#xC73C;&#xB85C; &#xBCC0;&#xACBD;&#xB420; &#xB54C;&#xB294;
+<code>CONVFMT</code> &#xD3EC;&#xBA67; &#xAC12;&#xC774; &#xC801;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.  &#xAE30;&#xBCF8;&#xAC12;&#xC740; &#xBAA8;&#xB450; <code>%.6g</code> &#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC785;&#xB825; &#xC2A4;&#xD2B8;&#xB9BC;&#xC73C;&#xB85C;&#xBD80;&#xD130; &#xB808;&#xCF54;&#xB4DC;&#xB97C; &#xC77D;&#xC5B4; &#xB4E4;&#xC77C; &#xB54C;&#xB294; &#xC22B;&#xC790; &#xB370;&#xC774;&#xD130;&#xB77C;&#xB3C4; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xC2A4;&#xD2B8;&#xB9C1;&#xC785;&#xB2C8;&#xB2E4;.
+&#xC2A4;&#xD2B8;&#xB9C1; &#xB370;&#xC774;&#xD130;&#xB294; &#xC788;&#xB294; &#xADF8;&#xB300;&#xB85C; &#xD504;&#xB9B0;&#xD2B8;&#xB418;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xD3EC;&#xBA67; &#xAC12;&#xC774; &#xC801;&#xC6A9;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xD558;&#xC9C0;&#xB9CC; &#xC0B0;&#xC220;&#xC5F0;&#xC0B0;&#xC744; &#xD558;&#xAC8C; &#xB418;&#xBA74; &#xACB0;&#xACFC;&#xAC00; &#xC22B;&#xC790;&#xAC00; &#xB418;&#xACE0; &#xC22B;&#xC790;&#xB294; <code>print</code> &#xBB38;&#xC5D0;&#xC11C; <code>OFMT</code> &#xC801;&#xC6A9;&#xC744; &#xBC1B;&#xACE0; 
+&#xB2E4;&#xC2DC; &#xC2A4;&#xD2B8;&#xB9C1;&#xC73C;&#xB85C; &#xBCC0;&#xD658;&#xC2DC; <code>CONVFMT</code> &#xAC12;&#xC758; &#xC801;&#xC6A9;&#xC744; &#xBC1B;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># OFMT, CONVFMT &#xAE30;&#xBCF8;&#xAC12;&#xC740; &#xBAA8;&#xB450; &apos;%.6g&apos; &#xC774;&#xB2E4;.</span>
+$ awk <span class="hljs-string">&apos;BEGIN{ print OFMT; print CONVFMT }&apos;</span> 
+%.<span class="hljs-number">6</span>g
+%.<span class="hljs-number">6</span>g
+
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;1.23456789&quot;</span> | awk <span class="hljs-string">&apos;{ 
+    OFMT = &quot;%.2f&quot;    
+    CONVFMT = &quot;%.4f&quot;    
+    print $1        # $1 == &quot;1.23456789&quot;  &#xC785;&#xB825;&#xAC12;&#xC740; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xC2A4;&#xD2B8;&#xB9C1;
+    a = $1 + 0      # a == 1.23456789     &#xC0B0;&#xC220;&#xC5F0;&#xC0B0;&#xC5D0; &#xC758;&#xD574; &#xC22B;&#xC790;&#xB85C; &#xBCC0;&#xACBD;&#xB428;
+    print a         # a &#xB294; &#xC22B;&#xC790;&#xC774;&#xBBC0;&#xB85C; OFMT &#xAC12;&#xC758; &#xC801;&#xC6A9;&#xC744; &#xBC1B;&#xC74C;
+    b = a &quot;&quot;        # b == &quot;1.2346&quot;  b &#xB294; CONVFMT &#xAC12;&#xC5D0; &#xB530;&#xB77C; &#xC2A4;&#xD2B8;&#xB9C1;&#xC774; &#xB428;
+    print b         # &#xC2A4;&#xD2B8;&#xB9C1;&#xC744; &#xD504;&#xB9B0;&#xD2B8;&#xD560; &#xB54C;&#xB294; OFMT &#xAC12;&#xC758; &#xC801;&#xC6A9;&#xC744; &#xBC1B;&#xC9C0; &#xC54A;&#xC74C;
+}&apos;</span> 
+<span class="hljs-number">1.23456789</span>
+<span class="hljs-number">1.23</span>
+<span class="hljs-number">1.2346</span>
+</code></pre>
+<p>&#xC704;&#xC5D0;&#xC11C; <code>a = $1 + 0</code> &#xC5D0; &#xC758;&#xD574; &#xC22B;&#xC790;&#xAC00; &#xB41C; <code>a</code> &#xB97C; <code>print length(a)</code> &#xD574;&#xBCF4;&#xBA74;
+&#xAC12;&#xC774; 10 &#xC774; &#xC544;&#xB2C8;&#xB77C; 6 &#xB85C; &#xB098;&#xC624;&#xB294; &#xAC83;&#xC744; &#xBCFC; &#xC218; &#xC788;&#xB294;&#xB370;&#xC694;.
+&#xC774;&#xAC83;&#xC740; a &#xAC12;&#xC774; <code>CONVFMT</code> &#xC5D0;&#xB530;&#xB77C; &#xBA3C;&#xC800; &#xC2A4;&#xD2B8;&#xB9C1;&#xC73C;&#xB85C; &#xBCC0;&#xD658;&#xB418;&#xAE30; &#xB54C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;.
+&#xC774;&#xAC83;&#xC740; length &#xD568;&#xC218;&#xBFD0;&#xB9CC; &#xC544;&#xB2C8;&#xB77C; &#xB2E4;&#xB978; &#xC2A4;&#xD2B8;&#xB9C1; &#xD568;&#xC218;&#xB3C4; &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<h5 id=""><img src="images/buttons/roundmode.png" alt=""></h5>
+<p>&#xC704;&#xC5D0;&#xC11C; &#xCD9C;&#xB825; &#xACB0;&#xACFC;&#xB97C; &#xC720;&#xC2EC;&#xD788; &#xBCF4;&#xC2E0; &#xBD84;&#xAED8;&#xC11C;&#xB294; &#xB9C8;&#xC9C0;&#xB9C9; &#xAC12;&#xC774; 1.2346 &#xC73C;&#xB85C; &#xB05D;&#xC790;&#xB9AC; &#xC22B;&#xC790;&#xAC00; &#xBC18;&#xC62C;&#xB9BC; &#xB418;&#xC5B4;&#xC788;&#xB294; &#xAC83;&#xC744;
+&#xC54C; &#xC218; &#xC788;&#xC744; &#xD150;&#xB370;&#xC694;.
+&#xC774;&#xAC83;&#xC740; awk &#xAC00; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; roundTiesToEven <a href="builtin_variables.html#ROUNDMODE">&#xB77C;&#xC6B4;&#xB4DC;&#xBAA8;&#xB4DC;</a> &#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xACE0; &#xC788;&#xAE30; &#xB54C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;.
+&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; roundTowardZero &#xB77C;&#xC6B4;&#xB4DC;&#xBAA8;&#xB4DC;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xAC12;&#xC744; 1.2345 &#xB85C; &#xCD9C;&#xB825;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># ROUNDMODE=z : roundTowardZero &#xB97C; &#xC0AC;&#xC6A9;</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;1.23456789&quot;</span> | awk -M -v ROUNDMODE=z <span class="hljs-string">&apos;{ 
+    OFMT = &quot;%.2f&quot;    
+    CONVFMT = &quot;%.4f&quot;    
+    print $1
+    a = $1 + 0
+    print a 
+    b = a &quot;&quot;
+    print b
+}&apos;</span> 
+<span class="hljs-number">1.23456789</span>
+<span class="hljs-number">1.23</span>
+<span class="hljs-number">1.2345</span>       &lt;----- <span class="hljs-number">1.2345</span> &#xB85C; &#xCD9C;&#xB825;&#xB428;
+</code></pre>
+<h3 id="floating-point-numbers">Floating point numbers</h3>
+<p>&#xCEF4;&#xD4E8;&#xD130;&#xC5D0;&#xC11C; &#xC18C;&#xC218;&#xC810; &#xC5F0;&#xC0B0;&#xC740; &#xD06C;&#xAC8C; fixed point &#xC5F0;&#xC0B0;&#xACFC; floating point &#xC5F0;&#xC0B0;&#xC73C;&#xB85C; &#xB098;&#xB20C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+fixed point &#xC5F0;&#xC0B0;&#xC740; &#xC18C;&#xC218;&#xC810; &#xC790;&#xB9AC;&#xAC00; &#xC815;&#xD574;&#xC838; &#xC788;&#xB294; &#xAC83;&#xC73C;&#xB85C; &#xB0B4;&#xBD80;&#xC801;&#xC73C;&#xB85C; &#xC815;&#xC218; &#xC5F0;&#xC0B0;&#xC744; &#xD1B5;&#xD574; &#xCC98;&#xB9AC;&#xAC00; &#xB429;&#xB2C8;&#xB2E4;.
+floating point &#xC5F0;&#xC0B0;&#xC740; 2 &#xC9C4;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; binary floating point &#xC5F0;&#xC0B0;&#xACFC;
+10 &#xC9C4;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; decimal floating point &#xC5F0;&#xC0B0;&#xC774; &#xC788;&#xB294;&#xB370;
+&#xD604;&#xC7AC; &#xB300;&#xBD80;&#xBD84;&#xC758; cpu &#xC5D0; &#xB4E4;&#xC5B4;&#xC788;&#xB294; &#xAC83;&#xC740; binary floating point &#xC5F0;&#xC0B0;&#xAE30; &#xC785;&#xB2C8;&#xB2E4;.
+binary floating point &#xC5F0;&#xC0B0;&#xC740; 2 &#xC9C4;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC18D;&#xB3C4;&#xAC00; &#xBE60;&#xB974;&#xACE0; &#xACFC;&#xD559; &#xACC4;&#xC0B0;&#xC5D0;&#xB294; &#xC88B;&#xC9C0;&#xB9CC;
+&#xC815;&#xD655;&#xD788; 10 &#xC9C4;&#xC218;&#xB97C; &#xD45C;&#xD604;&#xD558;&#xC9C0; &#xBABB;&#xD558;&#xB294; &#xB2E8;&#xC810;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;
+( &#xC608;&#xB97C; &#xB4E4;&#xC5B4; 0.1 &#xC740; &#xC815;&#xD655;&#xD788; 2 &#xC9C4;&#xC218;&#xB85C; &#xD45C;&#xD604;&#xC774; &#xC548;&#xB429;&#xB2C8;&#xB2E4; ).
+decimal floating point &#xB294; &#xB0B4;&#xBD80;&#xC801;&#xC73C;&#xB85C; 10 &#xC9C4;&#xC218;&#xB97C; &#xC774;&#xC6A9;&#xD574; &#xCC98;&#xB9AC;&#xD558;&#xBBC0;&#xB85C;
+( Binary Coded Decimal, Densely Packed Deciaml, Binary Integer Decimal )
+2 &#xC9C4;&#xC218; &#xBCC0;&#xD658;&#xC5D0; &#xB530;&#xB978; rounding errors &#xAC00; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xBCF4;&#xD1B5; &#xC18C;&#xD504;&#xD2B8;&#xC6E8;&#xC5B4;&#xB97C; &#xC774;&#xC6A9;&#xD574; &#xCC98;&#xB9AC;&#xD558;&#xB294;&#xB370;
+IBM &#xC5D0;&#xC11C; &#xB098;&#xC624;&#xB294; &#xC77C;&#xBD80; cpu &#xC911;&#xC5D0;&#xB294; decimal floating point &#xC5F0;&#xC0B0;&#xAE30;&#xAC00; &#xB4E4;&#xC5B4;&#xC788;&#xB294; &#xACBD;&#xC6B0;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>binary floating point &#xC5F0;&#xC0B0;&#xC740; &#xC815;&#xC218; &#xC5F0;&#xC0B0;&#xACFC; &#xB2E4;&#xB974;&#xAC8C; &#xBE44;&#xD2B8; &#xAC12;&#xB4E4;&#xC744;
+&#xBD80;&#xD638;&#xBE44;&#xD2B8;(sign), &#xC9C0;&#xC218;&#xBD80;&#xBD84;(exponent), &#xC18C;&#xC218;&#xBD80;&#xBD84;(fraction) &#xC73C;&#xB85C; &#xB098;&#xB204;&#xC5B4;&#xC11C; &#xCC98;&#xB9AC;&#xD558;&#xB294;
+IEEE 754 &#xB77C;&#xB294; &#xD3EC;&#xBA67;&#xC744; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.
+&#xC9C0;&#xC218;&#xBD80;&#xAC00; &#xC788;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xAC19;&#xC740; &#xBE44;&#xD2B8;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xC815;&#xC218;&#xAC12; &#xBCF4;&#xB2E4;
+dynamic range ( &#xD45C;&#xD604;&#xD560;&#xC218; &#xC788;&#xB294; &#xCD5C;&#xB300;&#xAC12; ~ &#xCD5C;&#xC18C;&#xAC12; &#xBC94;&#xC704; ) &#xAC00; &#xD06C;&#xACE0;
+precision ( &#xC815;&#xBC00;&#xB3C4;: &#xC778;&#xC811;&#xD55C; &#xB450; &#xC218; &#xC0AC;&#xC774;&#xC758; &#xAC2D;&#xC774; &#xC791;&#xB2E4; ) &#xAC00; &#xB192;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.
+&#xC5F0;&#xC0B0; &#xACB0;&#xACFC;&#xAC00; &#xC815;&#xD655;&#xD788; 10 &#xC9C4;&#xC218;&#xB85C; &#xD45C;&#xD604;&#xC774; &#xC548;&#xB418;&#xB294; &#xACBD;&#xC6B0;&#xAC00; &#xC788;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; 
+&#xAC12;&#xC744; &#xBE44;&#xAD50;&#xD558;&#xAC70;&#xB098; &#xCD9C;&#xB825;&#xD560; &#xB54C;&#xB294; &#xC8FC;&#xC758;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<blockquote>
+<p>&#xC774;&#xAC83;&#xC740; awk &#xC5D0;&#xB9CC; &#xD574;&#xB2F9;&#xB418;&#xB294; &#xAC83;&#xC774; &#xC544;&#xB2C8;&#xACE0; &#xD558;&#xB4DC;&#xC6E8;&#xC5B4; float &#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xBAA8;&#xB4E0; &#xC5B8;&#xC5B4;&#xC5D0; &#xD574;&#xB2F9;&#xB429;&#xB2C8;&#xB2E4;.<br>Python <a href="https://docs.python.org/3/tutorial/floatingpoint.html" target="_blank">Floating Point Arithmetic: Issues and Limitations</a> &#xCC38;&#xC870;</p>
+</blockquote>
+<pre><code class="lang-bash"><span class="hljs-comment"># 0.1 + 0.1 + 0.1 &#xC5F0;&#xC0B0; &#xACB0;&#xACFC;&#xB294; &#xC815;&#xD655;&#xD788; 0.3 &#xC774; &#xC544;&#xB2C8;&#xB2E4;.</span>
+$ awk <span class="hljs-string">&apos;BEGIN { n = 0.1 + 0.1 + 0.1; printf &quot;%.30f\n&quot;, n }&apos;</span> 
+<span class="hljs-number">0.300000000000000044408920985006</span>
+
+<span class="hljs-comment"># &#xB530;&#xB77C;&#xC11C; &#xB2E4;&#xC74C; equal &#xC5F0;&#xC0B0;&#xC758; &#xACBD;&#xC6B0; &quot;yes&quot; &#xAC00; &#xD504;&#xB9B0;&#xD2B8;&#xB418;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;.</span>
+$ awk <span class="hljs-string">&apos;BEGIN { n = 0.1 + 0.1 + 0.1; if ( n == 0.3 ) print &quot;yes&quot; }&apos;</span> 
+$
+
+<span class="hljs-comment"># CONVFMT &#xC744; &#xC774;&#xC6A9;&#xD574; float &#xC744; &#xC2A4;&#xD2B8;&#xB9C1;&#xC73C;&#xB85C; &#xBCC0;&#xD658;</span>
+$ awk <span class="hljs-string">&apos;BEGIN { n = 0.1 + 0.1 + 0.1; n2 = n &quot;&quot;; print n2 }&apos;</span> 
+<span class="hljs-number">0.3</span>
+
+<span class="hljs-comment"># &#xC2A4;&#xD2B8;&#xB9C1; &#xBE44;&#xAD50;&#xB97C; &#xD558;&#xAC8C; &#xB418;&#xC5B4; &quot;yes&quot; &#xAC00; &#xD504;&#xB9B0;&#xD2B8;&#xB41C;&#xB2E4;.</span>
+$ awk <span class="hljs-string">&apos;BEGIN { n = 0.1 + 0.1 + 0.1; if ( n &quot;&quot; == 0.3 ) print &quot;yes&quot; }&apos;</span> 
+yes
+---------------------------------------------------------------------
+
+$ awk <span class="hljs-string">&apos;BEGIN { n = 2.15 - 1.1; printf &quot;%.30f\n&quot;, n }&apos;</span> 
+<span class="hljs-number">1.049999999999999822364316059975</span>
+
+$ awk <span class="hljs-string">&apos;BEGIN { n = 2.15 - 1.1; if ( n == 1.05 ) print &quot;yes&quot; }&apos;</span>
+$
+
+$ awk <span class="hljs-string">&apos;BEGIN { n = 2.15 - 1.1; n2 = n &quot;&quot;; print n2 }&apos;</span> 
+<span class="hljs-number">1.05</span>
+
+$ awk <span class="hljs-string">&apos;BEGIN { n = 2.15 - 1.1; if ( n &quot;&quot; == 1.05 ) print &quot;yes&quot; }&apos;</span> 
+yes
+--------------------------------------------------------------------
+
+$ gawk <span class="hljs-string">&apos;BEGIN {
+  for (d = 1; d &lt;= 5; d += 1)
+      print d
+}&apos;</span>
+<span class="hljs-number">1</span>      <span class="hljs-comment"># 5&#xBC88; &#xBC18;&#xBCF5;</span>
+<span class="hljs-number">2</span>
+<span class="hljs-number">3</span>
+<span class="hljs-number">4</span>
+<span class="hljs-number">5</span>
+
+$ gawk <span class="hljs-string">&apos;BEGIN {
+  for (d = 1.1; d &lt;= 1.5; d += 0.1)
+      print d
+}&apos;</span>
+<span class="hljs-number">1.1</span>    <span class="hljs-comment"># 5&#xBC88; &#xBC18;&#xBCF5;&#xC774; &#xC548;&#xB41C;&#xB2E4;.</span>
+<span class="hljs-number">1.2</span>
+<span class="hljs-number">1.3</span>
+<span class="hljs-number">1.4</span>
+</code></pre>
+<h4 id="errors-accumulate">Errors Accumulate</h4>
+<p>&#xC774;&#xC640; &#xAC19;&#xC740; binary floating point &#xC758; 10 &#xC9C4;&#xC218; &#xC5F0;&#xC0B0;&#xC5D0; &#xB300;&#xD55C; &#xC624;&#xCC28;&#xB294;
+&#xD55C;&#xBC88;&#xC758; &#xC5F0;&#xC0B0;&#xC5D0;&#xC11C;&#xB294; &#xD070; &#xBB38;&#xC81C;&#xAC00; &#xB418;&#xC9C0; &#xC54A;&#xACA0;&#xC9C0;&#xB9CC;
+&#xC5F0;&#xC0B0;&#xC774; &#xB204;&#xC801;&#xB420; &#xACBD;&#xC6B0; &#xB73B;&#xD558;&#xC9C0; &#xC54A;&#xC740; &#xACB0;&#xACFC;&#xAC00; &#xB098;&#xC62C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xB2E4;&#xC74C;&#xC740; pi &#xAC12;&#xC744; &#xAD6C;&#xD558;&#xB294; series &#xC778;&#xB370;&#xC694;.
+x &#xAC12;&#xC744; &#xAD6C;&#xD558;&#xB294; &#xC5F0;&#xC0B0;&#xC5D0;&#xC11C; &#xC624;&#xCC28;&#xAC00; &#xB204;&#xC801;&#xB418;&#xC5B4; division by zero &#xB85C; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xAC00; &#xC885;&#xB8CC;&#xB418;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;BEGIN {              
+    x = 1 / sqrt(3)
+    n = 6
+    for (i = 1; i &lt; 30; i++) {
+        n = n * 2
+        x = (sqrt(x * x + 1) - 1) / x
+        printf &quot;%.15f\n&quot;, n * x
+    }
+}&apos;</span> 
+<span class="hljs-number">3.215390309173475</span>
+<span class="hljs-number">3.159659942097510</span>
+<span class="hljs-number">3.146086215131467</span>
+<span class="hljs-number">3.142714599645573</span>
+<span class="hljs-number">3.141873049979866</span>
+<span class="hljs-number">3.141662747055068</span>
+. . . .
+. . . .
+<span class="hljs-number">3.141406154737622</span>
+<span class="hljs-number">3.140543492401100</span>
+<span class="hljs-number">3.140006864690968</span>
+<span class="hljs-number">3.134945375658852</span>
+<span class="hljs-number">3.140006864690968</span>
+<span class="hljs-number">3.224515243534819</span>
+<span class="hljs-number">2.791117213058638</span>
+<span class="hljs-number">0.000000000000000</span>
+awk: cmd. line:<span class="hljs-number">6</span>: fatal: division by zero attempted
+----------------------------------------------------
+
+<span class="hljs-comment"># -M -v PREC &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xC815;&#xD655;&#xD55C; &#xAC12;&#xC744; &#xCD9C;&#xB825;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+$ awk -M -v PREC=<span class="hljs-number">200</span> <span class="hljs-string">&apos;BEGIN {
+    x = 1 / sqrt(3)
+    n = 6
+    for (i = 1; i &lt; 30; i++) {
+        n = n * 2
+        x = (sqrt(x * x + 1) - 1) / x
+        printf &quot;%.15f\n&quot;, n * x
+    }
+}&apos;</span> 
+<span class="hljs-number">3.215390309173472</span>
+<span class="hljs-number">3.159659942097500</span>
+<span class="hljs-number">3.146086215131435</span>
+<span class="hljs-number">3.142714599645368</span>
+<span class="hljs-number">3.141873049979824</span>
+<span class="hljs-number">3.141662747056849</span>
+. . . .
+. . . .
+<span class="hljs-number">3.141592653590054</span>
+<span class="hljs-number">3.141592653589859</span>
+<span class="hljs-number">3.141592653589810</span>
+<span class="hljs-number">3.141592653589797</span>
+<span class="hljs-number">3.141592653589794</span>
+<span class="hljs-number">3.141592653589793</span>   <span class="hljs-comment"># &#xC815;&#xD655;&#xD55C; &#xAC12;&#xC774; &#xCD9C;&#xB825;&#xB41C;&#xB2E4;.</span>
+<span class="hljs-number">3.141592653589793</span>
+<span class="hljs-number">3.141592653589793</span>
+<span class="hljs-number">3.141592653589793</span>
+<span class="hljs-number">3.141592653589793</span>   
+------------------------------------------
+
+$ bc <span class="hljs-operator">-l</span> &lt;&lt;&lt; <span class="hljs-string">&quot;scale=20; 4 * a(1)&quot;</span>     <span class="hljs-comment"># &#xC2E4;&#xC81C; PI &#xAC12;</span>
+<span class="hljs-number">3.14159265358979323844</span>
+</code></pre>
+<blockquote>
+<p>IEEE 754 &#xD3EC;&#xBA67;&#xC774; &#xCC98;&#xB9AC;&#xB418;&#xB294; &#xBC29;&#xC2DD;&#xC740; &#xC11C;&#xD604;&#xC6B0; &#xB2D8;&#xC774; &#xC791;&#xC131;&#xD558;&#xC2E0; <a href="&#xC2E4;&#xC218;&#xAC12;&#xD45C;&#xD604;&#xBC95;.doc">&#xC2E4;&#xC218;&#xAC12;&#xD45C;&#xD604;&#xBC95;</a> &#xBB38;&#xC11C;&#xB97C; &#xCC38;&#xC870;&#xD558;&#xC138;&#xC694;</p>
+</blockquote>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./basics.html" class="navigation navigation-prev " aria-label="Previous page: Basics"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="./variables.html" class="navigation navigation-next " aria-label="Next page: Variables"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/app.js"></script>
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

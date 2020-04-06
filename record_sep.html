@@ -1,0 +1,925 @@
+<!DOCTYPE HTML>
+<html lang="ko" >
+    
+    <head>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-161001174-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-161001174-3');
+</script>
+
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Record 분리 | Introduction</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="./field_sep.html" />
+    
+    
+    <link rel="prev" href="./builtin_variables.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="4"
+        data-chapter-title="Record 분리"
+        data-filepath="record_sep.md"
+        data-basepath="."
+
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="bug_reports.html">
+            
+                
+                    <a href="./bug_reports.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Bug reports
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="basics.html">
+            
+                
+                    <a href="./basics.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Basics
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="data_types.html">
+            
+                
+                    <a href="./data_types.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        Data Types
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="variables.html">
+            
+                
+                    <a href="./variables.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Variables
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="regexp.html">
+            
+                
+                    <a href="./regexp.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        Regexp
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="functions.html">
+            
+                
+                    <a href="./functions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        Functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="escape_sequences.html">
+            
+                
+                    <a href="./escape_sequences.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        Escape sequences
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="begin_end.html">
+            
+                
+                    <a href="./begin_end.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.6.</b>
+                        
+                        BEGIN, END
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="builtin_variables.html">
+            
+                
+                    <a href="./builtin_variables.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Built-in Variables
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="4" data-path="record_sep.html">
+            
+                
+                    <a href="./record_sep.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Record 분리
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="field_sep.html">
+            
+                
+                    <a href="./field_sep.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        Field 분리
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="zero_one.html">
+            
+                
+                    <a href="./zero_one.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        $0=$0, $1=$1
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="redirection.html">
+            
+                
+                    <a href="./redirection.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        Redirection
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="getline.html">
+            
+                
+                    <a href="./getline.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        getline
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9" data-path="arrays.html">
+            
+                
+                    <a href="./arrays.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                        Arrays
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.1" data-path="sort.html">
+            
+                
+                    <a href="./sort.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.1.</b>
+                        
+                        Sort
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="GROUP_BY.html">
+            
+                
+                    <a href="./GROUP_BY.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.2.</b>
+                        
+                        GROUP BY
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="JOIN.html">
+            
+                
+                    <a href="./JOIN.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.3.</b>
+                        
+                        JOIN
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.4" data-path="subquery.html">
+            
+                
+                    <a href="./subquery.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.4.</b>
+                        
+                        Subquery
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.5" data-path="index2.html">
+            
+                
+                    <a href="./index2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.5.</b>
+                        
+                        Index
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="10" data-path="control_statements.html">
+            
+                
+                    <a href="./control_statements.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                        Control Statements
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11" data-path="operators.html">
+            
+                
+                    <a href="./operators.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.</b>
+                        
+                        Operators
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12" data-path="builtin_functions.html">
+            
+                
+                    <a href="./builtin_functions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.</b>
+                        
+                        Built-in Functions
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="12.1" data-path="builtin/numeric.html">
+            
+                
+                    <a href="./builtin/numeric.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.1.</b>
+                        
+                        Numeric Functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.2" data-path="builtin/string.html">
+            
+                
+                    <a href="./builtin/string.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.2.</b>
+                        
+                        String Functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.3" data-path="builtin/io.html">
+            
+                
+                    <a href="./builtin/io.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.3.</b>
+                        
+                        I/O Functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.4" data-path="builtin/time.html">
+            
+                
+                    <a href="./builtin/time.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.4.</b>
+                        
+                        Time Functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.5" data-path="builtin/bitwise.html">
+            
+                
+                    <a href="./builtin/bitwise.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.5.</b>
+                        
+                        Bitwise Functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.6" data-path="builtin/type.html">
+            
+                
+                    <a href="./builtin/type.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.6.</b>
+                        
+                        Type Functions
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="13" data-path="extensions.html">
+            
+                
+                    <a href="./extensions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.</b>
+                        
+                        Dynamic Extensions
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="13.1" data-path="example.html">
+            
+                
+                    <a href="./example.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.1.</b>
+                        
+                        예제
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="14" data-path="tcp_ip.html">
+            
+                
+                    <a href="./tcp_ip.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.</b>
+                        
+                        TCP/IP Internetworking
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="15" data-path="command_line_options.html">
+            
+                
+                    <a href="./command_line_options.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.</b>
+                        
+                        Command-line options
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="16" data-path="debugging.html">
+            
+                
+                    <a href="./debugging.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>16.</b>
+                        
+                        Debugging
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="17" data-path="tips.html">
+            
+                
+                    <a href="./tips.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>17.</b>
+                        
+                        Tips
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="18" data-path="closing.html">
+            
+                
+                    <a href="./closing.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>18.</b>
+                        
+                        맺음말
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >Introduction</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="record-&#xBD84;&#xB9AC;">Record &#xBD84;&#xB9AC;</h1>
+<p>awk &#xAC00; &#xD30C;&#xC77C;&#xC5D0;&#xC11C; &#xB370;&#xC774;&#xD130;&#xB97C; &#xC77D;&#xC5B4;&#xB4E4;&#xC77C; &#xB54C;&#xB294; &#xB77C;&#xC778; &#xB2E8;&#xC704;&#xB85C; &#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC774;&#xAC83;&#xC740; sed &#xAC19;&#xC740; &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xB3C4; &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xB85C; newline, null &#xBB38;&#xC790;, non-printing &#xBB38;&#xC790; &#xD560; &#xAC83; &#xC5C6;&#xC774;
+&#xC77C;&#xB2E8; &#xC77C;&#xC815;&#xD55C; &#xBE14;&#xB85D; &#xD06C;&#xAE30;&#xB85C; &#xB370;&#xC774;&#xD130;&#xB97C; &#xBC84;&#xD37C;&#xC5D0; &#xC77D;&#xC5B4;&#xB4E4;&#xC778; &#xD6C4;&#xC5D0;
+sed &#xC758; &#xACBD;&#xC6B0; newline &#xBB38;&#xC790;&#xB97C; &#xC774;&#xC6A9;&#xD574; &#xB77C;&#xC778;&#xC744; &#xBD84;&#xB9AC;&#xD574;&#xB0B4;&#xACE0; awk &#xC758; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; RS &#xB97C; &#xC774;&#xC6A9;&#xD574; 
+&#xB808;&#xCF54;&#xB4DC;&#xB97C; &#xBD84;&#xB9AC;&#xD574; &#xB0C5;&#xB2C8;&#xB2E4;.
+awk &#xC758; &#xACBD;&#xC6B0;&#xB294; &#xC5EC;&#xAE30;&#xC11C; &#xD55C; &#xB2E8;&#xACC4; &#xB354; &#xB098;&#xC544;&#xAC00; FS &#xC5D0; &#xB530;&#xB77C; &#xB808;&#xCF54;&#xB4DC;&#xC5D0;&#xC11C; &#xD544;&#xB4DC;&#xAC12;&#xB4E4;&#xC744; &#xBD84;&#xB9AC;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB808;&#xCF54;&#xB4DC; &#xBD84;&#xB9AC;&#xC5D0; &#xAD00;&#xACC4;&#xB41C; builtin &#xBCC0;&#xC218;&#xB294; RS( Record Seperator ) &#xC640; RT( Record Terminator ) &#xC785;&#xB2C8;&#xB2E4;.
+RS &#xBCC0;&#xC218;&#xC5D0; &#xC124;&#xC815;&#xB418;&#xB294; &#xAC12;&#xC740; &#xBB38;&#xC790;&#xAC00; &#xB450; &#xAC1C; &#xC774;&#xC0C1;&#xC774;&#xBA74; regexp &#xB85C; &#xD574;&#xC11D;&#xB429;&#xB2C8;&#xB2E4;.
+&#xADF8;&#xB7EC;&#xBBC0;&#xB85C; &#xB2E8;&#xC21C;&#xD788; RS=&apos;XXX&apos; &#xB85C; &#xC124;&#xC815;&#xD558;&#xBA74; &quot;XXX&quot; &#xB97C; &#xB9CC;&#xB098;&#xBA74; &#xB808;&#xCF54;&#xB4DC;&#xAC00; &#xBD84;&#xB9AC;&#xB418;&#xC9C0;&#xB9CC;
+RS=&apos;X+&apos; &#xB85C; &#xC124;&#xC815;&#xD558;&#xAC8C; &#xB418;&#xBA74; &#xC774;&#xAC83;&#xC740; &quot;X&quot;, &quot;XX&quot;, &quot;XXX&quot; ... &#xBAA8;&#xB450;&#xC5D0;&#xC11C; &#xBD84;&#xB9AC;&#xAC00; &#xB429;&#xB2C8;&#xB2E4;.
+&#xC774;&#xB54C; &apos;X+&apos; regexp &#xACFC; &#xB9E4;&#xCE6D;&#xB41C; &#xAC12;&#xC774; RT &#xBCC0;&#xC218;&#xC5D0; &#xC124;&#xC815;&#xB418;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB2E4;&#xC74C;&#xC740; RS &#xAC12;&#xC5D0; &#xB530;&#xB77C; &#xB808;&#xCF54;&#xB4DC;&#xAC00; &#xBD84;&#xB9AC;&#xB418;&#xC5B4; <code>$0</code> &#xBCC0;&#xC218;&#xC5D0; &#xB300;&#xC785;&#xB418;&#xACE0; RT &#xAC12;&#xC774; &#xC124;&#xC815;&#xB418;&#xB294; &#xAC83;&#xC744; &#xC54C;&#xC544;&#xBCF4;&#xAE30; &#xC704;&#xD55C; &#xD14C;&#xC2A4;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.
+printf &#xBB38;&#xC5D0; <code>(%s)</code> &#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC600;&#xC73C;&#xBBC0;&#xB85C; &#xAD04;&#xD638; &#xC548;&#xC758; &#xAC12;&#xC774; &#xACF5;&#xBC31;&#xC744; &#xD3EC;&#xD568;&#xD558;&#xC5EC; &#xC2E4;&#xC81C; &#xBD84;&#xB9AC;&#xB41C; &#xB808;&#xCF54;&#xB4DC; &#xAC12;&#xC774; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>&#xCCAB; &#xBC88;&#xC9F8; &#xC608;&#xB294; RS=&apos;XXX&apos; &#xB85C; &#xC124;&#xC815;&#xD55C; &#xACBD;&#xC6B0;&#xC785;&#xB2C8;&#xB2E4;. &#xC785;&#xB825;&#xB418;&#xB294; &#xB370;&#xC774;&#xD130;&#xC5D0; &apos;XXX&apos; &#xAC00; &#xB450; &#xAC1C; &#xC788;&#xC73C;&#xBBC0;&#xB85C;
+&#xB808;&#xCF54;&#xB4DC;&#xAC00; &#xC138; &#xAC1C;&#xB85C; &#xBD84;&#xB9AC;&#xB418;&#xACE0; &#xC774;&#xB54C; RT &#xAC12;&#xC740; &#xB3D9;&#xC77C;&#xD558;&#xAC8C; &apos;XXX&apos; &#xC124;&#xC815;&#xB418;&#xB294; &#xAC83;&#xC744; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;11 X 22 XX 33 XXX 44 X+ 55 XX 66 XXX 77 Y* 88 XX 99&apos;</span> |
+awk <span class="hljs-string">&apos;
+{ printf &quot;(%s) RT : \&quot;%s\&quot;\n&quot;, $0, RT } 
+END{ print &quot;===========\nNR : &quot; NR}
+&apos;</span> RS=<span class="hljs-string">&apos;XXX&apos;</span>      
+
+(<span class="hljs-number">11</span> X <span class="hljs-number">22</span> XX <span class="hljs-number">33</span> ) RT : <span class="hljs-string">&quot;XXX&quot;</span>
+( <span class="hljs-number">44</span> X+ <span class="hljs-number">55</span> XX <span class="hljs-number">66</span> ) RT : <span class="hljs-string">&quot;XXX&quot;</span>
+( <span class="hljs-number">77</span> Y* <span class="hljs-number">88</span> XX <span class="hljs-number">99</span>
+) RT : <span class="hljs-string">&quot;&quot;</span>
+===========
+NR : <span class="hljs-number">3</span>
+</code></pre>
+<p>&#xB450; &#xBC88;&#xC9F8; &#xACBD;&#xC6B0;&#xB294; RS=&apos;X+&apos; &#xB85C; &#xC124;&#xC815;&#xD55C; &#xACBD;&#xC6B0;&#xC785;&#xB2C8;&#xB2E4;. &#xC785;&#xB825;&#xB418;&#xB294; &#xB370;&#xC774;&#xD130; &#xC911;&#xAC04;&#xC5D0; &apos;X+&apos; &#xAC00; &#xD558;&#xB098; &#xC874;&#xC7AC;&#xD558;&#xC9C0;&#xB9CC;
+&#xB808;&#xCF54;&#xB4DC;&#xAC00; &#xB450; &#xAC1C;&#xB85C; &#xBD84;&#xB9AC;&#xB418;&#xC9C0; &#xC54A;&#xACE0; regexp &#xB85C; &#xD574;&#xC11D;&#xB418;&#xC5B4; &apos;X+&apos; &#xC640; &#xB9E4;&#xCE6D; &#xB418;&#xB294; &#xBAA8;&#xB4E0; &#xC2A4;&#xD2B8;&#xB9C1;&#xC5D0;&#xC11C; &#xBD84;&#xB9AC;&#xAC00; &#xC77C;&#xC5B4;&#xB098;&#xACE0;
+&#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774;&#xB54C; RT &#xAC12;&#xB3C4; &#xAC01;&#xAC01; &#xB9E4;&#xCE6D;&#xB41C; &#xAC12;&#xC73C;&#xB85C; &#xC124;&#xC815;&#xB418;&#xACE0; &#xC788;&#xB294;&#xAC83;&#xC744; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;11 X 22 XX 33 XXX 44 X+ 55 XX 66 XXX 77 Y* 88 XX 99&apos;</span> |
+awk <span class="hljs-string">&apos;
+{ printf &quot;(%s) RT : \&quot;%s\&quot;\n&quot;, $0, RT } 
+END{ print &quot;===========\nNR : &quot; NR}
+&apos;</span> RS=<span class="hljs-string">&apos;X+&apos;</span>
+
+(<span class="hljs-number">11</span> ) RT : <span class="hljs-string">&quot;X&quot;</span>
+( <span class="hljs-number">22</span> ) RT : <span class="hljs-string">&quot;XX&quot;</span>
+( <span class="hljs-number">33</span> ) RT : <span class="hljs-string">&quot;XXX&quot;</span>
+( <span class="hljs-number">44</span> ) RT : <span class="hljs-string">&quot;X&quot;</span>
+(+ <span class="hljs-number">55</span> ) RT : <span class="hljs-string">&quot;XX&quot;</span>
+( <span class="hljs-number">66</span> ) RT : <span class="hljs-string">&quot;XXX&quot;</span>
+( <span class="hljs-number">77</span> Y* <span class="hljs-number">88</span> ) RT : <span class="hljs-string">&quot;XX&quot;</span>
+( <span class="hljs-number">99</span>
+) RT : <span class="hljs-string">&quot;&quot;</span>
+===========
+NR : <span class="hljs-number">8</span>
+</code></pre>
+<p>&#xB2E4;&#xC74C;&#xC758; &#xACBD;&#xC6B0;&#xB294; &#xC55E;&#xC120; &#xC608;&#xC81C;&#xC758; &apos;X+&apos; &#xAC00; regexp &#xB85C; &#xD574;&#xC11D;&#xB418;&#xB294; &#xAC83;&#xC744; &#xBC29;&#xC9C0;&#xD558;&#xACE0; &#xC2E4;&#xC81C; &apos;X+&apos; &#xC2A4;&#xD2B8;&#xB9C1;&#xACFC;
+&#xB9E4;&#xCE6D;&#xC744; &#xC2DC;&#xD0A4;&#xAE30; &#xC704;&#xD574; regexp &#xBB38;&#xC790;&#xC778; <code>+</code> &#xB97C; escape &#xCC98;&#xB9AC; &#xD55C; &#xACBD;&#xC6B0;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;11 X 22 XX 33 XXX 44 X+ 55 XX 66 XXX 77 Y* 88 XX 99&apos;</span> |
+awk <span class="hljs-string">&apos;
+{ printf &quot;(%s) RT : \&quot;%s\&quot;\n&quot;, $0, RT } 
+END{ print &quot;===========\nNR : &quot; NR}
+&apos;</span> RS=<span class="hljs-string">&apos;X\\+&apos;</span>
+
+(<span class="hljs-number">11</span> X <span class="hljs-number">22</span> XX <span class="hljs-number">33</span> XXX <span class="hljs-number">44</span> ) RT : <span class="hljs-string">&quot;X+&quot;</span>
+( <span class="hljs-number">55</span> XX <span class="hljs-number">66</span> XXX <span class="hljs-number">77</span> Y* <span class="hljs-number">88</span> XX <span class="hljs-number">99</span>
+) RT : <span class="hljs-string">&quot;&quot;</span>
+===========
+NR : <span class="hljs-number">2</span>
+</code></pre>
+<p>&#xB9C8;&#xC9C0;&#xB9C9; &#xC608;&#xB294; regexp &#xC758; OR &#xAE30;&#xB2A5;&#xC744; &#xD65C;&#xC6A9;&#xD558;&#xC5EC; &#xC2E4;&#xC81C;&#xC801;&#xC73C;&#xB85C; RS &#xB97C; &#xB450; &#xAC1C; &#xC124;&#xC815;&#xD558;&#xACE0; &#xC788;&#xB294; &#xC608;&#xC785;&#xB2C8;&#xB2E4;.
+&#xCD9C;&#xB825;&#xC5D0; RT &#xAC12;&#xC774; &#xC2E4;&#xC81C; &#xB9E4;&#xCE6D; &#xB41C; &#xAC12;&#xC73C;&#xB85C; &#xD45C;&#xC2DC;&#xB418;&#xB294; &#xAC83;&#xC744; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;11 X 22 XX 33 XXX 44 X+ 55 XX 66 XXX 77 Y* 88 XX 99&apos;</span> |
+awk <span class="hljs-string">&apos;
+{ printf &quot;(%s) RT : \&quot;%s\&quot;\n&quot;, $0, RT } 
+END{ print &quot;===========\nNR : &quot; NR}
+&apos;</span> RS=<span class="hljs-string">&apos;X\\+|Y\\*&apos;</span>
+
+(<span class="hljs-number">11</span> X <span class="hljs-number">22</span> XX <span class="hljs-number">33</span> XXX <span class="hljs-number">44</span> ) RT : <span class="hljs-string">&quot;X+&quot;</span>
+( <span class="hljs-number">55</span> XX <span class="hljs-number">66</span> XXX <span class="hljs-number">77</span> ) RT : <span class="hljs-string">&quot;Y*&quot;</span>
+( <span class="hljs-number">88</span> XX <span class="hljs-number">99</span>
+) RT : <span class="hljs-string">&quot;&quot;</span>
+===========
+NR : <span class="hljs-number">3</span>
+</code></pre>
+<h3 id="&#xB514;&#xD3F4;&#xD2B8;-&#xAC12;&#xC740;-rs--n">&#xB514;&#xD3F4;&#xD2B8; &#xAC12;&#xC740; <code>RS = &apos;\n&apos;</code></h3>
+<p>&#xD14D;&#xC2A4;&#xD2B8; &#xB370;&#xC774;&#xD130;&#xB294; &#xB9CE;&#xC740; &#xACBD;&#xC6B0; column, row &#xB85C; &#xAD6C;&#xC131;&#xB41C; &#xD14C;&#xC774;&#xBE14; &#xD615;&#xD0DC;&#xB97C; &#xAC00;&#xC9C0;&#xBBC0;&#xB85C; RS &#xC758; &#xB514;&#xD3F4;&#xD2B8; &#xAC12;&#xC740; <code>\n</code> &#xC785;&#xB2C8;&#xB2E4;.</p>
+<p><img src="images/data_example1.png" alt=""></p>
+<h3 id="rs--">RS = &quot;&quot;</h3>
+<p>&#xC544;&#xB798; &#xADF8;&#xB9BC;&#xACFC; &#xAC19;&#xC740; &#xD615;&#xC2DD;&#xC758; &#xB370;&#xC774;&#xD130;&#xB294; &#xB808;&#xCF54;&#xB4DC;&#xAC00; &#xD558;&#xB098; &#xC774;&#xC0C1;&#xC758; &#xACF5;&#xBC31; &#xB77C;&#xC778;&#xC5D0; &#xC758;&#xD574; &#xBD84;&#xB9AC;&#xB429;&#xB2C8;&#xB2E4;.
+&#xAC01; &#xD544;&#xB4DC;&#xAC12;&#xC774; &#xB77C;&#xC778; &#xD558;&#xB098;&#xB97C; &#xCC28;&#xC9C0;&#xD558;&#xAD6C;&#xC694;.
+&#xC774;&#xB54C;&#xB294;<code>RS=&apos;\n\n+&apos;</code> &#xB85C; &#xC124;&#xC815;&#xD558;&#xBA74; &#xB418;&#xB294;&#xB370; &#xC774;&#xB807;&#xAC8C; &#xD558;&#xBA74; &#xD55C;&#xAC00;&#xC9C0; &#xB2E8;&#xC810;&#xC774; &#xB370;&#xC774;&#xD130;&#xAC00; &#xC2DC;&#xC791;&#xD558;&#xAE30; &#xC804;&#xC5D0; 
+&#xACF5;&#xBC31; &#xB77C;&#xC778;&#xC774; &#xC788;&#xC744; &#xACBD;&#xC6B0; null &#xAC12; &#xB808;&#xCF54;&#xB4DC;&#xAC00; &#xD558;&#xB098; &#xCD94;&#xAC00;&#xB418;&#xAC70;&#xB098; &#xB808;&#xCF54;&#xB4DC;&#xC758; &#xCC98;&#xC74C;&#xC5D0; newline &#xC774; &#xD3EC;&#xD568;&#xB420; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC774;&#xC640; &#xAC19;&#xC740; &#xB2E8;&#xC810;&#xC744; &#xC5C6;&#xC560;&#xAE30; &#xC704;&#xD574; &#xD2B9;&#xBCC4;&#xD788; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xAE30;&#xB2A5;&#xC774; <code>RS=&apos;&apos;</code> &#xC785;&#xB2C8;&#xB2E4;.
+<code>RS=&apos;&apos;</code> &#xC758; &#xC758;&#xBBF8;&#xB294; RS &#xAC12;&#xC774; &#xC5C6;&#xC73C;&#xBBC0;&#xB85C; &#xC804;&#xCCB4; &#xB370;&#xC774;&#xD130;&#xB97C; &#xD558;&#xB098;&#xC758; &#xB808;&#xCF54;&#xB4DC;&#xB85C; &#xBCF4;&#xACA0;&#xB2E4;&#xB294; &#xB73B;&#xC774; &#xC544;&#xB2C8;&#xACE0;
+&#xAE30;&#xB2A5;&#xC0C1;&#xC73C;&#xB85C;&#xB294; <code>RS=&apos;\n\n+&apos;</code> &#xC640; &#xAC19;&#xC9C0;&#xB9CC; &#xCC28;&#xC774;&#xC810;&#xC740; &#xB370;&#xC774;&#xD130; &#xC2DC;&#xC791; &#xC804;&#xC5D0; &#xC704;&#xCE58;&#xD55C; &#xACF5;&#xBC31; &#xB77C;&#xC778;&#xB4E4;&#xC744; &#xBA3C;&#xC800; &#xC81C;&#xAC70;&#xD558;&#xC5EC;
+null &#xAC12; &#xB808;&#xCF54;&#xB4DC;&#xAC00; &#xC0DD;&#xAE30;&#xC9C0; &#xC54A;&#xAC8C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>[ &#xB2E4;&#xC74C;&#xC740; <code>RS=&apos;&apos;</code> , <code>FS=&apos;\n&apos;</code> &#xC73C;&#xB85C; &#xC124;&#xC815;&#xD560; &#xACBD;&#xC6B0; ]</p>
+<p><img src="images/data_example2.png" alt=""></p>
+<h3 id="rs--0">RS = &apos;\0&apos;</h3>
+<p>&#xC774;&#xAC83;&#xC740; RS &#xAC12;&#xC744; NUL &#xBB38;&#xC790;&#xB85C; &#xC124;&#xC815;&#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.
+&#xC608;&#xB97C; &#xB4E4;&#xBA74; <code>/proc/$PID/environ</code>  &#xB294; &#xD658;&#xACBD;&#xBCC0;&#xC218; &#xAC12;&#xB4E4;&#xC744; NUL &#xBB38;&#xC790;&#xB97C; &#xAD6C;&#xBD84;&#xC790;&#xB85C; &#xD558;&#xC5EC; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB294;&#xB370;
+&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; <code>RS=&apos;\0&apos;</code> &#xB85C; &#xC124;&#xC815;&#xD558;&#xBA74; &#xAC12;&#xB4E4;&#xC744; &#xBD84;&#xB9AC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ awk -vRS=<span class="hljs-string">&apos;\0&apos;</span> <span class="hljs-number">1</span> /proc/$$/environ                               
+XDG_GREETER_DATA_DIR=/var/lib/lightdm-data/mug896
+LANGUAGE=en
+LC_MONETARY=en_US.UTF-<span class="hljs-number">8</span>
+KDE_FULL_SESSION=<span class="hljs-literal">true</span>
+QT_QPA_PLATFORM=xcb
+KONSOLE_DBUS_SERVICE=:<span class="hljs-number">1.35</span>
+...
+...
+</code></pre>
+<h3 id="rs-&#xAC12;&#xC5D0;-&#xC0AC;&#xC6A9;&#xB418;&#xB294;---regexp-&#xBB38;&#xC790;">RS &#xAC12;&#xC5D0; &#xC0AC;&#xC6A9;&#xB418;&#xB294; <code>^</code>, <code>$</code> regexp &#xBB38;&#xC790;</h3>
+<p>RS &#xC5D0; &#xC0AC;&#xC6A9;&#xB418;&#xB294; <code>^</code>, <code>$</code> &#xBB38;&#xC790;&#xB294; &#xB370;&#xC774;&#xD130; &#xC2A4;&#xD2B8;&#xB9C1;&#xC758; &#xC2DC;&#xC791;&#xACFC; &#xB05D;&#xC744; &#xB098;&#xD0C0;&#xB0C5;&#xB2C8;&#xB2E4;.
+&#xC774;&#xAC83;&#xC740; &#xB808;&#xCF54;&#xB4DC;&#xAC00; &#xC544;&#xB2CC; &#xC804;&#xCCB4; &#xB370;&#xC774;&#xD130;&#xB97C; &#xB9D0;&#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;. 
+&#xB530;&#xB77C;&#xC11C; &#xB9CC;&#xC57D;&#xC5D0; RS &#xC5D0; <code>^</code> &#xB97C; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;&#xBA74; &#xB370;&#xC774;&#xD130;&#xC758; &#xC2DC;&#xC791; &#xBD80;&#xBD84;&#xC5D0;&#xB9CC; &#xB9E4;&#xCE6D;&#xC774; &#xB418;&#xACE0;
+<code>$</code> &#xB97C; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;&#xBA74; &#xB370;&#xC774;&#xD130;&#xC758; &#xB9C8;&#xC9C0;&#xB9C9; &#xBD80;&#xBD84;&#xC5D0;&#xB9CC; &#xB9E4;&#xCE6D;&#xC774; &#xB418;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<h3 id="rs--">RS = &apos;^$&apos;</h3>
+<p>&#xC774;&#xAC83;&#xC740; &#xD30C;&#xC77C;&#xC5D0; &#xB370;&#xC774;&#xD130;&#xAC00; &#xC874;&#xC7AC;&#xD558;&#xB294; &#xD55C; &#xB9E4;&#xCE6D;&#xC774; &#xB418;&#xC9C0; &#xC54A;&#xC73C;&#xBBC0;&#xB85C; &#xD30C;&#xC77C;&#xC744; &#xD55C; &#xBC88;&#xC5D0; &#xC804;&#xBD80; &#xC77D;&#xC5B4;&#xB4E4;&#xC77C; &#xB54C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash"><span class="hljs-keyword">function</span> readfile(file,     tmp, save_rs)
+{
+    save_rs = RS
+    RS = <span class="hljs-string">&quot;^$&quot;</span>
+    getline tmp &lt; file
+    close(file)
+    RS = save_rs
+
+    <span class="hljs-built_in">return</span> tmp
+}
+</code></pre>
+<h3 id="rs---&#xB610;&#xB294;-rs--">RS = &apos;<code>(.)</code>&apos; &#xB610;&#xB294; RS = &apos;<code>|.</code>&apos;</h3>
+<p>&#xBB38;&#xC790;&#xAC00; &#xB450;&#xAC1C; &#xC774;&#xC0C1;&#xC774;&#xBA74; regexp &#xB85C; &#xD574;&#xC11D;&#xB418;&#xC8E0;. <code>( )</code> &#xB294; regexp group &#xC5D0; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xBB38;&#xC790;&#xC778;&#xB370;
+&#xC5EC;&#xAE30;&#xC11C;&#xB294; &#xB2E8;&#xC9C0; <code>.</code> &#xBB38;&#xC790;&#xAC00; regexp &#xB85C; &#xD574;&#xC11D;&#xB418;&#xAC8C; &#xD558;&#xB294; &#xC5ED;&#xD560;&#xB9CC; &#xD569;&#xB2C8;&#xB2E4;.
+&#xC784;&#xC758;&#xC758; &#xBB38;&#xC790; &#xD558;&#xB098;&#xAC00; RS &#xAC00; &#xB418;&#xBA74; &#xACB0;&#xACFC;&#xC801;&#xC73C;&#xB85C; <code>$0</code> &#xAC12;&#xC740; null &#xC774;&#xB418;&#xACE0; RT &#xAC12;&#xB9CC; &#xD574;&#xB2F9; &#xBB38;&#xC790;&#xB85C; &#xC124;&#xC815;&#xB418;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> -n <span class="hljs-string">&apos;1234567890&apos;</span> | awk <span class="hljs-string">&apos;END{ print NR }&apos;</span> RS=<span class="hljs-string">&apos;(.)&apos;</span>
+<span class="hljs-number">10</span>
+
+$ <span class="hljs-built_in">echo</span> -n <span class="hljs-string">&apos;1234567890&apos;</span> | awk <span class="hljs-string">&apos;{ printf RT &quot;:&quot; }&apos;</span> RS=<span class="hljs-string">&apos;|.&apos;</span>
+<span class="hljs-number">1</span>:<span class="hljs-number">2</span>:<span class="hljs-number">3</span>:<span class="hljs-number">4</span>:<span class="hljs-number">5</span>:<span class="hljs-number">6</span>:<span class="hljs-number">7</span>:<span class="hljs-number">8</span>:<span class="hljs-number">9</span>:<span class="hljs-number">0</span>:
+
+<span class="hljs-comment"># 20 &#xAC1C;&#xC758; random &#xBB38;&#xC790;&#xB97C; &#xAC16;&#xB294; &#xC2A4;&#xD2B8;&#xB9C1; 10 &#xAC1C;&#xB97C; &#xC0DD;&#xC131;</span>
+$ tr -dc <span class="hljs-string">&apos;[:graph:]&apos;</span> &lt; /dev/urandom | awk -v RS=<span class="hljs-string">&apos;.{20}&apos;</span> <span class="hljs-string">&apos;{ print RT } NR==10{ exit }&apos;</span>
+tQ2H-:C7Z{@F=S!V&gt;[<span class="hljs-number">5</span>w
+o)MECUO&lt;]|e;G8O$?<span class="hljs-number">6</span>O!
+<span class="hljs-number">090</span>f1qcMb5<span class="hljs-string">&apos;e&apos;</span>r`_hqOQ
+d4*wx?dwi(*y%&lt;&amp;P66{b
+i|Hs<span class="hljs-operator">-e</span>2Y~f<span class="hljs-string">&quot;8*%pd?sj^
+c,?&lt;NY)q&lt;SEONyPHC2K_
+sHGlMN9&amp;STFyw~VfDZyE
+93_u`9yEl&quot;</span>Iui<span class="hljs-string">&quot;9;&apos;__#
+YF`BLQ{TG:Xos&apos;xEhWFi
+tYb!;,%{T`iU:f[G&apos;BQ|
+</span></code></pre>
+<h2 id="quiz">Quiz</h2>
+<p>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xB370;&#xC774;&#xD130; &#xD30C;&#xC77C;&#xC774; &#xC788;&#xC744; &#xACBD;&#xC6B0; RS &#xB97C; <code>RS=&apos;{[A-Z0-9]+}&apos;</code> &#xB85C; &#xC124;&#xC815;&#xD55C;&#xB2E4;&#xBA74; &#xC804;&#xCCB4; &#xB808;&#xCF54;&#xB4DC; &#xAC1C;&#xC218;&#xB294; &#xBA87; &#xAC1C;&#xAC00; &#xB420;&#xAE4C;&#xC694;?</p>
+<pre><code class="lang-bash">$ cat file
+{ITEM001}
+<span class="hljs-number">111</span>
+<span class="hljs-number">222</span>
+<span class="hljs-number">333</span>
+{ITEM002}
+<span class="hljs-number">444</span>
+<span class="hljs-number">555</span>
+<span class="hljs-number">666</span>
+{ITEM003}
+</code></pre>
+<p>&#xC804;&#xCCB4; &#xB808;&#xCF54;&#xB4DC; &#xAC1C;&#xC218;&#xB294; &#xCD1D; 4 &#xAC1C;&#xAC00; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;BEGIN{ RS=&quot;{[A-Z0-9]+}&quot; }
+{   
+    printf &quot;%s. (%s) %s\n&quot;, NR, $0, RT
+    print &quot;--------------&quot;
+}&apos;</span> file
+
+<span class="hljs-number">1</span>. () {ITEM001}      <span class="hljs-comment"># null &#xB808;&#xCF54;&#xB4DC;</span>
+--------------
+<span class="hljs-number">2</span>. (
+<span class="hljs-number">111</span>
+<span class="hljs-number">222</span>
+<span class="hljs-number">333</span>
+) {ITEM002}
+--------------
+<span class="hljs-number">3</span>. (
+<span class="hljs-number">444</span>
+<span class="hljs-number">555</span>
+<span class="hljs-number">666</span>
+) {ITEM003}
+--------------
+<span class="hljs-number">4</span>. (                 <span class="hljs-comment"># newline &#xB808;&#xCF54;&#xB4DC;</span>
+)                    <span class="hljs-comment"># RT &#xAC12;&#xC740; null </span>
+--------------
+</code></pre>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./builtin_variables.html" class="navigation navigation-prev " aria-label="Previous page: Built-in Variables"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="./field_sep.html" class="navigation navigation-next " aria-label="Next page: Field 분리"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/app.js"></script>
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

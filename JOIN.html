@@ -1,0 +1,1125 @@
+<!DOCTYPE HTML>
+<html lang="ko" >
+    
+    <head>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-161001174-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-161001174-3');
+</script>
+
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>JOIN | Introduction</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="./subquery.html" />
+    
+    
+    <link rel="prev" href="./GROUP_BY.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="9.3"
+        data-chapter-title="JOIN"
+        data-filepath="JOIN.md"
+        data-basepath="."
+
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="bug_reports.html">
+            
+                
+                    <a href="./bug_reports.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Bug reports
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="basics.html">
+            
+                
+                    <a href="./basics.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Basics
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="data_types.html">
+            
+                
+                    <a href="./data_types.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        Data Types
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="variables.html">
+            
+                
+                    <a href="./variables.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Variables
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="regexp.html">
+            
+                
+                    <a href="./regexp.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        Regexp
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="functions.html">
+            
+                
+                    <a href="./functions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        Functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="escape_sequences.html">
+            
+                
+                    <a href="./escape_sequences.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        Escape sequences
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="begin_end.html">
+            
+                
+                    <a href="./begin_end.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.6.</b>
+                        
+                        BEGIN, END
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="builtin_variables.html">
+            
+                
+                    <a href="./builtin_variables.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Built-in Variables
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="record_sep.html">
+            
+                
+                    <a href="./record_sep.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Record 분리
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="field_sep.html">
+            
+                
+                    <a href="./field_sep.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        Field 분리
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="zero_one.html">
+            
+                
+                    <a href="./zero_one.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        $0=$0, $1=$1
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="redirection.html">
+            
+                
+                    <a href="./redirection.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        Redirection
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="getline.html">
+            
+                
+                    <a href="./getline.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        getline
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9" data-path="arrays.html">
+            
+                
+                    <a href="./arrays.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                        Arrays
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.1" data-path="sort.html">
+            
+                
+                    <a href="./sort.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.1.</b>
+                        
+                        Sort
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="GROUP_BY.html">
+            
+                
+                    <a href="./GROUP_BY.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.2.</b>
+                        
+                        GROUP BY
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="9.3" data-path="JOIN.html">
+            
+                
+                    <a href="./JOIN.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.3.</b>
+                        
+                        JOIN
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.4" data-path="subquery.html">
+            
+                
+                    <a href="./subquery.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.4.</b>
+                        
+                        Subquery
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.5" data-path="index2.html">
+            
+                
+                    <a href="./index2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.5.</b>
+                        
+                        Index
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="10" data-path="control_statements.html">
+            
+                
+                    <a href="./control_statements.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                        Control Statements
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11" data-path="operators.html">
+            
+                
+                    <a href="./operators.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.</b>
+                        
+                        Operators
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12" data-path="builtin_functions.html">
+            
+                
+                    <a href="./builtin_functions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.</b>
+                        
+                        Built-in Functions
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="12.1" data-path="builtin/numeric.html">
+            
+                
+                    <a href="./builtin/numeric.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.1.</b>
+                        
+                        Numeric Functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.2" data-path="builtin/string.html">
+            
+                
+                    <a href="./builtin/string.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.2.</b>
+                        
+                        String Functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.3" data-path="builtin/io.html">
+            
+                
+                    <a href="./builtin/io.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.3.</b>
+                        
+                        I/O Functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.4" data-path="builtin/time.html">
+            
+                
+                    <a href="./builtin/time.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.4.</b>
+                        
+                        Time Functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.5" data-path="builtin/bitwise.html">
+            
+                
+                    <a href="./builtin/bitwise.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.5.</b>
+                        
+                        Bitwise Functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.6" data-path="builtin/type.html">
+            
+                
+                    <a href="./builtin/type.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.6.</b>
+                        
+                        Type Functions
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="13" data-path="extensions.html">
+            
+                
+                    <a href="./extensions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.</b>
+                        
+                        Dynamic Extensions
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="13.1" data-path="example.html">
+            
+                
+                    <a href="./example.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.1.</b>
+                        
+                        예제
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="14" data-path="tcp_ip.html">
+            
+                
+                    <a href="./tcp_ip.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.</b>
+                        
+                        TCP/IP Internetworking
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="15" data-path="command_line_options.html">
+            
+                
+                    <a href="./command_line_options.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.</b>
+                        
+                        Command-line options
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="16" data-path="debugging.html">
+            
+                
+                    <a href="./debugging.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>16.</b>
+                        
+                        Debugging
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="17" data-path="tips.html">
+            
+                
+                    <a href="./tips.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>17.</b>
+                        
+                        Tips
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="18" data-path="closing.html">
+            
+                
+                    <a href="./closing.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>18.</b>
+                        
+                        맺음말
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >Introduction</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="join">JOIN</h1>
+<p><code>NR == FNR</code> &#xB294; &#xC785;&#xB825;&#xC73C;&#xB85C; &#xB450; &#xAC1C;&#xC758; &#xD30C;&#xC77C;&#xC744; &#xB2E4;&#xB8F0; &#xB54C; &#xAC04;&#xB2E8;&#xD788; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xBC29;&#xBC95;&#xC785;&#xB2C8;&#xB2E4;.
+<code>FNR</code> &#xAC12;&#xC740; &#xC785;&#xB825; &#xD30C;&#xC77C;&#xC774; &#xBCC0;&#xACBD;&#xB420; &#xB54C;&#xB9C8;&#xB2E4; <code>0</code> &#xC73C;&#xB85C; reset &#xB418;&#xC5B4; &#xB2E4;&#xC2DC; &#xC2DC;&#xC791;&#xD558;&#xACE0;
+<code>NR</code> &#xAC12;&#xC740; &#xACC4;&#xC18D;&#xD574;&#xC11C; &#xB204;&#xC801;&#xB418;&#xBBC0;&#xB85C; &#xACB0;&#xACFC;&#xC801;&#xC73C;&#xB85C; <code>NR == FNR</code> &#xAC00; &#xB418;&#xB294; &#xACBD;&#xC6B0;&#xB294; &#xCC98;&#xC74C; &#xD30C;&#xC77C;&#xC5D0;&#xB9CC; &#xD574;&#xB2F9;&#xB429;&#xB2C8;&#xB2E4;.
+&#xB530;&#xB77C;&#xC11C; <code>NR == FNR { a[$0]; next }</code> &#xB294; &#xCCAB; &#xBC88;&#xC9F8; &#xD30C;&#xC77C;&#xC744; &#xCC98;&#xB9AC;&#xD558;&#xAE30; &#xC704;&#xD55C; &#xBD80;&#xBD84;&#xC73C;&#xB85C;
+&#xB808;&#xCF54;&#xB4DC; &#xAC12;&#xC744; index &#xB85C; &#xD558;&#xB294; array &#xB97C; &#xC0DD;&#xC131;&#xD569;&#xB2C8;&#xB2E4;.
+&#xB4A4;&#xC5D0; next &#xAC00; &#xC788;&#xC73C;&#xBBC0;&#xB85C; &#xC774;&#xD6C4;&#xC758; &#xCF54;&#xB4DC;&#xB294; &#xC2E4;&#xD589;&#xB418;&#xC9C0; &#xC54A;&#xACE0; &#xACC4;&#xC18D;&#xD574;&#xC11C; &#xB2E4;&#xC74C; &#xB808;&#xCF54;&#xB4DC;&#xB85C; &#xC774;&#xB3D9;&#xD558;&#xACA0;&#xC8E0;.
+<code>$0 in a</code> &#xB294; <code>a</code> &#xB77C;&#xB294; array &#xC5D0; index &#xAC12;&#xC73C;&#xB85C; <code>$0</code> &#xAC00; &#xC788;&#xB294;&#xC9C0; &#xC870;&#xD68C;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC774;&#xBBC0;&#xB85C;
+&#xACB0;&#xAD6D; file1, file2 &#xB450; &#xD30C;&#xC77C;&#xC758; &#xACF5;&#xD1B5; &#xB77C;&#xC778;&#xC5D0; &#xB300;&#xD574;&#xC11C;&#xB9CC; &#xCC38;&#xC774; &#xB418;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># &#xB77C;&#xC778; 111, 222, 333 &#xC740; file1, file2 &#xACF5;&#xD1B5;</span>
+$ cat file1      $ cat file2
+AAA              XXX
+<span class="hljs-number">111</span>              <span class="hljs-number">111</span>
+<span class="hljs-number">222</span>              <span class="hljs-number">222</span>
+BBB              <span class="hljs-number">333</span>
+CCC              YYY
+<span class="hljs-number">333</span>              ZZZ
+....................................................
+
+<span class="hljs-comment"># file1 &#xC640; file2 &#xACF5;&#xD1B5; &#xB77C;&#xC778; &#xD504;&#xB9B0;&#xD2B8; (intersection)</span>
+$ awk <span class="hljs-string">&apos;NR == FNR{ a[$1]; next } $1 in a&apos;</span> file1 file2
+<span class="hljs-number">111</span>
+<span class="hljs-number">222</span>
+<span class="hljs-number">333</span>
+
+<span class="hljs-comment"># file1 &#xC5D0;&#xB9CC; &#xC788;&#xB294; &#xB77C;&#xC778; &#xD504;&#xB9B0;&#xD2B8; (file2 file1 &#xC21C;&#xC11C; &#xC8FC;&#xC758;)</span>
+$ awk <span class="hljs-string">&apos;NR == FNR{ a[$1]; next } !($1 in a)&apos;</span> file2 file1
+AAA
+BBB
+CCC
+
+<span class="hljs-comment"># file2 &#xC5D0;&#xB9CC; &#xC788;&#xB294; &#xB77C;&#xC778; &#xD504;&#xB9B0;&#xD2B8; (file1 file2 &#xC21C;&#xC11C; &#xC8FC;&#xC758;)</span>
+$ awk <span class="hljs-string">&apos;NR == FNR{ a[$1]; next } !($1 in a)&apos;</span> file1 file2
+XXX
+YYY
+ZZZ
+</code></pre>
+<p>JOIN &#xC740; data &#xD30C;&#xC77C;&#xACFC; map &#xD30C;&#xC77C;&#xC5D0; &#xACF5;&#xD1B5;&#xC801;&#xC73C;&#xB85C; &#xC874;&#xC7AC;&#xD558;&#xB294; &#xD0A4;&#xAC12;&#xC744; &#xC774;&#xC6A9;&#xD574; &#xC77C;&#xC885;&#xC758; &#xCE58;&#xD658; &#xC791;&#xC5C5;&#xC744; &#xD569;&#xB2C8;&#xB2E4;.
+map &#xD30C;&#xC77C;&#xC5D0; &#xC874;&#xC7AC;&#xD558;&#xB294; &#xD0A4;&#xAC12;&#xC5D0; &#xD55C;&#xC5D0;&#xC11C; data &#xD30C;&#xC77C;&#xC5D0;&#xC11C; &#xD0A4;&#xAC00; &#xC0AC;&#xC6A9;&#xB418;&#xBA74; &#xC0C1;&#xAD00;&#xC5C6;&#xB294;&#xB370;
+&#xADF8;&#xB807;&#xC9C0; &#xC54A;&#xACE0; map &#xD30C;&#xC77C;&#xC5D0; &#xC874;&#xC7AC;&#xD558;&#xC9C0; &#xC54A;&#xB294; &#xD0A4;&#xAC00; data &#xD30C;&#xC77C;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB418;&#xBA74;
+&#xC5EC;&#xAE30;&#xC11C; LEFT JOIN &#xACFC; INNER JOIN &#xC758; &#xCC28;&#xC774;&#xAC00; &#xC0DD;&#xAE41;&#xB2C8;&#xB2E4;.
+LEFT JOIN &#xC740; map &#xD30C;&#xC77C;&#xC5D0; &#xD574;&#xB2F9; &#xD0A4;&#xAC12;&#xC774; &#xC5C6;&#xC744; &#xACBD;&#xC6B0; &#xD574;&#xB2F9; &#xCEEC;&#xB7FC; &#xAC12;&#xC744; &#xACF5;&#xBC31;&#xC73C;&#xB85C; &#xB450;&#xACE0; &#xB098;&#xBA38;&#xC9C0; &#xC815;&#xBCF4;&#xB4E4;&#xC744; &#xD45C;&#xC2DC;&#xD558;&#xB294;&#xB370; &#xBC18;&#xD574;
+INNER JOIN &#xC740; &#xC544;&#xBB34;&#xB7F0; &#xC815;&#xBCF4;&#xB3C4; &#xD45C;&#xC2DC;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ cat data
+<span class="hljs-number">20081010</span> <span class="hljs-number">123</span> xxx
+<span class="hljs-number">20081011</span> <span class="hljs-number">234</span> def
+<span class="hljs-number">20081012</span> <span class="hljs-number">512</span> xyz
+<span class="hljs-number">20081013</span> <span class="hljs-number">512</span> abc
+<span class="hljs-number">20081014</span> <span class="hljs-number">717</span> def
+<span class="hljs-number">20081015</span> <span class="hljs-number">999</span> zzz   &lt;--- map &#xD30C;&#xC77C;&#xC5D0;&#xB294; &#xC5C6;&#xB294; &#xD0A4;
+
+$ cat map
+abc withdrawal
+def payment
+xyz deposit
+xxx balance
+........................................
+
+<span class="hljs-comment"># SELECT d.$1, d.$2, m.$2 FROM data d</span>
+<span class="hljs-comment">#    LEFT JOIN map m ON d.$3 = m.$1</span>
+$ awk <span class="hljs-string">&apos;NR == FNR{ a[$1]=$2; next } { print $1,$2,a[$3] }&apos;</span> map data
+<span class="hljs-number">20081010</span> <span class="hljs-number">123</span> balance
+<span class="hljs-number">20081011</span> <span class="hljs-number">234</span> payment
+<span class="hljs-number">20081012</span> <span class="hljs-number">512</span> deposit
+<span class="hljs-number">20081013</span> <span class="hljs-number">512</span> withdrawal
+<span class="hljs-number">20081014</span> <span class="hljs-number">717</span> payment
+<span class="hljs-number">20081015</span> <span class="hljs-number">999</span>          &lt;---- LEFT JOIN &#xACB0;&#xACFC;
+
+<span class="hljs-comment"># SELECT d.$1, d.$2, m.$2 FROM data d</span>
+<span class="hljs-comment">#    INNER JOIN map m ON d.$3 = m.$1</span>
+$ awk <span class="hljs-string">&apos;NR == FNR{ a[$1]=$2; next }
+    $3 in a { print $1,$2,a[$3] }        # INNER JOIN &#xC744; &#xC704;&#xD55C; &#xD0A4;&#xAC12; &#xCCB4;&#xD06C;
+&apos;</span> map data
+<span class="hljs-number">20081010</span> <span class="hljs-number">123</span> balance
+<span class="hljs-number">20081011</span> <span class="hljs-number">234</span> payment
+<span class="hljs-number">20081012</span> <span class="hljs-number">512</span> deposit
+<span class="hljs-number">20081013</span> <span class="hljs-number">512</span> withdrawal
+<span class="hljs-number">20081014</span> <span class="hljs-number">717</span> payment
+</code></pre>
+<p>&#xC55E;&#xC11C; &#xC0AC;&#xC6A9;&#xD55C; <code>data</code>, <code>map</code> &#xD30C;&#xC77C;&#xC5D0; &#xC774;&#xC5B4; <code>map2</code> &#xD30C;&#xC77C;&#xC744; &#xCD94;&#xAC00;&#xD558;&#xC5EC; &#xB450; &#xAC1C;&#xC758; &#xD30C;&#xC77C;&#xC744; JOIN  &#xD569;&#xB2C8;&#xB2E4;.
+&#xBA3C;&#xC800; map, map2 &#xB450; &#xAC1C;&#xC758; &#xD30C;&#xC77C;&#xC744; array &#xB85C; &#xC77D;&#xC5B4;&#xB4E4;&#xC5EC;&#xC57C; &#xD558;&#xB294;&#xB370; <code>NR == FNR</code> &#xB294; &#xCCAB; &#xBC88;&#xC9F8; &#xD30C;&#xC77C;&#xC5D0;&#xB9CC;
+&#xC801;&#xC6A9;&#xB418;&#xBBC0;&#xB85C; &#xC5EC;&#xAE30;&#xC11C;&#xB294; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC5C6;&#xACE0; BEGIN &#xBE14;&#xB85D;&#xC5D0;&#xC11C; getline &#xC744; &#xC774;&#xC6A9;&#xD574; &#xC9C1;&#xC811; &#xC77D;&#xC5B4;&#xB4E4;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ cat map2
+<span class="hljs-number">123</span> spring
+<span class="hljs-number">234</span> summer
+<span class="hljs-number">512</span> autumn
+<span class="hljs-number">717</span> winter
+...............................................
+
+<span class="hljs-comment"># SELECT d.$1, m2.$2, m.$2 FROM data d</span>
+<span class="hljs-comment">#    LEFT JOIN map  m  ON d.$3 = m.$1</span>
+<span class="hljs-comment">#    LEFT JOIN map2 m2 ON d.$2 = m2.$1</span>
+$ awk <span class="hljs-string">&apos;BEGIN {
+    while (getline &lt; ARGV[1] &gt; 0) m[$1]  = $2
+    while (getline &lt; ARGV[2] &gt; 0) m2[$1] = $2
+    while (getline &lt; ARGV[3] &gt; 0) {
+        print $1,m2[$2],m[$3]
+    }
+}&apos;</span> map map2 data
+
+<span class="hljs-number">20081010</span> spring balance
+<span class="hljs-number">20081011</span> summer payment
+<span class="hljs-number">20081012</span> autumn deposit
+<span class="hljs-number">20081013</span> autumn withdrawal
+<span class="hljs-number">20081014</span> winter payment
+<span class="hljs-number">20081015</span>                &lt;---- LEFT JOIN &#xACB0;&#xACFC;
+
+<span class="hljs-comment"># SELECT d.$1, m2.$2, m.$2 FROM data d</span>
+<span class="hljs-comment">#    INNER JOIN map  m  ON d.$3 = m.$1</span>
+<span class="hljs-comment">#    INNER JOIN map2 m2 ON d.$2 = m2.$1</span>
+$ awk <span class="hljs-string">&apos;BEGIN {
+    while (getline &lt; ARGV[1] &gt; 0) m[$1]  = $2
+    while (getline &lt; ARGV[2] &gt; 0) m2[$1] = $2
+    while (getline &lt; ARGV[3] &gt; 0) {
+       if (( $2 in m2 ) &amp;&amp; ( $3 in m )) {        # INNER JOIN &#xC744; &#xC704;&#xD55C; &#xD0A4;&#xAC12; &#xCCB4;&#xD06C; 
+           print $1,m2[$2],m[$3]
+       }
+    }
+}&apos;</span> map map2 data
+
+<span class="hljs-number">20081010</span> spring balance
+<span class="hljs-number">20081011</span> summer payment
+<span class="hljs-number">20081012</span> autumn deposit
+<span class="hljs-number">20081013</span> autumn withdrawal
+<span class="hljs-number">20081014</span> winter payment
+</code></pre>
+<h4 id="group-by-&#xC640;-join-&#xC744;-&#xD568;&#xAED8;-&#xC0AC;&#xC6A9;">GROUP BY &#xC640; JOIN &#xC744; &#xD568;&#xAED8; &#xC0AC;&#xC6A9;</h4>
+<pre><code class="lang-bash"><span class="hljs-comment"># &#xC0AC;&#xC6A9;&#xD560;&#xB550; &#xB370;&#xC774;&#xD130; &#xC774;&#xC678;&#xC758; &#xD5E4;&#xB354; &#xBD80;&#xBD84;&#xC740; &#xC0AD;&#xC81C;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</span>
+$ cat Shippers
+ShipperID     ShipperName         Phone
+----------+-----------------+---------------
+<span class="hljs-number">1</span>     ,    Speedy Express   , (<span class="hljs-number">503</span>) <span class="hljs-number">555</span>-<span class="hljs-number">9831</span>
+<span class="hljs-number">2</span>     ,    United Package   , (<span class="hljs-number">503</span>) <span class="hljs-number">555</span>-<span class="hljs-number">3199</span>
+<span class="hljs-number">3</span>     ,    Federal Shipping , (<span class="hljs-number">503</span>) <span class="hljs-number">555</span>-<span class="hljs-number">9931</span>
+
+$ cat Orders
+OrderID  CustomerID  EmployeeID  OrderDate  ShipperID
+--------+-----------+----------+-----------+----------
+<span class="hljs-number">10248</span>        <span class="hljs-number">90</span>          <span class="hljs-number">5</span>       <span class="hljs-number">1996</span>-<span class="hljs-number">07</span>-<span class="hljs-number">04</span>     <span class="hljs-number">3</span>
+<span class="hljs-number">10249</span>        <span class="hljs-number">81</span>          <span class="hljs-number">6</span>       <span class="hljs-number">1996</span>-<span class="hljs-number">07</span>-<span class="hljs-number">05</span>     <span class="hljs-number">1</span>
+<span class="hljs-number">10250</span>        <span class="hljs-number">34</span>          <span class="hljs-number">4</span>       <span class="hljs-number">1996</span>-<span class="hljs-number">07</span>-<span class="hljs-number">08</span>     <span class="hljs-number">2</span>
+<span class="hljs-number">10251</span>        <span class="hljs-number">84</span>          <span class="hljs-number">3</span>       <span class="hljs-number">1996</span>-<span class="hljs-number">07</span>-<span class="hljs-number">08</span>     <span class="hljs-number">1</span>
+<span class="hljs-number">10252</span>        <span class="hljs-number">76</span>          <span class="hljs-number">4</span>       <span class="hljs-number">1996</span>-<span class="hljs-number">07</span>-<span class="hljs-number">09</span>     <span class="hljs-number">2</span>
+<span class="hljs-number">10253</span>        <span class="hljs-number">34</span>          <span class="hljs-number">3</span>       <span class="hljs-number">1996</span>-<span class="hljs-number">07</span>-<span class="hljs-number">10</span>     <span class="hljs-number">2</span>
+<span class="hljs-number">10254</span>        <span class="hljs-number">14</span>          <span class="hljs-number">5</span>       <span class="hljs-number">1996</span>-<span class="hljs-number">07</span>-<span class="hljs-number">11</span>     <span class="hljs-number">2</span>
+
+<span class="hljs-comment">#####################  SQL &#xBB38;  #######################</span>
+
+SELECT S.ShipperName, COUNT(O.OrderID) AS NumberOfOrders
+FROM Orders O
+LEFT JOIN Shippers S ON O.ShipperID = S.ShipperID
+GROUP BY ShipperName
+ORDER BY NumberOfOrders
+
+ ShipperName       NumberOfOrders
+----------------  --------------
+Federal Shipping  <span class="hljs-number">1</span>             
+Speedy Express    <span class="hljs-number">2</span>             
+United Package    <span class="hljs-number">4</span>    
+
+<span class="hljs-comment">######################  AWK  ##########################</span>
+
+<span class="hljs-comment"># $1 : Shippers.ShipperID</span>
+<span class="hljs-comment"># $2 : Shippers.ShipperName</span>
+<span class="hljs-comment"># $5 : Orders.ShipperID</span>
+$ awk <span class="hljs-string">&apos;
+NR == FNR{ s[$1]=$2; next } 
+{ o[$5]++ } 
+END {
+    PROCINFO[&quot;sorted_in&quot;] = &quot;@val_num_asc&quot;
+    for ( i in o ) { printf &quot;%-20s %d\n&quot;, s[i], o[i] }
+}
+&apos;</span> FS=<span class="hljs-string">&apos; *, *&apos;</span> Shippers FS=<span class="hljs-string">&apos; &apos;</span> Orders
+
+Federal Shipping     <span class="hljs-number">1</span>
+Speedy Express       <span class="hljs-number">2</span>
+United Package       <span class="hljs-number">4</span>
+</code></pre>
+<h3 id="cross-join">CROSS JOIN</h3>
+<p>CROSS JOIN &#xC740; <a href="https://en.wikipedia.org/wiki/Cartesian_product" target="_blank">Cartesian product</a> &#xB77C;&#xACE0;&#xB3C4; &#xD558;&#xB294;&#xB370; 
+&#xB450; &#xC9D1;&#xD569; A, B&#xC5D0; &#xB300;&#xD574; a&#x2208;A&#xC774;&#xACE0; b&#x2208;B&#xC778; &#xBAA8;&#xB4E0; &#xC21C;&#xC11C;&#xC30D;(a, b)&#xC758; &#xC9D1;&#xD569;&#xC744; &#xB9D0;&#xD569;&#xB2C8;&#xB2E4;.
+&#xADF8;&#xB7EC;&#xB2C8;&#xAE4C; &#xB9CC;&#xC57D;&#xC5D0; &#xD14C;&#xC774;&#xBE14; A &#xC5D0; 10 &#xAC1C;&#xC758; row &#xAC00; &#xC788;&#xACE0; &#xD14C;&#xC774;&#xBE14; B &#xC5D0; 10 &#xAC1C;&#xC758; row &#xAC00; &#xC788;&#xC73C;&#xBA74;
+CROSS JOIN &#xC744; &#xD558;&#xAC8C; &#xB418;&#xBA74; &#xBAA8;&#xB450; 10 X 10 = 100 &#xAC1C;&#xC758; row &#xAC00; &#xC0DD;&#xAE30;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.
+joining everything to everything &#xC774;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xB530;&#xB85C; ON &#xC808;&#xC774; &#xC5C6;&#xACE0; &#xB9CC;&#xC57D;&#xC5D0;
+&#xD14C;&#xC774;&#xBE14; &#xD558;&#xB098;&#xAC00; empty &#xBA74; result set &#xC740; 0 &#xC774; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC774;&#xAC83;&#xC774; &#xC5B4;&#xB514;&#xC5D0; &#xD544;&#xC694;&#xD55C;&#xC9C0; &#xC608;&#xC81C;&#xB97C; &#xD1B5;&#xD574; &#xC54C;&#xC544;&#xBCF4;&#xBA74; &#xBA3C;&#xC800; &#xC544;&#xB798;&#xC640; &#xAC19;&#xC740; &#xD14C;&#xC774;&#xBE14;&#xC774; &#xC788;&#xC744; &#xACBD;&#xC6B0; 
+&quot;&#xAC01; Store &#xC5D0;&#xC11C; &#xD310;&#xB9E4;&#xB41C; Product &#xBCC4;&#xB85C; Amount &#xB97C; SUM &#xD574;&#xC11C; &#xBCF4;&#xC5EC;&#xB2EC;&#xB77C;&quot;
+&#xB77C;&#xACE0; &#xD558;&#xBA74; &#xAC04;&#xB2E8;&#xD788; GROUP BY &#xB97C; &#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ cat sales                        $ cat stores       $ cat products 
+
+Store    Product   Amount          Store              Product        
+-------+---------+-------          -----              -------        
+lg24     snack     <span class="hljs-number">300</span>             lg24               milk           
+lg24     snack     <span class="hljs-number">200</span>             du                 bread          
+lg24     soda      <span class="hljs-number">150</span>             <span class="hljs-number">7</span>ele               soda           
+lg24     soda      <span class="hljs-number">250</span>                                snack          
+du       milk      <span class="hljs-number">150</span>
+du       bread     <span class="hljs-number">100</span>
+du       bread     <span class="hljs-number">200</span>
+<span class="hljs-number">7</span>ele     snack     <span class="hljs-number">100</span>
+<span class="hljs-number">7</span>ele     milk      <span class="hljs-number">150</span>
+<span class="hljs-number">7</span>ele     bread     <span class="hljs-number">200</span>
+<span class="hljs-number">7</span>ele     bread     <span class="hljs-number">150</span>
+.......................................................................
+
+SELECT Store, Product, SUM(Amount) as Sum
+FROM sales
+GROUP BY Store, Product
+.........................................
+
+$ awk <span class="hljs-string">&apos;
+{ a[$1,$2] += $3 }
+END { 
+    PROCINFO[&quot;sorted_in&quot;] = &quot;@ind_str_asc&quot;
+    for ( i in a ) { 
+        split(i, b, SUBSEP) 
+        printf &quot;%-10s %-10s %5d\n&quot;, b[1], b[2], a[i] 
+    }
+}&apos;</span> sales
+
+<span class="hljs-number">7</span>ele       bread        <span class="hljs-number">350</span>
+<span class="hljs-number">7</span>ele       milk         <span class="hljs-number">150</span>
+<span class="hljs-number">7</span>ele       snack        <span class="hljs-number">100</span>
+du         bread        <span class="hljs-number">300</span>
+du         milk         <span class="hljs-number">150</span>
+lg24       snack        <span class="hljs-number">500</span>
+lg24       soda         <span class="hljs-number">400</span>
+</code></pre>
+<p>&#xADF8;&#xB7F0;&#xB370; &quot;&#xC5B4;&#xB5A4; &#xC0C1;&#xC810;&#xC5D0;&#xC11C; &#xC5B4;&#xB5A4; &#xD488;&#xBAA9;&#xC774; &#xD310;&#xB9E4;&#xAC00; &#xC548;&#xB410;&#xB294;&#xC9C0; &#xC54C; &#xC218; &#xC5C6;&#xC73C;&#xB2C8;
+&#xADF8;&#xB7F0; &#xD488;&#xBAA9;&#xC5D0; &#xB300;&#xD574;&#xC11C;&#xB294; 0 &#xC73C;&#xB85C; &#xD45C;&#xC2DC;&#xD574;&#xB2EC;&#xB77C;&quot;
+&#xB77C;&#xACE0; &#xD560; &#xACBD;&#xC6B0;&#xC5D4; &#xBAA8;&#xB4E0; &#xC0C1;&#xC810;&#xC5D0;&#xC11C; &#xBAA8;&#xB4E0; &#xD488;&#xBAA9;&#xC744; &#xD45C;&#xC2DC;&#xD574;&#xC57C; &#xD558;&#xBBC0;&#xB85C;
+&#xC774;&#xB54C;&#xB294; CROSS JOIN &#xC744; &#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">SELECT S.Store, P.Product
+FROM stores S
+CROSS JOIN products P
+..........................
+
+SELECT S.Store, P.Product, ISNULL(C.Sum,<span class="hljs-number">0</span>) as Sum
+FROM stores S
+CROSS JOIN products P
+LEFT JOIN
+    (SELECT Store, Product, SUM(Amount) as Sum
+     FROM sales 
+     GROUP BY Store, Product) C
+ON
+  S.Store = C.Store AND
+  P.Product = C.Product
+................................................................
+
+$ awk <span class="hljs-string">&apos;BEGIN {
+    while (getline &lt; ARGV[1] &gt; 0) s[$1]
+    while (getline &lt; ARGV[2] &gt; 0) p[$1]
+    while (getline &lt; ARGV[3] &gt; 0) a[$1,$2] += $3 
+
+    PROCINFO[&quot;sorted_in&quot;] = &quot;@ind_str_asc&quot;
+    for ( i in s )  {                         # CROSS JOIN &#xC744; &#xC704;&#xD55C; &#xC774;&#xC911; for &#xBB38;
+        for ( j in p ) { 
+            printf &quot;%-10s %-10s %5d\n&quot;, i, j, ( a[i,j] ? a[i,j] : 0 )
+        }
+    }
+}&apos;</span> stores products sales
+
+<span class="hljs-number">7</span>ele       bread        <span class="hljs-number">350</span>
+<span class="hljs-number">7</span>ele       milk         <span class="hljs-number">150</span>
+<span class="hljs-number">7</span>ele       snack        <span class="hljs-number">100</span>
+<span class="hljs-number">7</span>ele       soda           <span class="hljs-number">0</span>
+du         bread        <span class="hljs-number">300</span>
+du         milk         <span class="hljs-number">150</span>
+du         snack          <span class="hljs-number">0</span>
+du         soda           <span class="hljs-number">0</span>
+lg24       bread          <span class="hljs-number">0</span>
+lg24       milk           <span class="hljs-number">0</span>
+lg24       snack        <span class="hljs-number">500</span>
+lg24       soda         <span class="hljs-number">400</span>
+</code></pre>
+<h3 id="full-join-exclusive">FULL JOIN (exclusive)</h3>
+<p>&#xB2E4;&#xC74C;&#xC740; file1, file2 &#xC758; &#xACF5;&#xD1B5;&#xBD80;&#xBD84;&#xC744; &#xC81C;&#xC678;&#xD558;&#xACE0; &#xAC01; &#xD30C;&#xC77C;&#xC5D0;&#xB9CC; &#xC874;&#xC7AC;&#xD558;&#xB294; &#xB370;&#xC774;&#xD130;&#xB97C; &#xCD9C;&#xB825;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">SELECT *
+FROM file1 f1 FULL JOIN file f2
+ON f1.value = f2.value
+WHERE f1.value IS NULL OR f2.value IS NULL
+..........................................
+
+$ cat file1      $ cat file2
+AAA              XXX
+<span class="hljs-number">111</span>              <span class="hljs-number">111</span>
+<span class="hljs-number">222</span>              <span class="hljs-number">222</span>
+BBB              <span class="hljs-number">333</span>
+CCC              YYY
+<span class="hljs-number">333</span>
+............................
+
+$ awk <span class="hljs-string">&apos;BEGIN { 
+    while (getline &lt; ARGV[1] &gt; 0) a[$1]=$1
+    while (getline &lt; ARGV[2] &gt; 0) b[$1]=$1
+    for (i in a) if ( !b[i] ) print i
+    for (i in b) if ( !a[i] ) print i
+}&apos;</span> file1 file2
+AAA
+CCC
+BBB
+XXX
+YYY
+</code></pre>
+<p>&#xB2E4;&#xC74C;&#xC740; FULL JOIN &#xC744; &#xC774;&#xC6A9;&#xD574; local directory &#xC640; remote directory &#xB97C; &#xBE44;&#xAD50;&#xD558;&#xB294; &#xC608;&#xC785;&#xB2C8;&#xB2E4;.
+remote &#xD30C;&#xC77C;&#xC744; &#xBE44;&#xAD50;&#xD558;&#xB294; &#xAC83;&#xC774;&#xBBC0;&#xB85C; &#xD30C;&#xC77C;&#xC744; &#xB2E4;&#xC6B4;&#xB85C;&#xB4DC;&#xD558;&#xC9C0; &#xC54A;&#xACE0; md5sum &#xC744; &#xC774;&#xC6A9;&#xD574; &#xBE44;&#xAD50;&#xD569;&#xB2C8;&#xB2E4;.
+local &#xACFC; remote &#xD30C;&#xC77C;&#xC758; md5sum &#xAC12;&#xC774; &#xB2E4;&#xB974;&#xB2E4;&#xB294; &#xAC83;&#xC740; &#xD30C;&#xC77C;&#xC774; &#xC218;&#xC815;&#xB418;&#xC5C8;&#xB2E4;&#xB294; &#xC758;&#xBBF8;&#xACE0;
+&#xC544;&#xB798; libtlpi.a &#xD30C;&#xC77C;&#xC740; remote &#xC5D0;&#xB9CC; &#xC874;&#xC7AC;&#xD558;&#xB294; &#xD30C;&#xC77C;&#xC774; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<blockquote>
+<p>&#xC774; &#xBC29;&#xBC95;&#xC740; md5sum &#xAC12;&#xB9CC;&#xC744; &#xC774;&#xC6A9;&#xD574; &#xBE44;&#xAD50;&#xD558;&#xB294; &#xAC83;&#xC73C;&#xB85C; &#xB3D9;&#xC77C;&#xD55C; &#xB0B4;&#xC6A9;&#xC758; &#xD30C;&#xC77C;&#xC774; &#xC788;&#xC744; &#xACBD;&#xC6B0;
+( &#xC608;&#xB97C; &#xB4E4;&#xBA74; <code>cp</code> &#xC5D0; &#xC758;&#xD574; &#xC0DD;&#xC131;&#xB41C; ) &#xB294; &#xBE44;&#xAD50;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xB610;&#xD55C; hash collision &#xC774; &#xC788;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. ( md5sum &#xC744; sha1sum &#xC774;&#xB098; &#xC774;&#xC0C1;&#xC73C;&#xB85C; &#xBCC0;&#xACBD;&#xD574;&#xBCF4;&#xC138;&#xC694; )</p>
+</blockquote>
+<pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;BEGIN { 
+    while (getline &lt; ARGV[1] &gt; 0) a[$1]=$0
+    while (getline &lt; ARGV[2] &gt; 0) b[$1]=$0
+    for (i in a) if ( !b[i] ) print a[i]
+    for (i in b) if ( !a[i] ) print b[i]
+}&apos;</span> &lt;( find BUILD -type f -exec md5sum {} + ) \
+&lt;( ssh user@remote <span class="hljs-string">&apos;find path/to/remote/BUILD -type f -exec md5sum {} +&apos;</span> ) 
+
+aeabb93eddf837d8dd45cbf94d0ef7d2  BUILD/pty_master_open.d
+e507a57525fabe57695683442ecde7e3  BUILD/pty_fork.o
+a0cc9039df2eab09f2b145e54070a081  path/to/remote/BUILD/libtlpi.a   <span class="hljs-comment"># remote &#xC5D0;&#xB9CC; &#xC874;&#xC7AC;&#xD558;&#xB294; &#xD30C;&#xC77C;</span>
+a123503825f130377d49e594e3f73504  path/to/remote/BUILD/pty_fork.o
+bc2a1a57bae6472a1bb1655bd404244b  path/to/remote/BUILD/pty_master_open.d
+</code></pre>
+<h3 id="fpat-&#xC744;-&#xC774;&#xC6A9;&#xD55C;-join">FPAT &#xC744; &#xC774;&#xC6A9;&#xD55C; JOIN</h3>
+<table>
+<tr>
+    <td>
+<b>datafile</b><br>
+------------------------------------------------------------------------------<br>
+<font color="blue">{{AA1}}</font>&apos;s design will serve as the basis for the planned Mars <font color="blue">{{BB1}}</font> rover.
+In December <font color="blue">{{BB2}}</font>, <font color="blue">{{AA1}}</font>&apos;s two-year mission was extended indefinitely.
+As of <font color="blue">{{AA2}}</font> 26, 2017, <font color="blue">{{AA1}}</font> has been on Mars for 1738 sols (1785 total days)
+since landing on August 6, . . . . . . .
+    </td>
+    <td>
+    <table>
+        <tr>
+            <td nowrap="">
+            mapfile1<br>
+            ------------------------------------<br>
+            {{AA1}} = Curiosity<br>
+            {{AA2}} = June<br>
+            </td>
+        </tr>
+        <tr>
+            <td nowrap="">
+            mapfile2<br>
+            ------------------------------------<br>
+            {{BB1}} = 2020<br>
+            {{BB2}} = 2012<br>
+            </td>
+        </tr>
+    </table>
+    </td>
+</tr>
+</table>
+
+
+<p>&#xC138; &#xAC1C;&#xC758; &#xD30C;&#xC77C;&#xC744; &#xCC98;&#xB9AC;&#xD558;&#xB294; &#xACBD;&#xC6B0;&#xC778;&#xB370; &#xC774;&#xC804;&#xC5D0; BEGIN &#xBE14;&#xB85D;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xACFC;&#xB294; &#xB2E4;&#xB974;&#xAC8C;
+BEGINFILE &#xBE14;&#xB85D;&#xC744; &#xC0AC;&#xC6A9;&#xD588;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ awk <span class="hljs-operator">-f</span> - &lt;&lt;\EOF <span class="hljs-built_in">mapfile</span>1 <span class="hljs-built_in">mapfile</span>2 RS=<span class="hljs-string">&apos;.&apos;</span> FPAT=<span class="hljs-string">&apos;{{[A-Z0-9]+}}&apos;</span> datafile
+BEGINFILE { 
+    <span class="hljs-keyword">if</span> ( ARGIND &lt; <span class="hljs-number">3</span> ) {          <span class="hljs-comment"># 1, 2 &#xBC88;&#xC9F8; &#xD30C;&#xC77C;&#xC77C; &#xACBD;&#xC6B0;&#xB9CC; &#xC2E4;&#xD589;</span>
+        <span class="hljs-keyword">while</span> ((getline &lt; FILENAME) &gt; <span class="hljs-number">0</span>) a[<span class="hljs-variable">$1</span>] = <span class="hljs-variable">$3</span>
+        nextfile
+    }
+}{
+    r = <span class="hljs-variable">$0</span>                       <span class="hljs-comment"># sub &#xD568;&#xC218;&#xC758; &#xC2E4;&#xD589;&#xACB0;&#xACFC;&#xB85C; $0 &#xBCC0;&#xC218;&#xC5D0; &#xB300;&#xC785;&#xC5F0;&#xC0B0;&#xC774; </span>
+    <span class="hljs-keyword">for</span> (i=<span class="hljs-number">1</span>; i&lt;=NF; i++) {      <span class="hljs-comment"># &#xC77C;&#xC5B4;&#xB098;&#xBA74; &#xD544;&#xB4DC; &#xAD00;&#xB828; &#xBCC0;&#xC218;&#xB4E4;&#xC774; &#xC7AC;&#xC124;&#xC815; &#xB418;&#xBBC0;&#xB85C;</span>
+        sub(<span class="hljs-variable">$i</span>, a[<span class="hljs-variable">$i</span>], r)        <span class="hljs-comment"># r &#xBCC0;&#xC218;&#xC5D0; &#xB300;&#xC785;&#xD574; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</span>
+    } 
+    <span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;%s&quot;</span>, r RT
+}
+EOF
+</code></pre>
+<pre><code>Curiosity&apos;s design will serve as the basis for the planned Mars 2020 rover. In
+^^^^^^^^^                                                       ^^^^
+December 2012, Curiosity&apos;s two-year mission was extended indefinitely. As of
+         ^^^^  ^^^^^^^^^
+June 26, 2017, Curiosity has been on Mars for 1738 sols (1785 total days)
+^^^^           ^^^^^^^^^
+since landing on August 6, .......
+</code></pre>
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./GROUP_BY.html" class="navigation navigation-prev " aria-label="Previous page: GROUP BY"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="./subquery.html" class="navigation navigation-next " aria-label="Next page: Subquery"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/app.js"></script>
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

@@ -1,0 +1,949 @@
+<!DOCTYPE HTML>
+<html lang="ko" >
+    
+    <head>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-161001174-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-161001174-3');
+</script>
+
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Dynamic Extensions | Introduction</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="./example.html" />
+    
+    
+    <link rel="prev" href="./builtin/type.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="13"
+        data-chapter-title="Dynamic Extensions"
+        data-filepath="extensions.md"
+        data-basepath="."
+
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="bug_reports.html">
+            
+                
+                    <a href="./bug_reports.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Bug reports
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="basics.html">
+            
+                
+                    <a href="./basics.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Basics
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="data_types.html">
+            
+                
+                    <a href="./data_types.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        Data Types
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="variables.html">
+            
+                
+                    <a href="./variables.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Variables
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="regexp.html">
+            
+                
+                    <a href="./regexp.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        Regexp
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="functions.html">
+            
+                
+                    <a href="./functions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        Functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="escape_sequences.html">
+            
+                
+                    <a href="./escape_sequences.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        Escape sequences
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="begin_end.html">
+            
+                
+                    <a href="./begin_end.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.6.</b>
+                        
+                        BEGIN, END
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="builtin_variables.html">
+            
+                
+                    <a href="./builtin_variables.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Built-in Variables
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="record_sep.html">
+            
+                
+                    <a href="./record_sep.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Record 분리
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="field_sep.html">
+            
+                
+                    <a href="./field_sep.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        Field 분리
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="zero_one.html">
+            
+                
+                    <a href="./zero_one.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        $0=$0, $1=$1
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="redirection.html">
+            
+                
+                    <a href="./redirection.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        Redirection
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="getline.html">
+            
+                
+                    <a href="./getline.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        getline
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9" data-path="arrays.html">
+            
+                
+                    <a href="./arrays.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                        Arrays
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.1" data-path="sort.html">
+            
+                
+                    <a href="./sort.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.1.</b>
+                        
+                        Sort
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="GROUP_BY.html">
+            
+                
+                    <a href="./GROUP_BY.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.2.</b>
+                        
+                        GROUP BY
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="JOIN.html">
+            
+                
+                    <a href="./JOIN.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.3.</b>
+                        
+                        JOIN
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.4" data-path="subquery.html">
+            
+                
+                    <a href="./subquery.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.4.</b>
+                        
+                        Subquery
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.5" data-path="index2.html">
+            
+                
+                    <a href="./index2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.5.</b>
+                        
+                        Index
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="10" data-path="control_statements.html">
+            
+                
+                    <a href="./control_statements.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                        Control Statements
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11" data-path="operators.html">
+            
+                
+                    <a href="./operators.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.</b>
+                        
+                        Operators
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12" data-path="builtin_functions.html">
+            
+                
+                    <a href="./builtin_functions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.</b>
+                        
+                        Built-in Functions
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="12.1" data-path="builtin/numeric.html">
+            
+                
+                    <a href="./builtin/numeric.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.1.</b>
+                        
+                        Numeric Functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.2" data-path="builtin/string.html">
+            
+                
+                    <a href="./builtin/string.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.2.</b>
+                        
+                        String Functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.3" data-path="builtin/io.html">
+            
+                
+                    <a href="./builtin/io.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.3.</b>
+                        
+                        I/O Functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.4" data-path="builtin/time.html">
+            
+                
+                    <a href="./builtin/time.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.4.</b>
+                        
+                        Time Functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.5" data-path="builtin/bitwise.html">
+            
+                
+                    <a href="./builtin/bitwise.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.5.</b>
+                        
+                        Bitwise Functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.6" data-path="builtin/type.html">
+            
+                
+                    <a href="./builtin/type.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.6.</b>
+                        
+                        Type Functions
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="13" data-path="extensions.html">
+            
+                
+                    <a href="./extensions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.</b>
+                        
+                        Dynamic Extensions
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="13.1" data-path="example.html">
+            
+                
+                    <a href="./example.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.1.</b>
+                        
+                        예제
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="14" data-path="tcp_ip.html">
+            
+                
+                    <a href="./tcp_ip.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.</b>
+                        
+                        TCP/IP Internetworking
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="15" data-path="command_line_options.html">
+            
+                
+                    <a href="./command_line_options.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.</b>
+                        
+                        Command-line options
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="16" data-path="debugging.html">
+            
+                
+                    <a href="./debugging.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>16.</b>
+                        
+                        Debugging
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="17" data-path="tips.html">
+            
+                
+                    <a href="./tips.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>17.</b>
+                        
+                        Tips
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="18" data-path="closing.html">
+            
+                
+                    <a href="./closing.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>18.</b>
+                        
+                        맺음말
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >Introduction</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="dynamic-extensions">Dynamic Extensions</h1>
+<p>&#xC2E4;&#xD589;&#xD30C;&#xC77C;&#xC744; &#xB9CC;&#xB4E4; &#xB54C;&#xB294; &#xACF5;&#xD1B5;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xB418;&#xB294; library &#xB97C; &#xC2E4;&#xD589;&#xD30C;&#xC77C;&#xC5D0; &#xD3EC;&#xD568;&#xC2DC;&#xD0AC; &#xC218;&#xB3C4; &#xC788;&#xACE0; ( static linking )
+&#xADF8;&#xB807;&#xC9C0; &#xC54A;&#xACE0; &#xD504;&#xB85C;&#xADF8;&#xB7A8; &#xC2E4;&#xD589; &#xC2DC;&#xC5D0; shared library &#xB97C; load &#xD558;&#xACE0; link &#xD574; &#xC0AC;&#xC6A9;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4; ( dynamic linking ).
+&#xC774; &#xC678;&#xC5D0;&#xB3C4; &#xD504;&#xB85C;&#xADF8;&#xB7A8; &#xC2E4;&#xD589; &#xC911;&#xC5D0; &#xC784;&#xC758;&#xB85C; &#xD2B9;&#xC815; library &#xB97C; load &#xD574; &#xC0AC;&#xC6A9;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xB294;&#xB370; ( dynamic loading )
+&#xC774; &#xBC29;&#xBC95;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xBA74; &#xBA54;&#xC778; &#xC2E4;&#xD589;&#xD30C;&#xC77C;&#xACFC; &#xBD84;&#xB9AC;&#xD558;&#xC5EC; &#xC77C;&#xC885;&#xC758; plug-in &#xAE30;&#xB2A5;&#xC744; &#xC81C;&#xACF5;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC608;&#xB97C; &#xB4E4;&#xBA74; apache &#xC6F9;&#xC11C;&#xBC84;&#xC5D0;&#xC11C; &#xBCFC; &#xC218; &#xC788;&#xB294; &#xB2E4;&#xC591;&#xD55C; &#xBAA8;&#xB4C8;&#xB4E4;&#xC740; &#xC774; &#xBC29;&#xBC95;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC778;&#xB370;&#xC694;.
+awk &#xC5D0;&#xC11C;&#xB3C4; &#xAC19;&#xC740; &#xC885;&#xB958;&#xC758; &#xD655;&#xC7A5; &#xAE30;&#xB2A5;&#xC744; &#xC81C;&#xACF5;&#xD569;&#xB2C8;&#xB2E4;.
+&#xC0AC;&#xC6A9;&#xC790;&#xAC00; c/c++ &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC744; &#xC791;&#xC131;&#xD558;&#xC5EC; &#xC77C;&#xC885;&#xC758; &#xC790;&#xC2E0;&#xC758; built-in &#xD568;&#xC218;&#xB97C; &#xB9CC;&#xB4E4;&#xC5B4; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xB2E4;&#xC74C;&#xC740; time &#xD655;&#xC7A5; &#xBAA8;&#xB4C8;&#xC744; &#xC774;&#xC6A9;&#xD574; sleep &#xBA85;&#xB839;&#xC744; &#xC0AC;&#xC6A9;&#xD55C; &#xAC83;&#xACFC; &#xC678;&#xBD80; &#xBA85;&#xB839;&#xC744; &#xC0AC;&#xC6A9;&#xD55C; &#xAC83;&#xC744; &#xBE44;&#xAD50;&#xD55C; &#xAC83;&#xC778;&#xB370;&#xC694;.
+&#xD655;&#xC7A5; &#xBAA8;&#xB4C8;&#xC744; &#xC774;&#xC6A9;&#xD560; &#xACBD;&#xC6B0; built-in &#xD568;&#xC218;&#xC640; &#xAC19;&#xC774; &#xBCC4;&#xB3C4;&#xC758; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xAC00; &#xC0DD;&#xC131;&#xB418;&#xC9C0; &#xC54A;&#xB294; &#xAC83;&#xC744; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p><img src="images/extension_1.png" alt=""></p>
+<p>awk &#xC5D0;&#xC11C; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xD655;&#xC7A5; &#xBAA8;&#xB4C8;&#xB4E4;. &#xBCF4;&#xD1B5; &#xBAA8;&#xB4C8;&#xB2F9; &#xB450;&#xC138;&#xAC1C; &#xC815;&#xB3C4;&#xC758; &#xD568;&#xC218;&#xB97C; &#xC81C;&#xACF5;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ ls <span class="hljs-operator">-l</span> /usr/lib/x86_64-linux-gnu/gawk/
+total <span class="hljs-number">176</span>
+-rw-r--r-- <span class="hljs-number">1</span> root root <span class="hljs-number">26664</span> <span class="hljs-number">2017</span>-<span class="hljs-number">01</span>-<span class="hljs-number">26</span> <span class="hljs-number">01</span>:<span class="hljs-number">06</span> filefuncs.so
+-rw-r--r-- <span class="hljs-number">1</span> root root <span class="hljs-number">10184</span> <span class="hljs-number">2017</span>-<span class="hljs-number">01</span>-<span class="hljs-number">26</span> <span class="hljs-number">01</span>:<span class="hljs-number">06</span> fnmatch.so
+-rw-r--r-- <span class="hljs-number">1</span> root root <span class="hljs-number">10176</span> <span class="hljs-number">2017</span>-<span class="hljs-number">01</span>-<span class="hljs-number">26</span> <span class="hljs-number">01</span>:<span class="hljs-number">06</span> fork.so
+-rw-r--r-- <span class="hljs-number">1</span> root root <span class="hljs-number">14280</span> <span class="hljs-number">2017</span>-<span class="hljs-number">01</span>-<span class="hljs-number">26</span> <span class="hljs-number">01</span>:<span class="hljs-number">06</span> inplace.so
+-rw-r--r-- <span class="hljs-number">1</span> root root <span class="hljs-number">10152</span> <span class="hljs-number">2017</span>-<span class="hljs-number">01</span>-<span class="hljs-number">26</span> <span class="hljs-number">01</span>:<span class="hljs-number">06</span> ordchr.so
+-rw-r--r-- <span class="hljs-number">1</span> root root <span class="hljs-number">10136</span> <span class="hljs-number">2017</span>-<span class="hljs-number">01</span>-<span class="hljs-number">26</span> <span class="hljs-number">01</span>:<span class="hljs-number">06</span> readdir.so
+-rw-r--r-- <span class="hljs-number">1</span> root root <span class="hljs-number">10168</span> <span class="hljs-number">2017</span>-<span class="hljs-number">01</span>-<span class="hljs-number">26</span> <span class="hljs-number">01</span>:<span class="hljs-number">06</span> readfile.so
+-rw-r--r-- <span class="hljs-number">1</span> root root <span class="hljs-number">10136</span> <span class="hljs-number">2017</span>-<span class="hljs-number">01</span>-<span class="hljs-number">26</span> <span class="hljs-number">01</span>:<span class="hljs-number">06</span> revoutput.so
+-rw-r--r-- <span class="hljs-number">1</span> root root <span class="hljs-number">10136</span> <span class="hljs-number">2017</span>-<span class="hljs-number">01</span>-<span class="hljs-number">26</span> <span class="hljs-number">01</span>:<span class="hljs-number">06</span> revtwoway.so
+-rw-r--r-- <span class="hljs-number">1</span> root root <span class="hljs-number">10152</span> <span class="hljs-number">2017</span>-<span class="hljs-number">01</span>-<span class="hljs-number">26</span> <span class="hljs-number">01</span>:<span class="hljs-number">06</span> rwarray.so
+-rw-r--r-- <span class="hljs-number">1</span> root root <span class="hljs-number">22656</span> <span class="hljs-number">2017</span>-<span class="hljs-number">01</span>-<span class="hljs-number">26</span> <span class="hljs-number">01</span>:<span class="hljs-number">06</span> testext.so
+-rw-r--r-- <span class="hljs-number">1</span> root root <span class="hljs-number">10152</span> <span class="hljs-number">2017</span>-<span class="hljs-number">01</span>-<span class="hljs-number">26</span> <span class="hljs-number">01</span>:<span class="hljs-number">06</span> time.so
+</code></pre>
+<p>&#xD655;&#xC7A5; &#xBAA8;&#xB4C8;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xBC29;&#xBC95;</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># &#xBE14;&#xB85D; &#xBC16;&#xC5D0;&#xC11C; &apos;@load&apos; &#xD0A4;&#xC6CC;&#xB4DC;&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xB294; &#xBC29;&#xBC95;</span>
+$ awk <span class="hljs-string">&apos;
+@load &quot;time&quot;
+@load &quot;readfile&quot;
+BEGIN { ... }
+&apos;</span>
+
+<span class="hljs-comment"># &apos;-l&apos; &#xC635;&#xC158;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xB294; &#xBC29;&#xBC95;</span>
+$ awk <span class="hljs-operator">-l</span> time <span class="hljs-operator">-l</span> readfile <span class="hljs-string">&apos;BEGIN { ... }&apos;</span>
+</code></pre>
+<p>&#xD655;&#xC7A5; &#xBAA8;&#xB4C8;&#xACFC; &#xAD00;&#xB828;&#xB41C; &#xD658;&#xACBD; &#xBCC0;&#xC218;</p>
+<blockquote>
+<p>&#xBAA8;&#xB4C8;&#xC744; &#xB85C;&#xB4DC;&#xD560; &#xB54C; <code>AWKLIBPATH</code> &#xC5D0;&#xC11C; &#xCC3E;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
+<h2 id="time">time</h2>
+<p><a href="https://www.gnu.org/software/gawk/manual/html_node/Extension-Sample-Time.html" target="_blank">https://www.gnu.org/software/gawk/manual/html_node/Extension-Sample-Time.html</a></p>
+<ul>
+<li><p><strong>result = sleep(seconds)</strong><br>seconds &#xAC12;&#xC73C;&#xB85C; &#xC18C;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+</li>
+<li><p><strong>the_time = gettimeofday()</strong></p>
+</li>
+</ul>
+<p><code>system()</code> built-in &#xD568;&#xC218;&#xC758; &#xACBD;&#xC6B0; &#xBC18;&#xD658;&#xB418;&#xB294; &#xAC12;&#xC774; &#xCD08; &#xB2E8;&#xC704;&#xC774;&#xC9C0;&#xB9CC; <code>gettimeofday()</code> &#xB294; 
+&#xCD08; &#xB2E8;&#xC704; &#xC774;&#xD558; &#xC18C;&#xC218;&#xC810;&#xB3C4; &#xD45C;&#xC2DC;&#xD574; &#xC90D;&#xB2C8;&#xB2E4;.
+&#xBC18;&#xD658;&#xB418;&#xB294; &#xAC12;&#xC774; &#xC22B;&#xC790;&#xB77C; <code>print</code> &#xBB38;&#xC73C;&#xB85C; &#xCD9C;&#xB825;&#xD560; &#xB54C; <code>OFMT</code> &#xAC12;&#xC758; &#xC801;&#xC6A9;&#xC744; &#xBC1B;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xAC00;&#xB839; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xC2E4;&#xD589; &#xC2DC;&#xAC04;&#xC744; &#xC880; &#xB354; &#xC815;&#xBC00;&#xD558;&#xAC8C; &#xCE21;&#xC815;&#xD560; &#xB54C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;@load &quot;time&quot;; BEGIN { OFMT=&quot;%.100g&quot;; print systime(); print gettimeofday() }&apos;</span> 
+<span class="hljs-number">1499185591</span>
+<span class="hljs-number">1499185591.4129660129547119140625</span>
+...................................................................................
+
+$ awk -b <span class="hljs-string">&apos;@load &quot;time&quot;; BEGIN{ OFMT=&quot;%.5f&quot;; RS=&quot;.{1,300}&quot; 
+    s = gettimeofday()
+    while ( getline &lt; &quot;file1.mp3&quot; &gt; 0 ) {
+        printf &quot;%s&quot;, RT &gt; &quot;/inet/tcp/0/some.host.com/8080&quot;
+    }
+    e = gettimeofday()
+    print &quot;time: &quot; e - s
+}&apos;</span>
+time: <span class="hljs-number">2.50368</span>
+</code></pre>
+<hr>
+<h2 id="inplace">inplace</h2>
+<p><a href="https://www.gnu.org/software/gawk/manual/html_node/Extension-Sample-Inplace.html" target="_blank">https://www.gnu.org/software/gawk/manual/html_node/Extension-Sample-Inplace.html</a></p>
+<p>awk &#xC5D0;&#xB294; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; sed &#xC5D0;&#xC11C;&#xCC98;&#xB7FC; &#xC218;&#xC815;&#xC0AC;&#xD56D;&#xC774; &#xBC14;&#xB85C; &#xD30C;&#xC77C;&#xB85C; &#xC800;&#xC7A5;&#xB418;&#xB294; <code>-i</code> &#xC635;&#xC158;&#xC774; &#xC5C6;&#xB294;&#xB370;&#xC694;.
+&#xD558;&#xC9C0;&#xB9CC; &#xC774; &#xD655;&#xC7A5; &#xAE30;&#xB2A5;&#xC744; &#xC774;&#xC6A9;&#xD574;&#xC11C; &#xB3D9;&#xC77C;&#xD55C; &#xAE30;&#xB2A5;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC2E4;&#xC81C; &#xC0AC;&#xC6A9;&#xBC29;&#xBC95;&#xC774; &#xC57D;&#xAC04; &#xBCF5;&#xC7A1;&#xD558;&#xC5EC; &#xAC04;&#xB2E8;&#xD788; include &#xD558;&#xC5EC; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xAC8C; &#xD30C;&#xC77C;&#xB85C; &#xB9CC;&#xB4E4;&#xC5B4; &#xB193;&#xC558;&#xC2B5;&#xB2C8;&#xB2E4;.
+stdout &#xCD9C;&#xB825;&#xC774; &#xD30C;&#xC77C;&#xB85C; &#xC800;&#xC7A5;&#xB418;&#xB294; &#xAC83;&#xC774;&#xBBC0;&#xB85C; &#xB9CC;&#xC57D;&#xC5D0; &#xCD9C;&#xB825;&#xC774; &#xBC1C;&#xC0DD;&#xD558;&#xC9C0; &#xC54A;&#xC73C;&#xBA74;
+&#xD574;&#xB2F9; &#xD30C;&#xC77C;&#xC774; &#xC0AD;&#xC81C;&#xB418;&#xB294; &#xACB0;&#xACFC;&#xB97C; &#xAC16;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># include &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xD30C;&#xC77C;</span>
+$ cat /usr/share/awk/inplace.awk
+
+<span class="hljs-comment"># &apos;-i&apos; &#xC635;&#xC158;&#xC744; &#xC774;&#xC6A9;</span>
+$ gawk -i inplace <span class="hljs-string">&apos;{ gsub(/foo/, &quot;bar&quot;); print }&apos;</span> file1 file2 file3
+
+<span class="hljs-comment"># backup &#xD30C;&#xC77C;&#xC744; &#xB9CC;&#xB4E4; &#xACBD;&#xC6B0; INPLACE_SUFFIX &#xBCC0;&#xC218;&#xAC12;&#xC744; &#xC124;&#xC815;</span>
+$ gawk -i inplace -v INPLACE_SUFFIX=.bak <span class="hljs-string">&apos;{ gsub(/foo/, &quot;bar&quot;); print }&apos;</span> \
+file1 file2 file3
+</code></pre>
+<hr>
+<h2 id="fork">fork</h2>
+<p><a href="https://www.gnu.org/software/gawk/manual/html_node/Extension-Sample-Fork.html" target="_blank">https://www.gnu.org/software/gawk/manual/html_node/Extension-Sample-Fork.html</a></p>
+<ul>
+<li><p><strong>pid = fork()</strong></p>
+</li>
+<li><p><strong>ret = wait(pid)</strong><br>&#xD574;&#xB2F9; pid &#xAC00; &#xC885;&#xB8CC;&#xB420; &#xB54C;&#xAE4C;&#xC9C0; &#xAE30;&#xB2E4;&#xB9BD;&#xB2C8;&#xB2E4;.</p>
+</li>
+<li><p><strong>ret = wait()</strong><br>&#xCCAB; &#xBC88;&#xC9F8; child &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xAC00; &#xC885;&#xB8CC;&#xB420; &#xB54C;&#xAE4C;&#xC9C0; &#xAE30;&#xB2E4;&#xB9BD;&#xB2C8;&#xB2E4;.<br>( bash shell &#xC758; &#xACBD;&#xC6B0; &#xBAA8;&#xB4E0; child &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xB97C; &#xAE30;&#xB2E4;&#xB9AC;&#xB294;&#xB370; awk &#xB294; &#xB2E4;&#xB985;&#xB2C8;&#xB2E4;.)</p>
+</li>
+</ul>
+<p><code>pid = fork()</code> &#xD568;&#xC218;&#xB294; &#xC0C8;&#xB85C; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xB97C; &#xC0DD;&#xC131;&#xD560; &#xB54C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xD568;&#xC218;&#xC778;&#xB370; 
+&#xC2E4;&#xD589;&#xD558;&#xAC8C; &#xB418;&#xBA74; parent &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xAC8C;&#xB294; &#xC0C8;&#xB85C; &#xC0DD;&#xC131;&#xB41C; child &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC758; pid &#xAC00;
+&#xBCF4;&#xC774;&#xAC8C; &#xB418;&#xACE0; child &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xAC8C;&#xB294; pid &#xAC12;&#xC73C;&#xB85C; <code>0</code> &#xC774; &#xBCF4;&#xC774;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.
+&#xB530;&#xB77C;&#xC11C; <code>if (( pid = fork() ) == 0 )</code> &#xBB38;&#xC744; &#xC774;&#xC6A9;&#xD574; child, parent &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xB97C; &#xAD6C;&#xBD84;&#xD560;
+ &#xC218;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p><code>fork()</code> &#xD568;&#xC218; &#xC2E4;&#xD589;&#xC2DC; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD560; &#xACBD;&#xC6B0; <code>-1</code> &#xC774; &#xBC18;&#xD658;&#xB418;&#xACE0; <code>ERRNO</code> &#xAC12;&#xC774; &#xC124;&#xC815;&#xB429;&#xB2C8;&#xB2E4;.
+&#xB530;&#xB85C; <code>exec</code> &#xD568;&#xC218;&#xB294; &#xC5C6;&#xACE0; fork &#xD560; &#xB2F9;&#xC2DC; &#xD504;&#xB85C;&#xC138;&#xC2A4; &#xC0C1;&#xD0DC;&#xAC00; child &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC640; &#xACF5;&#xC720;&#xB418;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.
+&#xC774;&#xD6C4; child &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC758; &#xACBD;&#xC6B0; <code>PROCINFO[&quot;pid&quot;]</code> &#xC640; <code>PROCINFO[&quot;ppid&quot;]</code> &#xAC12;&#xC774; &#xC0C8;&#xB85C; &#xC124;&#xC815;&#xB418;&#xACE0;
+&#xAC01;&#xC790; &#xB3C5;&#xB9BD;&#xC801;&#xC778; &#xD504;&#xB85C;&#xC138;&#xC2A4; &#xC8FC;&#xC18C; &#xACF5;&#xAC04;&#xC744; &#xAC00;&#xC9C0;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ awk -vOFS=<span class="hljs-string">&apos;\t&apos;</span> <span class="hljs-operator">-f</span> - &lt;&lt;\EOF
+@load <span class="hljs-string">&quot;fork&quot;</span>
+@load <span class="hljs-string">&quot;time&quot;</span>
+BEGIN{ 
+
+    var = <span class="hljs-number">100</span>;
+
+    <span class="hljs-comment"># &#xC5EC;&#xAE30;&#xC11C; &#xC0DD;&#xC131;&#xB418;&#xB294; pid &#xB294; child pid &#xC785;&#xB2C8;&#xB2E4;. parent &#xC5D0;&#xAC8C;&#xB9CC; &#xBCF4;&#xC774;&#xACE0; waitpid(pid) &#xD560;&#xB54C; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</span>
+    <span class="hljs-keyword">if</span> (( pid = fork() ) == <span class="hljs-number">0</span> ) {
+        var += <span class="hljs-number">100</span>                  <span class="hljs-comment"># child</span>
+        <span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;child &quot;</span>
+    } <span class="hljs-keyword">else</span> {
+        sleep(<span class="hljs-number">1</span>)                    <span class="hljs-comment"># parent</span>
+        <span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;parent &quot;</span> 
+    }
+    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;END&quot;</span>, <span class="hljs-string">&quot;pid:&quot;</span>, pid, <span class="hljs-string">&quot;var:&quot;</span>, var
+}
+EOF
+child END       pid:    <span class="hljs-number">0</span>       var:    <span class="hljs-number">200</span>   <span class="hljs-comment"># child &#xC640; parent &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC758; &#xC8FC;&#xC18C; &#xACF5;&#xAC04;&#xC774;</span>
+parent END      pid:    <span class="hljs-number">16643</span>   var:    <span class="hljs-number">100</span>   <span class="hljs-comment"># &#xAC01;&#xAE30; &#xB2E4;&#xB974;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; child &#xAC00; &#xBCC0;&#xACBD;&#xD55C; var</span>
+                                              <span class="hljs-comment"># &#xAC12;&#xC774; parent &#xC5D0; &#xBC18;&#xC601;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+</code></pre>
+<hr>
+<h2 id="filefuncs">filefuncs</h2>
+<p><a href="https://www.gnu.org/software/gawk/manual/html_node/Extension-Sample-File-Functions.html" target="_blank">https://www.gnu.org/software/gawk/manual/html_node/Extension-Sample-File-Functions.html</a></p>
+<ul>
+<li><p><strong>result = chdir(&quot;/some/directory&quot;)</strong><br>&#xD604;&#xC7AC; &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xB97C; &#xBCC0;&#xACBD;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC131;&#xACF5;&#xC2DC; <code>0</code> &#xC774; &#xBC18;&#xD658;&#xB418;&#xACE0;, &#xC624;&#xB958;&#xC2DC;&#xB294; 0 &#xBCF4;&#xB2E4; &#xC791;&#xC740; &#xAC12;&#xACFC; <code>ERRNO</code> &#xAC00; &#xC124;&#xC815;&#xB429;&#xB2C8;&#xB2E4;.</p>
+</li>
+<li><p><strong>result = stat(&quot;/some/file&quot;, array [, follow])</strong><br>&#xD30C;&#xC77C; mode, size, uid, gid, atime, type &#xAC19;&#xC740; &#xC815;&#xBCF4;&#xAC00; array &#xC5D0; &#xC124;&#xC815;&#xB429;&#xB2C8;&#xB2E4;.<br>&#xC131;&#xACF5;&#xC2DC; <code>0</code> &#xC774; &#xBC18;&#xD658;&#xB418;&#xACE0;, &#xC624;&#xB958;&#xC2DC;&#xB294; 0 &#xBCF4;&#xB2E4; &#xC791;&#xC740; &#xAC12;&#xACFC; <code>ERRNO</code> &#xAC00; &#xC124;&#xC815;&#xB429;&#xB2C8;&#xB2E4;.</p>
+</li>
+<li><p><strong>flags = or(FTS_PHYSICAL, ...)</strong></p>
+</li>
+<li><p><strong>result = fts(pathlist, flags, filedata)</strong></p>
+</li>
+</ul>
+<hr>
+<h2 id="readfile">readfile</h2>
+<p><a href="https://www.gnu.org/software/gawk/manual/html_node/Extension-Sample-Readfile.html" target="_blank">https://www.gnu.org/software/gawk/manual/html_node/Extension-Sample-Readfile.html</a></p>
+<ul>
+<li><strong>contents = readfile(&quot;/some/file&quot;)</strong></li>
+</ul>
+<p>&#xC774;&#xAC83;&#xC740; &#xD574;&#xB2F9; &#xD30C;&#xC77C; &#xB0B4;&#xC6A9;&#xC744; RS, FS &#xC0C1;&#xAD00;&#xC5C6;&#xC774; &#xD55C; &#xBC88;&#xC5D0; &#xC77D;&#xC5B4;&#xB4E4;&#xC77C; &#xB54C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xD568;&#xC218;&#xC785;&#xB2C8;&#xB2E4;.
+&#xC2E4;&#xD589;&#xC2DC; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD558;&#xBA74; empty &#xC2A4;&#xD2B8;&#xB9C1;&#xC774; &#xBC18;&#xD658;&#xB418;&#xACE0; <code>ERRNO</code> &#xAC12;&#xC774; &#xC124;&#xC815;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">@load <span class="hljs-string">&quot;readfile&quot;</span>
+...
+contents = readfile(<span class="hljs-string">&quot;/path/to/file&quot;</span>);
+<span class="hljs-keyword">if</span> (contents == <span class="hljs-string">&quot;&quot;</span> &amp;&amp; ERRNO != <span class="hljs-string">&quot;&quot;</span>) {
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;problem reading file&quot;</span>, ERRNO) &gt; <span class="hljs-string">&quot;/dev/stderr&quot;</span>
+    ...
+}
+</code></pre>
+<hr>
+<h2 id="readdir">readdir</h2>
+<p><a href="https://www.gnu.org/software/gawk/manual/html_node/Extension-Sample-Readdir.html" target="_blank">https://www.gnu.org/software/gawk/manual/html_node/Extension-Sample-Readdir.html</a></p>
+<hr>
+<h2 id="ordchr">ordchr</h2>
+<p><a href="https://www.gnu.org/software/gawk/manual/html_node/Extension-Sample-Ord.html" target="_blank">https://www.gnu.org/software/gawk/manual/html_node/Extension-Sample-Ord.html</a></p>
+<ul>
+<li><p><strong>number = ord(character)</strong><br>&#xD574;&#xB2F9; &#xBB38;&#xC790;&#xC758; &#xC22B;&#xC790; &#xAC12;&#xC744; &#xB9AC;&#xD134;&#xD569;&#xB2C8;&#xB2E4;.</p>
+</li>
+<li><p><strong>char = chr(number)</strong><br>&#xD574;&#xB2F9; &#xC22B;&#xC790;&#xC758; &#xBB38;&#xC790; &#xAC12;&#xC744; &#xB9AC;&#xD134;&#xD569;&#xB2C8;&#xB2E4;.</p>
+</li>
+</ul>
+<pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;@load &quot;ordchr&quot;; BEGIN { 
+    printf(&quot;The numeric value of A is %d\n&quot;, ord(&quot;A&quot;))
+    printf(&quot;The string value of 65 is %s\n&quot;, chr(65))
+}&apos;</span> 
+The numeric value of A is <span class="hljs-number">65</span>
+The string value of <span class="hljs-number">65</span> is A
+</code></pre>
+<hr>
+<h2 id="rwarray">rwarray</h2>
+<p><a href="https://www.gnu.org/software/gawk/manual/html_node/Extension-Sample-Read-write-array.html" target="_blank">https://www.gnu.org/software/gawk/manual/html_node/Extension-Sample-Read-write-array.html</a></p>
+<ul>
+<li><p><strong>ret = writea(file, array)</strong><br>&#xC131;&#xACF5;&#xC2DC; <code>1</code>, &#xC624;&#xB958;&#xC2DC; <code>0</code> &#xC744; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
+</li>
+<li><p><strong>ret = reada(file, array)</strong><br>&#xC131;&#xACF5;&#xC2DC; <code>1</code>, &#xC624;&#xB958;&#xC2DC; <code>0</code> &#xC744; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
+</li>
+</ul>
+<p>java &#xC5D0;&#xC11C; object serializing &#xD558;&#xB294; &#xAC83;&#xCC98;&#xB7FC; &#xB2E4;&#xCC28;&#xC6D0; &#xBC30;&#xC5F4; &#xAC12;&#xC744; &#xD30C;&#xC77C;&#xB85C; &#xC800;&#xC7A5;&#xD558;&#xACE0;, &#xB2E4;&#xC2DC; &#xC77D;&#xC5B4;&#xB4E4;&#xC77C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">@load <span class="hljs-string">&quot;rwarray&quot;</span>
+...
+ret = writea(<span class="hljs-string">&quot;arraydump.bin&quot;</span>, array)
+...
+ret = reada(<span class="hljs-string">&quot;arraydump.bin&quot;</span>, array)
+</code></pre>
+<hr>
+<h3 id="the-gawkextlib-project">The gawkextlib Project</h3>
+<p><a href="https://www.gnu.org/software/gawk/manual/html_node/gawkextlib.html" target="_blank">https://www.gnu.org/software/gawk/manual/html_node/gawkextlib.html</a></p>
+<p>&#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xC81C;&#xACF5;&#xB418;&#xB294; &#xD655;&#xC7A5; &#xBAA8;&#xB4C8; &#xC678;&#xC5D0;&#xB3C4; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>The gawkextlib project provides a number of gawk extensions, including one for processing XML files. This is the evolution of the original xgawk (XML gawk) project.</p>
+<ul>
+<li>errno extension</li>
+<li>GD graphics library extension</li>
+<li>PDF extension</li>
+<li>PostgreSQL extension</li>
+<li>MPFR library extension (this provides access to a number of MPFR functions that gawk&#x2019;s native MPFR support does not)</li>
+<li>Redis extension</li>
+<li>XML parser extension, using the Expat XML parsing library</li>
+</ul>
+<hr>
+<h2 id="writing-extensions-for-gawk">Writing Extensions for gawk</h2>
+<p><a href="https://www.gnu.org/software/gawk/manual/html_node/Dynamic-Extensions.html" target="_blank">https://www.gnu.org/software/gawk/manual/html_node/Dynamic-Extensions.html</a></p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./builtin/type.html" class="navigation navigation-prev " aria-label="Previous page: Type Functions"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="./example.html" class="navigation navigation-next " aria-label="Next page: 예제"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/app.js"></script>
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

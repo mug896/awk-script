@@ -1,0 +1,1034 @@
+<!DOCTYPE HTML>
+<html lang="ko" >
+    
+    <head>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-161001174-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-161001174-3');
+</script>
+
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Time Functions | Introduction</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../builtin/bitwise.html" />
+    
+    
+    <link rel="prev" href="../builtin/io.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="12.4"
+        data-chapter-title="Time Functions"
+        data-filepath="builtin/time.md"
+        data-basepath=".."
+
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="bug_reports.html">
+            
+                
+                    <a href="../bug_reports.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Bug reports
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="basics.html">
+            
+                
+                    <a href="../basics.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Basics
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="data_types.html">
+            
+                
+                    <a href="../data_types.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        Data Types
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="variables.html">
+            
+                
+                    <a href="../variables.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Variables
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="regexp.html">
+            
+                
+                    <a href="../regexp.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        Regexp
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="functions.html">
+            
+                
+                    <a href="../functions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        Functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="escape_sequences.html">
+            
+                
+                    <a href="../escape_sequences.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        Escape sequences
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="begin_end.html">
+            
+                
+                    <a href="../begin_end.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.6.</b>
+                        
+                        BEGIN, END
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="builtin_variables.html">
+            
+                
+                    <a href="../builtin_variables.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Built-in Variables
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="record_sep.html">
+            
+                
+                    <a href="../record_sep.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Record 분리
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="field_sep.html">
+            
+                
+                    <a href="../field_sep.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        Field 분리
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="zero_one.html">
+            
+                
+                    <a href="../zero_one.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        $0=$0, $1=$1
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="redirection.html">
+            
+                
+                    <a href="../redirection.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        Redirection
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="getline.html">
+            
+                
+                    <a href="../getline.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        getline
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9" data-path="arrays.html">
+            
+                
+                    <a href="../arrays.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                        Arrays
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.1" data-path="sort.html">
+            
+                
+                    <a href="../sort.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.1.</b>
+                        
+                        Sort
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="GROUP_BY.html">
+            
+                
+                    <a href="../GROUP_BY.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.2.</b>
+                        
+                        GROUP BY
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="JOIN.html">
+            
+                
+                    <a href="../JOIN.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.3.</b>
+                        
+                        JOIN
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.4" data-path="subquery.html">
+            
+                
+                    <a href="../subquery.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.4.</b>
+                        
+                        Subquery
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.5" data-path="index2.html">
+            
+                
+                    <a href="../index2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.5.</b>
+                        
+                        Index
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="10" data-path="control_statements.html">
+            
+                
+                    <a href="../control_statements.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                        Control Statements
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11" data-path="operators.html">
+            
+                
+                    <a href="../operators.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.</b>
+                        
+                        Operators
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12" data-path="builtin_functions.html">
+            
+                
+                    <a href="../builtin_functions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.</b>
+                        
+                        Built-in Functions
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="12.1" data-path="builtin/numeric.html">
+            
+                
+                    <a href="../builtin/numeric.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.1.</b>
+                        
+                        Numeric Functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.2" data-path="builtin/string.html">
+            
+                
+                    <a href="../builtin/string.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.2.</b>
+                        
+                        String Functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.3" data-path="builtin/io.html">
+            
+                
+                    <a href="../builtin/io.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.3.</b>
+                        
+                        I/O Functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="12.4" data-path="builtin/time.html">
+            
+                
+                    <a href="../builtin/time.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.4.</b>
+                        
+                        Time Functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.5" data-path="builtin/bitwise.html">
+            
+                
+                    <a href="../builtin/bitwise.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.5.</b>
+                        
+                        Bitwise Functions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.6" data-path="builtin/type.html">
+            
+                
+                    <a href="../builtin/type.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.6.</b>
+                        
+                        Type Functions
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="13" data-path="extensions.html">
+            
+                
+                    <a href="../extensions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.</b>
+                        
+                        Dynamic Extensions
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="13.1" data-path="example.html">
+            
+                
+                    <a href="../example.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.1.</b>
+                        
+                        예제
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="14" data-path="tcp_ip.html">
+            
+                
+                    <a href="../tcp_ip.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.</b>
+                        
+                        TCP/IP Internetworking
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="15" data-path="command_line_options.html">
+            
+                
+                    <a href="../command_line_options.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.</b>
+                        
+                        Command-line options
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="16" data-path="debugging.html">
+            
+                
+                    <a href="../debugging.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>16.</b>
+                        
+                        Debugging
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="17" data-path="tips.html">
+            
+                
+                    <a href="../tips.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>17.</b>
+                        
+                        Tips
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="18" data-path="closing.html">
+            
+                
+                    <a href="../closing.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>18.</b>
+                        
+                        맺음말
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Introduction</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h2 id="time-functions">Time functions</h2>
+<h4 id="systime--">systime ( )</h4>
+<p>1970-01-01 00:00:00 UTC (system epoch) &#xB85C;&#xBD80;&#xD130; &#xD604;&#xC7AC;&#xAE4C;&#xC9C0;&#xC758; &#xC2DC;&#xAC04;&#xC744; &#xCD08; &#xB2E8;&#xC704;&#xB85C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.<br>&#xC774; &#xAC12;&#xC740; strftime &#xD568;&#xC218;&#xC758; &#xC778;&#xC218;&#xB85C; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;BEGIN { print systime() }&apos;</span> 
+<span class="hljs-number">1524693474</span>
+</code></pre>
+<h4 id="mktime--datespec-">mktime ( <em>datespec</em> )</h4>
+<p>systime &#xD568;&#xC218;&#xC640; &#xAC19;&#xC774; system epoch &#xB85C;&#xBD80;&#xD130;&#xC758; &#xC2DC;&#xAC04;&#xC744; &#xCD08; &#xB2E8;&#xC704;&#xB85C; &#xBC18;&#xD658;&#xD558;&#xB294;&#xB370;
+&#xCC28;&#xC774;&#xC810;&#xC740; <em>datespec</em> &#xC778;&#xC218;&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xC5EC; &#xD2B9;&#xC815;&#xC77C;&#xC758; &#xC2DC;&#xAC04;&#xC744; &#xC9C0;&#xC815;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<blockquote>
+<p>&quot;YYYY MM DD HH MM SS&quot;</p>
+</blockquote>
+<p><code>&#xB144;</code>(YYYY) 4&#xC790;&#xB9AC;, <code>&#xC6D4;</code>(MM) from 1 to 12, <code>&#xC77C;</code>(DD) from 1 to 31,<br><code>&#xC2DC;</code>(HH) from 0 to 23, <code>&#xBD84;</code>(MM) from 0 to 59, <code>&#xCD08;</code>(SS) from 0 to 60</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># system epoch &#xB85C;&#xBD80;&#xD130; 2015&#xB144; 6&#xC6D4; 7&#xC77C; 8&#xC2DC; 9&#xBD84; 10&#xCD08; &#xAE4C;&#xC9C0;&#xC758; &#xC2DC;&#xAC04;</span>
+$ awk <span class="hljs-string">&apos;BEGIN { 
+    print mktime(&quot;2015 6 7 8 9 10&quot;) 
+    print mktime(&quot;2015 06 07 08 09 10&quot;) 
+}&apos;</span> 
+<span class="hljs-number">1433632150</span>
+<span class="hljs-number">1433632150</span>  <span class="hljs-comment"># &#xAC19;&#xC740; &#xAC12;</span>
+......................................
+
+<span class="hljs-comment"># &apos;0&apos; &#xC77C;&#xC740; &#xC804;&#xB2EC; &#xB9C8;&#xC9C0;&#xB9C9; &#xC77C;&#xC774; &#xB429;&#xB2C8;&#xB2E4;. ( 2 &#xC6D4;&#xC774; 28 &#xC77C;&#xAE4C;&#xC9C0; &#xC778;&#xAC83;&#xC744; &#xC54C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4; )</span>
+$ awk <span class="hljs-string">&apos;BEGIN{ print strftime(&quot;%Y-%m-%d %H:%M:%S&quot;, mktime(&quot;2017 3 0 0 0 0&quot;)) }&apos;</span>
+<span class="hljs-number">2017</span>-<span class="hljs-number">02</span>-<span class="hljs-number">28</span> <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span>
+
+<span class="hljs-comment"># &#xC74C;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+$ awk <span class="hljs-string">&apos;BEGIN{ print strftime(&quot;%Y-%m-%d %H:%M:%S&quot;, mktime(&quot;2017 3 -1 0 0 0&quot;)) }&apos;</span>
+<span class="hljs-number">2017</span>-<span class="hljs-number">02</span>-<span class="hljs-number">27</span> <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span>
+</code></pre>
+<p>&#xC2DC;&#xAC04; &#xCC28;&#xC774; &#xAD6C;&#xD558;&#xAE30;</p>
+<blockquote>
+<p>1 &#xBD84;&#xC740; 60 &#xCD08;, 1 &#xC2DC;&#xAC04;&#xC740; 3600 &#xCD08;, 1 &#xC77C;&#xC740; 86400 &#xCD08; &#xC774;&#xBBC0;&#xB85C;</p>
+</blockquote>
+<pre><code class="lang-bash"><span class="hljs-comment"># 2017&#xB144; 06&#xC6D4; 07&#xC77C; 08&#xC2DC; 09&#xBD84; 10&#xCD08; &#xB85C;&#xBD80;&#xD130; &#xD604;&#xC7AC;&#xAE4C;&#xC9C0;&#xC758; &#xC2DC;&#xAC04; &#xCC28;&#xC774;</span>
+$ awk <span class="hljs-string">&apos;BEGIN { print timediff( systime() - mktime(&quot;2017 6 7 8 9 10&quot;)) }
+function timediff( d ) {
+   return int( d / 86400 ) &quot; &#xC77C; &quot;             \
+   int(( d % 86400 ) / 3600 ) &quot; &#xC2DC;&#xAC04; &quot;        \
+   int((( d % 86400 ) % 3600 ) / 60 ) &quot; &#xBD84; &quot;  \
+   int((( d % 86400 ) % 3600 ) % 60 ) &quot; &#xCD08; &quot; 
+}&apos;</span> 
+<span class="hljs-number">323</span> &#xC77C; <span class="hljs-number">2</span> &#xC2DC;&#xAC04; <span class="hljs-number">37</span> &#xBD84; <span class="hljs-number">40</span> &#xCD08;
+</code></pre>
+<h4 id="strftime---format--timestamp--utcflag----">strftime ( [ <em>format</em> [, <em>timestamp</em> [, <em>utc-flag</em> ] ] ] )</h4>
+<p>strftime &#xD568;&#xC218;&#xB294; &#xD3EC;&#xBA67; &#xC2A4;&#xD2B8;&#xB9C1;&#xC744; &#xC774;&#xC6A9;&#xD574; &#xC6D0;&#xD558;&#xB294; &#xD615;&#xC2DD;&#xC758; &#xC2DC;&#xAC04;&#xC744; &#xCD9C;&#xB825;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+systime, mktime &#xD568;&#xC218;&#xB85C;&#xBD80;&#xD130; <em>timestamp</em> &#xAC12;&#xC744; &#xC785;&#xB825;&#xBC1B;&#xC544; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xACE0;,
+<em>utc-flag</em> &#xAC12;&#xC774; non-null &#xC774;&#xBA74; UTC &#xAC12;&#xC774; &#xC801;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<blockquote>
+<p>UTC (Coordinated Universal Time, formerly GMT or Greenwich Mean Time).</p>
+</blockquote>
+<pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;BEGIN { print strftime() }&apos;</span> 
+Thu Apr <span class="hljs-number">26</span> <span class="hljs-number">07</span>:<span class="hljs-number">07</span>:<span class="hljs-number">05</span> KST <span class="hljs-number">2018</span>
+
+$ awk <span class="hljs-string">&apos;BEGIN { 
+    print strftime(&quot;%Y/%m/%d %H:%M:%S&quot;)
+    print strftime(&quot;%Y/%m/%d %H:%M:%S&quot;, systime())
+    print strftime(&quot;%Y/%m/%d %H:%M:%S&quot;, systime(), 1)   # UTC
+}&apos;</span>
+<span class="hljs-number">2018</span>/<span class="hljs-number">04</span>/<span class="hljs-number">26</span> <span class="hljs-number">07</span>:<span class="hljs-number">03</span>:<span class="hljs-number">37</span>
+<span class="hljs-number">2018</span>/<span class="hljs-number">04</span>/<span class="hljs-number">26</span> <span class="hljs-number">07</span>:<span class="hljs-number">03</span>:<span class="hljs-number">37</span>
+<span class="hljs-number">2018</span>/<span class="hljs-number">04</span>/<span class="hljs-number">25</span> <span class="hljs-number">22</span>:<span class="hljs-number">03</span>:<span class="hljs-number">37</span>   <span class="hljs-comment"># UTC</span>
+.............................................................
+
+$ awk <span class="hljs-string">&apos;BEGIN { 
+    print strftime(&quot;%Y/%m/%d %H:%M:%S&quot;, mktime(&quot;2015 6 7 8 9 10&quot;))
+    print strftime(&quot;%Y/%m/%d %H:%M:%S&quot;, mktime(&quot;2015 6 7 8 9 10&quot;), 1)  # UTC
+}&apos;</span>
+<span class="hljs-number">2015</span>/<span class="hljs-number">06</span>/<span class="hljs-number">07</span> <span class="hljs-number">08</span>:<span class="hljs-number">09</span>:<span class="hljs-number">10</span>
+<span class="hljs-number">2015</span>/<span class="hljs-number">06</span>/<span class="hljs-number">06</span> <span class="hljs-number">23</span>:<span class="hljs-number">09</span>:<span class="hljs-number">10</span>   <span class="hljs-comment"># UTC</span>
+</code></pre>
+<h4 id="format-specifications--descriptions">Format specifications &amp; Descriptions</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Spc</th>
+<th>Description</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>%a</strong></td>
+<td>The locale&#x2019;s abbreviated weekday name.</td>
+<td>Thu</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>%A</strong></td>
+<td>The locale&#x2019;s full weekday name.</td>
+<td>Thursday</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>%b</strong></td>
+<td>The locale&#x2019;s abbreviated month name.</td>
+<td>Apr</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>%B</strong></td>
+<td>The locale&#x2019;s full month name.</td>
+<td>April</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>%c</strong></td>
+<td>The locale&#x2019;s &#x201C;appropriate&#x201D; date and time representation.<br>(This is &#x2018;%A %B %d %T %Y&#x2019; in the &quot;C&quot; locale.)</td>
+<td>Thu 26 Apr 2018 09:36:07 AM KST</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>%C</strong></td>
+<td>The century part of the current year. This is the year divided by 100 and truncated to the next lower integer.</td>
+<td>20</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>%d</strong></td>
+<td>The day of the month as a decimal number (01&#x2013;31).</td>
+<td>26</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>%D</strong></td>
+<td>Equivalent to specifying &#x2018;%m/%d/%y&#x2019;.</td>
+<td>04/26/18</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>%e</strong></td>
+<td>The day of the month, padded with a space if it is only one digit.</td>
+<td>26</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>%F</strong></td>
+<td>Equivalent to specifying &#x2018;%Y-%m-%d&#x2019;. This is the ISO 8601 date format.</td>
+<td>2018-04-26</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>%g</strong></td>
+<td>The year modulo 100 of the ISO 8601 week number, as a decimal number (00&#x2013;99). For example, January 1, 2012, is in week 53 of 2011. Thus, the year of its ISO 8601 week number is 2011, even though its year is 2012. Similarly, December 31, 2012, is in week 1 of 2013. Thus, the year of its ISO week number is 2013, even though its year is 2012.</td>
+<td>18</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>%G</strong></td>
+<td>The full year of the ISO week number, as a decimal number.</td>
+<td>2018</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>%h</strong></td>
+<td>Equivalent to &#x2018;%b&#x2019;.</td>
+<td>Apr</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>%H</strong></td>
+<td>The hour (24-hour clock) as a decimal number (00&#x2013;23).</td>
+<td>21</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>%I</strong></td>
+<td>The hour (12-hour clock) as a decimal number (01&#x2013;12).</td>
+<td>09</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>%j</strong></td>
+<td>The day of the year as a decimal number (001&#x2013;366).</td>
+<td>116</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>%m</strong></td>
+<td>The month as a decimal number (01&#x2013;12).</td>
+<td>04</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>%M</strong></td>
+<td>The minute as a decimal number (00&#x2013;59).</td>
+<td>40</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>%n</strong></td>
+<td>A newline character (ASCII LF).</td>
+<td>(newline)</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>%p</strong></td>
+<td>The locale&#x2019;s equivalent of the AM/PM designations associated with a 12-hour clock.</td>
+<td>AM</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>%r</strong></td>
+<td>The locale&#x2019;s 12-hour clock time.<br>(This is &#x2018;%I:%M:%S %p&#x2019; in the &quot;C&quot; locale.)</td>
+<td>09:42:13 AM</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>%R</strong></td>
+<td>Equivalent to specifying &#x2018;%H:%M&#x2019;.</td>
+<td>09:42</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>%S</strong></td>
+<td>The second as a decimal number (00&#x2013;60).</td>
+<td>47</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>%t</strong></td>
+<td>A TAB character.</td>
+<td>(tab)</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>%T</strong></td>
+<td>Equivalent to specifying &#x2018;%H:%M:%S&#x2019;.</td>
+<td>09:43:04</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>%u</strong></td>
+<td>The weekday as a decimal number (1&#x2013;7). Monday is day one.</td>
+<td>4</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>%U</strong></td>
+<td>The week number of the year (with the first Sunday as the first day of week one) as a decimal number (00&#x2013;53).</td>
+<td>16</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>%V</strong></td>
+<td>The week number of the year (with the first Monday as the first day of week one) as a decimal number (01&#x2013;53). The method for determining the week number is as specified by ISO 8601. (To wit: if the week containing January 1 has four or more days in the new year, then it is week one; otherwise it is the last week [52 or 53] of the previous year and the next week is week one.)</td>
+<td>17</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>%w</strong></td>
+<td>The weekday as a decimal number (0&#x2013;6). Sunday is day zero.</td>
+<td>4</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>%W</strong></td>
+<td>The week number of the year (with the first Monday as the first day of week one) as a decimal number (00&#x2013;53).</td>
+<td>17</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>%x</strong></td>
+<td>The locale&#x2019;s &#x201C;appropriate&#x201D; date representation.<br>(This is &#x2018;%A %B %d %Y&#x2019; in the &quot;C&quot; locale.)</td>
+<td>04/26/2018</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>%X</strong></td>
+<td>The locale&#x2019;s &#x201C;appropriate&#x201D; time representation.<br>(This is &#x2018;%T&#x2019; in the &quot;C&quot; locale.)</td>
+<td>09:44:32 AM</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>%y</strong></td>
+<td>The year modulo 100 as a decimal number (00&#x2013;99).</td>
+<td>18</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>%Y</strong></td>
+<td>The full year as a decimal number (e.g., 2015).</td>
+<td>2018</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>%z</strong></td>
+<td>The time zone offset in a &#x2018;+HHMM&#x2019; format <br>(e.g., the format necessary to produce RFC 822/RFC 1036 date headers).</td>
+<td>+0900</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>%Z</strong></td>
+<td>The time zone name or abbreviation; no characters if no time zone is determinable.</td>
+<td>KST</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>%%</strong></td>
+<td>A literal &#x2018;%&#x2019;.</td>
+<td>%</td>
+</tr>
+</tbody>
+</table>
+<p>For systems that are not yet fully standards-compliant, gawk supplies a copy of strftime() from the GNU C Library. It supports all of the just-listed format specifications. If that version is used to compile gawk (see Installation), then the following additional format specifications are available:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Spc</th>
+<th>Description</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>%k</strong></td>
+<td>The hour (24-hour clock) as a decimal number (0&#x2013;23). <br>Single-digit numbers are padded with a space.</td>
+<td>(space)7</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>%l</strong></td>
+<td>The hour (12-hour clock) as a decimal number (1&#x2013;12). <br>Single-digit numbers are padded with a space.</td>
+<td>(space)8</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>%s</strong></td>
+<td>The time as a decimal timestamp in seconds since the epoch.</td>
+<td>1524704904</td>
+</tr>
+</tbody>
+</table>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../builtin/io.html" class="navigation navigation-prev " aria-label="Previous page: I/O Functions"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../builtin/bitwise.html" class="navigation navigation-next " aria-label="Next page: Bitwise Functions"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
