@@ -878,7 +878,6 @@ END { PROCINFO[&quot;sorted_in&quot;]=&quot;@val_num_desc&quot;; for (i in a) pr
 <span class="hljs-number">3111</span> pop
 . . .
 . . .
-
 <span class="hljs-comment"># /bin &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xC5D0; &#xC788;&#xB294; &#xBAA8;&#xB4E0; &#xC2E4;&#xD589;&#xD30C;&#xC77C; &#xD1B5;&#xACC4;</span>
 $ find /bin -type f -exec <span class="hljs-built_in">stat</span> -c <span class="hljs-string">&apos;%i %n&apos;</span> {} + |
     awk <span class="hljs-string">&apos;!($1 in a) { a[$1]; print $2 }&apos;</span> |
