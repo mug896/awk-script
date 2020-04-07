@@ -863,38 +863,41 @@ $ objdump <span class="hljs-operator">-d</span> /usr/lib/firefox/firefox | cat -
     <span class="hljs-number">3663</span>:^I48 <span class="hljs-number">85</span> c0             ^I<span class="hljs-built_in">test</span>   %rax,%rax
 
 $ objdump <span class="hljs-operator">-d</span> /usr/lib/firefox/firefox |
-awk -F<span class="hljs-string">&apos;\t&apos;</span> <span class="hljs-string">&apos;$3 { FS=&quot; &quot;; $0=$3; print $1; FS=&quot;\t&quot; }&apos;</span> |
-sort | uniq -c | sort -rn
+awk -F<span class="hljs-string">&apos;\t&apos;</span> <span class="hljs-string">&apos;$3 { FS=&quot; &quot;; $0=$3; a[$1]++; FS=&quot;\t&quot; } \
+END { PROCINFO[&quot;sorted_in&quot;]=&quot;@val_num_desc&quot;; for (i in a) print a[i], i}&apos;</span>
 
-   <span class="hljs-number">9893</span> mov
-   <span class="hljs-number">2091</span> cmp
-   <span class="hljs-number">1998</span> lea
-   <span class="hljs-number">1821</span> add
-   <span class="hljs-number">1193</span> xor
-   <span class="hljs-number">1160</span> jmpq
-   <span class="hljs-number">1137</span> je
-   <span class="hljs-number">1098</span> callq
-   <span class="hljs-number">1070</span> sub
-   <span class="hljs-number">1031</span> <span class="hljs-built_in">test</span>
-   . . .
-   . . .
-----------------------------------------------------------
+<span class="hljs-number">36719</span> mov
+<span class="hljs-number">9057</span> lea
+<span class="hljs-number">8570</span> add
+<span class="hljs-number">8130</span> cmp
+<span class="hljs-number">5730</span> callq
+<span class="hljs-number">5350</span> je
+<span class="hljs-number">4381</span> <span class="hljs-built_in">test</span>
+<span class="hljs-number">4365</span> xor
+<span class="hljs-number">3448</span> jne
+<span class="hljs-number">3111</span> pop
+. . .
+. . .
 
 <span class="hljs-comment"># /bin &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xC5D0; &#xC788;&#xB294; &#xBAA8;&#xB4E0; &#xC2E4;&#xD589;&#xD30C;&#xC77C; &#xD1B5;&#xACC4;</span>
-$ <span class="hljs-keyword">for</span> file <span class="hljs-keyword">in</span> `find /bin/* -type f`; <span class="hljs-keyword">do</span>     
-     <span class="hljs-keyword">if</span> [ <span class="hljs-string">&quot;<span class="hljs-variable">$(file -b --mime-encoding &quot;$file&quot;)</span>&quot;</span> = binary ]; <span class="hljs-keyword">then</span> 
-         objdump <span class="hljs-operator">-d</span> <span class="hljs-string">&quot;<span class="hljs-variable">$file</span>&quot;</span> | awk -F<span class="hljs-string">&apos;\t&apos;</span> <span class="hljs-string">&apos;$3 { FS=&quot; &quot;; $0=$3; print $1; FS=&quot;\t&quot; }&apos;</span>
-     <span class="hljs-keyword">fi</span>
-<span class="hljs-keyword">done</span> | sort | uniq -c | sort -rn
+$ find /bin -type f -exec <span class="hljs-built_in">stat</span> -c <span class="hljs-string">&apos;%i %n&apos;</span> {} + |
+    awk <span class="hljs-string">&apos;!($1 in a) { a[$1]; print $2 }&apos;</span> |
+    xargs objdump <span class="hljs-operator">-d</span> <span class="hljs-number">2</span>&gt; /dev/null |
+    awk -F<span class="hljs-string">&apos;\t&apos;</span> <span class="hljs-string">&apos;$3 { FS=&quot; &quot;; $0=$3; a[$1]++; FS=&quot;\t&quot; } \
+    END { PROCINFO[&quot;sorted_in&quot;]=&quot;@val_num_desc&quot;; for (i in a) print a[i], i}&apos;</span>
 
- <span class="hljs-number">473119</span> mov
- <span class="hljs-number">125107</span> callq
- <span class="hljs-number">106862</span> lea
-  <span class="hljs-number">80890</span> <span class="hljs-built_in">test</span>
-  <span class="hljs-number">80586</span> je
-  <span class="hljs-number">70953</span> xor
-  . . .
-  . . .
+<span class="hljs-number">702355</span> mov
+<span class="hljs-number">187434</span> callq
+<span class="hljs-number">166436</span> lea
+<span class="hljs-number">115877</span> <span class="hljs-built_in">test</span>
+<span class="hljs-number">109900</span> je
+<span class="hljs-number">106160</span> xor
+<span class="hljs-number">84808</span> pop
+<span class="hljs-number">83070</span> cmp
+<span class="hljs-number">76116</span> push
+<span class="hljs-number">75223</span> jne
+. . .
+. . .
 </code></pre>
 <h4 id="&#xD544;&#xB4DC;-range-&#xCD94;&#xCD9C;&#xACFC;-&#xC0AD;&#xC81C;">&#xD544;&#xB4DC; range &#xCD94;&#xCD9C;&#xACFC; &#xC0AD;&#xC81C;</h4>
 <p><a href="field_sep.html#range">Field &#xBD84;&#xB9AC;</a> &#xBA54;&#xB274;&#xC5D0;&#xC11C; &#xC791;&#xC131;&#xD55C; &#xD568;&#xC218;&#xC758; &#xACBD;&#xC6B0;&#xB294; &#xB808;&#xCF54;&#xB4DC;($0), &#xD544;&#xB4DC; &#xBCC0;&#xC218;&#xAC12; ($1,$2,$3 ... NF)
