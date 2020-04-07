@@ -864,7 +864,7 @@ $ objdump <span class="hljs-operator">-d</span> /usr/lib/firefox/firefox | cat -
 
 $ objdump <span class="hljs-operator">-d</span> /usr/lib/firefox/firefox |
 awk -F<span class="hljs-string">&apos;\t&apos;</span> <span class="hljs-string">&apos;$3 { FS=&quot; &quot;; $0=$3; a[$1]++; FS=&quot;\t&quot; } \
-END { PROCINFO[&quot;sorted_in&quot;]=&quot;@val_num_desc&quot;; for (i in a) print a[i], i}&apos;</span>
+END { for (i in a) print a[i], i}&apos;</span> | sort -rn
 
 <span class="hljs-number">36719</span> mov
 <span class="hljs-number">9057</span> lea
@@ -883,7 +883,7 @@ $ find /bin -type f -exec <span class="hljs-built_in">stat</span> -c <span class
     awk <span class="hljs-string">&apos;!($1 in a) { a[$1]; print $2 }&apos;</span> |
     xargs objdump <span class="hljs-operator">-d</span> <span class="hljs-number">2</span>&gt; /dev/null |
     awk -F<span class="hljs-string">&apos;\t&apos;</span> <span class="hljs-string">&apos;$3 { FS=&quot; &quot;; $0=$3; a[$1]++; FS=&quot;\t&quot; } \
-    END { PROCINFO[&quot;sorted_in&quot;]=&quot;@val_num_desc&quot;; for (i in a) print a[i], i}&apos;</span>
+    END { for (i in a) print a[i], i}&apos;</span> | sort -rn
 
 <span class="hljs-number">702355</span> mov
 <span class="hljs-number">187434</span> callq
