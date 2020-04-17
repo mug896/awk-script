@@ -739,7 +739,7 @@ DDD
 </code></pre>
 <p>&#xB0B1;&#xB9D0; &#xCD9C;&#xD604; &#xBE48;&#xB3C4; &#xACC4;&#xC0B0; &#xD6C4; &#xC815;&#xB82C;&#xD558;&#xAE30;</p>
 <pre><code class="lang-bash"><span class="hljs-comment"># &apos;.&apos; &#xC640; &apos;,&apos; &#xBB38;&#xC790;&#xAC00; &#xB0B1;&#xB9D0;&#xC5D0; &#xD3EC;&#xD568;&#xB418;&#xB294; &#xAC83;&#xC744; &#xBC29;&#xC9C0;&#xD558;&#xAE30; &#xC704;&#xD574; RS &#xB85C; &#xC124;&#xC815;</span>
-$ LANG=ko_KR.UTF-<span class="hljs-number">8</span> awk <span class="hljs-operator">-f</span> - &lt;&lt;\EOF RS=<span class="hljs-string">&apos;\\.|,&apos;</span> song.txt
+$ LANG=ko_KR.utf8 awk <span class="hljs-operator">-f</span> - &lt;&lt;\EOF RS=<span class="hljs-string">&apos;\\.|,&apos;</span> song.txt
 {                                            
     <span class="hljs-keyword">for</span> (i=<span class="hljs-number">1</span>; i&lt;=NF; i++)                    
         words[<span class="hljs-variable">$i</span>]++                          
