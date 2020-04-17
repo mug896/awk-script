@@ -749,7 +749,7 @@ END {
     <span class="hljs-keyword">for</span> (i <span class="hljs-keyword">in</span> words)                         
         <span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;%s %s\n&quot;</span>,  i, words[i]       
  }                                           
-<span class="hljs-comment"># &#xC774; &#xBE44;&#xAD50; &#xD568;&#xC218;&#xB294; awk &#xBA85;&#xB839; &#xCD9C;&#xB825;&#xC744; &quot;| LANG=C sort -k2,2r -k1,1&quot; &#xD55C; &#xAC83;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+<span class="hljs-comment"># &#xC774; &#xBE44;&#xAD50; &#xD568;&#xC218;&#xB294; awk &#xBA85;&#xB839; &#xCD9C;&#xB825;&#xC744; &quot;| LC_ALL=C sort -k2,2r -k1,1&quot; &#xD55C; &#xAC83;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
 <span class="hljs-comment"># ORDER BY count DESC, word ASC</span>
 <span class="hljs-keyword">function</span> compare(i1, v1, i2, v2)
 {                              
