@@ -750,6 +750,24 @@ arbitrary-precision arithmetic ( &#xB610;&#xB294; bignum arithmetic, multiple pr
 <blockquote>
 <p>&#xC5F0;&#xC0B0; &#xACB0;&#xACFC; &#xAC12;&#xC774; 53 bits &#xB97C; &#xB118;&#xC744; &#xACBD;&#xC6B0; &#xC774; &#xC635;&#xC158;&#xC744; &#xC124;&#xC815;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 </blockquote>
+<pre><code class="lang-bash"><span class="hljs-comment"># 72057594037927935 (0xFFFFFFFFFFFFFF) &#xB294; 57 bits &#xAC12;</span>
+
+$ awk <span class="hljs-string">&apos;BEGIN { print 72057594037927935 + 1}&apos;</span>
+<span class="hljs-number">72057594037927936</span>
+
+$ awk <span class="hljs-string">&apos;BEGIN { print 72057594037927935 + 2}&apos;</span>
+<span class="hljs-number">72057594037927936</span>
+
+$ awk <span class="hljs-string">&apos;BEGIN { print 72057594037927935 + 3}&apos;</span>
+<span class="hljs-number">72057594037927936</span>
+
+$ awk <span class="hljs-string">&apos;BEGIN { print 72057594037927935 + 4}&apos;</span>
+<span class="hljs-number">72057594037927936</span>
+
+<span class="hljs-comment"># &apos;-M&apos; &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xC815;&#xD655;&#xD55C; &#xAC12;&#xC774; &#xCD9C;&#xB825;&#xB41C;&#xB2E4;.</span>
+$ awk -M <span class="hljs-string">&apos;BEGIN { print 72057594037927935 + 4}&apos;</span>
+<span class="hljs-number">72057594037927939</span>
+</code></pre>
 <h4 id="n-uselcnumeric">-N, --use-lc-numeric</h4>
 <p>locale &#xC5D0; &#xB530;&#xB77C;&#xC11C; decimal and thousands separators &#xBB38;&#xC790;&#xAC00; &#xB2E4;&#xB97C; &#xC218; &#xC788;&#xB294;&#xB370; &#xC774; &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBA74;
 &#xC22B;&#xC790; &#xB370;&#xC774;&#xD130;&#xB97C; locale &#xC5D0; &#xB530;&#xB77C; &#xD574;&#xC11D;&#xD558;&#xC5EC; &#xC77D;&#xC5B4; &#xB4E4;&#xC785;&#xB2C8;&#xB2E4;.</p>
