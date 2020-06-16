@@ -768,6 +768,23 @@ $ awk <span class="hljs-string">&apos;BEGIN { print 72057594037927935 + 4}&apos;
 $ awk -M <span class="hljs-string">&apos;BEGIN { print 72057594037927935 + 4}&apos;</span>
 <span class="hljs-number">72057594037927939</span>
 </code></pre>
+<p>factorial 100 &#xACC4;&#xC0B0; &#xACB0;&#xACFC;&#xB294; <code>-M</code> &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xAC12;&#xC774; &#xC815;&#xD655;&#xD574;&#xC9C4;&#xB2E4;.</p>
+<pre><code class="lang-bash">awk <span class="hljs-string">&apos;BEGIN { print fac(100) } 
+function fac(n,    accum) { 
+    accum = 1
+    while ( n &gt;= 2) accum *= n--
+    return accum
+}&apos;</span> 
+<span class="hljs-number">9332621544394417535430725413964319024712932813229586249193</span>...........
+
+$ awk -M <span class="hljs-string">&apos;BEGIN { print fac(100) }         # -M &#xC635;&#xC158; &#xC0AC;&#xC6A9;
+function fac(n,    accum) { 
+    accum = 1
+    while ( n &gt;= 2) accum *= n--
+    return accum
+}&apos;</span> 
+<span class="hljs-number">9332621544394415268169923885626670049071596826438162146859</span>..........
+</code></pre>
 <p>10,000 &#xBC88;&#xC9F8; &#xD53C;&#xBCF4;&#xB098;&#xCE58;&#xC218; &#xAD6C;&#xD558;&#xAE30;</p>
 <pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;BEGIN { print fibo(10000,1,0) } 
 function fibo(n, p, pp) { 
@@ -777,7 +794,7 @@ function fibo(n, p, pp) {
         return fibo(n - 1, p + pp, p) 
     }
 }&apos;</span> 
-+inf
++inf                                             <span class="hljs-comment"># +inf</span>
 
 $ awk -M <span class="hljs-string">&apos;BEGIN { print fibo(10000,1,0) }        # -M &#xC635;&#xC158; &#xC0AC;&#xC6A9;
 function fibo(n, p, pp) { 
