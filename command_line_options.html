@@ -772,7 +772,7 @@ $ awk -M <span class="hljs-string">&apos;BEGIN { print 72057594037927935 + 4}&ap
 <pre><code class="lang-bash">awk <span class="hljs-string">&apos;BEGIN { print fac(100) } 
 function fac(n,    accum) { 
     accum = 1
-    while ( n &gt;= 2) accum *= n--
+    while (n &gt;= 2) accum *= n--
     return accum
 }&apos;</span> 
 <span class="hljs-number">9332621544394417535430725413964319024712932813229586249193</span>...........
@@ -780,7 +780,7 @@ function fac(n,    accum) {
 $ awk -M <span class="hljs-string">&apos;BEGIN { print fac(100) }         # -M &#xC635;&#xC158; &#xC0AC;&#xC6A9;
 function fac(n,    accum) { 
     accum = 1
-    while ( n &gt;= 2) accum *= n--
+    while (n &gt;= 2) accum *= n--
     return accum
 }&apos;</span> 
 <span class="hljs-number">9332621544394415268169923885626670049071596826438162146859</span>..........
