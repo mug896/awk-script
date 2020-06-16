@@ -768,6 +768,27 @@ $ awk <span class="hljs-string">&apos;BEGIN { print 72057594037927935 + 4}&apos;
 $ awk -M <span class="hljs-string">&apos;BEGIN { print 72057594037927935 + 4}&apos;</span>
 <span class="hljs-number">72057594037927939</span>
 </code></pre>
+<p>10000 &#xBC88;&#xC9F8; &#xD53C;&#xBCF4;&#xB098;&#xCE58;&#xC218; &#xAD6C;&#xD558;&#xAE30;</p>
+<pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;BEGIN { print fibo(10000,1,0) } 
+function fibo(n, p, pp) { 
+    if (n &lt; 2) { 
+        return n * p
+    } else { 
+        return fibo(n - 1, p + pp, p) 
+    }
+}&apos;</span> 
++inf
+
+$ awk -M <span class="hljs-string">&apos;BEGIN { print fibo(10000,1,0) }        # -M &#xC635;&#xC158; &#xC0AC;&#xC6A9;
+function fibo(n, p, pp) { 
+    if (n &lt; 2) { 
+        return n * p
+    } else { 
+        return fibo(n - 1, p + pp, p) 
+    }
+}&apos;</span> 
+<span class="hljs-number">3364476487643178326662161200510754331030214846068</span>..........
+</code></pre>
 <h4 id="n-uselcnumeric">-N, --use-lc-numeric</h4>
 <p>locale &#xC5D0; &#xB530;&#xB77C;&#xC11C; decimal and thousands separators &#xBB38;&#xC790;&#xAC00; &#xB2E4;&#xB97C; &#xC218; &#xC788;&#xB294;&#xB370; &#xC774; &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBA74;
 &#xC22B;&#xC790; &#xB370;&#xC774;&#xD130;&#xB97C; locale &#xC5D0; &#xB530;&#xB77C; &#xD574;&#xC11D;&#xD558;&#xC5EC; &#xC77D;&#xC5B4; &#xB4E4;&#xC785;&#xB2C8;&#xB2E4;.</p>
