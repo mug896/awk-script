@@ -788,8 +788,8 @@ function fac(n,    accum) {
 <p>10,000 &#xBC88;&#xC9F8; &#xD53C;&#xBCF4;&#xB098;&#xCE58;&#xC218; &#xAD6C;&#xD558;&#xAE30;</p>
 <pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;BEGIN { print fibo(10000,1,0) } 
 function fibo(n, p, pp) { 
-    if (n &lt; 2) { 
-        return n * p
+    if (n == 1) { 
+        return p
     } else { 
         return fibo(n - 1, p + pp, p) 
     }
@@ -798,8 +798,8 @@ function fibo(n, p, pp) {
 
 $ awk -M <span class="hljs-string">&apos;BEGIN { print fibo(10000,1,0) }        # -M &#xC635;&#xC158; &#xC0AC;&#xC6A9;
 function fibo(n, p, pp) { 
-    if (n &lt; 2) { 
-        return n * p
+    if (n == 1) { 
+        return p
     } else { 
         return fibo(n - 1, p + pp, p) 
     }
