@@ -907,33 +907,6 @@ awk: cmd. line:<span class="hljs-number">1</span>:            ^ syntax error
 $ awk <span class="hljs-string">&apos;BEGIN { if (!(val)) print &quot;yes&quot; }&apos;</span>  
 yes
 </code></pre>
-<h3 id="pattern-range">Pattern range</h3>
-<p>sed &#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xBC29;&#xC2DD;&#xACFC; &#xAC19;&#xC774; awk &#xC5D0;&#xC11C;&#xB3C4; <code>,</code> (comma) &#xB97C; &#xC774;&#xC6A9;&#xD55C; range &#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-bash"><span class="hljs-comment"># 3 &#xBC88;&#xC9F8; &#xB77C;&#xC778;&#xBD80;&#xD130; 5 &#xBC88;&#xC9F8;&#xAE4C;&#xC9C0; &#xD504;&#xB9B0;&#xD2B8;</span>
-$ seq <span class="hljs-number">10</span> | awk <span class="hljs-string">&apos;NR == 3, NR == 5&apos;</span>
-<span class="hljs-number">3</span>
-<span class="hljs-number">4</span>
-<span class="hljs-number">5</span>
-
-<span class="hljs-comment"># &apos;AAA&apos; &#xAC00; &#xD3EC;&#xD568;&#xB418;&#xB294; &#xB77C;&#xC778;&#xBD80;&#xD130;, &apos;BBB&apos; &#xAC00; &#xD3EC;&#xD568;&#xB418;&#xB294; &#xB77C;&#xC778;&#xAE4C;&#xC9C0; &#xD504;&#xB9B0;&#xD2B8;</span>
-$ awk <span class="hljs-string">&apos;/AAA/,/BBB/&apos;</span> file
-<span class="hljs-comment"># &apos;AAA&apos;, &apos;BBB&apos; &#xB77C;&#xC778;&#xC740; &#xC81C;&#xC678;&#xD558;&#xACE0; &#xD504;&#xB9B0;&#xD2B8;</span>
-$ awk <span class="hljs-string">&apos;/AAA/,/BBB/ { if (!/AAA/ &amp;&amp; !/BBB/) print }&apos;</span> file
-$ awk <span class="hljs-string">&apos;/BBB/{p=0}; p; /AAA/{p=1}&apos;</span> file
-
-<span class="hljs-comment"># &apos;AAA&apos; &#xAC00; &#xD3EC;&#xD568;&#xB418;&#xB294; &#xB77C;&#xC778;&#xBD80;&#xD130;, &#xACF5;&#xBC31; &#xB77C;&#xC778;&#xAE4C;&#xC9C0; &#xD504;&#xB9B0;&#xD2B8;</span>
-<span class="hljs-comment"># /^$/ &#xB294; &apos;^&apos; &#xCC98;&#xC74C;&#xBD80;&#xD130; &apos;$&apos; &#xB05D;&#xAE4C;&#xC9C0; &#xC0AC;&#xC774;&#xC5D0; &#xC544;&#xBB34;&#xAC83;&#xB3C4; &#xC5C6;&#xC73C;&#xB2C8; &#xACF5;&#xBC31; &#xB77C;&#xC778;&#xC744; &#xC758;&#xBBF8;</span>
-$ awk <span class="hljs-string">&apos;/AAA/,/^$/&apos;</span> file
-
-<span class="hljs-comment"># &apos;AAA&apos; &#xAC00; &#xD3EC;&#xD568;&#xB418;&#xB294; &#xB77C;&#xC778;&#xBD80;&#xD130;, &#xD30C;&#xC77C; &#xB05D;&#xAE4C;&#xC9C0; &#xD504;&#xB9B0;&#xD2B8; ( 0 &#xC740; &#xB05D;&#xAE4C;&#xC9C0; false &#xC774;&#xBBC0;&#xB85C; )</span>
-$ awk <span class="hljs-string">&apos;/AAA/,0&apos;</span> file
-
-<span class="hljs-comment"># &#xCCAB;&#xBC88;&#xC9F8; &#xCEEC;&#xB7FC; &#xAC12;&#xC774; &apos;AAA&apos; &#xAC00; &#xD3EC;&#xD568;&#xB418;&#xB294; &#xB77C;&#xC778;&#xBD80;&#xD130;, &#xB450;&#xBC88;&#xC9F8; &#xCEEC;&#xB7FC; &#xAC12;&#xC774; &apos;BBB&apos; &#xAC00; &#xD3EC;&#xD568;&#xB418;&#xB294; &#xB77C;&#xC778;&#xAE4C;&#xC9C0;</span>
-$ awk <span class="hljs-string">&apos;$1 ~ /AAA/, $2 ~ /BBB/&apos;</span> file
-
-<span class="hljs-comment"># 5&#xBC88;&#xC9F8; &#xB77C;&#xC778;&#xBD80;&#xD130;, &apos;BBB&apos; &#xAC00; &#xD3EC;&#xD568;&#xB418;&#xB294; &#xB77C;&#xC778;&#xAE4C;&#xC9C0;</span>
-$ awk <span class="hljs-string">&apos;NR == 5, /BBB/&apos;</span> file
-</code></pre>
 <h3 id="and-or">AND, OR</h3>
 <p>awk &#xC5D0;&#xC11C;&#xB294; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; <code>&amp;&amp;</code>, <code>||</code> &#xC5F0;&#xC0B0;&#xC790;&#xB97C; &#xC81C;&#xACF5;&#xD569;&#xB2C8;&#xB2E4;.
 &#xC6B0;&#xC120;&#xC21C;&#xC704;&#xB294; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D; &#xC5B8;&#xC5B4;&#xC5D0;&#xC11C;&#xCC98;&#xB7FC; <code>&amp;&amp;</code> &#xAC00; <code>||</code> &#xBCF4;&#xB2E4; &#xB192;&#xC740;&#xB370; 
@@ -962,6 +935,33 @@ $ awk <span class="hljs-string">&apos;(NR &lt; 4) || (NR &gt; 6) &amp;&amp; /foo
 $ awk <span class="hljs-string">&apos;((NR &lt; 4) || (NR &gt; 6)) &amp;&amp; /foo/&apos;</span> file
 <span class="hljs-number">222</span> foo
 <span class="hljs-number">888</span> foo
+</code></pre>
+<h3 id="pattern-range">Pattern range</h3>
+<p>sed &#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xBC29;&#xC2DD;&#xACFC; &#xAC19;&#xC774; awk &#xC5D0;&#xC11C;&#xB3C4; <code>,</code> (comma) &#xB97C; &#xC774;&#xC6A9;&#xD55C; range &#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># 3 &#xBC88;&#xC9F8; &#xB77C;&#xC778;&#xBD80;&#xD130; 5 &#xBC88;&#xC9F8;&#xAE4C;&#xC9C0; &#xD504;&#xB9B0;&#xD2B8;</span>
+$ seq <span class="hljs-number">10</span> | awk <span class="hljs-string">&apos;NR == 3, NR == 5&apos;</span>
+<span class="hljs-number">3</span>
+<span class="hljs-number">4</span>
+<span class="hljs-number">5</span>
+
+<span class="hljs-comment"># &apos;AAA&apos; &#xAC00; &#xD3EC;&#xD568;&#xB418;&#xB294; &#xB77C;&#xC778;&#xBD80;&#xD130;, &apos;BBB&apos; &#xAC00; &#xD3EC;&#xD568;&#xB418;&#xB294; &#xB77C;&#xC778;&#xAE4C;&#xC9C0; &#xD504;&#xB9B0;&#xD2B8;</span>
+$ awk <span class="hljs-string">&apos;/AAA/,/BBB/&apos;</span> file
+<span class="hljs-comment"># &apos;AAA&apos;, &apos;BBB&apos; &#xB77C;&#xC778;&#xC740; &#xC81C;&#xC678;&#xD558;&#xACE0; &#xD504;&#xB9B0;&#xD2B8;</span>
+$ awk <span class="hljs-string">&apos;/AAA/,/BBB/ { if (!/AAA/ &amp;&amp; !/BBB/) print }&apos;</span> file
+$ awk <span class="hljs-string">&apos;/BBB/{p=0}; p; /AAA/{p=1}&apos;</span> file
+
+<span class="hljs-comment"># &apos;AAA&apos; &#xAC00; &#xD3EC;&#xD568;&#xB418;&#xB294; &#xB77C;&#xC778;&#xBD80;&#xD130;, &#xACF5;&#xBC31; &#xB77C;&#xC778;&#xAE4C;&#xC9C0; &#xD504;&#xB9B0;&#xD2B8;</span>
+<span class="hljs-comment"># /^$/ &#xB294; &apos;^&apos; &#xCC98;&#xC74C;&#xBD80;&#xD130; &apos;$&apos; &#xB05D;&#xAE4C;&#xC9C0; &#xC0AC;&#xC774;&#xC5D0; &#xC544;&#xBB34;&#xAC83;&#xB3C4; &#xC5C6;&#xC73C;&#xB2C8; &#xACF5;&#xBC31; &#xB77C;&#xC778;&#xC744; &#xC758;&#xBBF8;</span>
+$ awk <span class="hljs-string">&apos;/AAA/,/^$/&apos;</span> file
+
+<span class="hljs-comment"># &apos;AAA&apos; &#xAC00; &#xD3EC;&#xD568;&#xB418;&#xB294; &#xB77C;&#xC778;&#xBD80;&#xD130;, &#xD30C;&#xC77C; &#xB05D;&#xAE4C;&#xC9C0; &#xD504;&#xB9B0;&#xD2B8; ( 0 &#xC740; &#xB05D;&#xAE4C;&#xC9C0; false &#xC774;&#xBBC0;&#xB85C; )</span>
+$ awk <span class="hljs-string">&apos;/AAA/,0&apos;</span> file
+
+<span class="hljs-comment"># &#xCCAB;&#xBC88;&#xC9F8; &#xCEEC;&#xB7FC; &#xAC12;&#xC774; &apos;AAA&apos; &#xAC00; &#xD3EC;&#xD568;&#xB418;&#xB294; &#xB77C;&#xC778;&#xBD80;&#xD130;, &#xB450;&#xBC88;&#xC9F8; &#xCEEC;&#xB7FC; &#xAC12;&#xC774; &apos;BBB&apos; &#xAC00; &#xD3EC;&#xD568;&#xB418;&#xB294; &#xB77C;&#xC778;&#xAE4C;&#xC9C0;</span>
+$ awk <span class="hljs-string">&apos;$1 ~ /AAA/, $2 ~ /BBB/&apos;</span> file
+
+<span class="hljs-comment"># 5&#xBC88;&#xC9F8; &#xB77C;&#xC778;&#xBD80;&#xD130;, &apos;BBB&apos; &#xAC00; &#xD3EC;&#xD568;&#xB418;&#xB294; &#xB77C;&#xC778;&#xAE4C;&#xC9C0;</span>
+$ awk <span class="hljs-string">&apos;NR == 5, /BBB/&apos;</span> file
 </code></pre>
 <h2 id="print-printf">print, printf</h2>
 <p>awk &#xB294; &#xCD9C;&#xB825;&#xC5D0; <code>print</code>, <code>printf</code> &#xB450; &#xAC1C;&#xC758; &#xD504;&#xB9B0;&#xD2B8;&#xBB38; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.
