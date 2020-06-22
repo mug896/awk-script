@@ -776,9 +776,9 @@ Error
 <span class="hljs-comment">#!/usr/bin/env -S gawk -E</span>
 
 BEGIN {
-    RS=<span class="hljs-string">&quot;(.)&quot;</span>
-    INDENT = <span class="hljs-number">2</span>;
-    keyword[<span class="hljs-string">&quot;true&quot;</span>]; keyword[<span class="hljs-string">&quot;false&quot;</span>]; keyword[<span class="hljs-string">&quot;null&quot;</span>]
+    RS=<span class="hljs-string">&quot;(.)&quot;</span>       <span class="hljs-comment"># &#xD55C; &#xBB38;&#xC790;&#xC529; &#xC77D;&#xC5B4; &#xB4E4;&#xC785;&#xB2C8;&#xB2E4;.</span>
+    INDENT = <span class="hljs-number">2</span>;    <span class="hljs-comment"># &#xAE30;&#xBCF8; indent &#xD06C;&#xAE30;</span>
+    keyword[<span class="hljs-string">&quot;true&quot;</span>]; keyword[<span class="hljs-string">&quot;false&quot;</span>]; keyword[<span class="hljs-string">&quot;null&quot;</span>]   <span class="hljs-comment"># json &#xD0A4;&#xC6CC;&#xB4DC;</span>
     token[<span class="hljs-number">0</span>] = idx = <span class="hljs-string">&quot;&quot;</span>
 }
 
@@ -788,6 +788,7 @@ END {
     pretty_<span class="hljs-built_in">print</span>()
 }
 
+<span class="hljs-comment"># { } [ ] : , &#xB294; json &#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xBB38;&#xC790;</span>
 <span class="hljs-keyword">function</span> tokenize(char) {
     switch (char) {
         <span class="hljs-keyword">case</span> /{|}|\[|]|:|,/ : token[idx++] = char; <span class="hljs-built_in">break</span>
