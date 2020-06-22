@@ -885,6 +885,24 @@ $ seq <span class="hljs-number">3</span> | awk <span class="hljs-string">&apos;!
 $ seq <span class="hljs-number">3</span> | awk <span class="hljs-string">&apos;$0 !~ /2/&apos;</span>
 <span class="hljs-number">1</span>
 <span class="hljs-number">3</span>
+............................
+
+$ awk <span class="hljs-string">&apos;BEGIN { if (!val) print &quot;null&quot; }&apos;</span> 
+null
+
+$ awk <span class="hljs-string">&apos;BEGIN { if (val == &quot;&quot;) print &quot;null&quot; }&apos;</span> 
+null
+
+$ awk <span class="hljs-string">&apos;BEGIN { if (!val != &quot;&quot;) print &quot;null&quot; }&apos;</span> 
+null
+
+$ awk <span class="hljs-string">&apos;BEGIN { if (!val == !&quot;&quot;) print &quot;null&quot; }&apos;</span> 
+null
+
+$ awk <span class="hljs-string">&apos;BEGIN { if !(val) print &quot;null&quot; }&apos;</span>               <span class="hljs-comment"># &#xC624;&#xB958;</span>
+awk: cmd. line:<span class="hljs-number">1</span>: BEGIN { <span class="hljs-keyword">if</span> !(val) <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;null&quot;</span> }
+awk: cmd. line:<span class="hljs-number">1</span>:            ^ syntax error
+. . .
 </code></pre>
 <h3 id="pattern-range">Pattern range</h3>
 <p>sed &#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xBC29;&#xC2DD;&#xACFC; &#xAC19;&#xC774; awk &#xC5D0;&#xC11C;&#xB3C4; <code>,</code> (comma) &#xB97C; &#xC774;&#xC6A9;&#xD55C; range &#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>

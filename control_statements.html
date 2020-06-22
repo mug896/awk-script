@@ -773,11 +773,11 @@ Error
 <h1 id="quiz">Quiz</h1>
 <p>JSON &#xB370;&#xC774;&#xD130;&#xB97C; &#xD30C;&#xC2F1; &#xD574;&#xC11C; pretty printing &#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">$ cat pp-json.sh
-<span class="hljs-comment">#!/usr/bin/env -S gawk -E</span>
+<span class="hljs-comment">#!/usr/bin/env -S gawk -f</span>
 
 BEGIN {
-    RS=<span class="hljs-string">&quot;(.)&quot;</span>       <span class="hljs-comment"># &#xD55C; &#xBB38;&#xC790;&#xC529; &#xC77D;&#xC5B4; &#xB4E4;&#xC785;&#xB2C8;&#xB2E4;.</span>
-    INDENT = <span class="hljs-number">2</span>;    <span class="hljs-comment"># &#xAE30;&#xBCF8; indent &#xD06C;&#xAE30;</span>
+    RS=<span class="hljs-string">&quot;(.)&quot;</span>     <span class="hljs-comment"># &#xD55C; &#xBB38;&#xC790;&#xC529; &#xC77D;&#xC5B4; &#xB4E4;&#xC785;&#xB2C8;&#xB2E4;.</span>
+    <span class="hljs-keyword">if</span> (!INDENT) INDENT = <span class="hljs-number">2</span>;    <span class="hljs-comment"># &#xAE30;&#xBCF8; indent &#xD06C;&#xAE30;</span>
     keyword[<span class="hljs-string">&quot;true&quot;</span>]; keyword[<span class="hljs-string">&quot;false&quot;</span>]; keyword[<span class="hljs-string">&quot;null&quot;</span>]   <span class="hljs-comment"># json &#xD0A4;&#xC6CC;&#xB4DC;</span>
     token[<span class="hljs-number">0</span>] = idx = <span class="hljs-string">&quot;&quot;</span>
 }
