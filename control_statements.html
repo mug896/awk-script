@@ -845,7 +845,7 @@ END {
 }
 
 <span class="hljs-keyword">function</span> pretty_<span class="hljs-built_in">print</span>(    i, depth, prev, cur) {
-    <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; idx; i++) {
+    <span class="hljs-keyword">for</span> (i <span class="hljs-keyword">in</span> token) {
         prev = cur; cur = token[i]
         switch (cur) {
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;{&quot;</span> : 
