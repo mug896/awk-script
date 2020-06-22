@@ -792,9 +792,9 @@ END {
 <span class="hljs-keyword">function</span> tokenize(char) {
     switch (char) {
         <span class="hljs-keyword">case</span> /{|}|\[|]|:|,/ : token[idx++] = char; <span class="hljs-built_in">break</span>
-        <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;\&quot;&quot;</span> : t_string(); <span class="hljs-built_in">break</span>
-        <span class="hljs-keyword">case</span> /[<span class="hljs-number">0</span>-<span class="hljs-number">9</span>-]/ : t_number(char); <span class="hljs-built_in">break</span>
-        <span class="hljs-keyword">case</span> /[a-z]/: t_keyword(char); <span class="hljs-built_in">break</span>
+        <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;\&quot;&quot;</span>           : t_string(); <span class="hljs-built_in">break</span>
+        <span class="hljs-keyword">case</span> /[<span class="hljs-number">0</span>-<span class="hljs-number">9</span>-]/       : t_number(char); <span class="hljs-built_in">break</span>
+        <span class="hljs-keyword">case</span> /[a-z]/        : t_keyword(char); <span class="hljs-built_in">break</span>
     }
 }
 
