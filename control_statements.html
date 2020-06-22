@@ -770,6 +770,160 @@ Error
 <p>while, do-while, for &#xBB38;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xAC83;&#xC73C;&#xB85C; &#xB4A4;&#xC5D0; &#xC774;&#xC5B4;&#xC9C0;&#xB294; &#xC2E4;&#xD589;&#xBB38;&#xC744; skip &#xD558;&#xACE0; &#xB2E4;&#xC74C; &#xBC18;&#xBCF5;&#xC744; &#xC2DC;&#xC791;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <h3 id="exit">exit</h3>
 <p>awk &#xC2E4;&#xD589;&#xC744; &#xC911;&#xC9C0;&#xD558;&#xACE0; exit &#xD569;&#xB2C8;&#xB2E4;.</p>
+<h1 id="quiz">Quiz</h1>
+<p>JSON &#xB370;&#xC774;&#xD130;&#xB97C; &#xD30C;&#xC2F1;&#xD574;&#xC11C; pretty printing &#xD558;&#xB294;&#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ cat pp-json.sh
+<span class="hljs-comment">#!/usr/bin/env -S gawk -E</span>
+
+BEGIN {
+    RS=<span class="hljs-string">&quot;(.)&quot;</span>
+    INDENT = <span class="hljs-number">2</span>;
+    keyword[<span class="hljs-string">&quot;true&quot;</span>]; keyword[<span class="hljs-string">&quot;false&quot;</span>]; keyword[<span class="hljs-string">&quot;null&quot;</span>]
+    token[<span class="hljs-number">0</span>] = idx = <span class="hljs-string">&quot;&quot;</span>
+}
+
+{ tokenize(RT) }
+
+END { 
+    pretty_<span class="hljs-built_in">print</span>()
+}
+
+<span class="hljs-keyword">function</span> tokenize(char) {
+    switch (char) {
+        <span class="hljs-keyword">case</span> /{|}|\[|]|:|,/ : token[idx++] = char; <span class="hljs-built_in">break</span>
+        <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;\&quot;&quot;</span> : t_string(); <span class="hljs-built_in">break</span>
+        <span class="hljs-keyword">case</span> /[<span class="hljs-number">0</span>-<span class="hljs-number">9</span>-]/ : t_number(char); <span class="hljs-built_in">break</span>
+        <span class="hljs-keyword">case</span> /[a-z]/: t_keyword(char); <span class="hljs-built_in">break</span>
+    }
+}
+
+<span class="hljs-keyword">function</span> t_keyword(str) {
+    <span class="hljs-keyword">while</span> (getline) {
+        <span class="hljs-keyword">if</span> ( RT ~ /[a-z]/ ) 
+            str = str RT
+        <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">if</span> ( str <span class="hljs-keyword">in</span> keyword ) token[idx++] = str
+            <span class="hljs-built_in">break</span>
+        }
+    }
+    tokenize(RT)
+}
+
+<span class="hljs-keyword">function</span> t_number(str) {
+    <span class="hljs-keyword">while</span> (getline) {
+        <span class="hljs-keyword">if</span> ( RT ~ /[<span class="hljs-number">0</span>-<span class="hljs-number">9</span>.eE+-]/ ) 
+            str = str RT
+        <span class="hljs-keyword">else</span> {
+            token[idx++] = str
+            <span class="hljs-built_in">break</span>
+        }
+    }
+    tokenize(RT)
+}
+
+<span class="hljs-keyword">function</span> t_string(    str, prev) {
+    <span class="hljs-keyword">while</span> (getline) {
+        <span class="hljs-keyword">if</span> ( RT != <span class="hljs-string">&quot;\&quot;&quot;</span> ) 
+            str = str RT
+        <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">if</span> (prev == <span class="hljs-string">&quot;\\&quot;</span>) {
+                str = str RT
+            } <span class="hljs-keyword">else</span> {
+                token[idx++] = <span class="hljs-string">&quot;\&quot;&quot;</span> str <span class="hljs-string">&quot;\&quot;&quot;</span>
+                <span class="hljs-built_in">break</span>
+            }
+        }
+        prev = RT
+    }
+}
+
+<span class="hljs-keyword">function</span> space (depth,   i, sp) { 
+    depth = depth * INDENT
+    <span class="hljs-keyword">for</span> (i=<span class="hljs-number">0</span>; i &lt; depth; i++) sp = sp <span class="hljs-string">&quot; &quot;</span>
+    <span class="hljs-built_in">return</span> sp
+}
+
+<span class="hljs-keyword">function</span> pretty_<span class="hljs-built_in">print</span>(    i, depth, prev, cur) {
+    <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; idx; i++) {
+        prev = cur; cur = token[i]
+        switch (cur) {
+            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;{&quot;</span> : 
+                <span class="hljs-built_in">printf</span>( (prev == <span class="hljs-string">&quot;:&quot;</span> ? <span class="hljs-string">&quot;&quot;</span> : <span class="hljs-string">&quot;\n&quot;</span> space(depth)) <span class="hljs-string">&quot;{&quot;</span>)
+                depth++; <span class="hljs-built_in">break</span>
+            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;}&quot;</span> : 
+                depth--
+                <span class="hljs-built_in">printf</span>( (prev == <span class="hljs-string">&quot;{&quot;</span> ? <span class="hljs-string">&quot; &quot;</span> : <span class="hljs-string">&quot;\n&quot;</span> space(depth)) <span class="hljs-string">&quot;}&quot;</span>)
+                <span class="hljs-built_in">break</span>
+            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;[&quot;</span> : 
+                <span class="hljs-built_in">printf</span>( (prev == <span class="hljs-string">&quot;:&quot;</span> ? <span class="hljs-string">&quot;&quot;</span> : <span class="hljs-string">&quot;\n&quot;</span> space(depth)) <span class="hljs-string">&quot;[&quot;</span>)
+                depth++; <span class="hljs-built_in">break</span>
+            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;]&quot;</span> : 
+                depth--
+                <span class="hljs-built_in">printf</span>( (prev == <span class="hljs-string">&quot;[&quot;</span> ? <span class="hljs-string">&quot; &quot;</span> : <span class="hljs-string">&quot;\n&quot;</span> space(depth)) <span class="hljs-string">&quot;]&quot;</span>)
+                <span class="hljs-built_in">break</span>
+            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;,&quot;</span> : <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;,&quot;</span>); <span class="hljs-built_in">break</span>
+            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;:&quot;</span> : <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;: &quot;</span>); <span class="hljs-built_in">break</span>
+            default : 
+                <span class="hljs-built_in">printf</span>( (prev == <span class="hljs-string">&quot;:&quot;</span> ? <span class="hljs-string">&quot;&quot;</span> : <span class="hljs-string">&quot;\n&quot;</span> space(depth)) cur)
+        }
+        <span class="hljs-keyword">if</span> (depth == <span class="hljs-number">0</span>) <span class="hljs-built_in">break</span>
+    }
+    <span class="hljs-built_in">print</span>
+}
+</code></pre>
+<pre><code class="lang-bash">$ cat sample.json
+{<span class="hljs-string">&quot;squadName&quot;</span>:<span class="hljs-string">&quot;Super hero squad&quot;</span>,<span class="hljs-string">&quot;homeTown&quot;</span>:<span class="hljs-string">&quot;Metro City&quot;</span>,<span class="hljs-string">&quot;formed&quot;</span>:<span class="hljs-number">2016</span>,<span class="hljs-string">&quot;secretBase&quot;</span>:
+<span class="hljs-string">&quot;Super tower&quot;</span>,<span class="hljs-string">&quot;active&quot;</span>:<span class="hljs-literal">true</span>,<span class="hljs-string">&quot;members&quot;</span>:[{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Molecule Man&quot;</span>,<span class="hljs-string">&quot;age&quot;</span>:<span class="hljs-number">29</span>,<span class="hljs-string">&quot;secretIdentity&quot;</span>:
+<span class="hljs-string">&quot;Dan Jukes&quot;</span>,<span class="hljs-string">&quot;powers&quot;</span>:[<span class="hljs-string">&quot;Radiation resistance&quot;</span>,<span class="hljs-string">&quot;Turning tiny&quot;</span>,<span class="hljs-string">&quot;Radiation blast&quot;</span>]},{<span class="hljs-string">&quot;name&quot;</span>:
+<span class="hljs-string">&quot;Madame Uppercut&quot;</span>,<span class="hljs-string">&quot;age&quot;</span>:<span class="hljs-number">39</span>,<span class="hljs-string">&quot;secretIdentity&quot;</span>:<span class="hljs-string">&quot;Jane Wilson&quot;</span>,<span class="hljs-string">&quot;powers&quot;</span>:[<span class="hljs-string">&quot;Million tonne punch&quot;</span>,
+<span class="hljs-string">&quot;Damage resistance&quot;</span>,<span class="hljs-string">&quot;Superhuman reflexes&quot;</span>]},{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Eternal Flame&quot;</span>,<span class="hljs-string">&quot;age&quot;</span>:<span class="hljs-number">1000000</span>,
+<span class="hljs-string">&quot;secretIdentity&quot;</span>:<span class="hljs-string">&quot;Unknown&quot;</span>,<span class="hljs-string">&quot;powers&quot;</span>:[<span class="hljs-string">&quot;Immortality&quot;</span>,<span class="hljs-string">&quot;Heat Immunity&quot;</span>,<span class="hljs-literal">false</span>,<span class="hljs-string">&quot;Teleportation&quot;</span>,
+<span class="hljs-string">&quot;Interdimensional travel&quot;</span>]}]}
+
+$ ./pp-json.sh sample.json
+
+{
+  <span class="hljs-string">&quot;squadName&quot;</span>: <span class="hljs-string">&quot;Super hero squad&quot;</span>,
+  <span class="hljs-string">&quot;homeTown&quot;</span>: <span class="hljs-string">&quot;Metro City&quot;</span>,
+  <span class="hljs-string">&quot;formed&quot;</span>: <span class="hljs-number">2016</span>,
+  <span class="hljs-string">&quot;secretBase&quot;</span>: <span class="hljs-string">&quot;Super tower&quot;</span>,
+  <span class="hljs-string">&quot;active&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">&quot;members&quot;</span>: [
+    {
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Molecule Man&quot;</span>,
+      <span class="hljs-string">&quot;age&quot;</span>: <span class="hljs-number">29</span>,
+      <span class="hljs-string">&quot;secretIdentity&quot;</span>: <span class="hljs-string">&quot;Dan Jukes&quot;</span>,
+      <span class="hljs-string">&quot;powers&quot;</span>: [
+        <span class="hljs-string">&quot;Radiation resistance&quot;</span>,
+        <span class="hljs-string">&quot;Turning tiny&quot;</span>,
+        <span class="hljs-string">&quot;Radiation blast&quot;</span>
+      ]
+    },
+    {
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Madame Uppercut&quot;</span>,
+      <span class="hljs-string">&quot;age&quot;</span>: <span class="hljs-number">39</span>,
+      <span class="hljs-string">&quot;secretIdentity&quot;</span>: <span class="hljs-string">&quot;Jane Wilson&quot;</span>,
+      <span class="hljs-string">&quot;powers&quot;</span>: [
+        <span class="hljs-string">&quot;Million tonne punch&quot;</span>,
+        <span class="hljs-string">&quot;Damage resistance&quot;</span>,
+        <span class="hljs-string">&quot;Superhuman reflexes&quot;</span>
+      ]
+    },
+    {
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Eternal Flame&quot;</span>,
+      <span class="hljs-string">&quot;age&quot;</span>: <span class="hljs-number">1000000</span>,
+      <span class="hljs-string">&quot;secretIdentity&quot;</span>: <span class="hljs-string">&quot;Unknown&quot;</span>,
+      <span class="hljs-string">&quot;powers&quot;</span>: [
+        <span class="hljs-string">&quot;Immortality&quot;</span>,
+        <span class="hljs-string">&quot;Heat Immunity&quot;</span>,
+        <span class="hljs-literal">false</span>,
+        <span class="hljs-string">&quot;Teleportation&quot;</span>,
+        <span class="hljs-string">&quot;Interdimensional travel&quot;</span>
+      ]
+    }
+  ]
+}
+</code></pre>
 
                     
                     </section>
