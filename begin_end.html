@@ -706,9 +706,9 @@
 </blockquote>
 <pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;
 BEGIN { print &quot;BEGIN &quot; FILENAME } 
-    BEGINFILE { print &quot;BEGINFILE &quot; FILENAME } 
-        { print $0 &quot; .............FNR: &quot; FNR &quot;, NR: &quot; NR }
-    ENDFILE { print &quot;ENDFILE &quot; FILENAME } 
+BEGINFILE { print &quot;BEGINFILE &quot; FILENAME } 
+{ print $0 &quot; .............FNR: &quot; FNR &quot;, NR: &quot; NR }
+ENDFILE { print &quot;ENDFILE &quot; FILENAME } 
 END { print &quot;END &quot; FILENAME }
 &apos;</span> file1 file2 file3
 

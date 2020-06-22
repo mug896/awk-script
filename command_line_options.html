@@ -724,10 +724,19 @@ converting &#xC5C6;&#xC774; &#xBB34;&#xC870;&#xAC74; single-byte characters &#xB
 &#xAE30;&#xBCF8;&#xC801;&#xC778; &#xAE30;&#xB2A5;&#xC740; <code>-f</code> &#xC635;&#xC158;&#xACFC; &#xAC19;&#xC9C0;&#xB9CC; &#xC545;&#xC758;&#xC801;&#xC778; &#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xC635;&#xC158; &#xC774;&#xB098; &#xBCC0;&#xC218;&#xAC12; &#xC804;&#xB2EC;,
 <code>-e</code> &#xC635;&#xC158;&#xC744; &#xC774;&#xC6A9;&#xD55C; &#xC18C;&#xC2A4;&#xCF54;&#xB4DC; &#xC804;&#xB2EC;&#xC744; &#xD558;&#xC9C0; &#xBABB;&#xD558;&#xAC8C; &#xD569;&#xB2C8;&#xB2E4;.
 &#xB530;&#xB77C;&#xC11C; &#xBA85;&#xB839; &#xB77C;&#xC778;&#xC5D0; &#xC0AC;&#xC6A9;&#xB41C; &#xC778;&#xC218;&#xB294; &#xCC98;&#xB9AC;&#xB418;&#xC9C0; &#xC54A;&#xACE0; &#xC2A4;&#xD2B8;&#xB9C1;&#xC73C;&#xB85C;&#xB9CC; &#xC804;&#xB2EC;&#xB429;&#xB2C8;&#xB2E4;.</p>
-<p>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-bash"><span class="hljs-comment">#! /usr/bin/awk -E</span>
+<p><code>awk -f</code> &#xB294; <code>-v</code> &#xB97C; awk &#xC635;&#xC158;&#xC73C;&#xB85C; &#xC778;&#xC2DD;&#xD574; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD558;&#xC9C0;&#xB9CC;
+<code>awk -E</code> &#xB294; &#xADF8;&#xB300;&#xB85C; &#xD30C;&#xC77C;&#xBA85; &#xC2A4;&#xD2B8;&#xB9C1;&#xC73C;&#xB85C; &#xC804;&#xB2EC;&#xB41C;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ cat test.sh                $ cat test.sh                                              
+<span class="hljs-comment">#!/usr/bin/awk -E            #!/usr/bin/awk -f</span>
 
-awk program here ...
+BEGINFILE {                  BEGINFILE {
+    <span class="hljs-built_in">print</span> FILENAME               <span class="hljs-built_in">print</span> FILENAME 
+    nextfile                     nextfile
+}                            }
+
+$ ./test.sh -v hello         $ ./test.sh -v hello   <span class="hljs-comment"># &#xC624;&#xB958;</span>
+-v                           awk: <span class="hljs-string">&apos;hello&apos;</span> argument to <span class="hljs-string">&apos;-v&apos;</span> not <span class="hljs-keyword">in</span> <span class="hljs-string">&apos;var=value&apos;</span> form
+hello                        . . .
 </code></pre>
 <h4 id="g-genpot">-g, --gen-pot</h4>
 <p>&#xC11C;&#xBE44;&#xC2A4; &#xBA54;&#xC2DC;&#xC9C0;&#xC758; &#xAD6D;&#xC81C;&#xD654;&#xB97C; &#xC704;&#xD55C; &#xAE30;&#xB2A5;&#xC73C;&#xB85C; &#xC18C;&#xC2A4; &#xCF54;&#xB4DC;&#xC5D0;&#xC11C; &#xD2B9;&#xC815; &#xD615;&#xC2DD;&#xC73C;&#xB85C; &#xC791;&#xC131;&#xB41C; &#xC2A4;&#xD2B8;&#xB9C1; &#xC0C1;&#xC218;&#xB97C;
