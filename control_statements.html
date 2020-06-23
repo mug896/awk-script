@@ -1020,10 +1020,10 @@ END {
                             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;{&quot;</span> : pretty_<span class="hljs-built_in">print</span>(sdx + <span class="hljs-number">1</span>); <span class="hljs-built_in">break</span>
                             default  : <span class="hljs-built_in">print</span> token[sdx + <span class="hljs-number">1</span>]
                         }
-                        <span class="hljs-built_in">break</span>
+                    } <span class="hljs-keyword">else</span> {
+                        val = gensub( /^<span class="hljs-string">&quot;(.*)&quot;</span>$/, <span class="hljs-string">&quot;\\1&quot;</span>, <span class="hljs-string">&quot;g&quot;</span>, token[sdx + <span class="hljs-number">1</span>])
+                        <span class="hljs-keyword">if</span> ( opt2 == key <span class="hljs-string">&quot;=&quot;</span> val ) pretty_<span class="hljs-built_in">print</span>(sblock)
                     }
-                    val = gensub( /^<span class="hljs-string">&quot;(.*)&quot;</span>$/, <span class="hljs-string">&quot;\\1&quot;</span>, <span class="hljs-string">&quot;g&quot;</span>, token[sdx + <span class="hljs-number">1</span>])
-                    <span class="hljs-keyword">if</span> ( opt2 == key <span class="hljs-string">&quot;=&quot;</span> val ) pretty_<span class="hljs-built_in">print</span>(sblock)
                 }
         }
     }
