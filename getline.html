@@ -970,7 +970,7 @@ OK: <span class="hljs-built_in">stat</span>: cannot <span class="hljs-built_in">
 ERRNO: Address family not supported by protocol
 
 $ awk <span class="hljs-string">&apos;BEGIN {
-    PROCINFO[&quot;/dev/stdin&quot;, &quot;READ_TIMEOUT&quot;] = 1000  # 1 &#xCD08;
+    PROCINFO[&quot;/dev/stdin&quot;, &quot;READ_TIMEOUT&quot;] = 2000  # 2 &#xCD08;
     print ( getline var &lt; &quot;/dev/stdin&quot; )
     print &quot;ERRNO: &quot; ERRNO
 }&apos;</span>
