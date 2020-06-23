@@ -803,8 +803,7 @@ END {
 
 <span class="hljs-keyword">function</span> t_keyword (str) {
     <span class="hljs-keyword">while</span> (getline) {
-        <span class="hljs-keyword">if</span> ( RT ~ /[a-z]/ ) 
-            str = str RT
+        <span class="hljs-keyword">if</span> ( RT ~ /[a-z]/ ) str = str RT
         <span class="hljs-keyword">else</span> {
             <span class="hljs-keyword">if</span> ( str <span class="hljs-keyword">in</span> keyword ) token[idx++] = str
             <span class="hljs-built_in">break</span>
@@ -815,8 +814,7 @@ END {
 
 <span class="hljs-keyword">function</span> t_number (str) {
     <span class="hljs-keyword">while</span> (getline) {
-        <span class="hljs-keyword">if</span> ( RT ~ /[<span class="hljs-number">0</span>-<span class="hljs-number">9</span>.eE+-]/ ) 
-            str = str RT
+        <span class="hljs-keyword">if</span> ( RT ~ /[<span class="hljs-number">0</span>-<span class="hljs-number">9</span>.eE+-]/ ) str = str RT
         <span class="hljs-keyword">else</span> {
             token[idx++] = str
             <span class="hljs-built_in">break</span>
@@ -827,12 +825,10 @@ END {
 
 <span class="hljs-keyword">function</span> t_string (    str, prev) {
     <span class="hljs-keyword">while</span> (getline) {
-        <span class="hljs-keyword">if</span> ( RT != <span class="hljs-string">&quot;\&quot;&quot;</span> ) 
-            str = str RT
+        <span class="hljs-keyword">if</span> ( RT != <span class="hljs-string">&quot;\&quot;&quot;</span> ) str = str RT
         <span class="hljs-keyword">else</span> {
-            <span class="hljs-keyword">if</span> ( prev == <span class="hljs-string">&quot;\\&quot;</span> ) {
-                str = str RT
-            } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">if</span> ( prev == <span class="hljs-string">&quot;\\&quot;</span> ) str = str RT
+            <span class="hljs-keyword">else</span> {
                 token[idx++] = <span class="hljs-string">&quot;\&quot;&quot;</span> str <span class="hljs-string">&quot;\&quot;&quot;</span>
                 <span class="hljs-built_in">break</span>
             }
@@ -1041,8 +1037,7 @@ END {
 
 <span class="hljs-keyword">function</span> t_keyword (str) {
     <span class="hljs-keyword">while</span> (getline) {
-        <span class="hljs-keyword">if</span> ( RT ~ /[a-z]/ ) 
-            str = str RT
+        <span class="hljs-keyword">if</span> ( RT ~ /[a-z]/ ) str = str RT
         <span class="hljs-keyword">else</span> {
             <span class="hljs-keyword">if</span> ( str <span class="hljs-keyword">in</span> keyword ) token[idx++] = str
             <span class="hljs-built_in">break</span>
@@ -1053,8 +1048,7 @@ END {
 
 <span class="hljs-keyword">function</span> t_number (str) {
     <span class="hljs-keyword">while</span> (getline) {
-        <span class="hljs-keyword">if</span> ( RT ~ /[<span class="hljs-number">0</span>-<span class="hljs-number">9</span>.eE+-]/ ) 
-            str = str RT
+        <span class="hljs-keyword">if</span> ( RT ~ /[<span class="hljs-number">0</span>-<span class="hljs-number">9</span>.eE+-]/ ) str = str RT
         <span class="hljs-keyword">else</span> {
             token[idx++] = str
             <span class="hljs-built_in">break</span>
@@ -1065,12 +1059,10 @@ END {
 
 <span class="hljs-keyword">function</span> t_string (    str, prev) {
     <span class="hljs-keyword">while</span> (getline) {
-        <span class="hljs-keyword">if</span> ( RT != <span class="hljs-string">&quot;\&quot;&quot;</span> ) 
-            str = str RT
+        <span class="hljs-keyword">if</span> ( RT != <span class="hljs-string">&quot;\&quot;&quot;</span> ) str = str RT
         <span class="hljs-keyword">else</span> {
-            <span class="hljs-keyword">if</span> ( prev == <span class="hljs-string">&quot;\\&quot;</span> ) {
-                str = str RT
-            } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">if</span> ( prev == <span class="hljs-string">&quot;\\&quot;</span> ) str = str RT
+            <span class="hljs-keyword">else</span> {
                 token[idx++] = <span class="hljs-string">&quot;\&quot;&quot;</span> str <span class="hljs-string">&quot;\&quot;&quot;</span>
                 <span class="hljs-built_in">break</span>
             }
