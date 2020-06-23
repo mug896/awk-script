@@ -984,7 +984,7 @@ BEGIN {
     INDENT = <span class="hljs-number">2</span>;
     keyword[<span class="hljs-string">&quot;true&quot;</span>]; keyword[<span class="hljs-string">&quot;false&quot;</span>]; keyword[<span class="hljs-string">&quot;null&quot;</span>]
     token[<span class="hljs-number">0</span>] = opt1 = opt2 = <span class="hljs-string">&quot;&quot;</span>
-    idx = sdx = sblock = <span class="hljs-number">0</span>
+    idx = sdx = <span class="hljs-number">0</span>
 }
 
 BEGINFILE {
@@ -999,13 +999,12 @@ END {
 }
 
 
-<span class="hljs-keyword">function</span> search (start, path,       ckey, key, val) {
+<span class="hljs-keyword">function</span> search (start, path, sblock,       ckey, key, val) {
     <span class="hljs-keyword">for</span> (sdx = start; sdx &lt; idx; sdx++) { 
         switch (token[sdx]) {
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;{&quot;</span> :
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;[&quot;</span> : 
-                sblock = sdx
-                search( sdx + <span class="hljs-number">1</span>, path <span class="hljs-string">&quot;/&quot;</span> ckey)
+                search( sdx + <span class="hljs-number">1</span>, path <span class="hljs-string">&quot;/&quot;</span> ckey, sdx)
                 <span class="hljs-built_in">break</span>
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;}&quot;</span> :
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;]&quot;</span> : <span class="hljs-built_in">return</span>
