@@ -1095,8 +1095,8 @@ END {
                 depth--
                 <span class="hljs-built_in">printf</span> (prev == <span class="hljs-string">&quot;[&quot;</span> ? <span class="hljs-string">&quot; &quot;</span> : <span class="hljs-string">&quot;\n&quot;</span> space(depth)) <span class="hljs-string">&quot;]&quot;</span>
                 <span class="hljs-built_in">break</span>
-            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;,&quot;</span> : <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;,&quot;</span>); <span class="hljs-built_in">break</span>
-            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;:&quot;</span> : <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;: &quot;</span>); <span class="hljs-built_in">break</span>
+            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;,&quot;</span> : <span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;,&quot;</span>; <span class="hljs-built_in">break</span>
+            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;:&quot;</span> : <span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;: &quot;</span>; <span class="hljs-built_in">break</span>
             default : 
                 <span class="hljs-built_in">printf</span> (prev == <span class="hljs-string">&quot;:&quot;</span> ? <span class="hljs-string">&quot;&quot;</span> : <span class="hljs-string">&quot;\n&quot;</span> space(depth)) cur
         }
