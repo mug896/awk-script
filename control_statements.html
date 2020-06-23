@@ -972,7 +972,7 @@ $ ./json.sh <span class="hljs-operator">-s</span> /members/name=<span class="hlj
   ]
 }
 
-<span class="hljs-comment"># shell &#xC5D0;&#xC11C; &#xD30C;&#xC774;&#xD504;&#xC640; &#xD568;&#xAED8; &#xC0AC;&#xC6A9;&#xD558;&#xB824;&#xBA74; stdin &#xC744; &#xB098;&#xD0C0;&#xB0B4;&#xB294; &quot;-&quot; &#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</span>
+<span class="hljs-comment"># shell &#xC5D0;&#xC11C; &#xD30C;&#xC774;&#xD504;&#xC640; &#xD568;&#xAED8; &#xC0AC;&#xC6A9;&#xD560; &#xB54C;&#xB294; stdin &#xC744; &#xB098;&#xD0C0;&#xB0B4;&#xB294; &quot;-&quot; &#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</span>
 $ cat sample.json | ./json.sh <span class="hljs-operator">-s</span> /members/name=<span class="hljs-string">&quot;Molecule Man&quot;</span> -
 </code></pre>
 <p>&#xCF54;&#xB4DC;&#xB294; &#xCC98;&#xC74C; &#xC608;&#xC81C;&#xC640; &#xB3D9;&#xC77C;&#xD55C;&#xB370; &#xAC80;&#xC0C9; &#xAE30;&#xB2A5;&#xC744; &#xC704;&#xD574;&#xC11C; search &#xD568;&#xC218;&#xAC00; &#xCD94;&#xAC00;&#xB418;&#xACE0;
@@ -996,16 +996,22 @@ BEGINFILE {
 { tokenize(RT) }
 
 END { 
-    <span class="hljs-keyword">if</span> (opt1) search(<span class="hljs-number">0</span>, <span class="hljs-string">&quot;&quot;</span>); <span class="hljs-keyword">else</span> pretty_<span class="hljs-built_in">print</span>(<span class="hljs-number">0</span>)
+    <span class="hljs-keyword">if</span> (opt1) search(); <span class="hljs-keyword">else</span> pretty_<span class="hljs-built_in">print</span>(<span class="hljs-number">0</span>)
 }
 
-
-<span class="hljs-keyword">function</span> search (start, path, sblock,       ckey, key, val) {
-    <span class="hljs-keyword">for</span> (sdx = start; sdx &lt; idx; sdx++) { 
+<span class="hljs-comment"># json &#xB370;&#xC774;&#xD130;&#xB294; &#xAD04;&#xD638; &#xC548;&#xC5D0; &#xAD04;&#xD638;&#xAC00; &#xACC4;&#xC18D; &#xC774;&#xC5B4;&#xC9C0;&#xB294; &#xD615;&#xD0DC;&#xC774;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xAC01;&#xAC01;&#xC758; &#xAD04;&#xD638;&#xC5D0;&#xC11C;&#xC758;</span>
+<span class="hljs-comment"># context &#xB97C; &#xC720;&#xC9C0;&#xD558;&#xB824;&#xBA74; recursion &#xC744; &#xC774;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC774; &#xC88B;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+<span class="hljs-comment"># &quot;{&quot; &quot;[&quot; &#xC5EC;&#xB294; &#xAD04;&#xD638;&#xB97C; &#xB9DE;&#xB098;&#xBA74; &#xB2E4;&#xC2DC; &#xC790;&#xAE30; &#xC790;&#xC2E0;&#xC744; &#xD638;&#xCD9C;&#xD558;&#xACE0; &quot;}&quot; &quot;]&quot; &#xB2EB;&#xB294; &#xAD04;&#xD638;&#xB97C; &#xB9DE;&#xB098;&#xBA74;</span>
+<span class="hljs-comment"># return &#xD569;&#xB2C8;&#xB2E4;. &#xC790;&#xAE30; &#xC790;&#xC2E0;&#xC744; &#xD638;&#xCD9C;&#xD560; &#xB54C;&#xB294; path &quot;/&quot; ckey &#xD615;&#xD0DC;&#xB85C; &#xB9CC;&#xB4E4;&#xC5B4;&#xC9C0;&#xB294; &#xB204;&#xC801; &#xACBD;&#xB85C;&#xC640; </span>
+<span class="hljs-comment"># key=value &#xAC80;&#xC0C9;&#xC744; &#xC704;&#xD55C; &#xC2DC;&#xC791; &#xAD04;&#xD638; index &#xBC88;&#xD638;&#xB97C; context &#xB85C; &#xC720;&#xC9C0;&#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C; </span>
+<span class="hljs-comment"># &#xAC01;&#xAC01; path, sblock &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB85C; &#xC9C0;&#xC815;&#xD569;&#xB2C8;&#xB2E4;. &#xBAA8;&#xB4E0; token &#xAC12;&#xC744; &#xCC28;&#xB840;&#xB85C; &#xCC98;&#xB9AC;&#xD558;&#xAE30; &#xC704;&#xD55C;</span>
+<span class="hljs-comment"># sdx &#xBCC0;&#xC218;&#xB294; recursion &#xC5D0; &#xC0C1;&#xAD00;&#xC5C6;&#xC774; &#xACC4;&#xC18D; &#xC99D;&#xAC00;&#xB3FC;&#xC57C; &#xB418;&#xBBC0;&#xB85C; global &#xBCC0;&#xC218;&#xB85C; &#xC9C0;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</span>
+<span class="hljs-keyword">function</span> search (path, sblock,       ckey, key, val) {
+    <span class="hljs-keyword">for</span> (  ; sdx &lt; idx; sdx++) { 
         switch (token[sdx]) {
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;{&quot;</span> :
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;[&quot;</span> : 
-                search( sdx + <span class="hljs-number">1</span>, path <span class="hljs-string">&quot;/&quot;</span> ckey, sdx)
+                search( path <span class="hljs-string">&quot;/&quot;</span> ckey, sdx++)
                 <span class="hljs-built_in">break</span>
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;}&quot;</span> :
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;]&quot;</span> : <span class="hljs-built_in">return</span>
@@ -1080,6 +1086,8 @@ END {
     <span class="hljs-built_in">return</span> sp
 }
 
+<span class="hljs-comment"># pretty_print &#xD568;&#xC218;&#xB97C; &#xD638;&#xCD9C;&#xD560; &#xB54C; &quot;{&quot; &quot;[&quot; &#xC2DC;&#xC791; &#xAD04;&#xD638;&#xC758; index &#xBC88;&#xD638; (token &#xBCC0;&#xC218;&#xC5D0;&#xC11C;) </span>
+<span class="hljs-comment"># &#xB97C; &#xC778;&#xC218;&#xB85C; &#xC804;&#xB2EC;&#xD558;&#xBA74; &#xD574;&#xB2F9; &#xBE14;&#xB85D;&#xB9CC; &#xD504;&#xB9B0;&#xD2B8;&#xB429;&#xB2C8;&#xB2E4;.</span>
 <span class="hljs-keyword">function</span> pretty_<span class="hljs-built_in">print</span> (start,    i, depth, prev, cur) {
     <span class="hljs-keyword">for</span> (i = start; i &lt; idx; i++) {
         prev = cur; cur = token[i]
