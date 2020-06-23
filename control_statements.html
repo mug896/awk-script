@@ -743,16 +743,17 @@
         <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;*&quot;</span> :                                     <span class="hljs-built_in">print</span> <span class="hljs-number">222</span>
             res = <span class="hljs-variable">$1</span> * <span class="hljs-variable">$3</span>                      }
             <span class="hljs-built_in">break</span>                          }<span class="hljs-string">&apos;
-        case &quot;/&quot; :                         111
-            res = $1 / $3                  111
-            break                          222
-        default :                          222
-            print &quot;Error&quot;
-            next
+        case &quot;/&quot; :                         
+            res = $1 / $3                  #######  &#xC2E4;&#xD589; &#xACB0;&#xACFC;  ######
+            break                          111
+        default :                          111
+            print &quot;Error&quot;                  222
+            next                           222
     }
     print res
 }&apos;</span>
 
+<span class="hljs-comment">#######  &#xC2E4;&#xD589; &#xACB0;&#xACFC;  #######</span>
 <span class="hljs-number">1</span> + <span class="hljs-number">2</span>
 <span class="hljs-number">3</span>
 <span class="hljs-number">2</span> * <span class="hljs-number">3</span>
