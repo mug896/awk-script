@@ -1195,10 +1195,12 @@ index : <span class="hljs-number">17</span>, value : <span class="hljs-number">4
 function push(arr, val) {
     arr[length(arr)] = val
 }
-function pop(arr,      val) {
-    val = arr[length(arr) - 1]
-    delete arr[length(arr) - 1]
-    return val
+function pop(arr,      ret) {
+    if ( length(arr) &gt; 1 ) {
+        ret = arr[length(arr) - 1]
+        delete arr[length(arr) - 1]
+    }
+    return ret
 }
 &apos;</span> 
 <span class="hljs-number">30</span>
