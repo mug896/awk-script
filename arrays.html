@@ -1182,30 +1182,48 @@ index : <span class="hljs-number">17</span>, value : <span class="hljs-number">4
 </code></pre>
 <h1 id="quiz">Quiz</h1>
 <p>array &#xB97C; &#xC774;&#xC6A9;&#xD574; stack &#xC790;&#xB8CC;&#xAD6C;&#xC870;&#xB97C; &#xB9CC;&#xB4E4;&#xB824;&#xBA74; &#xC5B4;&#xB5BB;&#xAC8C; &#xD560;&#xAE4C;&#xC694;?</p>
-<pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;BEGIN { 
-    stack[0]
-    push(stack, 10)
-    push(stack, 20)
-    push(stack, 30)  
-    print pop(stack)
-    print pop(stack)
-    print pop(stack)
+<pre><code class="lang-bash">$ awk <span class="hljs-operator">-f</span> - &lt;&lt;\EOF
+BEGIN { 
+    stack[<span class="hljs-number">0</span>]
+    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;stack length: &quot;</span> slength(stack)
+    push(stack, <span class="hljs-number">10</span>)
+    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;stack length: &quot;</span> slength(stack)
+    push(stack, <span class="hljs-number">20</span>)
+    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;stack length: &quot;</span> slength(stack)
+    push(stack, <span class="hljs-number">30</span>)  
+    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;stack length: &quot;</span> slength(stack)
+    <span class="hljs-built_in">print</span> pop(stack)
+    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;stack length: &quot;</span> slength(stack)
+    <span class="hljs-built_in">print</span> pop(stack)
+    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;stack length: &quot;</span> slength(stack)
+    <span class="hljs-built_in">print</span> pop(stack)
+    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;stack length: &quot;</span> slength(stack)
 }
 
-function push(arr, val) {
-    arr[length(arr)] = val
+<span class="hljs-keyword">function</span> push(arr, val) {
+    arr[ length(arr) ] = val
 }
-function pop(arr,      ret) {
-    if ( length(arr) &gt; 1 ) {
-        ret = arr[length(arr) - 1]
-        delete arr[length(arr) - 1]
+<span class="hljs-keyword">function</span> pop(arr,      ret) {
+    <span class="hljs-keyword">if</span> ( length(arr) &gt; <span class="hljs-number">1</span> ) {
+        ret = arr[ length(arr) - <span class="hljs-number">1</span> ]
+        delete arr[ length(arr) - <span class="hljs-number">1</span> ]
     }
-    return ret
+    <span class="hljs-built_in">return</span> ret
 }
-&apos;</span> 
+<span class="hljs-keyword">function</span> slength(arr) {
+    <span class="hljs-built_in">return</span> length(arr) - <span class="hljs-number">1</span>
+}
+EOF
+stack length: <span class="hljs-number">0</span>
+stack length: <span class="hljs-number">1</span>
+stack length: <span class="hljs-number">2</span>
+stack length: <span class="hljs-number">3</span>
 <span class="hljs-number">30</span>
+stack length: <span class="hljs-number">2</span>
 <span class="hljs-number">20</span>
+stack length: <span class="hljs-number">1</span>
 <span class="hljs-number">10</span>
+stack length: <span class="hljs-number">0</span>
 </code></pre>
 
                     
