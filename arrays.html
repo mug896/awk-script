@@ -1180,6 +1180,31 @@ $ awk <span class="hljs-string">&apos;BEGIN {
 }&apos;</span> 
 index : <span class="hljs-number">17</span>, value : <span class="hljs-number">400</span>   <span class="hljs-comment"># &#xCD5C;&#xC885;&#xC801;&#xC73C;&#xB85C; &#xB9C8;&#xC9C0;&#xB9C9; &#xAC12;&#xC778; 400 &#xC774; &#xB41C;&#xB2E4;.</span>
 </code></pre>
+<h1 id="quiz">Quiz</h1>
+<p>array &#xB97C; &#xC774;&#xC6A9;&#xD574; stack &#xC790;&#xB8CC;&#xAD6C;&#xC870;&#xB97C; &#xB9CC;&#xB4E4;&#xB824;&#xBA74; &#xC5B4;&#xB5BB;&#xAC8C; &#xD560;&#xAE4C;&#xC694;?</p>
+<pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;BEGIN { 
+    stack[0]
+    push(stack, 10)
+    push(stack, 20)
+    push(stack, 30)  
+    print pop(stack)
+    print pop(stack)
+    print pop(stack)
+}
+
+function push(arr, val) {
+    arr[length(arr)] = val
+}
+function pop(arr,      val) {
+    val = arr[length(arr) - 1]
+    delete arr[length(arr) - 1]
+    return val
+}
+&apos;</span> 
+<span class="hljs-number">30</span>
+<span class="hljs-number">20</span>
+<span class="hljs-number">10</span>
+</code></pre>
 
                     
                     </section>
