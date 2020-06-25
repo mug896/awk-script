@@ -1185,19 +1185,19 @@ index : <span class="hljs-number">17</span>, value : <span class="hljs-number">4
 <pre><code class="lang-bash">$ awk <span class="hljs-operator">-f</span> - &lt;&lt;\EOF
 BEGIN { 
     stack[<span class="hljs-number">0</span>]
-    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;stack length: &quot;</span> slength(stack)
+    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;stack length: &quot;</span> slen(stack)
     push(stack, <span class="hljs-number">10</span>)
-    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;stack length: &quot;</span> slength(stack)
+    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;stack length: &quot;</span> slen(stack)
     push(stack, <span class="hljs-number">20</span>)
-    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;stack length: &quot;</span> slength(stack)
+    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;stack length: &quot;</span> slen(stack)
     push(stack, <span class="hljs-number">30</span>)  
-    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;stack length: &quot;</span> slength(stack)
+    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;stack length: &quot;</span> slen(stack)
     <span class="hljs-built_in">print</span> pop(stack)
-    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;stack length: &quot;</span> slength(stack)
+    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;stack length: &quot;</span> slen(stack)
     <span class="hljs-built_in">print</span> pop(stack)
-    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;stack length: &quot;</span> slength(stack)
+    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;stack length: &quot;</span> slen(stack)
     <span class="hljs-built_in">print</span> pop(stack)
-    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;stack length: &quot;</span> slength(stack)
+    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;stack length: &quot;</span> slen(stack)
 }
 
 <span class="hljs-keyword">function</span> push(arr, val) {
@@ -1210,7 +1210,7 @@ BEGIN {
     }
     <span class="hljs-built_in">return</span> ret
 }
-<span class="hljs-keyword">function</span> slength(arr) {
+<span class="hljs-keyword">function</span> slen(arr) {
     <span class="hljs-built_in">return</span> length(arr) - <span class="hljs-number">1</span>
 }
 EOF
