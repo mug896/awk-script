@@ -1120,9 +1120,9 @@ END {
 <p>&#xC704;&#xC758; sample.json &#xC5D0;&#xC11C; &#xAC01; &#xBA64;&#xBC84; &#xBE14;&#xB85D;&#xC744; desc age &#xC21C;&#xC73C;&#xB85C; &#xCD9C;&#xB825;&#xD558;&#xB824;&#xBA74; &#xC5B4;&#xB5BB;&#xAC8C; &#xD560;&#xAE4C;&#xC694;?</p>
 <pre><code class="lang-bash">$ ./json.sh <span class="hljs-operator">-s</span> /members/name sample.json | 
 xargs -i ./json.sh <span class="hljs-operator">-s</span> /members/name={} sample.json |
-awk <span class="hljs-string">&apos;/{/ { res = &quot;{&quot;; next }
-         { if ( $1 ~ /&quot;age&quot;/ ) idx = $2 i++; res = res &quot;\n&quot; $0 }
-     /}/ { a[idx] = res } 
+awk <span class="hljs-string">&apos;&quot;{&quot; == $0 { res = &quot;{&quot;; next }
+               { if ( $1 ~ /&quot;age&quot;/ ) idx = $2 i++; res = res &quot;\n&quot; $0 }
+     &quot;}&quot; == $0 { a[idx] = res } 
 END { PROCINFO[&quot;sorted_in&quot;]=&quot;@ind_num_desc&quot;; for (i in a) print a[i] }
 &apos;</span>
 {
