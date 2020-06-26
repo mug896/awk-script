@@ -1124,7 +1124,7 @@ awk <span class="hljs-string">&apos;/{/ { res = &quot;{&quot;; next } \
          { if ( $1 ~ /&quot;age&quot;/ ) idx = $2 i; res = res &quot;\n&quot; $0 } \
      /}/ { arr[idx] = res; i++ } 
 END { PROCINFO[&quot;sorted_in&quot;]=&quot;@ind_num_desc&quot;; for (i in arr) print arr[i] }
-&apos;</span> - 
+&apos;</span>
 {
   <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Eternal Flame&quot;</span>,
   <span class="hljs-string">&quot;age&quot;</span>: <span class="hljs-number">1000000</span>,
