@@ -1054,6 +1054,23 @@ fruit orange <span class="hljs-number">35</span>
 fruit apple <span class="hljs-number">15</span>
 fruit banana <span class="hljs-number">55</span>
 </code></pre>
+<p>index &#xB97C; &#xC22B;&#xC790; &#xBE44;&#xAD50;&#xB97C; &#xD574;&#xC11C; &#xC815;&#xB82C;&#xD560;&#xB54C;&#xB294; <code>,</code> &#xB4B7; &#xBD80;&#xBD84;&#xC740; &#xC2A4;&#xD2B8;&#xB9C1; &#xBE44;&#xAD50;&#xB97C; &#xD558;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;BEGIN { a[9,9]=10; a[10,10]=20; a[11,11]=30
+    PROCINFO[&quot;sorted_in&quot;]=&quot;@ind_num_asc&quot;
+    for (i in a) print a[i]
+}&apos;</span> 
+<span class="hljs-number">10</span>
+<span class="hljs-number">20</span>
+<span class="hljs-number">30</span>
+
+$ awk <span class="hljs-string">&apos;BEGIN { a[1,9]=10; a[1,10]=20; a[1,11]=30
+    PROCINFO[&quot;sorted_in&quot;]=&quot;@ind_num_asc&quot;
+    for (i in a) print a[i] 
+}&apos;</span> 
+<span class="hljs-number">20</span>
+<span class="hljs-number">30</span>
+<span class="hljs-number">10</span>
+</code></pre>
 <h3 id="subarray-&#xC0AC;&#xC6A9;&#xC2DC;-&#xC8FC;&#xC758;&#xD560;-&#xC810;">Subarray &#xC0AC;&#xC6A9;&#xC2DC; &#xC8FC;&#xC758;&#xD560; &#xC810;</h3>
 <p>split &#xD568;&#xC218;&#xB294; &#xC2E4;&#xD589; &#xACB0;&#xACFC;&#xB85C; &#xB450; &#xBC88;&#xC9F8; &#xC778;&#xC218;&#xAC00; array &#xAC00; &#xB418;&#xB294;&#xB370;&#xC694;.
 &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xB450; &#xBC88;&#xC9F8; &#xC778;&#xC218;&#xC5D0; &#xBC14;&#xB85C; subarray <code>arr[1]</code>, <code>arr[2]</code> &#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xAC8C; &#xB418;&#xBA74; 
