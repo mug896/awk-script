@@ -1116,6 +1116,48 @@ END {
     <span class="hljs-built_in">print</span>
 }
 </code></pre>
+<h1 id="2">2.</h1>
+<p>&#xC704;&#xC758; smaple.json &#xC5D0;&#xC11C; &#xAC01; &#xBA64;&#xBC84; &#xBE14;&#xB85D;&#xC744; desc age &#xC21C;&#xC73C;&#xB85C; &#xCD9C;&#xB825;&#xD558;&#xB824;&#xBA74; &#xC5B4;&#xB5BB;&#xAC8C; &#xD560;&#xAE4C;&#xC694;?</p>
+<pre><code class="lang-bash">$ ./json.sh <span class="hljs-operator">-s</span> /members/name sample.json | 
+xargs -i ./json.sh <span class="hljs-operator">-s</span> /members/name={} sample.json |
+awk <span class="hljs-string">&apos;/{/ { res = &quot;{&quot;; next } \
+         { if ( $1 ~ /&quot;age&quot;/ ) idx = $2 i; res = res &quot;\n&quot; $0 } \
+     /}/ { arr[idx] = res; i++ } 
+END { PROCINFO[&quot;sorted_in&quot;]=&quot;@ind_num_desc&quot;; for (i in arr) print arr[i] }
+&apos;</span> - 
+{
+  <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Eternal Flame&quot;</span>,
+  <span class="hljs-string">&quot;age&quot;</span>: <span class="hljs-number">1000000</span>,
+  <span class="hljs-string">&quot;secretIdentity&quot;</span>: <span class="hljs-string">&quot;Unknown&quot;</span>,
+  <span class="hljs-string">&quot;powers&quot;</span>: [
+    <span class="hljs-string">&quot;Immortality&quot;</span>,
+    <span class="hljs-string">&quot;Heat Immunity&quot;</span>,
+    <span class="hljs-string">&quot;Inferno&quot;</span>,
+    <span class="hljs-string">&quot;Teleportation&quot;</span>,
+    <span class="hljs-string">&quot;Interdimensional travel&quot;</span>
+  ]
+}
+{
+  <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Madame Uppercut&quot;</span>,
+  <span class="hljs-string">&quot;age&quot;</span>: <span class="hljs-number">39</span>,
+  <span class="hljs-string">&quot;secretIdentity&quot;</span>: <span class="hljs-string">&quot;Jane Wilson&quot;</span>,
+  <span class="hljs-string">&quot;powers&quot;</span>: [
+    <span class="hljs-string">&quot;Million tonne punch&quot;</span>,
+    <span class="hljs-string">&quot;Damage resistance&quot;</span>,
+    <span class="hljs-string">&quot;Superhuman reflexes&quot;</span>
+  ]
+}
+{
+  <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Molecule Man&quot;</span>,
+  <span class="hljs-string">&quot;age&quot;</span>: <span class="hljs-number">29</span>,
+  <span class="hljs-string">&quot;secretIdentity&quot;</span>: <span class="hljs-string">&quot;Dan Jukes&quot;</span>,
+  <span class="hljs-string">&quot;powers&quot;</span>: [
+    <span class="hljs-string">&quot;Radiation resistance&quot;</span>,
+    <span class="hljs-string">&quot;Turning tiny&quot;</span>,
+    <span class="hljs-string">&quot;Radiation blast&quot;</span>
+  ]
+}
+</code></pre>
 
                     
                     </section>
