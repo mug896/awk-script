@@ -1123,7 +1123,7 @@ xargs -i ./json.sh <span class="hljs-operator">-s</span> /members/name={} sample
 awk <span class="hljs-string">&apos;&quot;{&quot; == $0 { res = &quot;{&quot;; next }
                { if ( $1 ~ /&quot;age&quot;/ ) idx = $2 i++; res = res &quot;\n&quot; $0 }
      &quot;}&quot; == $0 { a[idx] = res } 
-END { PROCINFO[&quot;sorted_in&quot;]=&quot;@ind_num_desc&quot;; for (i in a) print a[i] }
+END { PROCINFO[&quot;sorted_in&quot;] = &quot;@ind_num_desc&quot;; for (i in a) print a[i] }
 &apos;</span>
 {
   <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Eternal Flame&quot;</span>,
