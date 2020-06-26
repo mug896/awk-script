@@ -1121,8 +1121,8 @@ END {
 <pre><code class="lang-bash">$ ./json.sh <span class="hljs-operator">-s</span> /members/name sample.json | 
 xargs -i ./json.sh <span class="hljs-operator">-s</span> /members/name={} sample.json |
 awk <span class="hljs-string">&apos;/{/ { res = &quot;{&quot;; next } \
-         { if ( $1 ~ /&quot;age&quot;/ ) idx = $2 i; res = res &quot;\n&quot; $0 } \
-     /}/ { a[idx] = res; i++ } 
+         { if ( $1 ~ /&quot;age&quot;/ ) idx = $2 i++; res = res &quot;\n&quot; $0 } \
+     /}/ { a[idx] = res } 
 END { PROCINFO[&quot;sorted_in&quot;]=&quot;@ind_num_desc&quot;; for (i in a) print a[i] }
 &apos;</span>
 {
