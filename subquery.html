@@ -759,8 +759,8 @@ NR == FNR {
     next 
 }{
     <span class="hljs-keyword">if</span> ((<span class="hljs-variable">$6</span> <span class="hljs-keyword">in</span> ac) &amp;&amp; (ac[<span class="hljs-variable">$6</span>] == <span class="hljs-variable">$2</span>))
-       <span class="hljs-comment"># &#xCD9C;&#xB825;&#xB54C; $6 &#xAC00; group by &#xB418;&#xB294; &#xAC83;&#xC744; &#xBC29;&#xC9C0;&#xD558;&#xAE30; &#xC704;&#xD574; ++i &#xB97C; &#xCD94;&#xAC00;</span>
-       r[<span class="hljs-variable">$6</span>,++i] = sprintf(<span class="hljs-string">&quot;%d %6s %11s %6d&quot;</span>, <span class="hljs-variable">$1</span>, <span class="hljs-variable">$6</span>, <span class="hljs-variable">$4</span>, <span class="hljs-variable">$2</span>)
+       <span class="hljs-comment"># &#xCD9C;&#xB825;&#xB54C; $6 &#xAC00; group by &#xB418;&#xB294; &#xAC83;&#xC744; &#xBC29;&#xC9C0;&#xD558;&#xAE30; &#xC704;&#xD574; i++ &#xB97C; &#xCD94;&#xAC00;</span>
+       r[<span class="hljs-variable">$6</span>,i++] = sprintf(<span class="hljs-string">&quot;%d %6s %11s %6d&quot;</span>, <span class="hljs-variable">$1</span>, <span class="hljs-variable">$6</span>, <span class="hljs-variable">$4</span>, <span class="hljs-variable">$2</span>)
 } 
 END {
     delete ac
