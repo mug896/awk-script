@@ -851,6 +851,32 @@ $ awk <span class="hljs-string">&apos;BEGIN { print &quot;begin...&quot; } END {
 begin...
 end...
 </code></pre>
+<h4 id="begin-beginfile---&#xC740;-global-&#xC601;&#xC5ED;&#xC5D0;-&#xD574;&#xB2F9;&#xB429;&#xB2C8;&#xB2E4;">BEGIN, BEGINFILE, <code>{ }</code> &#xC740; global &#xC601;&#xC5ED;&#xC5D0; &#xD574;&#xB2F9;&#xB429;&#xB2C8;&#xB2E4;.</h4>
+<p>&#xB530;&#xB77C;&#xC11C; foo &#xD568;&#xC218;&#xC5D0;&#xC11C; &#xBCC0;&#xC218; <code>AA</code>, <code>BB</code>, <code>EE</code> &#xC5D0; &#xC811;&#xADFC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> | awk <span class="hljs-string">&apos;
+BEGIN{ AA = 100 } 
+BEGINFILE { BB = 200 } 
+ENDFILE { CC = 300 } 
+END { DD = 400 } 
+
+{ EE = 500; foo() } 
+
+func foo() { 
+    print &quot;BEGIN : &quot; AA
+    print &quot;BEGINFILE : &quot; BB
+    print &quot;ENDFILE : &quot; CC
+    print &quot;END : &quot; DD
+    print &quot;{ } : &quot; EE
+}&apos;</span> 
+
+<span class="hljs-comment">#####  &#xC2E4;&#xD589; &#xACB0;&#xACFC;  #####</span>
+
+BEGIN : <span class="hljs-number">100</span>
+BEGINFILE : <span class="hljs-number">200</span>
+ENDFILE : 
+END : 
+{ } : <span class="hljs-number">500</span>
+</code></pre>
 <hr>
 <h3 id="&#xC608;&#xC81C;-">&#xC608;&#xC81C; )</h3>
 <p>&#xD604;&#xC7AC; &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xC5D0; &#xC788;&#xB294; <code>*.awk</code> &#xD30C;&#xC77C; total size &#xAD6C;&#xD558;&#xAE30;</p>
