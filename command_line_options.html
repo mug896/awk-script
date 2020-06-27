@@ -725,7 +725,7 @@ converting &#xC5C6;&#xC774; &#xBB34;&#xC870;&#xAC74; single-byte characters &#xB
 <code>-e</code> &#xC635;&#xC158;&#xC744; &#xC774;&#xC6A9;&#xD55C; &#xC18C;&#xC2A4;&#xCF54;&#xB4DC; &#xC804;&#xB2EC;&#xC744; &#xD558;&#xC9C0; &#xBABB;&#xD558;&#xAC8C; &#xD569;&#xB2C8;&#xB2E4;.
 &#xB530;&#xB77C;&#xC11C; &#xBA85;&#xB839; &#xB77C;&#xC778;&#xC5D0; &#xC0AC;&#xC6A9;&#xB41C; &#xC778;&#xC218;&#xB294; &#xCC98;&#xB9AC;&#xB418;&#xC9C0; &#xC54A;&#xACE0; &#xC2A4;&#xD2B8;&#xB9C1;&#xC73C;&#xB85C;&#xB9CC; &#xC804;&#xB2EC;&#xB429;&#xB2C8;&#xB2E4;.</p>
 <p><code>awk -f</code> &#xB294; <code>-v</code> &#xB97C; awk &#xC635;&#xC158;&#xC73C;&#xB85C; &#xC778;&#xC2DD;&#xD574; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD558;&#xC9C0;&#xB9CC;
-<code>awk -E</code> &#xB294; &#xADF8;&#xB300;&#xB85C; &#xD30C;&#xC77C;&#xBA85; &#xC2A4;&#xD2B8;&#xB9C1;&#xC73C;&#xB85C; &#xC804;&#xB2EC;&#xB41C;&#xB2E4;.</p>
+<code>awk -E</code> &#xB294; &#xADF8;&#xB300;&#xB85C; &#xD30C;&#xC77C;&#xBA85;&#xC73C;&#xB85C; &#xC804;&#xB2EC;&#xB41C;&#xB2E4;.</p>
 <pre><code class="lang-bash">$ cat test.sh                $ cat test.sh                                              
 <span class="hljs-comment">#!/usr/bin/awk -E            #!/usr/bin/awk -f</span>
 
@@ -737,6 +737,23 @@ BEGINFILE {                  BEGINFILE {
 $ ./test.sh -v hello         $ ./test.sh -v hello   <span class="hljs-comment"># &#xC624;&#xB958;</span>
 -v                           awk: <span class="hljs-string">&apos;hello&apos;</span> argument to <span class="hljs-string">&apos;-v&apos;</span> not <span class="hljs-keyword">in</span> <span class="hljs-string">&apos;var=value&apos;</span> form
 hello                        . . .
+</code></pre>
+<p>&#xB9CC;&#xC57D;&#xC5D0; &#xC635;&#xC158;&#xC744; &#xCD94;&#xAC00;&#xD558;&#xB824;&#xBA74; <code>-E</code> &#xC635;&#xC158; &#xC804;&#xC5D0; &#xC704;&#xCE58;&#xC2DC;&#xD0A4;&#xBA74; ARG &#xC5D0; &#xD3EC;&#xD568;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ cat test.sh
+<span class="hljs-comment">#!/usr/bin/env -S gawk -v AA=100 -E</span>
+
+BEGIN {
+    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;ARGC : &quot;</span> ARGC
+    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;ARGV[0] : &quot;</span> ARGV[<span class="hljs-number">0</span>]
+    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;ARGV[1] : &quot;</span> ARGV[<span class="hljs-number">1</span>]
+    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;AA : &quot;</span> AA 
+}
+
+$ ./test.sh
+ARGC : <span class="hljs-number">1</span>
+ARGV[<span class="hljs-number">0</span>] : gawk
+ARGV[<span class="hljs-number">1</span>] : 
+AA : <span class="hljs-number">100</span>
 </code></pre>
 <h4 id="g-genpot">-g, --gen-pot</h4>
 <p>&#xC11C;&#xBE44;&#xC2A4; &#xBA54;&#xC2DC;&#xC9C0;&#xC758; &#xAD6D;&#xC81C;&#xD654;&#xB97C; &#xC704;&#xD55C; &#xAE30;&#xB2A5;&#xC73C;&#xB85C; &#xC18C;&#xC2A4; &#xCF54;&#xB4DC;&#xC5D0;&#xC11C; &#xD2B9;&#xC815; &#xD615;&#xC2DD;&#xC73C;&#xB85C; &#xC791;&#xC131;&#xB41C; &#xC2A4;&#xD2B8;&#xB9C1; &#xC0C1;&#xC218;&#xB97C;
