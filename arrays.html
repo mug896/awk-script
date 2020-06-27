@@ -1227,6 +1227,12 @@ BEGIN {
     }
     <span class="hljs-built_in">return</span> ret
 }
+<span class="hljs-keyword">function</span> peek(arr,      ret) {
+    <span class="hljs-keyword">if</span> ( length(arr) &gt; <span class="hljs-number">1</span> ) {
+        ret = arr[ length(arr) - <span class="hljs-number">1</span> ]
+    }
+    <span class="hljs-built_in">return</span> ret
+}
 <span class="hljs-keyword">function</span> slen(arr) {
     <span class="hljs-built_in">return</span> length(arr) - <span class="hljs-number">1</span>
 }
