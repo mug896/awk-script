@@ -838,6 +838,17 @@ length: <span class="hljs-number">5</span> index: <span class="hljs-number">33</
 length: <span class="hljs-number">5</span> index: <span class="hljs-number">44</span> value: <span class="hljs-number">400</span>
 length: <span class="hljs-number">5</span> index: <span class="hljs-number">55</span> value: <span class="hljs-number">500</span>
 </code></pre>
+<p>&#xC0C8;&#xB85C;&#xC6B4; &#xB808;&#xCF54;&#xB4DC; &#xC785;&#xB825;&#xC2DC; &#xB9C8;&#xB2E4; &#xAE30;&#xC874;&#xC5D0; &#xC0AC;&#xC6A9;&#xB418;&#xB358; array &#xBCC0;&#xC218;&#xB97C; reset &#xD574; &#xC0AC;&#xC6A9;&#xD558;&#xB824;&#xBA74; delete &#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">BEGIN { token[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>]; stack[<span class="hljs-number">0</span>] }
+{
+    idx = <span class="hljs-number">0</span>
+    tokenize(token, <span class="hljs-variable">$0</span>)
+    . . .
+
+    delete token     <span class="hljs-comment"># &#xB2E4;&#xC74C; &#xB808;&#xCF54;&#xB4DC; &#xC785;&#xB825;&#xC2DC;&#xC5D0;&#xB294; array &#xAC00; &#xCD08;&#xAE30;&#xD654; &#xB41C;&#xB2E4;.</span>
+    delete stack
+}
+</code></pre>
 <p>delete &#xBB38;&#xC744; &#xC801;&#xC808;&#xD788; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xCD94;&#xAC00;&#xC801;&#xC778; &#xBA54;&#xBAA8;&#xB9AC; &#xC0AC;&#xC6A9;&#xC744; &#xC81C;&#xD55C;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
 &#xAC00;&#xB839; array A &#xB97C; &#xC0DD;&#xC131;&#xD558;&#xB294;&#xB370; 1G &#xBA54;&#xBAA8;&#xB9AC;&#xAC00; &#xC0AC;&#xC6A9;&#xB418;&#xACE0;, array B &#xB97C; &#xC0DD;&#xC131;&#xD558;&#xB294;&#xB370; 1G,
 array C &#xB97C; &#xC0DD;&#xC131;&#xD558;&#xB294;&#xB370; 1G &#xAC00; &#xC0AC;&#xC6A9;&#xB41C;&#xB2E4;&#xBA74; awk &#xC2E4;&#xD589;&#xC2DC; &#xCD1D; 3G &#xBA54;&#xBAA8;&#xB9AC;&#xAC00; &#xD544;&#xC694;&#xD558;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.
