@@ -1212,8 +1212,8 @@ index : <span class="hljs-number">17</span>, value : <span class="hljs-number">4
 <p>array &#xB97C; &#xC774;&#xC6A9;&#xD574; stack &#xC790;&#xB8CC;&#xAD6C;&#xC870;&#xB97C; &#xB9CC;&#xB4E4;&#xB824;&#xBA74; &#xC5B4;&#xB5BB;&#xAC8C; &#xD560;&#xAE4C;&#xC694;?</p>
 <pre><code class="lang-bash">$ awk <span class="hljs-operator">-f</span> - &lt;&lt;\EOF
 BEGIN { 
-    stack[<span class="hljs-number">0</span>]
-    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;stack length: &quot;</span> slen(stack)
+    stack[<span class="hljs-number">0</span>]                              <span class="hljs-comment"># &#xC5EC;&#xAE30;&#xC11C; &#xC6D0;&#xC18C;&#xAC00; &#xD558;&#xB098; &#xC0DD;&#xC131;&#xB3FC; length &#xAC00; 1 &#xC774; &#xB41C;&#xB2E4;.</span>
+    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;stack length: &quot;</span> slen(stack)    <span class="hljs-comment"># &#xB530;&#xB77C;&#xC11C; stack length &#xB97C; &#xAD6C;&#xD560;&#xB54C;&#xB294; -1 &#xC744; &#xD569;&#xB2C8;&#xB2E4;.</span>
     push(stack, <span class="hljs-number">10</span>)
     <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;stack length: &quot;</span> slen(stack)
     push(stack, <span class="hljs-number">20</span>)
@@ -1229,7 +1229,7 @@ BEGIN {
 }
 
 <span class="hljs-keyword">function</span> push(arr, val) {
-    arr[ length(arr) ] = val
+    arr[ length(arr) ] = val     <span class="hljs-comment"># push &#xB418;&#xB294; &#xC6D0;&#xC18C;&#xB294; stack[1] &#xBD80;&#xD130; &#xB4E4;&#xC5B4;&#xAC00;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.</span>
 }
 <span class="hljs-keyword">function</span> pop(arr,      ret) {
     <span class="hljs-keyword">if</span> ( length(arr) &gt; <span class="hljs-number">1</span> ) {
