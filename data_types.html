@@ -801,6 +801,16 @@ $ awk <span class="hljs-string">&apos;BEGIN {                         $ awk &apo
 foo                                    foo
 <span class="hljs-number">0</span>                                      foobar
 </code></pre>
+<p>&#xC9C0;&#xAE08; awk 5.0.1 &#xC744; &#xC0AC;&#xC6A9;&#xC911;&#xC778;&#xB370; &#xC2A4;&#xD2B8;&#xB9C1; concatination &#xACFC; &#xAD00;&#xB828;&#xD574;&#xC11C; prefix increment operator ( <code>++</code> ) &#xC5D0; &#xBC84;&#xADF8;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xC815;&#xC0C1;&#xC801;&#xC73C;&#xB85C; &#xB3D9;&#xC791;&#xD558;&#xC9C0;&#xB9CC; &#xC2A4;&#xD2B8;&#xB9C1; &#xC5F0;&#xC0B0;&#xC5D0;&#xC11C;&#xB294; &#xC624;&#xB958;&#xAC00; &#xC788;&#xB124;&#xC694;.
+&#xBC84;&#xADF8; &#xB9AC;&#xD3EC;&#xD2B8;&#xB97C; &#xBCF4;&#xB0C8;&#xB294;&#xB370; &#xB2F5;&#xC7A5;&#xC774; &#xC5C6;&#xB294;&#xAC83;&#xC744; &#xBCF4;&#xBA74; &#xC218;&#xC815;&#xB420;&#xAC83; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.
+( &#xBCF4;&#xD1B5; &#xBC84;&#xADF8;&#xAC00; &#xC544;&#xB2C8;&#xBA74; &#xCE5C;&#xC808;&#xD55C; &#xC124;&#xBA85;&#xACFC; &#xD568;&#xAED8; &#xB2F5;&#xC7A5;&#xC774; &#xC634; :) )</p>
+<pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;BEGIN { n = 12; x = 2; r = n x++; print r }&apos;</span>
+<span class="hljs-number">122</span>
+
+$ awk <span class="hljs-string">&apos;BEGIN { n = 12; x = 2; r = n ++x; print r }&apos;</span>   <span class="hljs-comment"># 123 &#xC774; &#xB418;&#xC5B4;&#xC57C; &#xD558;&#xB294;&#xB370; 122 &#xAC00; &#xB41C;&#xB2E4;.</span>
+<span class="hljs-number">122</span>
+</code></pre>
 <h3 id="&#xC22B;&#xC790;&#xC640;-&#xC2A4;&#xD2B8;&#xB9C1;&#xC758;-&#xBD80;&#xB4F1;&#xD638;-&#xB4F1;&#xD638;-&#xC0AC;&#xC6A9;">&#xC22B;&#xC790;&#xC640; &#xC2A4;&#xD2B8;&#xB9C1;&#xC758; &#xBD80;&#xB4F1;&#xD638;, &#xB4F1;&#xD638; &#xC0AC;&#xC6A9;</h3>
 <p>awk &#xC5D0;&#xC11C;&#xB294; &#xC22B;&#xC790; 123 &#xC640; &#xC2A4;&#xD2B8;&#xB9C1; &quot;123&quot; &#xC774; &#xBB38;&#xB9E5;&#xC5D0; &#xB9DE;&#xCD94;&#xC5B4;&#xC11C; &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xD0C0;&#xC785;&#xC774; &#xBCC0;&#xACBD;&#xB418;&#xC9C0;&#xB9CC;
 &#xD55C;&#xAC00;&#xC9C0; &#xC8FC;&#xC758;&#xD560; &#xC810;&#xC740; &#xBD80;&#xB4F1;&#xD638;, &#xB4F1;&#xD638;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xACF3;&#xC5D0;&#xC11C;&#xB294; &#xB450; &#xD53C;&#xC5F0;&#xC0B0;&#xC790; &#xC911;&#xC5D0; &#xD558;&#xB098;&#xAC00; 
