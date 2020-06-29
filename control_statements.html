@@ -1116,6 +1116,27 @@ END {
     <span class="hljs-built_in">print</span>
 }
 </code></pre>
+<p>search &#xD568;&#xC218;&#xC5D0;&#xC11C;&#xB294; &#xB0B4;&#xBD80;&#xC801;&#xC73C;&#xB85C; recursion &#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294;&#xB370; recursion &#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xACA0;&#xB2E4;&#xB294; &#xAC83;&#xC740;
+&#xB2E4;&#xC2DC; &#xB9D0;&#xD574;&#xC11C; &#xC790;&#xB3D9;&#xC73C;&#xB85C; stack &#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xACA0;&#xB2E4;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;
+( &#xD568;&#xC218;&#xAC00; &#xD638;&#xCD9C;&#xB418;&#xBA74; &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; &#xBC0F; &#xC9C0;&#xC5ED;&#xBCC0;&#xC218;&#xAC00; stack &#xC5D0; push &#xB418;&#xACE0;
+return &#xC2DC;&#xC5D0;&#xB294; pop &#xB418;&#xBBC0;&#xB85C; ).
+&#xB530;&#xB77C;&#xC11C; stack &#xC790;&#xB8CC;&#xAD6C;&#xC870;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC744; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; recursion &#xC5C6;&#xC774; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xD574;&#xB3C4; &#xB3D9;&#xC77C;&#xD55C;
+&#xACB0;&#xACFC;&#xAC00; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">        switch (token[sdx]) {
+            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;{&quot;</span> :
+            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;[&quot;</span> : 
+                push(stack, path )    <span class="hljs-comment"># &#xAE30;&#xC874; path, sblock &#xBCC0;&#xC218;&#xAC12;&#xC744;</span>
+                push(stack, sblock )  <span class="hljs-comment"># stack &#xC5D0; push &#xD574;&#xC11C; &#xC800;&#xC7A5;&#xD558;&#xACE0;</span>
+                path = path <span class="hljs-string">&quot;/&quot;</span> ckey  <span class="hljs-comment"># &#xBCC0;&#xC218;&#xAC12;&#xC744; &#xC0C8;&#xB85C; &#xC124;&#xC815;</span>
+                sblock = sdx++
+                <span class="hljs-built_in">break</span>
+            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;}&quot;</span> :
+            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;]&quot;</span> :
+                sblock = pop(stack)   <span class="hljs-comment"># &#xAE30;&#xC874;&#xC758; path, sblock &#xAC12;&#xC744;</span>
+                path = pop(stack)     <span class="hljs-comment"># stack &#xC5D0;&#xC11C; pop &#xD574;&#xC11C; &#xBCF5;&#xAD6C;</span>
+                <span class="hljs-built_in">break</span>
+            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;:&quot;</span> :
+</code></pre>
 <h1 id="2">2.</h1>
 <p>&#xC704;&#xC758; sample.json &#xB370;&#xC774;&#xD130;&#xC5D0;&#xC11C; &#xAC01; &#xBA64;&#xBC84; &#xBE14;&#xB85D;&#xC744; DESC age &#xC21C;&#xC73C;&#xB85C; &#xCD9C;&#xB825;&#xD558;&#xB824;&#xBA74; &#xC5B4;&#xB5BB;&#xAC8C; &#xD560;&#xAE4C;&#xC694;?</p>
 <pre><code class="lang-bash">$ ./json.sh <span class="hljs-operator">-s</span> /members/name sample.json | 
