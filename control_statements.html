@@ -1125,15 +1125,15 @@ return &#xC2DC;&#xC5D0;&#xB294; pop &#xB418;&#xBBC0;&#xB85C; ).
 <pre><code class="lang-bash">        switch (token[sdx]) {
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;{&quot;</span> :
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;[&quot;</span> : 
-                push(stack, path )    <span class="hljs-comment"># &#xAE30;&#xC874; path, sblock &#xBCC0;&#xC218;&#xAC12;&#xC744;</span>
-                push(stack, sblock )  <span class="hljs-comment"># stack &#xC5D0; push &#xD574;&#xC11C; &#xC800;&#xC7A5;&#xD558;&#xACE0;</span>
-                path = path <span class="hljs-string">&quot;/&quot;</span> ckey  <span class="hljs-comment"># &#xBCC0;&#xC218;&#xAC12;&#xC744; &#xC0C8;&#xB85C; &#xC124;&#xC815;</span>
+                push(stack, path )       <span class="hljs-comment"># &#xAE30;&#xC874; path, sblock &#xBCC0;&#xC218;&#xAC12;&#xC744;</span>
+                push(stack, sblock )     <span class="hljs-comment"># stack &#xC5D0; push &#xD574;&#xC11C; &#xC800;&#xC7A5;&#xD558;&#xACE0;</span>
+                path = path <span class="hljs-string">&quot;/&quot;</span> ckey     <span class="hljs-comment"># &#xBCC0;&#xC218;&#xAC12;&#xC744; &#xC0C8;&#xB85C; &#xC124;&#xC815;</span>
                 sblock = sdx++
                 <span class="hljs-built_in">break</span>
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;}&quot;</span> :
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;]&quot;</span> :
-                sblock = pop(stack)   <span class="hljs-comment"># stack &#xC5D0; &#xC800;&#xC7A5;&#xD574; &#xB193;&#xC740; path, sblock</span>
-                path = pop(stack)     <span class="hljs-comment"># &#xBCC0;&#xC218;&#xAC12;&#xC744; pop &#xD574;&#xC11C; &#xBCF5;&#xAD6C;</span>
+                sblock = pop(stack)      <span class="hljs-comment"># stack &#xC5D0; &#xC800;&#xC7A5;&#xD574; &#xB193;&#xC740; path, sblock</span>
+                path = pop(stack)        <span class="hljs-comment"># &#xBCC0;&#xC218;&#xAC12;&#xC744; pop &#xD574;&#xC11C; &#xBCF5;&#xAD6C;</span>
                 <span class="hljs-built_in">break</span>
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;:&quot;</span> :
 </code></pre>
