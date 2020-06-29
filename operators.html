@@ -775,9 +775,9 @@ $ ./test.sh file        <span class="hljs-comment"># &#xB610;&#xB294; cat file |
 </code></pre>
 <pre><code class="lang-bash"><span class="hljs-comment">#!/usr/bin/env -S gawk -f</span>
 
-<span class="hljs-comment"># stack &#xC740; &#xB450; &#xAC1C;&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;. stack[0] &#xC5D0;&#xB294; operator &#xC640; &#xAD04;&#xD638;&#xAC00; &#xB4E4;&#xC5B4;&#xAC00;&#xACE0;</span>
+<span class="hljs-comment"># stack &#xC740; &#xB450; &#xAC1C;&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;. ostack[0] &#xC5D0;&#xB294; operator &#xC640; &#xAD04;&#xD638;&#xAC00; &#xB4E4;&#xC5B4;&#xAC00;&#xACE0;</span>
 <span class="hljs-comment"># rstack[0] &#xC5D0;&#xB294; operand &#xAC00; &#xB4E4;&#xC5B4;&#xAC00;&#xACE0; calc &#xACC4;&#xC0B0; &#xACB0;&#xACFC;&#xAC00; &#xC800;&#xC7A5;&#xB429;&#xB2C8;&#xB2E4;.</span>
-BEGIN { token[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>]; stack[<span class="hljs-number">0</span>]; rstack[<span class="hljs-number">0</span>] }
+BEGIN { token[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>]; ostack[<span class="hljs-number">0</span>]; rstack[<span class="hljs-number">0</span>] }
 
 {
     idx = <span class="hljs-number">0</span>
@@ -798,31 +798,31 @@ BEGIN { token[<span class="hljs-number">0</span>][<span class="hljs-number">0</s
 
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;operator&quot;</span> :
                 op = token[i][<span class="hljs-string">&quot;value&quot;</span>]
-                pk = peek(stack)                  <span class="hljs-comment"># stack &#xC758; top &#xD56D;&#xBAA9;&#xC744; &#xC870;&#xD68C;&#xD574;&#xC11C; </span>
-                <span class="hljs-keyword">if</span> ( pk == <span class="hljs-string">&quot;&quot;</span> || pk == <span class="hljs-string">&quot;(&quot;</span> )      <span class="hljs-comment"># &#xD56D;&#xBAA9;&#xC774; empty &#xC774;&#xAC70;&#xB098; &quot;(&quot; &#xC77C; &#xACBD;&#xC6B0;</span>
-                    { push(stack, op); <span class="hljs-built_in">break</span> }    <span class="hljs-comment"># &#xC5F0;&#xC0B0;&#xC790;&#xB97C; stack &#xC5D0; push &#xD569;&#xB2C8;&#xB2E4;.</span>
-                <span class="hljs-keyword">if</span> ( op == <span class="hljs-string">&quot;*&quot;</span> || op == <span class="hljs-string">&quot;/&quot;</span> )        <span class="hljs-comment"># &#xD604;&#xC7AC; &#xC5F0;&#xC0B0;&#xC790;&#xAC00; &quot;*&quot; or &quot;/&quot; &#xC774;&#xBA74;&#xC11C;</span>
-                    <span class="hljs-keyword">if</span> ( pk == <span class="hljs-string">&quot;+&quot;</span> || pk == <span class="hljs-string">&quot;-&quot;</span> )    <span class="hljs-comment"># stack &#xC758; top &#xD56D;&#xBAA9;&#xC774; &quot;+&quot; or &quot;-&quot;</span>
-                        { push(stack, op); <span class="hljs-built_in">break</span> }   <span class="hljs-comment"># &#xC77C;&#xACBD;&#xC6B0; stack &#xC5D0; push &#xD569;&#xB2C8;&#xB2E4;.</span>
-                calc( pop(stack))       <span class="hljs-comment"># &#xADF8; &#xC678;&#xC5D0;&#xB294; stack &#xC5D0;&#xC788;&#xB294; &#xC5F0;&#xC0B0;&#xC790;&#xB97C; pop &#xD55C; &#xD6C4;</span>
-                push( stack, op)        <span class="hljs-comment"># calc &#xD558;&#xACE0; &#xD604;&#xC7AC; &#xC5F0;&#xC0B0;&#xC790;&#xB97C; stack &#xC5D0; push &#xD569;&#xB2C8;&#xB2E4;.</span>
+                pk = peek(ostack)                  <span class="hljs-comment"># ostack &#xC758; top &#xD56D;&#xBAA9;&#xC744; &#xC870;&#xD68C;&#xD574;&#xC11C; </span>
+                <span class="hljs-keyword">if</span> ( pk == <span class="hljs-string">&quot;&quot;</span> || pk == <span class="hljs-string">&quot;(&quot;</span> )       <span class="hljs-comment"># &#xD56D;&#xBAA9;&#xC774; empty &#xC774;&#xAC70;&#xB098; &quot;(&quot; &#xC77C; &#xACBD;&#xC6B0;</span>
+                    { push(ostack, op); <span class="hljs-built_in">break</span> }    <span class="hljs-comment"># &#xC5F0;&#xC0B0;&#xC790;&#xB97C; ostack &#xC5D0; push &#xD569;&#xB2C8;&#xB2E4;.</span>
+                <span class="hljs-keyword">if</span> ( op == <span class="hljs-string">&quot;*&quot;</span> || op == <span class="hljs-string">&quot;/&quot;</span> )         <span class="hljs-comment"># &#xD604;&#xC7AC; &#xC5F0;&#xC0B0;&#xC790;&#xAC00; &quot;*&quot; or &quot;/&quot; &#xC774;&#xBA74;&#xC11C;</span>
+                    <span class="hljs-keyword">if</span> ( pk == <span class="hljs-string">&quot;+&quot;</span> || pk == <span class="hljs-string">&quot;-&quot;</span> )     <span class="hljs-comment"># ostack &#xC758; top &#xD56D;&#xBAA9;&#xC774; &quot;+&quot; or &quot;-&quot;</span>
+                        { push(ostack, op); <span class="hljs-built_in">break</span> }   <span class="hljs-comment"># &#xC77C;&#xACBD;&#xC6B0; ostack &#xC5D0; push &#xD569;&#xB2C8;&#xB2E4;.</span>
+                calc( pop(ostack))       <span class="hljs-comment"># &#xADF8; &#xC678;&#xC5D0;&#xB294; ostack &#xC5D0;&#xC788;&#xB294; &#xC5F0;&#xC0B0;&#xC790;&#xB97C; pop &#xD55C; &#xD6C4;</span>
+                push( ostack, op)        <span class="hljs-comment"># calc &#xD558;&#xACE0; &#xD604;&#xC7AC; &#xC5F0;&#xC0B0;&#xC790;&#xB97C; ostack &#xC5D0; push &#xD569;&#xB2C8;&#xB2E4;.</span>
                 <span class="hljs-built_in">break</span>
 
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;parenthesis&quot;</span> :
                 val = token[i][<span class="hljs-string">&quot;value&quot;</span>]
-                <span class="hljs-keyword">if</span> ( val == <span class="hljs-string">&quot;(&quot;</span> ) push(stack, val)   <span class="hljs-comment"># &quot;(&quot; &#xB97C; &#xB9DE;&#xB098;&#xBA74; stack &#xC5D0; push &#xD558;&#xACE0;</span>
+                <span class="hljs-keyword">if</span> ( val == <span class="hljs-string">&quot;(&quot;</span> ) push(ostack, val)   <span class="hljs-comment"># &quot;(&quot; &#xB97C; &#xB9DE;&#xB098;&#xBA74; ostack &#xC5D0; push &#xD558;&#xACE0;</span>
                 <span class="hljs-keyword">else</span> {
-                    <span class="hljs-keyword">while</span> (val = pop(stack)) {       <span class="hljs-comment"># &quot;)&quot; &#xB97C; &#xB9DE;&#xB098;&#xBA74; &quot;(&quot; &#xAC00; &#xB098;&#xC62C;&#xB54C; &#xAE4C;&#xC9C0;</span>
-                        <span class="hljs-keyword">if</span> ( val == <span class="hljs-string">&quot;(&quot;</span> ) <span class="hljs-built_in">break</span>      <span class="hljs-comment"># &#xC5F0;&#xC0B0;&#xC790;&#xB97C; pop &#xD574;&#xC11C; calc &#xD569;&#xB2C8;&#xB2E4;.</span>
+                    <span class="hljs-keyword">while</span> (val = pop(ostack)) {       <span class="hljs-comment"># &quot;)&quot; &#xB97C; &#xB9DE;&#xB098;&#xBA74; &quot;(&quot; &#xAC00; &#xB098;&#xC62C;&#xB54C; &#xAE4C;&#xC9C0;</span>
+                        <span class="hljs-keyword">if</span> ( val == <span class="hljs-string">&quot;(&quot;</span> ) <span class="hljs-built_in">break</span>       <span class="hljs-comment"># &#xC5F0;&#xC0B0;&#xC790;&#xB97C; pop &#xD574;&#xC11C; calc &#xD569;&#xB2C8;&#xB2E4;.</span>
                         <span class="hljs-keyword">else</span> calc(val)
                     }
                 }
         }
     }
 
-    len = slen(stack)                               <span class="hljs-comment"># stack &#xC5D0; operator &#xAC00; &#xB0A8;&#xC544; &#xC788;&#xC744;&#xACBD;&#xC6B0;</span>
-    <span class="hljs-keyword">for</span> (i = <span class="hljs-number">1</span>; i &lt;= len; i++) calc( pop(stack) )   <span class="hljs-comment"># pop &#xD574;&#xC11C; calc &#xD569;&#xB2C8;&#xB2E4;.</span>
-    <span class="hljs-built_in">return</span>  pop(rstack)       <span class="hljs-comment"># stack &#xC5D0; &#xC788;&#xB294; &#xBAA8;&#xB4E0; &#xC5F0;&#xC0B0;&#xC790;&#xAC00; calc &#xB418;&#xACE0; &#xB09C;&#xD6C4;&#xC5D0;&#xB294;</span>
+    len = slen(ostack)                               <span class="hljs-comment"># ostack &#xC5D0; operator &#xAC00; &#xB0A8;&#xC544; &#xC788;&#xC744;&#xACBD;&#xC6B0;</span>
+    <span class="hljs-keyword">for</span> (i = <span class="hljs-number">1</span>; i &lt;= len; i++) calc( pop(ostack) )   <span class="hljs-comment"># pop &#xD574;&#xC11C; calc &#xD569;&#xB2C8;&#xB2E4;.</span>
+    <span class="hljs-built_in">return</span>  pop(rstack)       <span class="hljs-comment"># ostack &#xC5D0; &#xC788;&#xB294; &#xBAA8;&#xB4E0; &#xC5F0;&#xC0B0;&#xC790;&#xAC00; calc &#xB418;&#xACE0; &#xB09C;&#xD6C4;&#xC5D0;&#xB294;</span>
                               <span class="hljs-comment"># rstack &#xC5D0;&#xB294; &#xCD5C;&#xC885; &#xACB0;&#xACFC;&#xB9CC; &#xB0A8;&#xC544;&#xC788;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.</span>
 }
 
