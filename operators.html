@@ -775,8 +775,8 @@ $ ./test.sh file        <span class="hljs-comment"># &#xB610;&#xB294; cat file |
 </code></pre>
 <pre><code class="lang-bash"><span class="hljs-comment">#!/usr/bin/env -S gawk -f</span>
 
-<span class="hljs-comment"># stack &#xC740; &#xB450; &#xAC1C;&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;. ostack[0] &#xC5D0;&#xB294; operator &#xC640; &#xAD04;&#xD638;&#xAC00; &#xB4E4;&#xC5B4;&#xAC00;&#xACE0;</span>
-<span class="hljs-comment"># rstack[0] &#xC5D0;&#xB294; operand &#xAC00; &#xB4E4;&#xC5B4;&#xAC00;&#xACE0; calc &#xACC4;&#xC0B0; &#xACB0;&#xACFC;&#xAC00; &#xC800;&#xC7A5;&#xB429;&#xB2C8;&#xB2E4;.</span>
+<span class="hljs-comment"># stack &#xC740; &#xB450; &#xAC1C;&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;. ostack &#xC5D0;&#xB294; operator &#xC640; &#xAD04;&#xD638;&#xAC00; &#xB4E4;&#xC5B4;&#xAC00;&#xACE0;</span>
+<span class="hljs-comment"># rstack &#xC5D0;&#xB294; operand &#xAC00; &#xB4E4;&#xC5B4;&#xAC00;&#xACE0; calc &#xACC4;&#xC0B0; &#xACB0;&#xACFC;&#xAC00; &#xC800;&#xC7A5;&#xB429;&#xB2C8;&#xB2E4;.</span>
 BEGIN { token[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>]; ostack[<span class="hljs-number">0</span>]; rstack[<span class="hljs-number">0</span>] }
 
 {
