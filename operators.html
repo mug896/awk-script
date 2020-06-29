@@ -753,25 +753,26 @@ $ awk <span class="hljs-string">&apos;BEGIN { aa = 4; aa ^= 2; print aa }&apos;<
 &#xC5F0;&#xC0B0; &#xACB0;&#xACFC;&#xB97C; &#xCD9C;&#xB825;&#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.  &#xB367;&#xC148;, &#xBE84;&#xC148;&#xBCF4;&#xB2E4;&#xB294; &#xACF1;&#xC148;, &#xB098;&#xB217;&#xC148;&#xC744; &#xBA3C;&#xC800; &#xACC4;&#xC0B0;&#xD574;&#xC57C; &#xD558;&#xACE0; 
 &#xAD04;&#xD638;&#xAC00; &#xC788;&#xC744; &#xACBD;&#xC6B0; &#xC81C;&#xC77C; &#xBA3C;&#xC800; &#xACC4;&#xC0B0;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.
 &#xC5EC;&#xAE30;&#xC11C;&#xB294; stack &#xC744; &#xD65C;&#xC6A9;&#xD558;&#xB294; &#xD6C4;&#xC704; &#xD45C;&#xAE30; &#xBC29;&#xBC95;&#xC744; &#xC0AC;&#xC6A9;&#xD588;&#xC2B5;&#xB2C8;&#xB2E4;.
-&#xC790;&#xC138;&#xD55C; &#xC124;&#xBA85;&#xC740; <a href="https://jamanbbo.tistory.com/53" target="_blank">&#xC3ED;&#xC774;&#xB2D8;&#xC758; &#xD648;&#xD398;&#xC774;&#xC9C0;</a> &#xB97C; &#xCC38;&#xACE0;&#xD558;&#xC138;&#xC694;.
-stack &#xC744; &#xD65C;&#xC6A9;&#xD558;&#xB294; &#xAE30;&#xBC95;&#xC774; &#xC544;&#xC8FC; &#xD6CC;&#xB96D;&#xD569;&#xB2C8;&#xB2E4;.</p>
+&#xC790;&#xC138;&#xD55C; &#xC124;&#xBA85;&#xC740; <a href="https://jamanbbo.tistory.com/53" target="_blank">&#xC3ED;&#xC774;&#xB2D8;&#xC758; &#xD648;&#xD398;&#xC774;&#xC9C0;</a> &#xB97C; &#xCC38;&#xACE0;&#xD558;&#xC138;&#xC694;.</p>
+<blockquote>
+<ol>
+<li>&#xC801;&#xC6A9;&#xB418;&#xB294; &#xC6B0;&#xC120;&#xC21C;&#xC704;&#xB294; <code>(</code>  &lt;&lt;  <code>+</code> <code>-</code>  &lt;&lt;  <code>*</code> <code>/</code> &#xC785;&#xB2C8;&#xB2E4;.   </li>
+<li>&#xD604;&#xC7AC; &#xC5F0;&#xC0B0;&#xC790;&#xAC00; ostack &#xC758; top &#xC5D0; &#xC788;&#xB294; &#xC5F0;&#xC0B0;&#xC790; &#xBCF4;&#xB2E4; &#xC6B0;&#xC120;&#xC21C;&#xC704;&#xAC00; &#xB192;&#xC744; &#xB54C;&#xAE4C;&#xC9C0; &#xAEBC;&#xB0B4;&#xC5B4; calc &#xD558;&#xACE0; &#xC6B0;&#xC120;&#xC21C;&#xC704;&#xAC00; &#xB192;&#xC544;&#xC84C;&#xB2E4;&#xBA74; ostack &#xC5D0; push &#xD569;&#xB2C8;&#xB2E4;.</li>
+</ol>
+</blockquote>
 <pre><code class="lang-bash">$ cat file
 <span class="hljs-number">1</span> + <span class="hljs-number">2</span> * <span class="hljs-number">3</span> + <span class="hljs-number">4</span> 
 (<span class="hljs-number">1</span> + <span class="hljs-number">2</span>) * <span class="hljs-number">3</span> + <span class="hljs-number">4</span>
-<span class="hljs-number">1</span> + <span class="hljs-number">2</span> * (<span class="hljs-number">3</span> + <span class="hljs-number">4</span>)
-((<span class="hljs-number">1</span> + <span class="hljs-number">2</span>) * <span class="hljs-number">3</span>) + <span class="hljs-number">4</span> 
-<span class="hljs-number">1</span> + (<span class="hljs-number">2</span> * (<span class="hljs-number">3</span> + <span class="hljs-number">4</span>))
 <span class="hljs-number">7</span> + <span class="hljs-number">3</span> * (<span class="hljs-number">5</span> - <span class="hljs-number">2</span>) + <span class="hljs-number">4</span>
 ( <span class="hljs-number">34</span> + <span class="hljs-number">93</span> ) * <span class="hljs-number">2</span> - <span class="hljs-number">43</span> / <span class="hljs-number">2</span> 
+<span class="hljs-number">3</span> + <span class="hljs-number">7</span> / <span class="hljs-number">2</span> * <span class="hljs-number">4</span> - <span class="hljs-number">2</span> / <span class="hljs-number">5</span> + (( <span class="hljs-number">2</span> + <span class="hljs-number">3</span> / <span class="hljs-number">4</span>) / ( <span class="hljs-number">2</span> + <span class="hljs-number">1</span>))
 
 $ ./test.sh file        <span class="hljs-comment"># &#xB610;&#xB294; cat file | ./test.sh</span>
 <span class="hljs-number">11</span>
 <span class="hljs-number">13</span>
-<span class="hljs-number">15</span>
-<span class="hljs-number">13</span>
-<span class="hljs-number">15</span>
 <span class="hljs-number">20</span>
 <span class="hljs-number">232.5</span>
+<span class="hljs-number">17.5167</span>
 </code></pre>
 <pre><code class="lang-bash"><span class="hljs-comment">#!/usr/bin/env -S gawk -f</span>
 
@@ -798,14 +799,20 @@ BEGIN { token[<span class="hljs-number">0</span>][<span class="hljs-number">0</s
 
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;operator&quot;</span> :
                 op = token[i][<span class="hljs-string">&quot;value&quot;</span>]
-                pk = peek(ostack)                  <span class="hljs-comment"># ostack &#xC758; top &#xD56D;&#xBAA9;&#xC744; &#xC870;&#xD68C;&#xD574;&#xC11C; </span>
+                pk = peek(ostack)                  <span class="hljs-comment"># ostack &#xC758; top &#xD56D;&#xBAA9;&#xC744; &#xC870;&#xD68C;&#xD574;&#xC11C;</span>
                 <span class="hljs-keyword">if</span> ( pk == <span class="hljs-string">&quot;&quot;</span> || pk == <span class="hljs-string">&quot;(&quot;</span> )       <span class="hljs-comment"># &#xD56D;&#xBAA9;&#xC774; empty &#xC774;&#xAC70;&#xB098; &quot;(&quot; &#xC77C; &#xACBD;&#xC6B0;</span>
-                    { push(ostack, op); <span class="hljs-built_in">break</span> }    <span class="hljs-comment"># &#xC5F0;&#xC0B0;&#xC790;&#xB97C; ostack &#xC5D0; push &#xD569;&#xB2C8;&#xB2E4;.</span>
-                <span class="hljs-keyword">if</span> ( op == <span class="hljs-string">&quot;*&quot;</span> || op == <span class="hljs-string">&quot;/&quot;</span> )         <span class="hljs-comment"># &#xD604;&#xC7AC; &#xC5F0;&#xC0B0;&#xC790;&#xAC00; &quot;*&quot; or &quot;/&quot; &#xC774;&#xBA74;&#xC11C;</span>
-                    <span class="hljs-keyword">if</span> ( pk == <span class="hljs-string">&quot;+&quot;</span> || pk == <span class="hljs-string">&quot;-&quot;</span> )     <span class="hljs-comment"># ostack &#xC758; top &#xD56D;&#xBAA9;&#xC774; &quot;+&quot; or &quot;-&quot;</span>
-                        { push(ostack, op); <span class="hljs-built_in">break</span> }   <span class="hljs-comment"># &#xC77C;&#xACBD;&#xC6B0; ostack &#xC5D0; push &#xD569;&#xB2C8;&#xB2E4;.</span>
-                calc( pop(ostack))       <span class="hljs-comment"># &#xADF8; &#xC678;&#xC5D0;&#xB294; ostack &#xC5D0;&#xC788;&#xB294; &#xC5F0;&#xC0B0;&#xC790;&#xB97C; pop &#xD55C; &#xD6C4;</span>
-                push( ostack, op)        <span class="hljs-comment"># calc &#xD558;&#xACE0; &#xD604;&#xC7AC; &#xC5F0;&#xC0B0;&#xC790;&#xB97C; ostack &#xC5D0; push &#xD569;&#xB2C8;&#xB2E4;.</span>
+                    { push(ostack, op); <span class="hljs-built_in">break</span> }    <span class="hljs-comment"># &#xC5F0;&#xC0B0;&#xC790;&#xB97C; ostack &#xC5D0; push &#xD569;&#xB2C8;&#xB2E4;.  </span>
+                <span class="hljs-keyword">if</span> ( op == <span class="hljs-string">&quot;*&quot;</span> || op == <span class="hljs-string">&quot;/&quot;</span> ) {      <span class="hljs-comment"># &#xD604;&#xC7AC; &#xC5F0;&#xC0B0;&#xC790;&#xAC00; &quot;*&quot; or &quot;/&quot; &#xC774;&#xBA74;</span>
+                    <span class="hljs-keyword">while</span>( peek(ostack) ~ /\*|\// )  <span class="hljs-comment"># &#xAC19;&#xC740; &#xC6B0;&#xC120;&#xC21C;&#xC704; &#xC5F0;&#xC0B0;&#xC790;&#xB97C; &#xAEBC;&#xB0B4;&#xC5B4;</span>
+                        calc( pop(ostack))           <span class="hljs-comment"># calc &#xD558;&#xACE0; &#xD604;&#xC7AC; &#xC5F0;&#xC0B0;&#xC790;&#xB97C; </span>
+                    push(ostack, op)                 <span class="hljs-comment"># ostack &#xC5D0; push &#xD569;&#xB2C8;&#xB2E4;</span>
+                    <span class="hljs-built_in">break</span>
+                }
+                <span class="hljs-comment"># &#xADF8;&#xC678; &#xD604;&#xC7AC; &#xC5F0;&#xC0B0;&#xC790;&#xAC00; &quot;+&quot; or &quot;-&quot; &#xC77C; &#xACBD;&#xC6B0; &#xC6B0;&#xC120;&#xC21C;&#xC704;&#xAC00; &#xB354; &#xB0AE;&#xC740; &quot;(&quot; &#xAC00;</span>
+                <span class="hljs-comment"># stack &#xC758; top &#xC774; &#xB420;&#xB54C;&#xAE4C;&#xC9C0; &#xAEBC;&#xB0B4;&#xC5B4; calc &#xD558;&#xACE0; &#xD604;&#xC7AC; &#xC5F0;&#xC0B0;&#xC790;&#xB97C; push &#xD569;&#xB2C8;&#xB2E4;.</span>
+                <span class="hljs-keyword">while</span>( peek(ostack) != <span class="hljs-string">&quot;(&quot;</span> &amp;&amp; slen(ostack) &gt; <span class="hljs-number">0</span> ) 
+                    calc( pop(ostack))
+                push( ostack, op) 
                 <span class="hljs-built_in">break</span>
 
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;parenthesis&quot;</span> :
