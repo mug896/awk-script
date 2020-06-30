@@ -803,7 +803,7 @@ BEGIN { token[<span class="hljs-number">0</span>][<span class="hljs-number">0</s
 
 {
     idx = <span class="hljs-number">0</span>
-    tokenize(token, <span class="hljs-variable">$0</span>)     <span class="hljs-comment"># &#xB77C;&#xC778; &#xBCC4;&#xB85C; tokenize &#xB97C; &#xD574;&#xC11C;</span>
+    tokenize(<span class="hljs-variable">$0</span>)            <span class="hljs-comment"># &#xB77C;&#xC778; &#xBCC4;&#xB85C; tokenize &#xB97C; &#xD574;&#xC11C;</span>
     <span class="hljs-built_in">print</span> result()          <span class="hljs-comment"># &#xC5F0;&#xC0B0; &#xACB0;&#xACFC;&#xB97C; &#xCD9C;&#xB825;&#xD569;&#xB2C8;&#xB2E4;.</span>
 
     delete token            <span class="hljs-comment"># &#xB2E4;&#xC74C; &#xC785;&#xB825; &#xB77C;&#xC778;&#xC744; &#xC704;&#xD55C; &#xCD08;&#xAE30;&#xD654; </span>
@@ -891,7 +891,7 @@ BEGIN { token[<span class="hljs-number">0</span>][<span class="hljs-number">0</s
     push(rstack, res)     <span class="hljs-comment"># &#xACB0;&#xACFC;&#xB97C; &#xB2E4;&#xC2DC; rstack &#xC73C;&#xB85C; push &#xD569;&#xB2C8;&#xB2E4;.</span>
 }
 
-<span class="hljs-keyword">function</span> tokenize (token, str,     i, len, char) {
+<span class="hljs-keyword">function</span> tokenize (str,     i, len, char) {
     len = length(str)
     <span class="hljs-keyword">for</span> (i = <span class="hljs-number">1</span>; i &lt;= len; i++) {
         char = substr(str, i, <span class="hljs-number">1</span>)
@@ -905,13 +905,13 @@ BEGIN { token[<span class="hljs-number">0</span>][<span class="hljs-number">0</s
                 token[idx++][<span class="hljs-string">&quot;value&quot;</span>] = char
                 <span class="hljs-built_in">break</span>
             <span class="hljs-keyword">case</span> /[<span class="hljs-number">0</span>-<span class="hljs-number">9</span>]/ : 
-                i += t_number(token, substr(str,i))
+                i += t_number( substr(str,i))
                 <span class="hljs-built_in">break</span>
         }
     }
 }
 
-<span class="hljs-keyword">function</span> t_number (token, str,      res, i, char) {
+<span class="hljs-keyword">function</span> t_number (str,      res, i, char) {
     <span class="hljs-keyword">for</span> (i = <span class="hljs-number">1</span>; char = substr(str, i, <span class="hljs-number">1</span>); i++) {
         <span class="hljs-keyword">if</span> ( char ~ /[<span class="hljs-number">0</span>-<span class="hljs-number">9</span>.]/ ) res = res char
         <span class="hljs-keyword">else</span> <span class="hljs-built_in">break</span>
