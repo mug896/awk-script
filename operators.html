@@ -806,7 +806,7 @@ BEGIN { token[<span class="hljs-number">0</span>][<span class="hljs-number">0</s
     delete token 
 }
 
-<span class="hljs-keyword">function</span> result(     i, len, op, pk, val, unary) {
+<span class="hljs-keyword">function</span> result(     i, len, op, pk, val, unary, unary_p) {
     len = length(token)
     unary = <span class="hljs-number">1</span>; unary_p = <span class="hljs-number">1</span>
     <span class="hljs-keyword">for</span> (i=<span class="hljs-number">0</span>; i &lt; len; i++) {
@@ -831,9 +831,10 @@ BEGIN { token[<span class="hljs-number">0</span>][<span class="hljs-number">0</s
                 }
 
                 pk = peek(ostack)               
-                <span class="hljs-keyword">if</span> ( pk == <span class="hljs-string">&quot;&quot;</span> || pk == <span class="hljs-string">&quot;(&quot;</span> )     
-                    { push(ostack, op); <span class="hljs-built_in">break</span> }   
-                <span class="hljs-keyword">if</span> ( op == <span class="hljs-string">&quot;*&quot;</span> || op == <span class="hljs-string">&quot;/&quot;</span> ) {
+                <span class="hljs-keyword">if</span> ( pk == <span class="hljs-string">&quot;&quot;</span> || pk == <span class="hljs-string">&quot;(&quot;</span> ) { push(ostack, op); <span class="hljs-built_in">break</span> }   
+
+                <span class="hljs-keyword">if</span> ( op == <span class="hljs-string">&quot;*&quot;</span> || op == <span class="hljs-string">&quot;/&quot;</span> )
+                {
                     <span class="hljs-keyword">while</span>( peek(ostack) ~ /\*|\// ) 
                         calc( pop(ostack))
                     push(ostack, op)
