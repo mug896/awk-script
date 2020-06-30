@@ -766,7 +766,7 @@ $ awk <span class="hljs-string">&apos;BEGIN { aa = 4; aa ^= 2; print aa }&apos;<
 - - <span class="hljs-number">3</span> - + - - <span class="hljs-number">4</span> + <span class="hljs-number">5</span>
 - - <span class="hljs-number">3</span> - ( - <span class="hljs-number">4</span> + <span class="hljs-number">5</span> )
 <span class="hljs-number">3</span> - - (-<span class="hljs-number">10</span> + -<span class="hljs-number">2</span>)
-<span class="hljs-number">3</span> + (-<span class="hljs-number">10</span> - -(<span class="hljs-number">3</span>) + - ( <span class="hljs-number">3</span> - - (<span class="hljs-number">10</span> + -<span class="hljs-number">2</span>) + -<span class="hljs-number">2</span>))
+<span class="hljs-number">3</span> + (-<span class="hljs-number">10</span> - -(<span class="hljs-number">3</span>) + - ( <span class="hljs-number">3</span> - - (-<span class="hljs-number">10</span> + -<span class="hljs-number">2</span>) + -<span class="hljs-number">2</span>))
 
 $ ./test.sh file        <span class="hljs-comment"># &#xB610;&#xB294; cat file | ./test.sh</span>
 <span class="hljs-number">11</span>
@@ -775,7 +775,7 @@ $ ./test.sh file        <span class="hljs-comment"># &#xB610;&#xB294; cat file |
 <span class="hljs-number">4</span>
 <span class="hljs-number">2</span>
 -<span class="hljs-number">9</span>
--<span class="hljs-number">13</span>
+<span class="hljs-number">7</span>
 </code></pre>
 <blockquote>
 <ol>
