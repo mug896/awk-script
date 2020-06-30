@@ -754,13 +754,6 @@ $ awk <span class="hljs-string">&apos;BEGIN { aa = 4; aa ^= 2; print aa }&apos;<
 &#xAD04;&#xD638;&#xAC00; &#xC788;&#xC744; &#xACBD;&#xC6B0; &#xC81C;&#xC77C; &#xBA3C;&#xC800; &#xACC4;&#xC0B0;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.
 &#xC5EC;&#xAE30;&#xC11C;&#xB294; stack &#xC744; &#xD65C;&#xC6A9;&#xD558;&#xB294; &#xD6C4;&#xC704; &#xD45C;&#xAE30; &#xBC29;&#xBC95;&#xC744; &#xC0AC;&#xC6A9;&#xD588;&#xC2B5;&#xB2C8;&#xB2E4;.
 &#xC790;&#xC138;&#xD55C; &#xC124;&#xBA85;&#xC740; <a href="https://jamanbbo.tistory.com/53" target="_blank">&#xC3ED;&#xC774;&#xB2D8;&#xC758; &#xD648;&#xD398;&#xC774;&#xC9C0;</a> &#xB97C; &#xCC38;&#xACE0;&#xD558;&#xC138;&#xC694;.</p>
-<blockquote>
-<ol>
-<li>&#xC801;&#xC6A9;&#xB418;&#xB294; &#xC6B0;&#xC120;&#xC21C;&#xC704;&#xB294; <code>(</code>  &lt;&lt;  <code>+</code> <code>-</code>  &lt;&lt;  <code>*</code> <code>/</code> &#xC785;&#xB2C8;&#xB2E4;.   </li>
-<li>&#xD604;&#xC7AC; &#xC5F0;&#xC0B0;&#xC790;&#xAC00; ostack &#xC758; top &#xC5D0; &#xC788;&#xB294; &#xC5F0;&#xC0B0;&#xC790; &#xBCF4;&#xB2E4; &#xC6B0;&#xC120;&#xC21C;&#xC704;&#xAC00; &#xB192;&#xC744; &#xB54C;&#xAE4C;&#xC9C0; &#xAEBC;&#xB0B4;&#xC5B4; calc &#xD558;&#xACE0; &#xC6B0;&#xC120;&#xC21C;&#xC704;&#xAC00; &#xB192;&#xC544;&#xC84C;&#xB2E4;&#xBA74; ostack &#xC5D0; push &#xD569;&#xB2C8;&#xB2E4;.   </li>
-<li><code>- 3 - ( - 4 - + - 5 )</code> &#xC5D0;&#xC11C; &#xC22B;&#xC790; &#xC55E;&#xC5D0; &#xC788;&#xB294; <code>- 3</code>, <code>- 4</code>, <code>+ - 5</code> &#xC5F0;&#xC0B0;&#xC790;&#xB294; &#xB450; &#xAC1C;&#xC758; operand &#xB97C; &#xC774;&#xC6A9;&#xD574; &#xC5F0;&#xC0B0;&#xD558;&#xB294; binary &#xC5F0;&#xC0B0;&#xC790;&#xAC00; &#xC544;&#xB2C8;&#xACE0; unary &#xC5F0;&#xC0B0;&#xC790; &#xC774;&#xBBC0;&#xB85C; ostack &#xC5D0; push &#xD558;&#xC9C0; &#xC54A;&#xACE0; number &#xC5D0; &#xBD80;&#xD638;&#xB97C; &#xC124;&#xC815;&#xD574;&#xC11C; rstack &#xC5D0; push &#xD569;&#xB2C8;&#xB2E4;.</li>
-</ol>
-</blockquote>
 <pre><code class="lang-bash">$ cat file
 <span class="hljs-number">1</span> + <span class="hljs-number">2</span> * <span class="hljs-number">3</span> + <span class="hljs-number">4</span> 
 (<span class="hljs-number">1</span> + <span class="hljs-number">2</span>) * <span class="hljs-number">3</span> + <span class="hljs-number">4</span>
@@ -779,6 +772,13 @@ $ ./test.sh file        <span class="hljs-comment"># &#xB610;&#xB294; cat file |
 <span class="hljs-number">232.5</span>
 <span class="hljs-number">17.5167</span>
 </code></pre>
+<blockquote>
+<ol>
+<li>&#xC801;&#xC6A9;&#xB418;&#xB294; &#xC6B0;&#xC120;&#xC21C;&#xC704;&#xB294; <code>(</code>  &lt;&lt;  <code>+</code> <code>-</code>  &lt;&lt;  <code>*</code> <code>/</code> &#xC785;&#xB2C8;&#xB2E4;.   </li>
+<li>&#xD604;&#xC7AC; &#xC5F0;&#xC0B0;&#xC790;&#xAC00; ostack &#xC758; top &#xC5D0; &#xC788;&#xB294; &#xC5F0;&#xC0B0;&#xC790; &#xBCF4;&#xB2E4; &#xC6B0;&#xC120;&#xC21C;&#xC704;&#xAC00; &#xB192;&#xC744; &#xB54C;&#xAE4C;&#xC9C0; &#xAEBC;&#xB0B4;&#xC5B4; calc &#xD558;&#xACE0; &#xC6B0;&#xC120;&#xC21C;&#xC704;&#xAC00; &#xB192;&#xC544;&#xC84C;&#xB2E4;&#xBA74; ostack &#xC5D0; push &#xD569;&#xB2C8;&#xB2E4;.   </li>
+<li><code>- 3 - ( - 4 - + - 5 )</code> &#xC5D0;&#xC11C; &#xC22B;&#xC790; &#xC55E;&#xC5D0; &#xC788;&#xB294; <code>- 3</code>, <code>- 4</code>, <code>+ - 5</code> &#xC5F0;&#xC0B0;&#xC790;&#xB294; &#xB450; &#xAC1C;&#xC758; operand &#xB97C; &#xC774;&#xC6A9;&#xD574; &#xC5F0;&#xC0B0;&#xD558;&#xB294; binary &#xC5F0;&#xC0B0;&#xC790;&#xAC00; &#xC544;&#xB2C8;&#xACE0; unary &#xC5F0;&#xC0B0;&#xC790; &#xC774;&#xBBC0;&#xB85C; ostack &#xC5D0; push &#xD558;&#xC9C0; &#xC54A;&#xACE0; number &#xC5D0; &#xBD80;&#xD638;&#xB97C; &#xC124;&#xC815;&#xD574;&#xC11C; rstack &#xC5D0; push &#xD569;&#xB2C8;&#xB2E4;.</li>
+</ol>
+</blockquote>
 <pre><code class="lang-bash"><span class="hljs-comment">#!/usr/bin/env -S gawk -f</span>
 
 <span class="hljs-comment"># stack &#xC740; &#xB450; &#xAC1C;&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;. ostack &#xC5D0;&#xB294; operator &#xC640; &#xAD04;&#xD638;&#xAC00; &#xB4E4;&#xC5B4;&#xAC00;&#xACE0;</span>
