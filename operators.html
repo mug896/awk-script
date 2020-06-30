@@ -828,6 +828,7 @@ BEGIN { token[<span class="hljs-number">0</span>][<span class="hljs-number">0</s
                     push(ostack, op)
                     <span class="hljs-built_in">break</span>
                 }
+
                 <span class="hljs-keyword">while</span>( peek(ostack) != <span class="hljs-string">&quot;(&quot;</span> &amp;&amp; slen(ostack) &gt; <span class="hljs-number">0</span> ) 
                     calc( pop(ostack))
                 push( ostack, op) 
