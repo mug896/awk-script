@@ -765,8 +765,8 @@ $ awk <span class="hljs-string">&apos;BEGIN { aa = 4; aa ^= 2; print aa }&apos;<
 <span class="hljs-number">7</span> + <span class="hljs-number">3</span> * (<span class="hljs-number">5</span> - <span class="hljs-number">2</span>) + <span class="hljs-number">4</span>
 - - <span class="hljs-number">3</span> - + - - <span class="hljs-number">4</span> + <span class="hljs-number">5</span>
 - - <span class="hljs-number">3</span> - ( - <span class="hljs-number">4</span> + <span class="hljs-number">5</span> )
--(<span class="hljs-number">3</span>) - - (-<span class="hljs-number">10</span> + -<span class="hljs-number">2</span>)
--(<span class="hljs-number">3</span>) + (-<span class="hljs-number">10</span> - -(<span class="hljs-number">3</span>) + - ( <span class="hljs-number">3</span> - - (<span class="hljs-number">10</span> + -<span class="hljs-number">2</span>) + -<span class="hljs-number">2</span>))
+<span class="hljs-number">3</span> - - (-<span class="hljs-number">10</span> + -<span class="hljs-number">2</span>)
+<span class="hljs-number">3</span> + (-<span class="hljs-number">10</span> - -(<span class="hljs-number">3</span>) + - ( <span class="hljs-number">3</span> - - (<span class="hljs-number">10</span> + -<span class="hljs-number">2</span>) + -<span class="hljs-number">2</span>))
 
 $ ./test.sh file        <span class="hljs-comment"># &#xB610;&#xB294; cat file | ./test.sh</span>
 <span class="hljs-number">11</span>
@@ -774,14 +774,24 @@ $ ./test.sh file        <span class="hljs-comment"># &#xB610;&#xB294; cat file |
 <span class="hljs-number">20</span>
 <span class="hljs-number">4</span>
 <span class="hljs-number">2</span>
--<span class="hljs-number">15</span>
--<span class="hljs-number">19</span>
+-<span class="hljs-number">9</span>
+-<span class="hljs-number">13</span>
 </code></pre>
 <blockquote>
 <ol>
-<li>&#xC801;&#xC6A9;&#xB418;&#xB294; &#xC6B0;&#xC120;&#xC21C;&#xC704;&#xB294; <code>(</code>  &lt;&lt;  <code>+</code> <code>-</code>  &lt;&lt;  <code>*</code> <code>/</code> &#xC785;&#xB2C8;&#xB2E4;.   </li>
-<li>&#xD604;&#xC7AC; &#xC5F0;&#xC0B0;&#xC790;&#xAC00; ostack &#xC758; top &#xC5D0; &#xC788;&#xB294; &#xC5F0;&#xC0B0;&#xC790; &#xBCF4;&#xB2E4; &#xC6B0;&#xC120;&#xC21C;&#xC704;&#xAC00; &#xB192;&#xC744; &#xB54C;&#xAE4C;&#xC9C0; &#xAEBC;&#xB0B4;&#xC5B4; calc &#xD558;&#xACE0; &#xC6B0;&#xC120;&#xC21C;&#xC704;&#xAC00; &#xB192;&#xC544;&#xC84C;&#xB2E4;&#xBA74; ostack &#xC5D0; push &#xD569;&#xB2C8;&#xB2E4;.   </li>
-<li><code>- 3 - ( - 4 - + - 5 )</code> &#xC5D0;&#xC11C; &#xC22B;&#xC790; &#xC55E;&#xC5D0; &#xC788;&#xB294; <code>- 3</code>, <code>- 4</code>, <code>+ - 5</code> &#xC5F0;&#xC0B0;&#xC790;&#xB294; &#xB450; &#xAC1C;&#xC758; operand &#xB97C; &#xC774;&#xC6A9;&#xD574; &#xC5F0;&#xC0B0;&#xD558;&#xB294; binary &#xC5F0;&#xC0B0;&#xC790;&#xAC00; &#xC544;&#xB2C8;&#xACE0; unary &#xC5F0;&#xC0B0;&#xC790; &#xC774;&#xBBC0;&#xB85C; ostack &#xC5D0; push &#xD558;&#xC9C0; &#xC54A;&#xACE0; number &#xC5D0; &#xBD80;&#xD638;&#xB97C; &#xC124;&#xC815;&#xD574;&#xC11C; rstack &#xC5D0; push &#xD569;&#xB2C8;&#xB2E4;.</li>
+<li><p>&#xC801;&#xC6A9;&#xB418;&#xB294; &#xC6B0;&#xC120;&#xC21C;&#xC704;&#xB294; <code>(</code>  &lt;&lt;  <code>+</code> <code>-</code>  &lt;&lt;  <code>*</code> <code>/</code> &#xC785;&#xB2C8;&#xB2E4;.   </p>
+</li>
+<li><p>&#xD604;&#xC7AC; &#xC5F0;&#xC0B0;&#xC790;&#xAC00; ostack &#xC758; top &#xC5D0; &#xC788;&#xB294; &#xC5F0;&#xC0B0;&#xC790; &#xBCF4;&#xB2E4; &#xC6B0;&#xC120;&#xC21C;&#xC704;&#xAC00; &#xB192;&#xC744; &#xB54C;&#xAE4C;&#xC9C0; &#xAEBC;&#xB0B4;&#xC5B4;
+calc &#xD558;&#xACE0; &#xC6B0;&#xC120;&#xC21C;&#xC704;&#xAC00; &#xB192;&#xC544;&#xC84C;&#xB2E4;&#xBA74; ostack &#xC5D0; push &#xD569;&#xB2C8;&#xB2E4;.   </p>
+</li>
+<li><p><code>- 3 - ( - 4 - + - 5 )</code> &#xC5D0;&#xC11C; &#xC22B;&#xC790; &#xC55E;&#xC5D0; &#xC788;&#xB294; <code>- 3</code>, <code>- 4</code>, <code>+ - 5</code> &#xC5F0;&#xC0B0;&#xC790;&#xB294; &#xB450; &#xAC1C;&#xC758;
+operand &#xB97C; &#xC774;&#xC6A9;&#xD574; &#xC5F0;&#xC0B0;&#xD558;&#xB294; binary &#xC5F0;&#xC0B0;&#xC790;&#xAC00; &#xC544;&#xB2C8;&#xACE0; unary &#xC5F0;&#xC0B0;&#xC790; &#xC774;&#xBBC0;&#xB85C; ostack &#xC5D0;
+push &#xD558;&#xC9C0; &#xC54A;&#xACE0; number &#xC5D0; &#xBD80;&#xD638;&#xB97C; &#xC124;&#xC815;&#xD574;&#xC11C; rstack &#xC5D0; push &#xD569;&#xB2C8;&#xB2E4;.</p>
+</li>
+<li><p><code>3 - - (-10 + -2)</code> &#xC640; &#xAC19;&#xC774; &#xAD04;&#xD638; &#xC55E;&#xC5D0; &#xC788;&#xB294; unary &#xC5F0;&#xC0B0;&#xC790;&#xB294; &#xAD04;&#xD638;&#xAC00; &#xB2EB;&#xD790;&#xB54C; &#xCD5C;&#xC885; &#xACB0;&#xACFC;&#xAC12;&#xC5D0;
+&#xBD80;&#xD638;&#xB97C; &#xC124;&#xC815;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xAD04;&#xD638;&#xB294; nesting &#xB420;&#xC218; &#xC788;&#xC73C;&#xBBC0;&#xB85C; ustack &#xC744; &#xC774;&#xC6A9;&#xD574; <code>&quot;(&quot;</code> &#xC5D0;&#xC11C;
+&#xBD80;&#xD638;&#xAC12;&#xC744; &#xC800;&#xC7A5;&#xD558;&#xACE0; <code>&quot;)&quot;</code> &#xC5D0;&#xC11C; rstack &#xC5D0;&#xC11C; &#xACB0;&#xACFC;&#xAC12;&#xC744; pop &#xD574;&#xC11C; &#xBD80;&#xD638;&#xB97C; &#xC124;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</p>
+</li>
 </ol>
 </blockquote>
 <pre><code class="lang-bash"><span class="hljs-comment">#!/usr/bin/env -S gawk -f</span>
@@ -811,7 +821,8 @@ BEGIN { token[<span class="hljs-number">0</span>][<span class="hljs-number">0</s
                 op = token[i][<span class="hljs-string">&quot;value&quot;</span>]
                 <span class="hljs-keyword">if</span> ( i == <span class="hljs-number">0</span> \
                      || token[i-<span class="hljs-number">1</span>][<span class="hljs-string">&quot;value&quot;</span>] == <span class="hljs-string">&quot;(&quot;</span> \
-                     || token[i-<span class="hljs-number">1</span>][<span class="hljs-string">&quot;name&quot;</span>] == <span class="hljs-string">&quot;operator&quot;</span>) { 
+                     || token[i-<span class="hljs-number">1</span>][<span class="hljs-string">&quot;name&quot;</span>] == <span class="hljs-string">&quot;operator&quot;</span>)
+                { 
                     <span class="hljs-keyword">if</span> ( token[i+<span class="hljs-number">1</span>][<span class="hljs-string">&quot;value&quot;</span>] == <span class="hljs-string">&quot;(&quot;</span>) {
                         unary_p = unary * (op <span class="hljs-number">1</span>)
                         unary = <span class="hljs-number">1</span>
