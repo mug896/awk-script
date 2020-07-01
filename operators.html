@@ -763,17 +763,17 @@ $ awk <span class="hljs-string">&apos;BEGIN { aa = 4; aa ^= 2; print aa }&apos;<
 <span class="hljs-number">1</span> + <span class="hljs-number">2</span> * <span class="hljs-number">3</span> + <span class="hljs-number">4</span> 
 (<span class="hljs-number">1</span> + <span class="hljs-number">2</span>) * <span class="hljs-number">3</span> + <span class="hljs-number">4</span>
 <span class="hljs-number">7</span> + <span class="hljs-number">3</span> * (<span class="hljs-number">5</span> - <span class="hljs-number">2</span>) + <span class="hljs-number">4</span>
-- - <span class="hljs-number">3</span> - + - - <span class="hljs-number">4</span> + <span class="hljs-number">5</span>
-- - <span class="hljs-number">3</span> - ( - <span class="hljs-number">4</span> + <span class="hljs-number">5</span> )
-<span class="hljs-number">3</span> - - (-<span class="hljs-number">10</span> + -<span class="hljs-number">2</span>)
-<span class="hljs-number">3</span> + (-<span class="hljs-number">10</span> - -(<span class="hljs-number">3</span>) + - ( <span class="hljs-number">3</span> - - (-<span class="hljs-number">10</span> + -<span class="hljs-number">2</span>) + -<span class="hljs-number">2</span>))
+- -<span class="hljs-number">3</span> - + - -<span class="hljs-number">4</span> + <span class="hljs-number">5</span>
++ -<span class="hljs-number">3</span> -( -<span class="hljs-number">4</span> + <span class="hljs-number">5</span> )
+<span class="hljs-number">3</span> - -( -<span class="hljs-number">10</span> + -<span class="hljs-number">2</span> )
+<span class="hljs-number">3</span> + ( -<span class="hljs-number">10</span> - -(<span class="hljs-number">3</span>) + -( <span class="hljs-number">3</span> - -( -<span class="hljs-number">10</span> + -<span class="hljs-number">2</span> ) + -<span class="hljs-number">2</span> ))
 
 $ ./test.sh file        <span class="hljs-comment"># &#xB610;&#xB294; cat file | ./test.sh</span>
 <span class="hljs-number">11</span>
 <span class="hljs-number">13</span>
 <span class="hljs-number">20</span>
 <span class="hljs-number">4</span>
-<span class="hljs-number">2</span>
+-<span class="hljs-number">4</span>
 -<span class="hljs-number">9</span>
 <span class="hljs-number">7</span>
 </code></pre>
@@ -789,7 +789,7 @@ operand &#xB97C; &#xC774;&#xC6A9;&#xD574; &#xC5F0;&#xC0B0;&#xD558;&#xB294; binar
 push &#xD558;&#xC9C0; &#xC54A;&#xACE0; number &#xC5D0; &#xBD80;&#xD638;&#xB97C; &#xC124;&#xC815;&#xD574;&#xC11C; rstack &#xC5D0; push &#xD569;&#xB2C8;&#xB2E4;.
 ( unary &#xC5F0;&#xC0B0;&#xC790; &#xC704;&#xCE58;&#xC5D0; <code>*</code> <code>/</code> &#xAC00; &#xC624;&#xB294;&#xAC83;&#xC740; &#xC624;&#xB958; &#xC785;&#xB2C8;&#xB2E4;. )</p>
 </li>
-<li><p><code>3 - - (-10 + -2)</code> &#xC640; &#xAC19;&#xC774; &#xAD04;&#xD638; &#xC55E;&#xC5D0; &#xC788;&#xB294; unary &#xC5F0;&#xC0B0;&#xC790;&#xB294; &#xAD04;&#xD638;&#xAC00; &#xB2EB;&#xD790;&#xB54C; &#xCD5C;&#xC885; &#xACB0;&#xACFC;&#xAC12;&#xC5D0;
+<li><p><code>3 - - ( -10 + -2 )</code> &#xC640; &#xAC19;&#xC774; &#xAD04;&#xD638; &#xC55E;&#xC5D0; &#xC788;&#xB294; unary &#xC5F0;&#xC0B0;&#xC790;&#xB294; &#xAD04;&#xD638;&#xAC00; &#xB2EB;&#xD790;&#xB54C; &#xCD5C;&#xC885; &#xACB0;&#xACFC;&#xAC12;&#xC5D0;
 &#xBD80;&#xD638;&#xB97C; &#xC124;&#xC815;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xAD04;&#xD638;&#xB294; nesting &#xB420;&#xC218; &#xC788;&#xC73C;&#xBBC0;&#xB85C; ustack &#xC744; &#xC774;&#xC6A9;&#xD574; <code>&quot;(&quot;</code> &#xC5D0;&#xC11C;
 &#xBD80;&#xD638;&#xAC12;&#xC744; &#xC800;&#xC7A5;&#xD558;&#xACE0; <code>&quot;)&quot;</code> &#xC5D0;&#xC11C; rstack &#xC5D0;&#xC11C; &#xACB0;&#xACFC;&#xAC12;&#xC744; pop &#xD574;&#xC11C; &#xBD80;&#xD638;&#xB97C; &#xC124;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</p>
 </li>
