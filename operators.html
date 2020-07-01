@@ -897,7 +897,8 @@ BEGIN { token[<span class="hljs-number">0</span>][<span class="hljs-number">0</s
     <span class="hljs-keyword">for</span> (i = <span class="hljs-number">1</span>; i &lt;= len; i++) {
         char = substr(str, i, <span class="hljs-number">1</span>)
         switch (char) {
-            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;+&quot;</span> : <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;-&quot;</span> : <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;*&quot;</span> : <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;/&quot;</span> : 
+            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;+&quot;</span> : <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;-&quot;</span> :
+            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;*&quot;</span> : <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;/&quot;</span> :
                 token[idx][<span class="hljs-string">&quot;name&quot;</span>] = <span class="hljs-string">&quot;operator&quot;</span>
                 token[idx++][<span class="hljs-string">&quot;value&quot;</span>] = char
                 <span class="hljs-built_in">break</span>
