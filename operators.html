@@ -831,6 +831,10 @@ BEGIN { token[<span class="hljs-number">0</span>][<span class="hljs-number">0</s
                      || token[i-<span class="hljs-number">1</span>][<span class="hljs-string">&quot;value&quot;</span>] == <span class="hljs-string">&quot;(&quot;</span> \
                      || token[i-<span class="hljs-number">1</span>][<span class="hljs-string">&quot;name&quot;</span>] == <span class="hljs-string">&quot;operator&quot;</span>)
                 { 
+                    <span class="hljs-keyword">if</span> ( op ~ /*|\// ) {    <span class="hljs-comment"># unary &#xC5F0;&#xC0B0;&#xC790; &#xC790;&#xB9AC;&#xC5D0; * or / &#xAC00; &#xC624;&#xBA74; &#xC624;&#xB958;</span>
+                        <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;ERROR: * or / unary operator&quot;</span> &gt; <span class="hljs-string">&quot;/dev/stderr&quot;</span>
+                        <span class="hljs-built_in">exit</span> <span class="hljs-number">1</span>
+                    }
                     <span class="hljs-keyword">if</span> ( token[i+<span class="hljs-number">1</span>][<span class="hljs-string">&quot;value&quot;</span>] == <span class="hljs-string">&quot;(&quot;</span>) {   <span class="hljs-comment"># &#xBC14;&#xB85C; &#xB2E4;&#xC74C; token &#xC774; &quot;(&quot; &#xC774;&#xBA74;</span>
                         unary_p = unary * (op <span class="hljs-number">1</span>)         <span class="hljs-comment"># &#xAD04;&#xD638;&#xB97C; &#xC704;&#xD55C; unary_p &#xBCC0;&#xC218;&#xB97C;  </span>
                         unary = <span class="hljs-number">1</span>                        <span class="hljs-comment"># &#xC124;&#xC815;&#xD558;&#xACE0; unary &#xBCC0;&#xC218;&#xB294; reset</span>
@@ -844,7 +848,7 @@ BEGIN { token[<span class="hljs-number">0</span>][<span class="hljs-number">0</s
 
                 <span class="hljs-keyword">if</span> ( op == <span class="hljs-string">&quot;*&quot;</span> || op == <span class="hljs-string">&quot;/&quot;</span> )        <span class="hljs-comment"># &#xD604;&#xC7AC; &#xC5F0;&#xC0B0;&#xC790;&#xAC00; &quot;*&quot; or &quot;/&quot; &#xC774;&#xBA74;</span>
                 {                                    
-                    <span class="hljs-keyword">while</span>( peek(ostack) ~ /\*|\// )  <span class="hljs-comment"># &#xAC19;&#xC740; &#xC6B0;&#xC120;&#xC21C;&#xC704; &#xC5F0;&#xC0B0;&#xC790;&#xB97C; &#xAEBC;&#xB0B4;&#xC5B4;</span>
+                    <span class="hljs-keyword">while</span>( peek(ostack) ~ /*|\// )   <span class="hljs-comment"># &#xAC19;&#xC740; &#xC6B0;&#xC120;&#xC21C;&#xC704; &#xC5F0;&#xC0B0;&#xC790;&#xB97C; &#xAEBC;&#xB0B4;&#xC5B4;</span>
                         calc( pop(ostack))           <span class="hljs-comment"># calc &#xD558;&#xACE0; &#xC644;&#xB8CC;&#xB418;&#xBA74; &#xD604;&#xC7AC;</span>
                     push(ostack, op)                 <span class="hljs-comment"># &#xC5F0;&#xC0B0;&#xC790;&#xB97C; ostack &#xC5D0; push &#xD569;&#xB2C8;&#xB2E4;</span>
                     <span class="hljs-built_in">break</span>
