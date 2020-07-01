@@ -855,7 +855,7 @@ BEGIN { token[<span class="hljs-number">0</span>][<span class="hljs-number">0</s
                 }
 
                 <span class="hljs-comment"># &#xADF8;&#xC678; &#xD604;&#xC7AC; &#xC5F0;&#xC0B0;&#xC790;&#xAC00; &quot;+&quot; or &quot;-&quot; &#xC77C; &#xACBD;&#xC6B0; &#xC6B0;&#xC120;&#xC21C;&#xC704;&#xAC00; &#xB354; &#xB0AE;&#xC740; &quot;(&quot; &#xAC00;</span>
-                <span class="hljs-comment"># stack &#xC758; top &#xC774; &#xB420;&#xB54C;&#xAE4C;&#xC9C0; &#xAEBC;&#xB0B4;&#xC5B4; calc &#xD558;&#xACE0; &#xD604;&#xC7AC; &#xC5F0;&#xC0B0;&#xC790;&#xB97C; push &#xD569;&#xB2C8;&#xB2E4;.</span>
+                <span class="hljs-comment"># ostack &#xC758; top &#xC774; &#xB420;&#xB54C;&#xAE4C;&#xC9C0; &#xAEBC;&#xB0B4;&#xC5B4; calc &#xD558;&#xACE0; &#xD604;&#xC7AC; &#xC5F0;&#xC0B0;&#xC790;&#xB97C; push &#xD569;&#xB2C8;&#xB2E4;.</span>
                 <span class="hljs-keyword">while</span>( peek(ostack) != <span class="hljs-string">&quot;(&quot;</span> &amp;&amp; slen(ostack) &gt; <span class="hljs-number">0</span> ) 
                     calc( pop(ostack))
                 push( ostack, op) 
