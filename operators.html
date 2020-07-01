@@ -916,9 +916,13 @@ BEGIN { token[<span class="hljs-number">0</span>][<span class="hljs-number">0</s
                 token[idx][<span class="hljs-string">&quot;name&quot;</span>] = <span class="hljs-string">&quot;parentheses&quot;</span>
                 token[idx++][<span class="hljs-string">&quot;value&quot;</span>] = char
                 <span class="hljs-built_in">break</span>
-            <span class="hljs-keyword">case</span> /[<span class="hljs-number">0</span>-<span class="hljs-number">9</span>]/ : 
+            <span class="hljs-keyword">case</span> /[<span class="hljs-number">0</span>-<span class="hljs-number">9</span>.]/ : 
                 i += t_number( substr(str,i))
                 <span class="hljs-built_in">break</span>
+            <span class="hljs-keyword">case</span> /[ \t]/ :
+                <span class="hljs-built_in">break</span>
+            default :
+                error( <span class="hljs-string">&quot;wrong character: &quot;</span> char)
         }
     }
 }
