@@ -891,15 +891,15 @@ BEGIN { token[<span class="hljs-number">0</span>][<span class="hljs-number">0</s
 }
 
 <span class="hljs-keyword">function</span> calc(op,      num1, num2, res) {
-    num1 = pop(rstack)    <span class="hljs-comment"># rstack &#xC5D0;&#xC11C; &#xB450;&#xAC1C;&#xC758; operand &#xB97C; pop &#xD574;&#xC11C;</span>
-    num2 = pop(rstack)    <span class="hljs-comment"># &#xC778;&#xC218;&#xB85C; &#xC804;&#xB2EC;&#xB41C; op &#xC5F0;&#xC0B0;&#xC790;&#xC640; &#xC5F0;&#xC0B0;&#xC744; &#xD558;&#xACE0;</span>
+    num1 = pop(rstack)      <span class="hljs-comment"># rstack &#xC5D0;&#xC11C; &#xB450;&#xAC1C;&#xC758; operand &#xB97C; pop &#xD574;&#xC11C;</span>
+    num2 = pop(rstack)      <span class="hljs-comment"># &#xC778;&#xC218;&#xB85C; &#xC804;&#xB2EC;&#xB41C; op &#xC5F0;&#xC0B0;&#xC790;&#xC640; &#xC5F0;&#xC0B0;&#xC744; &#xD558;&#xACE0;</span>
     switch (op) {
         <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;+&quot;</span> : res = num2 + num1; <span class="hljs-built_in">break</span>
         <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;-&quot;</span> : res = num2 - num1; <span class="hljs-built_in">break</span>
         <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;*&quot;</span> : res = num2 * num1; <span class="hljs-built_in">break</span>
         <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;/&quot;</span> : res = num2 / num1; <span class="hljs-built_in">break</span>
     }
-    push(rstack, res)     <span class="hljs-comment"># &#xACB0;&#xACFC;&#xB97C; &#xB2E4;&#xC2DC; rstack &#xC73C;&#xB85C; push &#xD569;&#xB2C8;&#xB2E4;.</span>
+    push(rstack, res)       <span class="hljs-comment"># &#xACB0;&#xACFC;&#xB97C; &#xB2E4;&#xC2DC; rstack &#xC73C;&#xB85C; push &#xD569;&#xB2C8;&#xB2E4;.</span>
 }
 
 <span class="hljs-keyword">function</span> tokenize (str,     i, len, char) {
