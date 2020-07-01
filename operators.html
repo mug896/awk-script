@@ -838,7 +838,7 @@ BEGIN { token[<span class="hljs-number">0</span>][<span class="hljs-number">0</s
                     <span class="hljs-keyword">if</span> ( token[i+<span class="hljs-number">1</span>][<span class="hljs-string">&quot;value&quot;</span>] == <span class="hljs-string">&quot;(&quot;</span>) {   <span class="hljs-comment"># &#xBC14;&#xB85C; &#xB2E4;&#xC74C; token &#xC774; &quot;(&quot; &#xC774;&#xBA74;</span>
                         unary_p = unary * (op <span class="hljs-number">1</span>)         <span class="hljs-comment"># &#xAD04;&#xD638;&#xB97C; &#xC704;&#xD55C; unary_p &#xBCC0;&#xC218;&#xB97C;  </span>
                         unary = <span class="hljs-number">1</span>                        <span class="hljs-comment"># &#xC124;&#xC815;&#xD558;&#xACE0; unary &#xBCC0;&#xC218;&#xB294; reset</span>
-                    } <span class="hljs-keyword">else</span> unary *= op <span class="hljs-number">1</span>                 <span class="hljs-comment"># &#xC774;&#xC678;&#xB294; unary &#xBCC0;&#xC218;&#xB97C; &#xC124;&#xC815; </span>
+                    } <span class="hljs-keyword">else</span> unary *= (op <span class="hljs-number">1</span>)               <span class="hljs-comment"># &#xC774;&#xC678;&#xB294; unary &#xBCC0;&#xC218;&#xB97C; &#xC124;&#xC815; </span>
                     <span class="hljs-built_in">break</span> 
                 }
 
