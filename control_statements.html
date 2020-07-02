@@ -783,7 +783,7 @@ BEGIN {
     RS=<span class="hljs-string">&quot;(.)&quot;</span>                    <span class="hljs-comment"># &#xD55C; &#xBB38;&#xC790;&#xC529; &#xC77D;&#xC5B4; &#xB4E4;&#xC785;&#xB2C8;&#xB2E4;. (getline &#xB3C4; &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;)</span>
     <span class="hljs-keyword">if</span> (!INDENT) INDENT = <span class="hljs-number">2</span>;    <span class="hljs-comment"># &#xAE30;&#xBCF8; indent &#xD06C;&#xAE30;</span>
     keyword[<span class="hljs-string">&quot;true&quot;</span>]; keyword[<span class="hljs-string">&quot;false&quot;</span>]; keyword[<span class="hljs-string">&quot;null&quot;</span>]   <span class="hljs-comment"># json &#xD0A4;&#xC6CC;&#xB4DC;</span>
-    token[<span class="hljs-number">0</span>]; idx = <span class="hljs-number">0</span>
+    token[<span class="hljs-number">0</span>]; idx = <span class="hljs-number">0</span>           <span class="hljs-comment"># idx &#xBCC0;&#xC218;&#xB294; token &#xBC30;&#xC5F4;&#xC758; index &#xB85C; &#xC0AC;&#xC6A9;</span>
 }
 
 { tokenize(RT) }
@@ -1018,17 +1018,21 @@ END {
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;}&quot;</span> :
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;]&quot;</span> : <span class="hljs-built_in">return</span>
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;:&quot;</span> : 
+                <span class="hljs-comment"># ckey &#xB294; &#xD604;&#xC7AC; &quot;key&quot; : &quot;value&quot; &#xC5D0;&#xC11C; quotes &#xC744; &#xC81C;&#xAC70;&#xD55C; key &#xBD80;&#xBD84;</span>
                 ckey = gensub( /^<span class="hljs-string">&quot;(.*)&quot;</span>$/, <span class="hljs-string">&quot;\\1&quot;</span>, <span class="hljs-string">&quot;g&quot;</span>, token[cdx - <span class="hljs-number">1</span>])
+                <span class="hljs-comment"># key &#xB294; &#xAC80;&#xC0C9;&#xC5D0; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xAC12;&#xC778;&#xB370; path &#xC5D0; &#xC911;&#xBCF5;&#xB418;&#xB294; //, /// ..</span>
+                <span class="hljs-comment"># &#xC774; &#xC788;&#xC744;&#xACBD;&#xC6B0; / &#xD558;&#xB098;&#xB85C; &#xC815;&#xB9AC;&#xD558;&#xC5EC; key &#xBCC0;&#xC218;&#xC5D0; &#xB300;&#xC785;</span>
                 key  = gensub( /\/{<span class="hljs-number">2</span>,}/, <span class="hljs-string">&quot;/&quot;</span>, <span class="hljs-string">&quot;g&quot;</span>, path <span class="hljs-string">&quot;/&quot;</span> ckey)
                 <span class="hljs-keyword">if</span> ( opt1 == <span class="hljs-string">&quot;-k&quot;</span> ) <span class="hljs-built_in">print</span> key 
-                <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> ( opt1 == <span class="hljs-string">&quot;-s&quot;</span> ) {
-                    <span class="hljs-keyword">if</span> ( opt2 == key ) {
-                        switch( token[cdx + <span class="hljs-number">1</span>] ) {
-                            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;[&quot;</span> :
+                <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> ( opt1 == <span class="hljs-string">&quot;-s&quot;</span> ) {            <span class="hljs-comment"># &#xAC80;&#xC0C9;&#xC5D0; &#xC0AC;&#xC6A9;&#xB41C; key &#xAC12;&#xC778; opt2 &#xC640; </span>
+                    <span class="hljs-keyword">if</span> ( opt2 == key ) {              <span class="hljs-comment"># key &#xBCC0;&#xC218;&#xAC12;&#xC774; &#xAC19;&#xC744;&#xACBD;&#xC6B0; &#xB2E4;&#xC74C; token</span>
+                        switch( token[cdx + <span class="hljs-number">1</span>] ) {    <span class="hljs-comment"># &#xC744; &#xC870;&#xD68C;&#xD558;&#xC5EC; &quot;[&quot; or &quot;{&quot; &#xC77C; &#xACBD;&#xC6B0;   </span>
+                            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;[&quot;</span> :                <span class="hljs-comment"># pretty_print &#xB85C; &#xBE14;&#xB85D;&#xC744; &#xCD9C;&#xB825;</span>
                             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;{&quot;</span> : pretty_<span class="hljs-built_in">print</span>(cdx + <span class="hljs-number">1</span>); <span class="hljs-built_in">break</span>
                             default  : <span class="hljs-built_in">print</span> token[cdx + <span class="hljs-number">1</span>]
                         }
                     } <span class="hljs-keyword">else</span> {
+                        <span class="hljs-comment"># val &#xB294; &#xAC80;&#xC0C9;&#xC5D0; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xAC12;&#xC73C;&#xB85C; quotes &#xC744; &#xC81C;&#xAC70;&#xD574; &#xC0AC;&#xC6A9;</span>
                         val = gensub( /^<span class="hljs-string">&quot;(.*)&quot;</span>$/, <span class="hljs-string">&quot;\\1&quot;</span>, <span class="hljs-string">&quot;g&quot;</span>, token[cdx + <span class="hljs-number">1</span>])
                         <span class="hljs-keyword">if</span> ( opt2 == key <span class="hljs-string">&quot;=&quot;</span> val ) pretty_<span class="hljs-built_in">print</span>(sblock)
                     }
