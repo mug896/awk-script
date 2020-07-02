@@ -829,6 +829,15 @@ BEGIN {
     print res
 }&apos;</span>
 YYY XXX
+..........................................................
+
+<span class="hljs-comment"># &#xB9E4;&#xCE6D;&#xC774; &#xB418;&#xBA74; &#xAC12;&#xC5D0;&#xC11C; @...@ &#xAC00; &#xBD84;&#xB9AC;&#xB418;&#xC9C0;&#xB9CC; </span>
+$ awk <span class="hljs-string">&apos;BEGIN { str = &quot;@foo@&quot;; print gensub( /^@(.*)@$/, &quot;\\1&quot;, &quot;1&quot;, str ) }&apos;</span> 
+foo
+
+<span class="hljs-comment"># &#xB9E4;&#xCE6D;&#xC774; &#xC548;&#xB418;&#xBA74; &#xC6D0;&#xBCF8;&#xC774; &#xADF8;&#xB300;&#xB85C; &#xCD9C;&#xB825;&#xB429;&#xB2C8;&#xB2E4;.</span>
+$ awk <span class="hljs-string">&apos;BEGIN { str = &quot;bar&quot;; print gensub( /^@(.*)@$/, &quot;\\1&quot;, &quot;1&quot;, str ) }&apos;</span> 
+bar
 </code></pre>
 <p>&#xD55C;&#xAC00;&#xC9C0; &#xC8FC;&#xC758;&#xD560; &#xC810;&#xC740; <code>/.../</code> &#xB9E4;&#xCE6D;&#xC5D0; &#xD3EC;&#xD568;&#xB418;&#xC9C0; &#xC54A;&#xB294; &#xC2A4;&#xD2B8;&#xB9C1;&#xC740;
 &#xD568;&#xAED8; &#xCD9C;&#xB825;&#xB41C;&#xB2E4;&#xB294; &#xC810;&#xC785;&#xB2C8;&#xB2E4;.
