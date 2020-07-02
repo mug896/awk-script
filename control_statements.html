@@ -1011,10 +1011,10 @@ END {
 <span class="hljs-keyword">function</span> search (path, sblock,       ckey, key, val) {
     <span class="hljs-keyword">for</span> (  ; cdx &lt; idx; cdx++) { 
         switch (token[cdx]) {
-            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;{&quot;</span> :
-            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;[&quot;</span> : 
-                search( path <span class="hljs-string">&quot;/&quot;</span> ckey, cdx++)
-                <span class="hljs-built_in">break</span>
+            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;{&quot;</span> :                          <span class="hljs-comment"># &#xBE14;&#xB85D;&#xC758; &#xC2DC;&#xC791;&#xC744; &#xB098;&#xD0C0;&#xB0B4;&#xB294; &quot;{&quot; &quot;[&quot;</span>
+            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;[&quot;</span> :                          <span class="hljs-comment"># &#xC758; &#xD604;&#xC7AC; index &#xAC12;&#xC778; cdx &#xB97C;</span>
+                search( path <span class="hljs-string">&quot;/&quot;</span> ckey, cdx++)   <span class="hljs-comment"># sblock &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; &#xAC12;&#xC73C;&#xB85C; &#xC804;&#xB2EC;</span>
+                <span class="hljs-built_in">break</span>                          
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;}&quot;</span> :
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;]&quot;</span> : <span class="hljs-built_in">return</span>
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;:&quot;</span> : 
