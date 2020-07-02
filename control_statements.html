@@ -987,7 +987,7 @@ BEGIN {
     INDENT = <span class="hljs-number">2</span>;
     keyword[<span class="hljs-string">&quot;true&quot;</span>]; keyword[<span class="hljs-string">&quot;false&quot;</span>]; keyword[<span class="hljs-string">&quot;null&quot;</span>]
     token[<span class="hljs-number">0</span>] = opt1 = opt2 = <span class="hljs-string">&quot;&quot;</span>
-    idx = sdx = <span class="hljs-number">0</span>
+    idx = cdx = <span class="hljs-number">0</span>
 }
 
 BEGINFILE {
@@ -1007,29 +1007,29 @@ END {
 <span class="hljs-comment"># return &#xD569;&#xB2C8;&#xB2E4;. &#xC790;&#xAE30; &#xC790;&#xC2E0;&#xC744; &#xD638;&#xCD9C;&#xD560; &#xB54C;&#xB294; path &quot;/&quot; ckey &#xD615;&#xD0DC;&#xB85C; &#xB9CC;&#xB4E4;&#xC5B4;&#xC9C0;&#xB294; &#xB204;&#xC801; &#xACBD;&#xB85C;&#xC640; </span>
 <span class="hljs-comment"># key=value &#xAC80;&#xC0C9;&#xC744; &#xC704;&#xD55C; &#xC2DC;&#xC791; &#xAD04;&#xD638; index &#xBC88;&#xD638;&#xB97C; context &#xB85C; &#xC720;&#xC9C0;&#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C; </span>
 <span class="hljs-comment"># &#xAC01;&#xAC01; path, sblock &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB85C; &#xC9C0;&#xC815;&#xD569;&#xB2C8;&#xB2E4;. &#xBAA8;&#xB4E0; token &#xAC12;&#xC744; &#xCC28;&#xB840;&#xB85C; &#xCC98;&#xB9AC;&#xD558;&#xAE30; &#xC704;&#xD55C;</span>
-<span class="hljs-comment"># sdx &#xBCC0;&#xC218;&#xB294; recursion &#xC5D0; &#xC0C1;&#xAD00;&#xC5C6;&#xC774; &#xACC4;&#xC18D; &#xC99D;&#xAC00;&#xB3FC;&#xC57C; &#xB418;&#xBBC0;&#xB85C; global &#xBCC0;&#xC218;&#xB85C; &#xC9C0;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</span>
+<span class="hljs-comment"># cdx &#xBCC0;&#xC218;&#xB294; recursion &#xC5D0; &#xC0C1;&#xAD00;&#xC5C6;&#xC774; &#xACC4;&#xC18D; &#xC99D;&#xAC00;&#xB3FC;&#xC57C; &#xB418;&#xBBC0;&#xB85C; global &#xBCC0;&#xC218;&#xB85C; &#xC9C0;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</span>
 <span class="hljs-keyword">function</span> search (path, sblock,       ckey, key, val) {
-    <span class="hljs-keyword">for</span> (  ; sdx &lt; idx; sdx++) { 
-        switch (token[sdx]) {
+    <span class="hljs-keyword">for</span> (  ; cdx &lt; idx; cdx++) { 
+        switch (token[cdx]) {
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;{&quot;</span> :
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;[&quot;</span> : 
-                search( path <span class="hljs-string">&quot;/&quot;</span> ckey, sdx++)
+                search( path <span class="hljs-string">&quot;/&quot;</span> ckey, cdx++)
                 <span class="hljs-built_in">break</span>
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;}&quot;</span> :
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;]&quot;</span> : <span class="hljs-built_in">return</span>
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;:&quot;</span> : 
-                ckey = gensub( /^<span class="hljs-string">&quot;(.*)&quot;</span>$/, <span class="hljs-string">&quot;\\1&quot;</span>, <span class="hljs-string">&quot;g&quot;</span>, token[sdx - <span class="hljs-number">1</span>])
+                ckey = gensub( /^<span class="hljs-string">&quot;(.*)&quot;</span>$/, <span class="hljs-string">&quot;\\1&quot;</span>, <span class="hljs-string">&quot;g&quot;</span>, token[cdx - <span class="hljs-number">1</span>])
                 key  = gensub( /\/{<span class="hljs-number">2</span>,}/, <span class="hljs-string">&quot;/&quot;</span>, <span class="hljs-string">&quot;g&quot;</span>, path <span class="hljs-string">&quot;/&quot;</span> ckey)
                 <span class="hljs-keyword">if</span> ( opt1 == <span class="hljs-string">&quot;-k&quot;</span> ) <span class="hljs-built_in">print</span> key 
                 <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> ( opt1 == <span class="hljs-string">&quot;-s&quot;</span> ) {
                     <span class="hljs-keyword">if</span> ( opt2 == key ) {
-                        switch( token[sdx + <span class="hljs-number">1</span>] ) {
+                        switch( token[cdx + <span class="hljs-number">1</span>] ) {
                             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;[&quot;</span> :
-                            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;{&quot;</span> : pretty_<span class="hljs-built_in">print</span>(sdx + <span class="hljs-number">1</span>); <span class="hljs-built_in">break</span>
-                            default  : <span class="hljs-built_in">print</span> token[sdx + <span class="hljs-number">1</span>]
+                            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;{&quot;</span> : pretty_<span class="hljs-built_in">print</span>(cdx + <span class="hljs-number">1</span>); <span class="hljs-built_in">break</span>
+                            default  : <span class="hljs-built_in">print</span> token[cdx + <span class="hljs-number">1</span>]
                         }
                     } <span class="hljs-keyword">else</span> {
-                        val = gensub( /^<span class="hljs-string">&quot;(.*)&quot;</span>$/, <span class="hljs-string">&quot;\\1&quot;</span>, <span class="hljs-string">&quot;g&quot;</span>, token[sdx + <span class="hljs-number">1</span>])
+                        val = gensub( /^<span class="hljs-string">&quot;(.*)&quot;</span>$/, <span class="hljs-string">&quot;\\1&quot;</span>, <span class="hljs-string">&quot;g&quot;</span>, token[cdx + <span class="hljs-number">1</span>])
                         <span class="hljs-keyword">if</span> ( opt2 == key <span class="hljs-string">&quot;=&quot;</span> val ) pretty_<span class="hljs-built_in">print</span>(sblock)
                     }
                 }
@@ -1126,13 +1126,13 @@ END {
 return &#xC2DC;&#xC5D0;&#xB294; pop &#xB418;&#xBBC0;&#xB85C; ).
 &#xB530;&#xB77C;&#xC11C; stack &#xC790;&#xB8CC;&#xAD6C;&#xC870;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC744; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; recursion &#xC5C6;&#xC774; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xD574;&#xB3C4; &#xB3D9;&#xC77C;&#xD55C;
 &#xACB0;&#xACFC;&#xAC00; &#xB429;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-bash">        switch (token[sdx]) {
+<pre><code class="lang-bash">        switch (token[cdx]) {
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;{&quot;</span> :
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;[&quot;</span> : 
                 push(stack, path )       <span class="hljs-comment"># &#xAE30;&#xC874; path, sblock &#xBCC0;&#xC218;&#xAC12;&#xC744;</span>
                 push(stack, sblock )     <span class="hljs-comment"># stack &#xC5D0; push &#xD574;&#xC11C; &#xC800;&#xC7A5;&#xD558;&#xACE0;</span>
                 path = path <span class="hljs-string">&quot;/&quot;</span> ckey     <span class="hljs-comment"># &#xBCC0;&#xC218;&#xAC12;&#xC744; &#xC0C8;&#xB85C; &#xC124;&#xC815;</span>
-                sblock = sdx++
+                sblock = cdx++
                 <span class="hljs-built_in">break</span>
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;}&quot;</span> :
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;]&quot;</span> :
