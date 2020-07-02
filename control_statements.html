@@ -1034,6 +1034,7 @@ END {
                     } <span class="hljs-keyword">else</span> {
                         <span class="hljs-comment"># val &#xB294; &#xAC80;&#xC0C9;&#xC5D0; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xAC12;&#xC73C;&#xB85C; quotes &#xC744; &#xC81C;&#xAC70;&#xD574; &#xC0AC;&#xC6A9;</span>
                         val = gensub( /^<span class="hljs-string">&quot;(.*)&quot;</span>$/, <span class="hljs-string">&quot;\\1&quot;</span>, <span class="hljs-string">&quot;g&quot;</span>, token[cdx + <span class="hljs-number">1</span>])
+                        <span class="hljs-comment"># opt2 &#xAC12;&#xC774; key=val &#xC640; &#xAC19;&#xC73C;&#xBA74; sblock &#xAC12;&#xC73C;&#xB85C; &#xBE14;&#xB85D;&#xC744; &#xCD9C;&#xB825;</span>
                         <span class="hljs-keyword">if</span> ( opt2 == key <span class="hljs-string">&quot;=&quot;</span> val ) pretty_<span class="hljs-built_in">print</span>(sblock)
                     }
                 }
