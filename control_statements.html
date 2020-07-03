@@ -867,6 +867,8 @@ END {
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;,&quot;</span> : <span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;,&quot;</span>; <span class="hljs-built_in">break</span>
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;:&quot;</span> : <span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;: &quot;</span>; <span class="hljs-built_in">break</span>
             default : 
+                <span class="hljs-comment"># &quot;%&quot; &#xBB38;&#xC790;&#xB294; printf &#xBB38;&#xC5D0;&#xC11C; format specifier &#xB97C; &#xC791;&#xC131;&#xD560; &#xB54C; &#xC0AC;&#xC6A9;&#xB418;&#xBBC0;&#xB85C;</span>
+                <span class="hljs-comment"># &quot;%&quot; &#xBB38;&#xC790;&#xAC00; &#xADF8;&#xB300;&#xB85C; &#xCD9C;&#xB825;&#xB418;&#xB824;&#xBA74; &quot;%%&quot; &#xB85C; &#xBCC0;&#xACBD;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</span>
                 <span class="hljs-built_in">printf</span> (prev == <span class="hljs-string">&quot;:&quot;</span> ? <span class="hljs-string">&quot;&quot;</span> : <span class="hljs-string">&quot;\n&quot;</span> space(depth)) gensub(/%/,<span class="hljs-string">&quot;%%&quot;</span>,<span class="hljs-string">&quot;g&quot;</span>,cur)
         }
         <span class="hljs-keyword">if</span> (depth == <span class="hljs-number">0</span>) <span class="hljs-built_in">break</span>
