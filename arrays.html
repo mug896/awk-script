@@ -1092,12 +1092,12 @@ $ awk <span class="hljs-string">&apos;BEGIN { a[1,9]=10; a[1,10]=20; a[1,11]=30
 }&apos;</span>
 awk: cmd. line:<span class="hljs-number">2</span>: fatal: split: second argument is not an array
 </code></pre>
-<p>&#xB530;&#xB77C;&#xC11C; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; <code>arr[1][1]</code>, <code>arr[2][1]</code> &#xB97C; &#xBA3C;&#xC800; &#xC120;&#xC5B8;&#xD558;&#xC5EC; <code>arr[1]</code>, <code>arr[2]</code> &#xB97C;
+<p>&#xB530;&#xB77C;&#xC11C; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; <code>arr[1][0]</code>, <code>arr[2][0]</code> &#xB97C; &#xBA3C;&#xC800; &#xC120;&#xC5B8;&#xD558;&#xC5EC; <code>arr[1]</code>, <code>arr[2]</code> &#xB97C;
 array &#xB85C; &#xB9CC;&#xB4E4;&#xC5B4; &#xC918;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;BEGIN { 
-     arr[1][1]
+     arr[1][0]
      split(&quot;aa:bb:cc&quot;, arr[1], &quot;:&quot;); print arr[1][2] 
-     arr[2][1]
+     arr[2][0]
      split(&quot;11:22:33&quot;, arr[2], &quot;:&quot;); print arr[2][2] 
 }&apos;</span>
 bb
@@ -1105,9 +1105,9 @@ bb
 -------------------------------------------------------
 
 $ awk <span class="hljs-string">&apos;BEGIN { 
-     arr[1][1]
+     arr[1][0]
      split(&quot;aa:bb:cc&quot;, arr[1], &quot;:&quot;)
-     arr[2][1]
+     arr[2][0]
      split(&quot;11:22:33&quot;, arr[2], &quot;:&quot;)
 
      for (i in arr)
