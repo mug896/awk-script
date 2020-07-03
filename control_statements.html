@@ -867,7 +867,7 @@ END {
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;,&quot;</span> : <span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;,&quot;</span>; <span class="hljs-built_in">break</span>
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;:&quot;</span> : <span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;: &quot;</span>; <span class="hljs-built_in">break</span>
             default : 
-                <span class="hljs-built_in">printf</span> (prev == <span class="hljs-string">&quot;:&quot;</span> ? <span class="hljs-string">&quot;&quot;</span> : <span class="hljs-string">&quot;\n&quot;</span> space(depth)) cur
+                <span class="hljs-built_in">printf</span> (prev == <span class="hljs-string">&quot;:&quot;</span> ? <span class="hljs-string">&quot;&quot;</span> : <span class="hljs-string">&quot;\n&quot;</span> space(depth)) gensub(/%/,<span class="hljs-string">&quot;%%&quot;</span>,<span class="hljs-string">&quot;g&quot;</span>,cur)
         }
         <span class="hljs-keyword">if</span> (depth == <span class="hljs-number">0</span>) <span class="hljs-built_in">break</span>
     }
@@ -1118,7 +1118,7 @@ END {
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;,&quot;</span> : <span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;,&quot;</span>; <span class="hljs-built_in">break</span>
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;:&quot;</span> : <span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;: &quot;</span>; <span class="hljs-built_in">break</span>
             default : 
-                <span class="hljs-built_in">printf</span> (prev == <span class="hljs-string">&quot;:&quot;</span> ? <span class="hljs-string">&quot;&quot;</span> : <span class="hljs-string">&quot;\n&quot;</span> space(depth)) cur
+                <span class="hljs-built_in">printf</span> (prev == <span class="hljs-string">&quot;:&quot;</span> ? <span class="hljs-string">&quot;&quot;</span> : <span class="hljs-string">&quot;\n&quot;</span> space(depth)) gensub(/%/,<span class="hljs-string">&quot;%%&quot;</span>,<span class="hljs-string">&quot;g&quot;</span>,cur)
         }
         <span class="hljs-keyword">if</span> (depth == <span class="hljs-number">0</span>) <span class="hljs-built_in">break</span>
     }
