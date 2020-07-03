@@ -995,7 +995,9 @@ $ sudo awk -b -v RS=<span class="hljs-string">&apos;^$&apos;</span> <span class=
 <span class="hljs-number">18357</span>
 </code></pre>
 <h4 id="length---string--">length ( [ <em>string</em> ] )</h4>
-<p>&#xC8FC;&#xC5B4;&#xC9C4; &#xC2A4;&#xD2B8;&#xB9C1;&#xC758; length &#xB97C; &#xAD6C;&#xD560; &#xB54C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.<br>string &#xAC12;&#xC774; &#xC8FC;&#xC5B4;&#xC9C0;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; <code>$0</code> &#xAC12;&#xC774; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>length &#xD568;&#xC218;&#xB294; scalar &#xBCC0;&#xC218;&#xC640; array &#xBCC0;&#xC218;&#xC5D0;&#xC11C; &#xAC01;&#xAC01; &#xB2E4;&#xB974;&#xAC8C; &#xC801;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.
+scalar &#xBCC0;&#xC218;&#xC5D0;&#xC11C;&#xB294; string length &#xAC00; &#xB418;&#xACE0; array &#xBCC0;&#xC218;&#xC5D0;&#xC11C;&#xB294; array length &#xAC00; &#xB429;&#xB2C8;&#xB2E4;.
+string &#xAC12;&#xC774; &#xC8FC;&#xC5B4;&#xC9C0;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; <code>$0</code> &#xAC12;&#xC774; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;BEGIN { print length(&quot;peanut&quot;) }&apos;</span>
 <span class="hljs-number">6</span>
 
