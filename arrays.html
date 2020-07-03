@@ -896,7 +896,9 @@ $ awk <span class="hljs-string">&apos;BEGIN {
 awk: cmd. line:<span class="hljs-number">3</span>: fatal: attempt to use scalar <span class="hljs-string">&apos;foo[&quot;1&quot;]&apos;</span> as an array
 </code></pre>
 <h4 id="array-length">array length</h4>
-<p><code>length()</code> &#xD568;&#xC218;&#xB294; SQL DISTINCT &#xC808;&#xC744; &#xAD6C;&#xD604;&#xD560; &#xB54C; &#xD65C;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<p><code>length()</code> &#xD568;&#xC218;&#xB294; scalar &#xBCC0;&#xC218;&#xC640; array &#xBCC0;&#xC218;&#xC5D0;&#xC11C; &#xAC01;&#xAC01; &#xB2E4;&#xB974;&#xAC8C; &#xC801;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.
+scalar &#xBCC0;&#xC218;&#xC5D0;&#xC11C;&#xB294; string length &#xAC00; &#xB418;&#xACE0; array &#xBCC0;&#xC218;&#xC5D0;&#xC11C;&#xB294; array length &#xAC00; &#xB429;&#xB2C8;&#xB2E4;.
+array &#xC758; &#xACBD;&#xC6B0; SQL DISTINCT &#xC808;&#xC744; &#xAD6C;&#xD604;&#xD560; &#xB54C; &#xD65C;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;BEGIN { 
     arr[1][1][1] = 1 
     arr[1][1][2] = 2
