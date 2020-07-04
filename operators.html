@@ -987,7 +987,8 @@ $ awk <span class="hljs-string">&apos;BEGIN { print -2 ^ -4 }&apos;</span>    <s
                 <span class="hljs-keyword">if</span> ( token[i+<span class="hljs-number">1</span>][<span class="hljs-string">&quot;value&quot;</span>] == <span class="hljs-string">&quot;^&quot;</span> ) {     <span class="hljs-comment"># &#xC22B;&#xC790; &#xBC14;&#xB85C; &#xB2E4;&#xC74C; &#xC5F0;&#xC0B0;&#xC790;&#xAC00; &quot;^&quot; &#xC774;&#xBA74;</span>
                     push( ustack, unary)                <span class="hljs-comment"># &#xBD80;&#xD638;&#xB97C; &#xB098;&#xC911;&#xC5D0; &#xC5F0;&#xC0B0; &#xACB0;&#xACFC;&#xC5D0; &#xC124;&#xC815;&#xD574;&#xC57C;</span>
                     push( rstack, token[i][<span class="hljs-string">&quot;value&quot;</span>])    <span class="hljs-comment"># &#xD558;&#xBBC0;&#xB85C; ustack &#xC5D0; push &#xD569;&#xB2C8;&#xB2E4;.</span>
-                } <span class="hljs-keyword">else</span> push( rstack, unary * token[i][<span class="hljs-string">&quot;value&quot;</span>])
+                } <span class="hljs-keyword">else</span> 
+                    push( rstack, unary * token[i][<span class="hljs-string">&quot;value&quot;</span>])
 
                 unary = <span class="hljs-number">1</span>
                 <span class="hljs-built_in">break</span>
