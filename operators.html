@@ -1101,15 +1101,15 @@ $ awk <span class="hljs-string">&apos;BEGIN { print -2 ^ -4 }&apos;</span>    <s
 &#xC815;&#xD558;&#xB294; &#xAC83;&#xC744; associativity &#xB77C;&#xACE0; &#xD558;&#xB294;&#xB370; <code>^</code> &#xC5F0;&#xC0B0;&#xC790;&#xB294; right associativity &#xC785;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;BEGIN { print 1 / 2 / 4 }&apos;</span>       
 <span class="hljs-number">0.125</span>
-$ awk <span class="hljs-string">&apos;BEGIN { print (1 / 2) / 4 }&apos;</span>    <span class="hljs-comment"># &quot;^&quot; &#xC774;&#xC678;&#xC758; &#xC5F0;&#xC0B0;&#xC790; &#xB4E4;&#xC740; &#xC67C;&#xCABD;&#xBD80;&#xD130; &#xACC4;&#xC0B0;&#xD558;&#xB294;</span>
-<span class="hljs-number">0.125</span>                                  <span class="hljs-comment"># left associativity &#xC774;&#xB2E4;.</span>
+$ awk <span class="hljs-string">&apos;BEGIN { print (1 / 2) / 4 }&apos;</span>      <span class="hljs-comment"># &quot;^&quot; &#xC774;&#xC678;&#xC758; &#xC5F0;&#xC0B0;&#xC790;&#xB4E4;&#xC740; &#xC67C;&#xCABD;&#xBD80;&#xD130; &#xACC4;&#xC0B0;&#xD558;&#xB294;</span>
+<span class="hljs-number">0.125</span>                                    <span class="hljs-comment"># left associativity &#xC774;&#xB2E4;.</span>
 $ awk <span class="hljs-string">&apos;BEGIN { print 1 / (2 / 4) }&apos;</span> 
 <span class="hljs-number">2</span>
 
 $ awk <span class="hljs-string">&apos;BEGIN { print 4 ^ 3 ^ 2 }&apos;</span> 
 <span class="hljs-number">262144</span>
-$ awk <span class="hljs-string">&apos;BEGIN { print 4 ^ (3 ^ 2) }&apos;</span>    <span class="hljs-comment"># &quot;^&quot; &#xC5F0;&#xC0B0;&#xC790;&#xB294; &#xC624;&#xB978;&#xCABD;&#xBD80;&#xD130; &#xACC4;&#xC0B0;&#xD558;&#xB294;</span>
-<span class="hljs-number">262144</span>                                 <span class="hljs-comment"># right associativity &#xC774;&#xB2E4;.</span>
+$ awk <span class="hljs-string">&apos;BEGIN { print 4 ^ (3 ^ 2) }&apos;</span>      <span class="hljs-comment"># &quot;^&quot; &#xC5F0;&#xC0B0;&#xC790;&#xB294; &#xC624;&#xB978;&#xCABD;&#xBD80;&#xD130; &#xACC4;&#xC0B0;&#xD558;&#xB294;</span>
+<span class="hljs-number">262144</span>                                   <span class="hljs-comment"># right associativity &#xC774;&#xB2E4;.</span>
 $ awk <span class="hljs-string">&apos;BEGIN { print (4 ^ 3) ^ 2 }&apos;</span> 
 <span class="hljs-number">4096</span>
 </code></pre>
