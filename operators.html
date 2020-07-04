@@ -1120,6 +1120,12 @@ $ awk <span class="hljs-string">&apos;BEGIN { print 4 ^ (3 ^ 2) }&apos;</span>  
 <span class="hljs-number">262144</span>                                   <span class="hljs-comment"># right associativity &#xC774;&#xB2E4;.</span>
 $ awk <span class="hljs-string">&apos;BEGIN { print (4 ^ 3) ^ 2 }&apos;</span> 
 <span class="hljs-number">4096</span>
+
+<span class="hljs-comment"># &#xB300;&#xC785; &#xC5F0;&#xC0B0;&#xB3C4; &#xC5F0;&#xC0B0; &#xACB0;&#xACFC;&#xAC00; value &#xC778; expression &#xC73C;&#xB85C; right associativity &#xC5D0; &#xD574;&#xB2F9;&#xD569;&#xB2C8;&#xB2E4;.</span>
+$ awk <span class="hljs-string">&apos;BEGIN { a = b = c = 100; print a,b,c }&apos;</span> 
+<span class="hljs-number">100</span> <span class="hljs-number">100</span> <span class="hljs-number">100</span>
+$ awk <span class="hljs-string">&apos;BEGIN { a = ( b = ( c = 100 )); print a,b,c }&apos;</span> 
+<span class="hljs-number">100</span> <span class="hljs-number">100</span> <span class="hljs-number">100</span>
 </code></pre>
 
                     
