@@ -897,7 +897,9 @@ BEGIN { FS=<span class="hljs-string">&quot;&quot;</span>; token[<span class="hlj
         <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;+&quot;</span> : res = num2 + num1; <span class="hljs-built_in">break</span>
         <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;-&quot;</span> : res = num2 - num1; <span class="hljs-built_in">break</span>
         <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;*&quot;</span> : res = num2 * num1; <span class="hljs-built_in">break</span>
-        <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;/&quot;</span> : res = num2 / num1; <span class="hljs-built_in">break</span>
+        <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;/&quot;</span> : 
+            <span class="hljs-keyword">if</span> (num1 == <span class="hljs-number">0</span> ) error( <span class="hljs-string">&quot;division by zero&quot;</span> )
+            res = num2 / num1
     }
     push(rstack, res)       <span class="hljs-comment"># &#xACB0;&#xACFC;&#xB97C; &#xB2E4;&#xC2DC; rstack &#xC73C;&#xB85C; push &#xD569;&#xB2C8;&#xB2E4;.</span>
 }
@@ -1060,10 +1062,15 @@ $ awk <span class="hljs-string">&apos;BEGIN { print -2 ^ -4 }&apos;</span>    <s
         <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;+&quot;</span> : res = num2 + num1; <span class="hljs-built_in">break</span>
         <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;-&quot;</span> : res = num2 - num1; <span class="hljs-built_in">break</span>
         <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;*&quot;</span> : res = num2 * num1; <span class="hljs-built_in">break</span>
-        <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;/&quot;</span> : res = num2 / num1; <span class="hljs-built_in">break</span>
-        <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;%&quot;</span> : res = num2 % num1; <span class="hljs-built_in">break</span>
+        <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;/&quot;</span> : 
+            <span class="hljs-keyword">if</span> (num1 == <span class="hljs-number">0</span> ) error( <span class="hljs-string">&quot;division by zero&quot;</span> )
+            res = num2 / num1
+            <span class="hljs-built_in">break</span>
+        <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;%&quot;</span> : 
+            <span class="hljs-keyword">if</span> (num1 == <span class="hljs-number">0</span> ) error( <span class="hljs-string">&quot;division by zero&quot;</span> )
+            res = num2 % num1
+            <span class="hljs-built_in">break</span>
         <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;^&quot;</span> : res = num2 ^ num1; <span class="hljs-built_in">break</span>
-
     }
     <span class="hljs-keyword">if</span> ( op == <span class="hljs-string">&quot;^&quot;</span> )
         push(rstack, pop(ustack) * res)    <span class="hljs-comment"># &quot;^&quot; &#xC5F0;&#xC0B0; &#xACB0;&#xACFC;&#xB97C; &#xC800;&#xC7A5;&#xD560; &#xB54C; &#xBD80;&#xD638;&#xB97C; &#xC124;&#xC815; </span>
