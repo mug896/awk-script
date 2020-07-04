@@ -1018,6 +1018,7 @@ $ awk <span class="hljs-string">&apos;BEGIN { print -2 ^ -4 }&apos;</span>    <s
                     push(ostack, op)
                     <span class="hljs-built_in">break</span>
                 }
+
                 <span class="hljs-keyword">while</span>( peek(ostack) != <span class="hljs-string">&quot;(&quot;</span> &amp;&amp; slen(ostack) &gt; <span class="hljs-number">0</span> ) 
                     calc( pop(ostack))
                 push( ostack, op) 
