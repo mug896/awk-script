@@ -744,9 +744,36 @@
 <pre><code class="lang-bash"><span class="hljs-comment"># &apos;^=&apos; &#xB294; power &#xB300;&#xC785; &#xC5F0;&#xC0B0;&#xC790;</span>
 $ awk <span class="hljs-string">&apos;BEGIN { aa = 3; aa ^= 2; print aa }&apos;</span> 
 <span class="hljs-number">9</span>
+</code></pre>
+<h4 id="-&#xC5F0;&#xC0B0;&#xC790;&#xB294;-&#xBCC0;&#xC218;&#xC640;&#xC758;-&#xC0AC;&#xC774;&#xC5D0;-&#xACF5;&#xBC31;&#xC774;-&#xC62C;-&#xC218;-&#xC788;&#xC2B5;&#xB2C8;&#xB2E4;"><code>++</code> <code>--</code> &#xC5F0;&#xC0B0;&#xC790;&#xB294; &#xBCC0;&#xC218;&#xC640;&#xC758; &#xC0AC;&#xC774;&#xC5D0; &#xACF5;&#xBC31;&#xC774; &#xC62C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</h4>
+<pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;BEGIN { n = 1; print ++ n; print n }&apos;</span>
+<span class="hljs-number">2</span>
+<span class="hljs-number">2</span>
 
-$ awk <span class="hljs-string">&apos;BEGIN { aa = 4; aa ^= 2; print aa }&apos;</span> 
-<span class="hljs-number">16</span>
+$ awk <span class="hljs-string">&apos;BEGIN { n = 1; print n ++; print n }&apos;</span>
+<span class="hljs-number">1</span>
+<span class="hljs-number">2</span>
+</code></pre>
+<p>&#xB530;&#xB77C;&#xC11C; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xACBD;&#xC6B0; &#xACB0;&#xACFC;&#xAC00; <code>123</code> &#xC774; &#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. 
+&#xC65C;&#xB0D0;&#xD558;&#xBA74; &#xB450; &#xBC88;&#xC9F8;&#xC640; &#xAC19;&#xC774; &#xD574;&#xC11D;&#xB418;&#xAE30; &#xB54C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;BEGIN { n = 12; x = 2; r = n ++x; print r }&apos;</span>
+<span class="hljs-number">122</span>
+
+$ awk <span class="hljs-string">&apos;BEGIN { n = 12; x = 2; r = (n ++)x; print r }&apos;</span>
+<span class="hljs-number">122</span>
+
+$ awk <span class="hljs-string">&apos;BEGIN { n = 12; x = 2; r = n ++x; print n }&apos;</span>
+<span class="hljs-number">13</span>
+</code></pre>
+<p><code>r</code> &#xAC12;&#xC774; <code>123</code> &#xC774; &#xB418;&#xAC8C; &#xD558;&#xB824;&#xBA74; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;BEGIN { n = 12; x = 2; r = n (++x); print r }&apos;</span>
+<span class="hljs-number">123</span>
+
+$ gawk <span class="hljs-string">&apos;BEGIN { n = 12; x = 2; r = (n) ++x; print r }&apos;</span>
+<span class="hljs-number">123</span>
+
+$ gawk <span class="hljs-string">&apos;BEGIN { n = 12; x = 2; r = n &quot;&quot; ++x; print r }&apos;</span>
+<span class="hljs-number">123</span>
 </code></pre>
 <h1 id="quiz">Quiz</h1>
 <p><code>7 + 3 * (5 - 2) + 4</code> &#xC640; &#xAC19;&#xC740; &#xC0AC;&#xCE59;&#xC5F0;&#xC0B0; &#xC218;&#xC2DD;&#xC744; &#xB77C;&#xC778; &#xB2E8;&#xC704;&#xB85C; &#xC785;&#xB825;&#xBC1B;&#xC544; 
