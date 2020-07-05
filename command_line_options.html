@@ -836,8 +836,8 @@ function fibo(n, p, pp) {
 &#xC774;&#xAC83;&#xC740; &#xBC84;&#xADF8; &#xB9AC;&#xD3EC;&#xD2B8;&#xB97C; &#xD588;&#xACE0; &#xC218;&#xC815;&#xB41C;&#xB2E4;&#xACE0; &#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">sh$ awk <span class="hljs-string">&apos;      # &quot;-M&quot; &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xC744; &#xACBD;&#xC6B0;&#xB294; &#xC815;&#xC0C1;&#xC791;&#xB3D9;
 {
-   switch ($1) { case &quot;A&quot; : arr[1] = $1 }
-   print &quot;value: &quot; arr[1]
+   switch ($1) { case &quot;A&quot; : v = $1 }
+   print &quot;value: &quot; v
 }
 &apos;</span>
 A              <span class="hljs-comment"># &#xC0AC;&#xC6A9;&#xC790; &#xC785;&#xB825;  </span>
@@ -845,8 +845,8 @@ value: A
 
 sh$ awk -M <span class="hljs-string">&apos;   # &quot;-M&quot; &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xACBD;&#xC6B0;
 {
-   switch ($1) { case &quot;A&quot; : arr[1] = $1 }
-   print &quot;value: &quot; arr[1]
+   switch ($1) { case &quot;A&quot; : v = $1 }
+   print &quot;value: &quot; v
 }
 &apos;</span>
 A
