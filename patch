@@ -1,0 +1,46 @@
+diff -ruN a/mpfr.c b/mpfr.c
+--- a/mpfr.c	2019-08-29 03:54:14.000000000 +0900
++++ b/mpfr.c	2020-07-08 14:00:38.477382839 +0900
+@@ -293,6 +293,17 @@
+ 	else
+ 		cp1 = cp;
+ 
++	/*
++	 * Maybe "+" or "-" was the field.  mpg_strtoui
++	 * won't check for that and set errno, so we have
++	 * to check manually.
++	 */
++	if (*cp1 == '\0') {
++		*cpend = save;
++		mpg_zero(n);
++		return false;
++	}
++
+ 	if (do_nondec)
+ 		base = get_numbase(cp1, cpend - cp1, use_locale);
+ 
+diff -ruN a/node.c b/node.c
+--- a/node.c	2020-02-07 05:52:57.000000000 +0900
++++ b/node.c	2020-07-08 14:00:35.245287010 +0900
+@@ -315,11 +315,13 @@
+ 		r = mpg_integer();
+ 		mpz_set(r->mpg_i, n->mpg_i);
+ 		r->flags = n->flags;
++		r->strndmode = MPFR_round_mode;
+ 	} else if ((n->flags & MPFN) != 0) {
+ 		r = mpg_float();
+ 		int tval = mpfr_set(r->mpg_numbr, n->mpg_numbr, ROUND_MODE);
+ 		IEEE_FMT(r->mpg_numbr, tval);
+ 		r->flags = n->flags;
++		r->strndmode = MPFR_round_mode;
+ 	} else {
+ #endif
+ 		getnode(r);
+@@ -342,6 +344,7 @@
+ 		emalloc(r->stptr, char *, n->stlen + 1, "r_dupnode");
+ 		memcpy(r->stptr, n->stptr, n->stlen);
+ 		r->stptr[n->stlen] = '\0';
++		r->stlen = n->stlen;
+ 		if ((n->flags & WSTRCUR) != 0) {
+ 			r->wstlen = n->wstlen;
+ 			emalloc(r->wstptr, wchar_t *, sizeof(wchar_t) * (n->wstlen + 1), "r_dupnode");
