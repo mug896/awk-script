@@ -827,6 +827,16 @@ record <span class="hljs-number">2</span> : field <span class="hljs-number">5</s
 record <span class="hljs-number">1</span> : field <span class="hljs-number">2</span> : <span class="hljs-number">222</span>
 record <span class="hljs-number">1</span> : field <span class="hljs-number">3</span> : <span class="hljs-number">333</span>
 </code></pre>
+<p>awk &#xB294; C/C++ &#xC640; &#xB2EC;&#xB9AC; recursion &#xD69F;&#xC218;&#xC5D0; &#xC81C;&#xD55C;&#xC774; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xB2E4;&#xC74C; &#xBA85;&#xB839;&#xC744; &#xC2E4;&#xD589;&#xD574;&#xBCF4;&#xBA74; &#xBA54;&#xBAA8;&#xB9AC; &#xC0AC;&#xC6A9;&#xB7C9;&#xC774; &#xACC4;&#xC18D;&#xD574;&#xC11C; &#xC99D;&#xAC00;&#xB418;&#xB294; &#xAC83;&#xC744; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;BEGIN { i=0; f(1,2,3,4); } 
+function f(a,b,c,d) { a=b=c=d=1; print &quot;recursion : &quot; i++; f(1,2,3,4) }&apos;</span>
+. . .
+. . .
+recursion : <span class="hljs-number">543784</span>
+recursion : <span class="hljs-number">543785</span>
+recursion : <span class="hljs-number">543786</span>
+recursion ^C              <span class="hljs-comment"># Ctrl-c &#xC885;&#xB8CC;</span>
+</code></pre>
 <p>&#xB2E4;&#xC74C;&#xC740; recursion &#xC744; &#xC774;&#xC6A9;&#xD574; &#xC790;&#xC190; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xB97C; &#xCD9C;&#xB825;&#xD558;&#xB294; &#xC608;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash"><span class="hljs-comment"># $1 &#xB294; PID, $4 &#xB294; PPID </span>
 $ awk -v PPID=`pidof gdm3` -v FPAT=<span class="hljs-string">&apos;[^ ]+|\\([^\\)]*\\)&apos;</span> <span class="hljs-string">&apos;
