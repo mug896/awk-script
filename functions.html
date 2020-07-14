@@ -829,7 +829,7 @@ record <span class="hljs-number">1</span> : field <span class="hljs-number">3</s
 </code></pre>
 <p>awk &#xB294; C/C++ &#xC640; &#xB2EC;&#xB9AC; recursion &#xD69F;&#xC218;&#xC5D0; &#xC81C;&#xD55C;&#xC774; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.<br>&#xB2E4;&#xC74C; &#xBA85;&#xB839;&#xC744; &#xC2E4;&#xD589;&#xD574;&#xBCF4;&#xBA74; &#xBA54;&#xBAA8;&#xB9AC; &#xC0AC;&#xC6A9;&#xB7C9;&#xC774; &#xACC4;&#xC18D;&#xD574;&#xC11C; &#xC99D;&#xAC00;&#xB418;&#xB294; &#xAC83;&#xC744; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;BEGIN { i=0; f(1,2,3,4); } 
-function f(a,b,c,d) { a=b=c=d=1; print &quot;recursion : &quot; i++; f(1,2,3,4) }&apos;</span>
+function f(a,b,c,d) { print &quot;recursion : &quot; i++; f(1,2,3,4) }&apos;</span>
 . . .
 . . .
 recursion : <span class="hljs-number">543784</span>
