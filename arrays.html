@@ -1031,13 +1031,14 @@ PROCINFO[identifiers][PREC] = scalar
 </code></pre>
 <p><a name="SUBSEP"></a></p>
 <h3 id="comma-&#xC640;-subsep-&#xC744;-&#xC774;&#xC6A9;&#xD558;&#xB294;-&#xBC29;&#xBC95;"><img src="images/buttons/subsep.png" alt=""> Comma &#xC640; SUBSEP &#xC744; &#xC774;&#xC6A9;&#xD558;&#xB294; &#xBC29;&#xBC95;</h3>
-<p>&#xC778;&#xB371;&#xC2A4;&#xC5D0;&#xB294; &#xC5B4;&#xB5A4; &#xBB38;&#xC790;&#xB3C4; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;  &#xD2B9;&#xC815; &#xBB38;&#xC790;&#xB97C; &#xAD6C;&#xBD84;&#xC790;&#xB85C; &#xD574;&#xC11C;
-&#xB2E4;&#xCC28;&#xC6D0; &#xBC30;&#xC5F4;&#xC744; &#xAD6C;&#xC131;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<h5 id="arridx1idx2idx3-or-arridx1idx2idx3-or-arridx1idx2idx3-"><code>arr[idx1@idx2@idx3]</code> or <code>arr[idx1#idx2#idx3]</code> or <code>arr[idx1/idx2/idx3]</code> ...</h5>
-<p>&#xC774;&#xAC83;&#xC744; &#xC5B8;&#xC5B4; &#xCC28;&#xC6D0;&#xC5D0; <code>,</code> &#xC640; <code>SUBSEP</code> &#xB97C; &#xC774;&#xC6A9;&#xD574; &#xC27D;&#xAC8C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xD574;&#xC900; &#xAC83;&#xC778;&#xB370;&#xC694;.
-&#xADF8;&#xB7EC;&#xBBC0;&#xB85C; <code>arr[idx1, idx2]</code> &#xC740; &#xC0AC;&#xC2E4;&#xC0C1;  <code>arr[idx1 SUBSEP idx2]</code> &#xC640; &#xB3D9;&#xC77C;&#xD569;&#xB2C8;&#xB2E4;.
-SUBSEP &#xAC12;&#xC740; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; <code>\034</code> &#xC778; non-printing &#xBB38;&#xC790;&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<p>&#xC778;&#xB371;&#xC2A4;&#xC5D0; <code>[idx1, idx2]</code> &#xAC00; &#xC0AC;&#xC6A9;&#xB418;&#xC5C8;&#xB2E4;&#xBA74; &#xC6D0;&#xC18C; &#xCCB4;&#xD06C;&#xC5D0;&#xB3C4; <code>(idx1, idx2) in array</code> &#xD615;&#xD0DC;&#xAC00; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC778;&#xB371;&#xC2A4;&#xC5D0; <code>,</code> &#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xC11C; <code>arr[idx1, idx2]</code> &#xC640; &#xAC19;&#xC774; &#xB2E4;&#xCC28;&#xC6D0; &#xBC30;&#xC5F4;&#xC744; &#xAD6C;&#xC131;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xADF8;&#xB7F0;&#xB370; &#xB9CC;&#xC57D;&#xC5D0; idx1 &#xAC12;&#xC5D0; <code>a,b</code> &#xC640; &#xAC19;&#xC774; <code>,</code> &#xAC00; &#xD3EC;&#xD568;&#xB418;&#xC5B4; &#xC788;&#xB2E4;&#xBA74; 
+idx1 &#xC640; idx2 &#xAC12;&#xC744; &#xC815;&#xC0C1;&#xC801;&#xC73C;&#xB85C; &#xBD84;&#xB9AC;&#xD560; &#xC218; &#xC5C6;&#xACA0;&#xC8E0;.
+&#xB530;&#xB77C;&#xC11C; &#xC778;&#xB371;&#xC2A4;&#xC5D0; &#xC0AC;&#xC6A9;&#xB41C; <code>,</code> &#xB294; &#xC800;&#xC7A5;&#xB420; &#xB54C; SUBSEP &#xBCC0;&#xC218;&#xAC12;&#xC73C;&#xB85C; &#xBCC0;&#xACBD;&#xB418;&#xC5B4; &#xC800;&#xC7A5;&#xB429;&#xB2C8;&#xB2E4;.
+SUBSEP &#xAC12;&#xC740; non-printing &#xBB38;&#xC790;&#xC778; <code>\034</code> &#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xBBC0;&#xB85C; idx1 &#xAC12;&#xC5D0; <code>,</code> &#xAC00; &#xD3EC;&#xD568;&#xB418;&#xC5B4;&#xB3C4;
+SUBSEP &#xC744; &#xC774;&#xC6A9;&#xD574; idx1, idx2 &#xAC12;&#xC744; &#xBD84;&#xB9AC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC778;&#xB371;&#xC2A4;&#xC5D0; <code>[idx1, idx2]</code> &#xAC00; &#xC0AC;&#xC6A9;&#xB418;&#xC5C8;&#xB2E4;&#xBA74; &#xC6D0;&#xC18C; &#xCCB4;&#xD06C;&#xC5D0;&#xB3C4; <code>(idx1, idx2) in array</code> &#xD615;&#xD0DC;&#xAC00; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.
+&#xC778;&#xB371;&#xC2A4;&#xC5D0; &#xC0AC;&#xC6A9;&#xB41C; &#xACF5;&#xBC31;&#xC740; &#xAC12;&#xC5D0; &#xD3EC;&#xD568;&#xB418;&#xC9C0; &#xC54A;&#xC73C;&#xBBC0;&#xB85C; <code>[idx1,idx2]</code> &#xC640; <code>[ idx1 , idx2 ]</code> &#xB294; &#xBAA8;&#xB450; &#xAC19;&#xC740; &#xAC12;&#xC774; &#xB429;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;BEGIN {
     arr[0, 0] = 45
     arr[2,3] = &quot;hello&quot;
@@ -1059,7 +1060,7 @@ arr[<span class="hljs-number">2</span>, <span class="hljs-number">3</span>] = he
     arr[&quot;fruit&quot;,&quot;banana&quot;,55]
 
     for(idx in arr) {
-        split(idx, a, SUBSEP) 
+        split(idx, a, SUBSEP)        # SUBSEP &#xBCC0;&#xC218;&#xB97C; &#xC774;&#xC6A9;
         print a[1], a[2], a[3]
     }
 }&apos;</span> 
