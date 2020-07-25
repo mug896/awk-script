@@ -891,12 +891,12 @@ BEGIN { FS=<span class="hljs-string">&quot;&quot;</span>; token[<span class="hlj
 
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;parentheses&quot;</span> :
                 val = token[i][<span class="hljs-string">&quot;value&quot;</span>]
-                <span class="hljs-keyword">if</span> ( val == <span class="hljs-string">&quot;(&quot;</span> ) {          <span class="hljs-comment"># &quot;(&quot; &#xB97C; &#xB9DE;&#xB098;&#xBA74; ostack &#xC5D0; push &#xD558;&#xACE0;</span>
+                <span class="hljs-keyword">if</span> ( val == <span class="hljs-string">&quot;(&quot;</span> ) {          <span class="hljs-comment"># &quot;(&quot; &#xB97C; &#xB9CC;&#xB098;&#xBA74; ostack &#xC5D0; push &#xD558;&#xACE0;</span>
                     push(ostack, val)        <span class="hljs-comment"># &#xAD04;&#xD638;&#xB97C; &#xC704;&#xD55C; &#xBD80;&#xD638; &#xC124;&#xC815;&#xC744; &#xC704;&#xD574;</span>
                     push(ustack, unary_p)    <span class="hljs-comment"># ustack &#xC5D0; unary_p &#xB97C; push &#xD558;&#xACE0;</span>
                     unary_p = <span class="hljs-number">1</span>              <span class="hljs-comment"># &#xC644;&#xB8CC;&#xB418;&#xBA74; 1 &#xB85C; reset &#xD569;&#xB2C8;&#xB2E4;.</span>
                 } <span class="hljs-keyword">else</span> {   <span class="hljs-comment"># &quot;)&quot;</span>
-                    <span class="hljs-keyword">while</span> (val = pop(ostack)) {     <span class="hljs-comment"># &quot;)&quot; &#xB97C; &#xB9DE;&#xB098;&#xBA74;</span>
+                    <span class="hljs-keyword">while</span> (val = pop(ostack)) {     <span class="hljs-comment"># &quot;)&quot; &#xB97C; &#xB9CC;&#xB098;&#xBA74;</span>
                         <span class="hljs-keyword">if</span> ( val == <span class="hljs-string">&quot;(&quot;</span> ) <span class="hljs-built_in">break</span>     <span class="hljs-comment"># &quot;(&quot; &#xAC00; &#xB098;&#xC62C;&#xB54C; &#xAE4C;&#xC9C0; &#xC5F0;&#xC0B0;&#xC790;&#xB97C;</span>
                         <span class="hljs-keyword">else</span> calc(val)              <span class="hljs-comment"># pop &#xD574;&#xC11C; calc &#xD569;&#xB2C8;&#xB2E4;.</span>
                     }
