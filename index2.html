@@ -725,8 +725,8 @@ index &#xB294; &#xC77C;&#xC885;&#xC5D0; &#xD2B9;&#xC815; &#xCEEC;&#xB7FC; &#xAC1
 &#xB530;&#xB77C;&#xC11C; &#xBA3C;&#xC800; &#xB370;&#xC774;&#xD130;&#xB97C; &#xC791;&#xC740; &#xC0AC;&#xC774;&#xC988;&#xB85C; split &#xD55C; &#xB2E4;&#xC74C; &#xAC1C;&#xBCC4; &#xD30C;&#xC77C;&#xC744; sort &#xD558;&#xACE0;
 &#xB9C8;&#xC9C0;&#xB9C9;&#xC73C;&#xB85C; merge sort &#xB97C; &#xD574;&#xC11C; &#xD558;&#xB098;&#xB85C; &#xB9CC;&#xB4E4;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">$ cat sort.sh 
-<span class="hljs-shebang">#!/bin/sh
-</span>
+<span class="hljs-comment">#!/bin/sh -e</span>
+
 dataFile=mydata_file              <span class="hljs-comment"># sort &#xD558;&#xACE0;&#xC790; &#xD558;&#xB294; &#xB370;&#xC774;&#xD130; &#xD30C;&#xC77C;&#xBA85;</span>
 sortOptions=<span class="hljs-string">&quot;-t &apos;,&apos; -k3,3 -k2,2r&quot;</span> <span class="hljs-comment"># FS &#xB294; &apos;,&apos; 3&#xBC88;&#xC9F8; &#xCEEC;&#xB7FC;&#xC744; ASC &#xC815;&#xB82C;&#xD558;&#xACE0; 2&#xBC88;&#xC9F8; &#xCEEC;&#xB7FC;&#xC744; DESC &#xC815;&#xB82C;</span>
 splitSize=<span class="hljs-number">100</span>M                    <span class="hljs-comment"># 100M &#xD06C;&#xAE30;&#xB85C; split</span>
