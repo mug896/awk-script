@@ -774,7 +774,7 @@ EOF
 </code></pre>
 <h4 id="awk-&#xB0B4;&#xC5D0;&#xC11C;-here-document-&#xC791;&#xC131;&#xBC95;">awk &#xB0B4;&#xC5D0;&#xC11C; here document &#xC791;&#xC131;&#xBC95;</h4>
 <p>awk &#xC5D0;&#xC11C; shell &#xBA85;&#xB839;&#xBB38;&#xC744; &#xC791;&#xC131;&#xD560; &#xB54C;&#xB294; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xC2A4;&#xD2B8;&#xB9C1;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xBBC0;&#xB85C; 
-here doc &#xACFC;&#xAC19;&#xC774; &#xAC1C;&#xD589;&#xC774; &#xD544;&#xC694;&#xD55C; &#xBA85;&#xB839;&#xBB38;&#xC5D0;&#xC11C;&#xB294; &#xC9C1;&#xC811; newline &#xBB38;&#xC790;&#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+heredoc &#xACFC;&#xAC19;&#xC774; &#xAC1C;&#xD589;&#xC774; &#xD544;&#xC694;&#xD55C; &#xBA85;&#xB839;&#xBB38;&#xC5D0;&#xC11C;&#xB294; &#xC9C1;&#xC811; newline &#xBB38;&#xC790;&#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;BEGIN {            # &#xC624;&#xB958;
     cmd = &quot;cat &lt;&lt;END                     
         111
@@ -797,7 +797,7 @@ system(cmd)
 <span class="hljs-number">222</span>
 <span class="hljs-number">333</span>
 </code></pre>
-<p>&#xB9CC;&#xC57D;&#xC5D0; shell &#xC5D0;&#xC11C;&#xCC98;&#xB7FC; here doc &#xC744; &#xC791;&#xC131;&#xD558;&#xB824;&#xBA74; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB9CC;&#xC57D;&#xC5D0; shell &#xC5D0;&#xC11C;&#xCC98;&#xB7FC; heredoc &#xC744; &#xC791;&#xC131;&#xD558;&#xB824;&#xBA74; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;BEGIN { 
 cmd = &quot;cat &lt;&lt;END\n\
       ${SHELL}\n\
