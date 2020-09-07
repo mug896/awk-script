@@ -708,7 +708,7 @@ printf &#xBB38;&#xC5D0; <code>(%s)</code> &#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC6
 <pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;11 X 22 XX 33 XXX 44 X+ 55 XX 66 XXX 77 Y* 88 XX 99&apos;</span> |
 awk <span class="hljs-string">&apos;
 { printf &quot;(%s) RT : \&quot;%s\&quot;\n&quot;, $0, RT } 
-END{ print &quot;===========\nNR : &quot; NR}
+END{ print &quot;===========\nNR : &quot; NR }
 &apos;</span> RS=<span class="hljs-string">&apos;XXX&apos;</span>      
 
 (<span class="hljs-number">11</span> X <span class="hljs-number">22</span> XX <span class="hljs-number">33</span> ) RT : <span class="hljs-string">&quot;XXX&quot;</span>
@@ -724,7 +724,7 @@ NR : <span class="hljs-number">3</span>
 <pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;11 X 22 XX 33 XXX 44 X+ 55 XX 66 XXX 77 Y* 88 XX 99&apos;</span> |
 awk <span class="hljs-string">&apos;
 { printf &quot;(%s) RT : \&quot;%s\&quot;\n&quot;, $0, RT } 
-END{ print &quot;===========\nNR : &quot; NR}
+END{ print &quot;===========\nNR : &quot; NR }
 &apos;</span> RS=<span class="hljs-string">&apos;X+&apos;</span>
 
 (<span class="hljs-number">11</span> ) RT : <span class="hljs-string">&quot;X&quot;</span>
@@ -744,7 +744,7 @@ NR : <span class="hljs-number">8</span>
 <pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;11 X 22 XX 33 XXX 44 X+ 55 XX 66 XXX 77 Y* 88 XX 99&apos;</span> |
 awk <span class="hljs-string">&apos;
 { printf &quot;(%s) RT : \&quot;%s\&quot;\n&quot;, $0, RT } 
-END{ print &quot;===========\nNR : &quot; NR}
+END{ print &quot;===========\nNR : &quot; NR }
 &apos;</span> RS=<span class="hljs-string">&apos;X\\+&apos;</span>
 
 (<span class="hljs-number">11</span> X <span class="hljs-number">22</span> XX <span class="hljs-number">33</span> XXX <span class="hljs-number">44</span> ) RT : <span class="hljs-string">&quot;X+&quot;</span>
@@ -758,7 +758,7 @@ NR : <span class="hljs-number">2</span>
 <pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;11 X 22 XX 33 XXX 44 X+ 55 XX 66 XXX 77 Y* 88 XX 99&apos;</span> |
 awk <span class="hljs-string">&apos;
 { printf &quot;(%s) RT : \&quot;%s\&quot;\n&quot;, $0, RT } 
-END{ print &quot;===========\nNR : &quot; NR}
+END{ print &quot;===========\nNR : &quot; NR }
 &apos;</span> RS=<span class="hljs-string">&apos;X\\+|Y\\*&apos;</span>
 
 (<span class="hljs-number">11</span> X <span class="hljs-number">22</span> XX <span class="hljs-number">33</span> XXX <span class="hljs-number">44</span> ) RT : <span class="hljs-string">&quot;X+&quot;</span>

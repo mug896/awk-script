@@ -825,16 +825,16 @@ system(cmd)
 &#xD3EC;&#xBA67; &#xC2A4;&#xD2B8;&#xB9C1;&#xC758; &#xACBD;&#xC6B0; <code>&apos;</code> &#xAC00; &#xC0AC;&#xC6A9;&#xB418;&#xC5B4; &#xBB38;&#xC81C;&#xAC00; &#xB418;&#xB294;&#xB370;&#xC694;.
 &#xC774;&#xB54C;&#xB294; <code>\047</code> escape &#xBB38;&#xC790;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xAC70;&#xB098; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xC791;&#xC131;&#xC5D0; &#xC0AC;&#xC6A9;&#xB41C; single quotes &#xC744; &#xBD84;&#xB9AC;&#xD55C; &#xD6C4;&#xC5D0; 
 <code>\&apos;</code> &#xB098; <code>&quot;&apos;&quot;</code> &#xB97C; &#xC774;&#xC6A9;&#xD574; &#xC5F0;&#xACB0;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-bash"><span class="hljs-built_in">echo</span> $(<span class="hljs-built_in">echo</span> <span class="hljs-number">2</span>^<span class="hljs-number">64</span> | bc) | awk <span class="hljs-string">&apos;{ printf &quot;%&apos;</span>d\n<span class="hljs-string">&quot;, <span class="hljs-variable">$1</span> }&apos;          # Error
+<pre><code class="lang-bash"><span class="hljs-built_in">echo</span> $(<span class="hljs-built_in">echo</span> <span class="hljs-number">2</span>^<span class="hljs-number">64</span> | bc) | LC_ALL=en_US.UTF-<span class="hljs-number">8</span> awk <span class="hljs-string">&apos;{ printf &quot;%&apos;</span>d\n<span class="hljs-string">&quot;, <span class="hljs-variable">$1</span> }&apos;        # Error
 &gt; ^C
 
-$ echo <span class="hljs-variable">$(echo 2^64 | bc)</span> | awk &apos;{ printf &quot;</span>%\<span class="hljs-number">047</span>d\n<span class="hljs-string">&quot;, <span class="hljs-variable">$1</span> }&apos;     # OK
+$ echo <span class="hljs-variable">$(echo 2^64 | bc)</span> | LC_ALL=en_US.UTF-8 awk &apos;{ printf &quot;</span>%\<span class="hljs-number">047</span>d\n<span class="hljs-string">&quot;, <span class="hljs-variable">$1</span> }&apos;    # OK
 18,446,744,073,709,551,616
 
-$ echo <span class="hljs-variable">$(echo 2^64 | bc)</span> | awk &apos;{ printf &quot;</span>%<span class="hljs-string">&apos;\&apos;</span><span class="hljs-string">&apos;d\n&quot;, $1 }&apos;</span>     <span class="hljs-comment"># OK</span>
+$ echo <span class="hljs-variable">$(echo 2^64 | bc)</span> | LC_ALL=ko_KR.UTF-8 awk &apos;{ printf &quot;</span>%<span class="hljs-string">&apos;\&apos;</span><span class="hljs-string">&apos;d\n&quot;, $1 }&apos;</span>    <span class="hljs-comment"># OK</span>
 <span class="hljs-number">18</span>,<span class="hljs-number">446</span>,<span class="hljs-number">744</span>,<span class="hljs-number">073</span>,<span class="hljs-number">709</span>,<span class="hljs-number">551</span>,<span class="hljs-number">616</span>
 
-$ <span class="hljs-built_in">echo</span> $(<span class="hljs-built_in">echo</span> <span class="hljs-number">2</span>^<span class="hljs-number">64</span> | bc) | awk <span class="hljs-string">&apos;{ printf &quot;%&apos;</span><span class="hljs-string">&quot;&apos;&quot;</span><span class="hljs-string">&apos;d\n&quot;, $1 }&apos;</span>    <span class="hljs-comment"># OK</span>
+$ <span class="hljs-built_in">echo</span> $(<span class="hljs-built_in">echo</span> <span class="hljs-number">2</span>^<span class="hljs-number">64</span> | bc) | LC_ALL=ko_KR.UTF-<span class="hljs-number">8</span> awk <span class="hljs-string">&apos;{ printf &quot;%&apos;</span><span class="hljs-string">&quot;&apos;&quot;</span><span class="hljs-string">&apos;d\n&quot;, $1 }&apos;</span>   <span class="hljs-comment"># OK</span>
 <span class="hljs-number">18</span>,<span class="hljs-number">446</span>,<span class="hljs-number">744</span>,<span class="hljs-number">073</span>,<span class="hljs-number">709</span>,<span class="hljs-number">551</span>,<span class="hljs-number">616</span>
 .....................................................................
 
