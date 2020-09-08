@@ -1158,6 +1158,35 @@ PROCINFO[identifiers][PREC] = scalar
 <p><a href="https://www.gnu.org/software/gawk/manual/html_node/I18N-Example.html" target="_blank">&#xC608;&#xC81C; &#xD398;&#xC774;&#xC9C0; &#xBCF4;&#xAE30;</a></p>
 <p><a href="https://www.joinc.co.kr/w/Site/PHP/gettext" target="_blank">https://www.joinc.co.kr/w/Site/PHP/gettext</a></p>
 <p><a href="https://www.joinc.co.kr/w/Site/Python/GetText" target="_blank">https://www.joinc.co.kr/w/Site/Python/GetText</a></p>
+<h1 id="quiz">Quiz</h1>
+<p><code>wc</code> &#xBA85;&#xB839;&#xC740; &#xD30C;&#xC77C;&#xC5D0; &#xD3EC;&#xD568;&#xB41C; lines, words, chars &#xC758; &#xAC1C;&#xC218;&#xB97C; &#xCD9C;&#xB825;&#xD574; &#xC8FC;&#xB294;&#xB370;&#xC694;.<br>&#xB3D9;&#xC77C;&#xD55C; &#xAE30;&#xB2A5;&#xC744; awk &#xB85C; &#xAD6C;&#xD604;&#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ wc /etc/hosts
+  <span class="hljs-number">9</span>  <span class="hljs-number">25</span> <span class="hljs-number">224</span> /etc/hosts
+
+$ gawk <span class="hljs-string">&apos;{ 
+        chars += length($0) + 1       # newline &#xBB38;&#xC790;&#xB3C4; &#xCD94;&#xAC00;&#xD574;&#xC57C; &#xD558;&#xBBC0;&#xB85C; + 1
+        words += NF
+} END { print NR, words, chars }
+&apos;</span> /etc/hosts
+
+<span class="hljs-number">9</span> <span class="hljs-number">25</span> <span class="hljs-number">224</span>
+</code></pre>
+<h1 id="2-">2 .</h1>
+<p><code>wc</code> &#xBA85;&#xB839;&#xC740; words &#xAC1C;&#xC218;&#xB97C; &#xC140; &#xB54C; &#xB2E8;&#xC21C;&#xD788; whitespace &#xBB38;&#xC790;&#xB97C; &#xC774;&#xC6A9;&#xD574; &#xAD6C;&#xBD84;&#xD558;&#xB294;&#xB370;&#xC694;.<br>&#xC54C;&#xD30C;&#xBCB3;&#xC73C;&#xB85C;&#xB9CC; &#xC774;&#xB8E8;&#xC5B4;&#xC9C4; &#xB2E8;&#xC5B4;&#xB97C; &#xC138;&#xB824;&#xBA74; &#xC5B4;&#xB5BB;&#xAC8C; &#xD560;&#xAE4C;&#xC694;?</p>
+<pre><code class="lang-bash">$ gawk -F <span class="hljs-string">&apos;[^A-Za-z]+&apos;</span> <span class="hljs-string">&apos;
+{ for(i = 1; i &lt;= NF; i++) word[$i] }
+END { 
+    delete word[&quot;&quot;]
+    print length(word)
+}&apos;</span> /etc/hosts
+
+<span class="hljs-number">19</span>
+--------------------------------
+
+foo@bar@zoo  &#xB294; <span class="hljs-number">3</span> &#xAC1C;&#xC758; &#xD544;&#xB4DC;&#xAC00; &#xB418;&#xC9C0;&#xB9CC;
+@foo@bar@zoo &#xC77C; &#xACBD;&#xC6B0;&#xB294; &#xACF5;&#xBC31; &#xD544;&#xB4DC;&#xAC00; &#xD3EC;&#xD568;&#xB418;&#xC5B4; <span class="hljs-number">4</span> &#xAC1C;&#xC758; &#xD544;&#xB4DC;&#xAC00; &#xB418;&#xBBC0;&#xB85C;
+delete word[<span class="hljs-string">&quot;&quot;</span>] &#xB97C; &#xD574;&#xC8FC;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.
+</code></pre>
 
                     
                     </section>
