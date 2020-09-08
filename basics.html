@@ -706,7 +706,7 @@ udev            <span class="hljs-number">7.8</span>G     <span class="hljs-numb
 tmpfs           <span class="hljs-number">1.6</span>G  <span class="hljs-number">9.7</span>M  <span class="hljs-number">1.6</span>G   <span class="hljs-number">1</span>% /run
 ...
 
-$ df -h | sed -rn <span class="hljs-string">&apos;2s/(\S+\s+){3}(\S+).*/\2/p&apos;</span>
+$ df -h | sed -En <span class="hljs-string">&apos;2s/(\S+\s+){3}(\S+).*/\2/p&apos;</span>
 <span class="hljs-number">7.8</span>G
 
 <span class="hljs-comment"># NR==2 &#xB294; 2&#xBC88;&#xC9F8; &#xB808;&#xCF54;&#xB4DC;&#xB97C; $4 &#xB294; 4&#xBC88;&#xC9F8; &#xCEEC;&#xB7FC; &#xAC12;&#xC744; &#xC758;&#xBBF8;</span>
