@@ -820,7 +820,7 @@ END {
     <span class="hljs-keyword">while</span> (getline) {
         <span class="hljs-keyword">if</span> ( RT ~ /[<span class="hljs-number">0</span>-<span class="hljs-number">9</span>.eE+-]/ ) str = str RT
         <span class="hljs-keyword">else</span> {
-            <span class="hljs-keyword">if</span> ( str ~ /^-?(<span class="hljs-number">0</span>|[<span class="hljs-number">1</span>-<span class="hljs-number">9</span>][<span class="hljs-number">0</span>-<span class="hljs-number">9</span>]*)(\.[<span class="hljs-number">0</span>-<span class="hljs-number">9</span>]+)?([eE][+-][<span class="hljs-number">0</span>-<span class="hljs-number">9</span>]+)?$/ )
+            <span class="hljs-keyword">if</span> ( str ~ /^-?(<span class="hljs-number">0</span>|[<span class="hljs-number">1</span>-<span class="hljs-number">9</span>][<span class="hljs-number">0</span>-<span class="hljs-number">9</span>]*)(\.[<span class="hljs-number">0</span>-<span class="hljs-number">9</span>]+)?([eE][+-]?[<span class="hljs-number">0</span>-<span class="hljs-number">9</span>]+)?$/ )
                 token[idx++] = str
             <span class="hljs-built_in">break</span>
         }
@@ -1072,7 +1072,7 @@ END {
     <span class="hljs-keyword">while</span> (getline) {
         <span class="hljs-keyword">if</span> ( RT ~ /[<span class="hljs-number">0</span>-<span class="hljs-number">9</span>.eE+-]/ ) str = str RT
         <span class="hljs-keyword">else</span> {
-            <span class="hljs-keyword">if</span> ( str ~ /^-?(<span class="hljs-number">0</span>|[<span class="hljs-number">1</span>-<span class="hljs-number">9</span>][<span class="hljs-number">0</span>-<span class="hljs-number">9</span>]*)(\.[<span class="hljs-number">0</span>-<span class="hljs-number">9</span>]+)?([eE][+-][<span class="hljs-number">0</span>-<span class="hljs-number">9</span>]+)?$/ )
+            <span class="hljs-keyword">if</span> ( str ~ /^-?(<span class="hljs-number">0</span>|[<span class="hljs-number">1</span>-<span class="hljs-number">9</span>][<span class="hljs-number">0</span>-<span class="hljs-number">9</span>]*)(\.[<span class="hljs-number">0</span>-<span class="hljs-number">9</span>]+)?([eE][+-]?[<span class="hljs-number">0</span>-<span class="hljs-number">9</span>]+)?$/ )
                 token[idx++] = str
             <span class="hljs-built_in">break</span>
         }
