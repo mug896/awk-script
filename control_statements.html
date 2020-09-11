@@ -931,6 +931,7 @@ $ ./json.sh sample.json
   ]
 }
 </code></pre>
+<h1 id="2-">2 .</h1>
 <p>&#xC774;&#xBC88;&#xC5D0;&#xB294; &#xAC80;&#xC0C9; &#xAE30;&#xB2A5;&#xC744; &#xCD94;&#xAC00;&#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.
 &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB294; &#xC635;&#xC158;&#xC740; <code>-k</code> , <code>-s</code> &#xB450; &#xAC00;&#xC9C0;&#xAC00; &#xC788;&#xB294;&#xB370;
 <code>-k</code> &#xC635;&#xC158;&#xC740; &#xC804;&#xCCB4; &#xB370;&#xC774;&#xD130;&#xC5D0;&#xC11C; key &#xB9CC; &#xBF51;&#xC544;&#xC11C; &#xACC4;&#xCE35; &#xAD6C;&#xC870;&#xB85C; &#xCD9C;&#xB825;&#xD569;&#xB2C8;&#xB2E4;.
@@ -1152,7 +1153,7 @@ return &#xC2DC;&#xC5D0;&#xB294; pop &#xB418;&#xBBC0;&#xB85C; ).
                 <span class="hljs-built_in">break</span>
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;:&quot;</span> :
 </code></pre>
-<h1 id="2">2.</h1>
+<h1 id="3">3.</h1>
 <p>&#xC704;&#xC758; sample.json &#xB370;&#xC774;&#xD130;&#xC5D0;&#xC11C; &#xAC01; &#xBA64;&#xBC84; &#xBE14;&#xB85D;&#xC744; DESC age &#xC21C;&#xC73C;&#xB85C; &#xCD9C;&#xB825;&#xD558;&#xB824;&#xBA74; &#xC5B4;&#xB5BB;&#xAC8C; &#xD560;&#xAE4C;&#xC694;?</p>
 <pre><code class="lang-bash">$ ./json.sh <span class="hljs-operator">-s</span> /members/name sample.json | 
 xargs -i ./json.sh <span class="hljs-operator">-s</span> /members/name={} sample.json |
