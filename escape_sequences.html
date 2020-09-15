@@ -786,9 +786,6 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;111***
 
 $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;111****333**444&apos;</span> | awk <span class="hljs-string">&apos;BEGIN{ FS=&quot;**&quot; } {print NF}&apos;</span>
 <span class="hljs-number">3</span>
-
-<span class="hljs-comment"># &apos;[start]&apos; &#xB97C; RS &#xB85C; &#xC0AC;&#xC6A9;. &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xB85C; &apos;[ ]&apos; &#xB294; regexp &#xBB38;&#xC790;</span>
-$ awk <span class="hljs-string">&apos;BEGIN{ RS=&quot;\\[start]&quot; } ...&apos;</span>
 </code></pre>
 <p>awk &#xC18C;&#xC2A4;&#xCF54;&#xB4DC; &#xC678;&#xBD80;&#xC5D0;&#xC11C; <code>-v</code> &#xC635;&#xC158; &#xB4F1;&#xC744; &#xC774;&#xC6A9;&#xD574; &#xAC12;&#xC744; &#xC124;&#xC815;&#xD560; &#xB54C;&#xB294; shell quotes &#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.
 &#xC774;&#xB54C;&#xB294; &#xC124;&#xC815;&#xB418;&#xB294; &#xAC12;&#xC774; &#xADF8;&#xB300;&#xB85C; awk &#xC2A4;&#xD2B8;&#xB9C1; double quotes &#xC548;&#xC73C;&#xB85C; &#xC804;&#xB2EC;&#xB41C;&#xB2E4;&#xACE0; &#xC0DD;&#xAC01;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;. 
@@ -802,7 +799,7 @@ $ awk -F <span class="hljs-string">&apos;\\t&apos;</span> <span class="hljs-stri
 ------------------------------------
 
 <span class="hljs-comment"># &#xB9CC;&#xC57D;&#xC5D0; double quotes &#xC744; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;&#xBA74; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</span>
-<span class="hljs-comment"># shell double quotes &#xC5D0;&#xC11C;&#xB3C4; escape sequence &#xAC00; &#xCC98;&#xB9AC;&#xB418;&#xBBC0;&#xB85C;</span>
+<span class="hljs-comment"># shell double quotes &#xC5D0;&#xC11C;&#xB3C4; \ &#xAC00; &#xCC98;&#xB9AC;&#xB418;&#xBBC0;&#xB85C;</span>
 $ awk -F <span class="hljs-string">&quot;*\\\\*&quot;</span> <span class="hljs-string">&apos;BEGIN{...}&apos;</span> ...
 </code></pre>
 <h3 id="16-&#xC9C4;&#xC218;-&#xD615;&#xC2DD;-&#xC0AC;&#xC6A9;&#xC2DC;-&#xBB38;&#xC81C;&#xC810;">16 &#xC9C4;&#xC218; &#xD615;&#xC2DD; &#xC0AC;&#xC6A9;&#xC2DC; &#xBB38;&#xC81C;&#xC810;</h3>
