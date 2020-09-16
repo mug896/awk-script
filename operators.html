@@ -889,7 +889,7 @@ BEGIN { FS=<span class="hljs-string">&quot;&quot;</span>; token[<span class="hlj
                 push( ostack, op) 
                 <span class="hljs-built_in">break</span>
 
-            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;parentheses&quot;</span> :
+            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;parenthesis&quot;</span> :
                 val = token[i][<span class="hljs-string">&quot;value&quot;</span>]
                 <span class="hljs-keyword">if</span> ( val == <span class="hljs-string">&quot;(&quot;</span> ) {          <span class="hljs-comment"># &quot;(&quot; &#xB97C; &#xB9CC;&#xB098;&#xBA74; ostack &#xC5D0; push &#xD558;&#xACE0;</span>
                     push(ostack, val)        <span class="hljs-comment"># &#xAD04;&#xD638;&#xB97C; &#xC704;&#xD55C; &#xBD80;&#xD638; &#xC124;&#xC815;&#xC744; &#xC704;&#xD574;</span>
@@ -940,7 +940,7 @@ BEGIN { FS=<span class="hljs-string">&quot;&quot;</span>; token[<span class="hlj
                 token[idx++][<span class="hljs-string">&quot;value&quot;</span>] = <span class="hljs-variable">$i</span>
                 <span class="hljs-built_in">break</span>
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;(&quot;</span> : <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;)&quot;</span> :
-                token[idx][<span class="hljs-string">&quot;name&quot;</span>] = <span class="hljs-string">&quot;parentheses&quot;</span>
+                token[idx][<span class="hljs-string">&quot;name&quot;</span>] = <span class="hljs-string">&quot;parenthesis&quot;</span>
                 token[idx++][<span class="hljs-string">&quot;value&quot;</span>] = <span class="hljs-variable">$i</span>
                 <span class="hljs-built_in">break</span>
             <span class="hljs-keyword">case</span> /[<span class="hljs-number">0</span>-<span class="hljs-number">9</span>.]/ : 
@@ -1054,7 +1054,7 @@ $ awk <span class="hljs-string">&apos;BEGIN { print -2 ^ -4 }&apos;</span>    <s
                 push( ostack, op) 
                 <span class="hljs-built_in">break</span>
 
-            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;parentheses&quot;</span> :
+            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;parenthesis&quot;</span> :
                 val = token[i][<span class="hljs-string">&quot;value&quot;</span>]
                 <span class="hljs-keyword">if</span> ( val == <span class="hljs-string">&quot;(&quot;</span> ) {
                     push(ostack, val)
@@ -1115,7 +1115,7 @@ $ awk <span class="hljs-string">&apos;BEGIN { print -2 ^ -4 }&apos;</span>    <s
                 token[idx++][<span class="hljs-string">&quot;value&quot;</span>] = <span class="hljs-variable">$i</span>
                 <span class="hljs-built_in">break</span>
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;(&quot;</span> : <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;)&quot;</span> :
-                token[idx][<span class="hljs-string">&quot;name&quot;</span>] = <span class="hljs-string">&quot;parentheses&quot;</span>
+                token[idx][<span class="hljs-string">&quot;name&quot;</span>] = <span class="hljs-string">&quot;parenthesis&quot;</span>
                 token[idx++][<span class="hljs-string">&quot;value&quot;</span>] = <span class="hljs-variable">$i</span>
                 <span class="hljs-built_in">break</span>
             <span class="hljs-keyword">case</span> /[<span class="hljs-number">0</span>-<span class="hljs-number">9</span>.]/ : 
