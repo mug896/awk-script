@@ -745,7 +745,7 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;foobar
 <h4 id="&#xC2A4;&#xD2B8;&#xB9C1;&#xC744;-&#xC774;&#xC6A9;&#xD558;&#xB294;-&#xBC29;&#xBC95;">&#xC2A4;&#xD2B8;&#xB9C1;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xB294; &#xBC29;&#xBC95;</h4>
 <ul>
 <li><p>&#xC2A4;&#xD2B8;&#xB9C1;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xBA74; regexp &#xC2DD; &#xB0B4;&#xC5D0; &#xBCC0;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xACE0;
-&#xB610;&#xD55C; regexp &#xC2DD; &#xC790;&#xCCB4;&#xB97C; &#xBCC0;&#xC218;&#xC5D0; &#xB300;&#xC785;&#xD558;&#xC5EC; &#xC0AC;&#xC6A9;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+&#xB610;&#xD55C; regexp &#xC2DD; &#xC790;&#xCCB4;&#xB97C; &#xBCC0;&#xC218;&#xC5D0; &#xB300;&#xC785;&#xD574; &#xC0AC;&#xC6A9;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 </li>
 <li><p>&#xB2E8;&#xB3C5;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC5C6;&#xACE0; &#xD56D;&#xC0C1; <code>~</code> &#xC5F0;&#xC0B0;&#xC790;&#xC640; &#xD568;&#xAED8; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 </li>
@@ -762,13 +762,13 @@ foobar
 </code></pre>
 <p>&#xB2E4;&#xC74C;&#xC740; &#xC2DD;&#xC744; &#xC791;&#xC131;&#xD560; &#xB54C; regexp &#xC0C1;&#xC218;&#xC640; &#xC2A4;&#xD2B8;&#xB9C1;&#xC758; &#xCC28;&#xC774;&#xC810;&#xC744; &#xBCF4;&#xC5EC;&#xC90D;&#xB2C8;&#xB2E4;.<br>&#xC2A4;&#xD2B8;&#xB9C1;&#xC73C;&#xB85C; &#xC791;&#xC131;&#xD560; &#xB54C;&#xB294; <code>/.../</code> &#xC548;&#xC5D0; &#xB4E4;&#xC5B4;&#xAC00;&#xB294; &#xC2A4;&#xD2B8;&#xB9C1;&#xACFC; &#xB3D9;&#xC77C;&#xD558;&#xAC8C; &#xB418;&#xB3C4;&#xB85D; &#xB9CC;&#xB4E4;&#xC5B4;&#xC900;&#xB2E4;&#xACE0; &#xC0DD;&#xAC01;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash"><span class="hljs-comment"># regexp &#xC0C1;&#xC218;&#xB85C; &#xC791;&#xC131;&#xD55C; &#xACBD;&#xC6B0;</span>
-$ <span class="hljs-built_in">printf</span> %s <span class="hljs-string">&apos;&quot;111\222&quot;:&quot;333\444&quot;&apos;</span> | awk -F: <span class="hljs-string">&apos;$1 ~ /&quot;111\\222&quot;/ { print $1 }&apos;</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;&quot;111\222&quot;:&quot;333\444&quot;&apos;</span> | awk -F: <span class="hljs-string">&apos;$1 ~ /&quot;111\\222&quot;/ { print $1 }&apos;</span>
 <span class="hljs-string">&quot;111\222&quot;</span>
 
 <span class="hljs-comment"># &#xB3D9;&#xC77C;&#xD55C; &#xC2DD;&#xC744; &#xC2A4;&#xD2B8;&#xB9C1;&#xC73C;&#xB85C; &#xB9CC;&#xB4E4; &#xACBD;&#xC6B0;</span>
 <span class="hljs-comment"># &#xBA3C;&#xC800; double quotes &#xC740; &quot; &quot; &#xB0B4;&#xC5D0;&#xC11C; escape &#xD574;&#xC57C; &#xD558;&#xBBC0;&#xB85C; \&quot; &#xB85C; &#xC791;&#xC131;&#xD558;&#xACE0;</span>
 <span class="hljs-comment"># &apos;\\&apos; &#xB97C; &#xB9CC;&#xB4E4;&#xB824;&#xBA74; &apos;\&apos; &#xBB38;&#xC790;&#xB294; escape &#xD574;&#xC57C; &#xD558;&#xBBC0;&#xB85C; &apos;\\\\&apos; &#xB85C; &#xC791;&#xC131;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</span>
-$ <span class="hljs-built_in">printf</span> %s <span class="hljs-string">&apos;&quot;111\222&quot;:&quot;333\444&quot;&apos;</span> | awk -F: <span class="hljs-string">&apos;$1 ~ &quot;\&quot;111\\\\222\&quot;&quot; { print $1 }&apos;</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;&quot;111\222&quot;:&quot;333\444&quot;&apos;</span> | awk -F: <span class="hljs-string">&apos;$1 ~ &quot;\&quot;111\\\\222\&quot;&quot; { print $1 }&apos;</span>
 <span class="hljs-string">&quot;111\222&quot;</span>
 </code></pre>
 <h3 id="regular-expression-extensions">Regular expression Extensions</h3>
