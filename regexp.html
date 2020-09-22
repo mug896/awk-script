@@ -701,7 +701,7 @@ regexp &#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; <code>?</code>, <code>+
 </li>
 <li><p>&#xC2DD; &#xB0B4;&#xC5D0;&#xC11C; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; escape &#xBB38;&#xC790;&#xAC00; &#xCC98;&#xB9AC;&#xB429;&#xB2C8;&#xB2E4;.</p>
 </li>
-<li><p><code>/</code> &#xBB38;&#xC790;&#xB97C; &#xC2DD;&#xC5D0; &#xC0AC;&#xC6A9;&#xD558;&#xB824;&#xBA74; escape &#xD569;&#xB2C8;&#xB2E4;.</p>
+<li><p><code>/</code> or <code>\</code> &#xBB38;&#xC790;&#xB97C; &#xC2DD;&#xC5D0; &#xC0AC;&#xC6A9;&#xD558;&#xB824;&#xBA74; escape &#xD569;&#xB2C8;&#xB2E4;.</p>
 </li>
 <li><p>regexp &#xC0C1;&#xC218; &#xB77C;&#xACE0;&#xB3C4; &#xD558;&#xACE0; &#xBCC0;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xBABB;&#xD558;&#xB294; &#xB2E8;&#xC810;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 </li>
@@ -710,7 +710,7 @@ regexp &#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; <code>?</code>, <code>+
 $ <span class="hljs-built_in">printf</span> <span class="hljs-string">&apos;111\t222:333\t444&apos;</span> | awk -F: <span class="hljs-string">&apos;$1 ~ /11\t22/ { print $1 }&apos;</span>
 <span class="hljs-number">111</span>    <span class="hljs-number">222</span>
 
-$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;/&apos;</span> | awk <span class="hljs-string">&apos;/\/{ print }&apos;</span>        <span class="hljs-comment"># ERROR</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;/&apos;</span> | awk <span class="hljs-string">&apos;///{ print }&apos;</span>        <span class="hljs-comment"># ERROR</span>
 
 $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;/&apos;</span> | awk <span class="hljs-string">&apos;/\//{ print }&apos;</span>       <span class="hljs-comment"># OK</span>
 /
