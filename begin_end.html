@@ -951,7 +951,7 @@ BEGINFILE {                                  # 1 pass
     while (getline &lt; FILENAME &gt; 0)
         count[$3]++;
 }
-count[$3] &gt; 1                                # 2 pass
+{ if (count[$3] &gt; 1) print }                 # 2 pass
 &apos;</span> sample
 
 <span class="hljs-number">111</span>:aa:xtp1:ada
