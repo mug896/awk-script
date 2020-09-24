@@ -877,14 +877,6 @@ ENDFILE :
 END : 
 { } : <span class="hljs-number">500</span>
 </code></pre>
-<p>&#xB610;&#xD55C; &#xC0C8;&#xB85C;&#xC6B4; &#xB808;&#xCF54;&#xB4DC; &#xAC12;&#xC774; &#xC785;&#xB825;&#xB418;&#xC5B4;&#xB3C4; &#xAE30;&#xC874; &#xBCC0;&#xC218;&#xAC12;&#xC774; reset &#xB418;&#xC9C0; &#xC54A;&#xACE0; &#xC720;&#xC9C0;&#xB429;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-bash">$ seq <span class="hljs-number">5</span> | awk <span class="hljs-string">&apos;{ AA++; print &quot;AA = &quot; AA }&apos;</span>
-AA = <span class="hljs-number">1</span>
-AA = <span class="hljs-number">2</span>
-AA = <span class="hljs-number">3</span>
-AA = <span class="hljs-number">4</span>
-AA = <span class="hljs-number">5</span>
-</code></pre>
 <hr>
 <h3 id="&#xC608;&#xC81C;-">&#xC608;&#xC81C; )</h3>
 <p>&#xD604;&#xC7AC; &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xC5D0; &#xC788;&#xB294; <code>*.awk</code> &#xD30C;&#xC77C; total size &#xAD6C;&#xD558;&#xAE30;</p>
@@ -909,6 +901,65 @@ EOF
        webserver.awk         <span class="hljs-number">1</span>,<span class="hljs-number">732</span>
  ----------------------------------
           total size         <span class="hljs-number">4</span>,<span class="hljs-number">604</span>
+</code></pre>
+<h1 id="quiz">Quiz</h1>
+<p>&#xB2E4;&#xC74C; sample &#xB370;&#xC774;&#xD130;&#xC758; &#xC138; &#xBC88;&#xC9F8; &#xCEEC;&#xB7FC; &#xAC12;&#xC744; &#xAE30;&#xC900;&#xC73C;&#xB85C; &#xC911;&#xBCF5;&#xB418;&#xB294; &#xB77C;&#xC778;&#xB4E4;&#xB9CC; &#xCD9C;&#xB825;&#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.
+&#xADF8;&#xB7EC;&#xB2C8;&#xAE4C; <code>xtp3</code> &#xC640; <code>xtp5</code> &#xAC00; &#xD3EC;&#xD568;&#xB418;&#xB294; &#xB77C;&#xC778;&#xC740; uniq &#xD55C; &#xB77C;&#xC778;&#xC774;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xCD9C;&#xB825;&#xC774; &#xB418;&#xBA74; &#xC548; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ cat sample
+<span class="hljs-number">111</span>:aa:xtp1:ada
+<span class="hljs-number">111</span>:aet:xtp1:papa
+<span class="hljs-number">333</span>:wc:xtp3:der          <span class="hljs-comment"># uniq &#xB77C;&#xC778;</span>
+<span class="hljs-number">111</span>:ab:xtp2:adad
+<span class="hljs-number">111</span>:ac:xtp4:lk
+<span class="hljs-number">333</span>:dc:xtp5:zsw          <span class="hljs-comment"># uniq &#xB77C;&#xC778;</span>
+<span class="hljs-number">222</span>:cc:xtp4:eq
+<span class="hljs-number">222</span>:ap:xtp2:lstp
+</code></pre>
+<ol>
+<li><p><code>case 0 :</code> &#xC77C; &#xACBD;&#xC6B0;&#xB294; &#xCC98;&#xC74C; &#xB77C;&#xC778;&#xC774; &#xB418;&#xBBC0;&#xB85C; &#xCD9C;&#xB825;&#xD558;&#xC9C0; &#xC54A;&#xACE0; <code>first</code> &#xBCC0;&#xC218;&#xC5D0; &#xC800;&#xC7A5;&#xD574; &#xB193;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+</li>
+<li><p><code>case 1 :</code> &#xBD80;&#xD130;&#xB294; &#xC911;&#xBCF5; &#xB77C;&#xC778;&#xC774; &#xB418;&#xBBC0;&#xB85C; &#xAC12;&#xC744; &#xCD9C;&#xB825;&#xD558;&#xB294;&#xB370; 
+ &#xBA3C;&#xC800; &#xAE30;&#xC874;&#xC5D0; &#xC800;&#xC7A5;&#xD574;&#xB454; <code>print first[$3]</code> &#xB77C;&#xC778;&#xC744; &#xCD9C;&#xB825;&#xD558;&#xACE0; 
+ &#xCD9C;&#xB825; &#xD6C4;&#xC5D0;&#xB294; &#xD544;&#xC694;&#xAC00; &#xC5C6;&#xC73C;&#xBBC0;&#xB85C; <code>delete first[$3]</code> &#xD569;&#xB2C8;&#xB2E4;.
+ &#xADF8;&#xB9AC;&#xACE0; <code>break</code> &#xC744; &#xC81C;&#xAC70;&#xD558;&#xC5EC; &#xB2E4;&#xC74C; <code>default :</code> &#xC5D0;&#xC11C; &#xD604;&#xC7AC; &#xB77C;&#xC778;&#xC774; &#xCD9C;&#xB825;&#xB418;&#xB3C4;&#xB85D; &#xD569;&#xB2C8;&#xB2E4;.</p>
+</li>
+<li><p><code>default :</code> &#xBD80;&#xD130;&#xB294; case 2 &#xC774;&#xD6C4;&#xAC00; &#xB418;&#xBBC0;&#xB85C; &#xBC14;&#xB85C; &#xD604;&#xC7AC; &#xB77C;&#xC778;&#xC744; &#xCD9C;&#xB825;&#xD569;&#xB2C8;&#xB2E4;.</p>
+</li>
+</ol>
+<pre><code class="lang-bash">$ awk -F: <span class="hljs-string">&apos;{
+switch(count[$3]++) {
+    case 0:  first[$3] = $0; break;
+    case 1:  print first[$3]; delete first[$3];
+    default: print $0
+  }
+}&apos;</span> sample
+
+<span class="hljs-number">111</span>:aa:xtp1:ada
+<span class="hljs-number">111</span>:aet:xtp1:papa
+<span class="hljs-number">111</span>:ac:xtp4:lk
+<span class="hljs-number">222</span>:cc:xtp4:eq
+<span class="hljs-number">111</span>:ab:xtp2:adad
+<span class="hljs-number">222</span>:ap:xtp2:lstp
+</code></pre>
+<h1 id="2-">2 .</h1>
+<p>&#xC704;&#xC758; &#xCCAB; &#xBC88;&#xC9F8; &#xBB38;&#xC81C;&#xC5D0;&#xC11C; &#xAE30;&#xC874;&#xC758; &#xB370;&#xC774;&#xD130; &#xC21C;&#xC11C;&#xB97C; &#xC720;&#xC9C0;&#xD558;&#xBA74;&#xC11C; &#xCD9C;&#xB825;&#xD558;&#xB824;&#xBA74; &#xC5B4;&#xB5BB;&#xAC8C; &#xD560;&#xAE4C;&#xC694;?</p>
+<p>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; <code>BEGINFILE</code> &#xBE14;&#xB85D;&#xC744; &#xD65C;&#xC6A9;&#xD558;&#xBA74; 2 pass &#xB85C; &#xCC98;&#xB9AC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xBA3C;&#xC800; <code>BEGINFILE</code> &#xBE14;&#xB85D;&#xC5D0;&#xC11C; &#xC804;&#xCCB4; &#xD30C;&#xC77C;&#xC744; &#xC77D;&#xC5B4;&#xC11C; <code>count</code> &#xBCC0;&#xC218;&#xC5D0; &#xCE74;&#xC6B4;&#xD305;&#xC744; &#xD558;&#xACE0; ( 1 pass ),
+&#xB2E4;&#xC74C;&#xC5D0; &#xBA54;&#xC778;&#xC2A4;&#xD2B8;&#xB9BC;&#xC5D0;&#xC11C; &#xB370;&#xC774;&#xD130;&#xB97C; &#xCC28;&#xB840;&#xB85C; &#xC77D;&#xC5B4;&#xB4E4;&#xC77C; &#xB54C; &#xCE74;&#xC6B4;&#xD2B8; &#xAC12;&#xC744; &#xD65C;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4; ( 2 pass ).</p>
+<pre><code class="lang-bash">$ awk -F: <span class="hljs-string">&apos;
+BEGINFILE {                                  # 1 pass
+    while( getline &lt; FILENAME &gt; 0 )
+        count[$3]++;
+}
+{ if(count[$3] &gt; 1) print }                  # 2 pass
+&apos;</span> sample
+
+<span class="hljs-number">111</span>:aa:xtp1:ada
+<span class="hljs-number">111</span>:aet:xtp1:papa
+<span class="hljs-number">111</span>:ab:xtp2:adad
+<span class="hljs-number">111</span>:ac:xtp4:lk
+<span class="hljs-number">222</span>:cc:xtp4:eq
+<span class="hljs-number">222</span>:ap:xtp2:lstp
 </code></pre>
 
                     
