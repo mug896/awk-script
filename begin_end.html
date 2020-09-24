@@ -927,11 +927,11 @@ EOF
 </li>
 </ol>
 <pre><code class="lang-bash">$ awk -F: <span class="hljs-string">&apos;{
-switch(count[$3]++) {
-    case 0:  first[$3] = $0; break;
-    case 1:  print first[$3]; delete first[$3];
-    default: print $0
-  }
+    switch (count[$3]++) {
+        case 0:  first[$3] = $0; break;
+        case 1:  print first[$3]; delete first[$3];
+        default: print $0
+    }
 }&apos;</span> sample
 
 <span class="hljs-number">111</span>:aa:xtp1:ada
@@ -948,10 +948,10 @@ switch(count[$3]++) {
 &#xB2E4;&#xC74C;&#xC5D0; &#xBA54;&#xC778;&#xC2A4;&#xD2B8;&#xB9BC;&#xC5D0;&#xC11C; &#xB370;&#xC774;&#xD130;&#xB97C; &#xCC28;&#xB840;&#xB85C; &#xC77D;&#xC5B4;&#xB4E4;&#xC77C; &#xB54C; &#xCE74;&#xC6B4;&#xD2B8; &#xAC12;&#xC744; &#xD65C;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4; ( 2 pass ).</p>
 <pre><code class="lang-bash">$ awk -F: <span class="hljs-string">&apos;
 BEGINFILE {                                  # 1 pass
-    while( getline &lt; FILENAME &gt; 0 )
+    while (getline &lt; FILENAME &gt; 0)
         count[$3]++;
 }
-{ if(count[$3] &gt; 1) print }                  # 2 pass
+{ if (count[$3] &gt; 1) print }                  # 2 pass
 &apos;</span> sample
 
 <span class="hljs-number">111</span>:aa:xtp1:ada
