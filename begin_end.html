@@ -947,8 +947,8 @@ EOF
 &#xBA3C;&#xC800; <code>BEGINFILE</code> &#xBE14;&#xB85D;&#xC5D0;&#xC11C; &#xC804;&#xCCB4; &#xD30C;&#xC77C;&#xC744; &#xC77D;&#xC5B4;&#xC11C; <code>count</code> &#xBCC0;&#xC218;&#xC5D0; &#xCE74;&#xC6B4;&#xD305;&#xC744; &#xD558;&#xACE0; ( 1 pass ),
 &#xB2E4;&#xC74C;&#xC5D0; &#xBA54;&#xC778;&#xC2A4;&#xD2B8;&#xB9BC;&#xC5D0;&#xC11C; &#xB370;&#xC774;&#xD130;&#xB97C; &#xCC28;&#xB840;&#xB85C; &#xC77D;&#xC5B4;&#xB4E4;&#xC77C; &#xB54C; &#xCE74;&#xC6B4;&#xD2B8; &#xAC12;&#xC744; &#xD65C;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4; ( 2 pass ).</p>
 <pre><code class="lang-bash">$ awk -F: <span class="hljs-string">&apos;
-BEGINFILE {                                  # 1 pass
-    while (getline &lt; FILENAME &gt; 0)
+BEGINFILE {
+    while (getline &lt; FILENAME &gt; 0)           # 1 pass
         count[$3]++;
 }
 { if (count[$3] &gt; 1) print }                 # 2 pass
