@@ -901,7 +901,10 @@ $ awk -M <span class="hljs-string">&apos;BEGIN { print 0x66778899aabbccdd + 1 }&
 <p>&#xC18C;&#xC218;&#xC810; &#xC5F0;&#xC0B0;&#xC2DC; &#xB192;&#xC740; &#xC218;&#xC900;&#xC758; &#xC815;&#xBC00;&#xB3C4;&#xAC00; &#xD544;&#xC694;&#xD560; &#xACBD;&#xC6B0; <code>-M</code> &#xC635;&#xC158;&#xACFC; <code>PREC</code> &#xBCC0;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. ( <a href="builtin_variables.html#PREC">&#xCC38;&#xC870;</a> ) </p>
 <h3 id="type-conversion">Type Conversion</h3>
 <p>&#xC2A4;&#xD2B8;&#xB9C1;&#xC744; &#xC22B;&#xC790;&#xB85C; &#xB9CC;&#xB4E4;&#xB824;&#xBA74; <code>+0</code> &#xC744; &#xD574;&#xC8FC;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;BEGIN{ print (12 &gt; &quot;111&quot;+0) }&apos;</span> 
+<pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;BEGIN{ print (12 &gt; &quot;111&quot;) }&apos;</span>
+<span class="hljs-number">1</span>
+
+$ awk <span class="hljs-string">&apos;BEGIN{ print (12 &gt; &quot;111&quot;+0) }&apos;</span> 
 <span class="hljs-number">0</span>
 
 $ awk <span class="hljs-string">&apos;BEGIN{ print (substr(12345,1,2)+0 &gt; 111) }&apos;</span>
