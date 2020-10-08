@@ -707,7 +707,7 @@ regexp &#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; <code>?</code>, <code>+
 </li>
 </ul>
 <pre><code class="lang-bash"><span class="hljs-comment"># /.../ &#xC5D0;&#xC11C; &apos;\t&apos; escape &#xBB38;&#xC790;&#xAC00; &#xCC98;&#xB9AC;&#xB418;&#xC5B4; &#xB9E4;&#xCE6D;&#xC774; &#xB41C;&#xB2E4;.</span>
-$ <span class="hljs-built_in">printf</span> <span class="hljs-string">&apos;111\t222:333\t444&apos;</span> | awk -F: <span class="hljs-string">&apos;$1 ~ /11\t22/ { print $1 }&apos;</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">&apos;111\t222:333\t444&apos;</span> | awk -F: <span class="hljs-string">&apos;$1 ~ /11\t22/ { print $1 }&apos;</span>
 <span class="hljs-number">111</span>    <span class="hljs-number">222</span>
 
 $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;/&apos;</span> | awk <span class="hljs-string">&apos;///{ print }&apos;</span>        <span class="hljs-comment"># ERROR</span>
