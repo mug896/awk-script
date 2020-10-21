@@ -936,6 +936,12 @@ $ awk <span class="hljs-string">&apos;((NR &lt; 4) || (NR &gt; 6)) &amp;&amp; /f
 <span class="hljs-number">222</span> foo
 <span class="hljs-number">888</span> foo
 </code></pre>
+<p>&#xD30C;&#xC77C;&#xC744; &#xCD94;&#xCD9C;&#xD560; &#xB54C; grep &#xBA85;&#xB839; &#xB300;&#xC2E0;&#xC5D0; awk &#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xB354; &#xAC04;&#xD3B8;&#xD560; &#xB54C;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ grep -E <span class="hljs-string">&apos; hello &apos;</span> | grep -Ev <span class="hljs-string">&apos;^(foo|bar|zoo)&apos;</span>
+
+<span class="hljs-comment"># grep -v &#xB294; awk &#xC5D0;&#xC11C; !/ ... / &#xC640; &#xAC19;&#xB2E4;.</span>
+$ awk <span class="hljs-string">&apos;/ hello / &amp;&amp; !/^(foo|bar|zoo)/&apos;</span>
+</code></pre>
 <h3 id="pattern-range">Pattern range</h3>
 <p>sed &#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xBC29;&#xC2DD;&#xACFC; &#xAC19;&#xC774; awk &#xC5D0;&#xC11C;&#xB3C4; <code>,</code> (comma) &#xB97C; &#xC774;&#xC6A9;&#xD55C; range &#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash"><span class="hljs-comment"># 3 &#xBC88;&#xC9F8; &#xB77C;&#xC778;&#xBD80;&#xD130; 5 &#xBC88;&#xC9F8;&#xAE4C;&#xC9C0; &#xD504;&#xB9B0;&#xD2B8;</span>
