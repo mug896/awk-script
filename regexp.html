@@ -782,12 +782,12 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;&quot;
 <h3 id="y-b"><code>\y</code>, <code>\B</code></h3>
 <p>word boundary &#xB97C; &#xB098;&#xD0C0;&#xB0C5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash"><span class="hljs-comment"># \y &#xC758; &#xACBD;&#xC6B0;</span>
-$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;abc %-= def.&apos;</span> | awk <span class="hljs-string">&apos;{ gsub(/\y/,&quot;X&quot;) }1&apos;</span>
-XabcX %-= XdefX.
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;abc %-= _def.&apos;</span> | awk <span class="hljs-string">&apos;{ gsub(/\y/,&quot;X&quot;) }1&apos;</span>
+XabcX %-= X_defX.
 
 <span class="hljs-comment"># \B &#xC758; &#xACBD;&#xC6B0;</span>
-$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;abc %-= def.&apos;</span> | awk <span class="hljs-string">&apos;{ gsub(/\B/,&quot;X&quot;) }1&apos;</span>
-aXbXc X%X-X=X dXeXf.X
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;abc %-= _def.&apos;</span> | awk <span class="hljs-string">&apos;{ gsub(/\B/,&quot;X&quot;) }1&apos;</span>
+aXbXc X%X-X=X _XdXeXf.X
 </code></pre>
 <h3 id=""><code>\&lt;</code>, <code>\&gt;</code></h3>
 <p><code>\&lt;</code> &#xB294; word boundary &#xC778;&#xB370; word &#xC758; &#xC2DC;&#xC791; &#xBD80;&#xBD84;&#xC744;, <code>\&gt;</code> &#xB294; word &#xC758; &#xB05D;&#xBD80;&#xBD84;&#xC744; &#xB098;&#xD0C0;&#xB0C5;&#xB2C8;&#xB2E4;.</p>
