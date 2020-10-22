@@ -788,6 +788,14 @@ XabcX %-= X_defX.
 <span class="hljs-comment"># \B &#xC758; &#xACBD;&#xC6B0;</span>
 $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;abc %-= _def.&apos;</span> | awk <span class="hljs-string">&apos;{ gsub(/\B/,&quot;X&quot;) }1&apos;</span>
 aXbXc X%X-X=X _XdXeXf.X
+
+-------------------------------------------------
+
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;*foo_bar&apos;</span> | awk <span class="hljs-string">&apos;/\y[a-z]\w+/&apos;</span>
+*foo_bar
+
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;_foo_bar&apos;</span> | awk <span class="hljs-string">&apos;/\y[a-z]\w+/&apos;</span>
+$
 </code></pre>
 <h3 id=""><code>\&lt;</code>, <code>\&gt;</code></h3>
 <p><code>\&lt;</code> &#xB294; word boundary &#xC778;&#xB370; word &#xC758; &#xC2DC;&#xC791; &#xBD80;&#xBD84;&#xC744;, <code>\&gt;</code> &#xB294; word &#xC758; &#xB05D;&#xBD80;&#xBD84;&#xC744; &#xB098;&#xD0C0;&#xB0C5;&#xB2C8;&#xB2E4;.</p>
