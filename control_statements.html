@@ -697,10 +697,14 @@
 <p>&#xD604;&#xC7AC; &#xCC98;&#xB9AC; &#xC911;&#xC778; &#xD30C;&#xC77C;&#xC744; &#xC911;&#xB2E8;&#xD558;&#xACE0; &#xB2E4;&#xC74C; &#xD30C;&#xC77C;&#xB85C; &#xC774;&#xB3D9;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <h3 id="ifelse">if-else</h3>
 <p><img src="images/control_statements/if-else.png" alt=""></p>
-<pre><code class="lang-bash"><span class="hljs-keyword">if</span> (x % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>)
-    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;x is even&quot;</span>
-<span class="hljs-keyword">else</span>
-    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;x is odd&quot;</span>
+<pre><code class="lang-bash"><span class="hljs-keyword">if</span> (x % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>)                         <span class="hljs-keyword">if</span> ( x == <span class="hljs-number">1</span> )
+    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;x is even&quot;</span>                       <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;x is 1&quot;</span>
+<span class="hljs-keyword">else</span>                                    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> ( y == <span class="hljs-number">2</span> )
+    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;x is odd&quot;</span>                        <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;y is 2&quot;</span>
+                                        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> ( z == <span class="hljs-number">3</span> )
+                                            <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;z is 3&quot;</span>
+                                        <span class="hljs-keyword">else</span> 
+                                            <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;default&quot;</span>
 </code></pre>
 <h3 id="while">while</h3>
 <p><img src="images/control_statements/while.png" alt=""></p>
