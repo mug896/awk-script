@@ -825,6 +825,12 @@ BEGIN {
 <span class="hljs-number">45</span>
 -----------------------------------------------
 
+$ awk <span class="hljs-string">&apos;BEGIN { 
+    while ( &quot;sort /proc/modules&quot; | getline &gt; 0 ) 
+        print $1 
+}&apos;</span>
+-----------------------------------------------
+
 $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;333 111 444 222&quot;</span> |
 awk <span class="hljs-string">&apos;{ 
     for (i=1; i&lt;=NF; i++)
