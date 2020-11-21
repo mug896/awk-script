@@ -865,12 +865,12 @@ remainder &#xD568;&#xC218;&#xB97C; &#xC774;&#xC6A9;&#xD574; modulus &#xD568;&#xC
 -<span class="hljs-number">1</span>
 
 $ awk <span class="hljs-string">&apos;BEGIN { print rem(-21, 4) } 
-function rem(n, d) { return n - d * int( n / d ) }
+function rem(n, d) { return n - d * int(n / d) }
 &apos;</span> 
 -<span class="hljs-number">1</span>
 
 $ awk <span class="hljs-string">&apos;BEGIN { print mod(-21, 4) } 
-function rem(n, d) { return n - d * int( n / d ) }
+function rem(n, d) { return n - d * int(n / d) }
 function mod(n, d) { return rem(d + rem(n, d), d) }
 &apos;</span> 
 <span class="hljs-number">3</span>
