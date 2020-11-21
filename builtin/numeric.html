@@ -859,6 +859,22 @@ function log10( x ) { return log(x) / log(10) }
 }&apos;</span>
 <span class="hljs-number">3</span> <span class="hljs-number">4</span> -<span class="hljs-number">5</span> -<span class="hljs-number">6</span>
 </code></pre>
+<p>&#xB2E4;&#xC74C;&#xC740; int &#xD568;&#xC218;&#xB97C; &#xC774;&#xC6A9;&#xD574; <code>%</code> &#xC5F0;&#xC0B0;&#xC790;&#xC640; &#xAC19;&#xC740; &#xAE30;&#xB2A5;&#xC758; remainder &#xD568;&#xC218;&#xB97C; &#xB9CC;&#xB4E4;&#xACE0;, 
+remainder &#xD568;&#xC218;&#xB97C; &#xC774;&#xC6A9;&#xD574; modulus &#xD568;&#xC218;&#xB97C; &#xB9CC;&#xB4DC;&#xB294; &#xC608;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;BEGIN { print -21 % 4 }&apos;</span>
+-<span class="hljs-number">1</span>
+
+$ awk <span class="hljs-string">&apos;BEGIN { print rem(-21, 4) } 
+function rem(n, d) { return n - d * int( n / d ) }      # &quot;%&quot; &#xC5F0;&#xC0B0;&#xC790;&#xC640; &#xAC19;&#xC740; &#xAE30;&#xB2A5;
+&apos;</span> 
+-<span class="hljs-number">1</span>
+
+$ awk <span class="hljs-string">&apos;BEGIN { print mod(-21, 4) } 
+function rem(n, d) { return n - d * int( n / d ) }
+function mod(n, d) { return rem(d + rem(n, d), d) }
+&apos;</span> 
+<span class="hljs-number">3</span>
+</code></pre>
 <h4 id="rand--">rand ( )</h4>
 <h4 id="srand---x--">srand ( [ <em>x</em> ] )</h4>
 <p>rand, srand &#xD568;&#xC218;&#xB294; &#xAC19;&#xC774; &#xC124;&#xBA85;&#xD569;&#xB2C8;&#xB2E4;.
