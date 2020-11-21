@@ -877,9 +877,11 @@ function mod(n, d) { return rem(d + rem(n, d), d) }
 --------------------------------------------------
 
 $ awk <span class="hljs-string">&apos;BEGIN { 
-    calc(&quot;rem&quot;, 10, 4); calc(&quot;mod&quot;, 10, 4);
-    print gensub(/ /,&quot;-&quot;,&quot;g&quot;,sprintf(&quot;%85s&quot;,&quot;&quot;));
-    calc(&quot;rem&quot;, 10, -4); calc(&quot;mod&quot;, 10, -4);
+    calc(&quot;rem&quot;, 10, 4)
+    calc(&quot;mod&quot;, 10, 4)
+    print gensub(/ /,&quot;-&quot;,&quot;g&quot;,sprintf(&quot;%85s&quot;,&quot;&quot;))
+    calc(&quot;rem&quot;, 10, -4)
+    calc(&quot;mod&quot;, 10, -4)
 } 
 function calc(fun, n, d) {
     print fun &quot; &quot; d
