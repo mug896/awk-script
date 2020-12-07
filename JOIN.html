@@ -1057,7 +1057,7 @@ BEGINFILE &#xBE14;&#xB85D;&#xC744; &#xC0AC;&#xC6A9;&#xD588;&#xC2B5;&#xB2C8;&#xB2
 <pre><code class="lang-bash">$ awk <span class="hljs-operator">-f</span> - &lt;&lt;\EOF <span class="hljs-built_in">mapfile</span>1 <span class="hljs-built_in">mapfile</span>2 RS=<span class="hljs-string">&apos;.&apos;</span> FPAT=<span class="hljs-string">&apos;{{[A-Z0-9]+}}&apos;</span> datafile
 BEGINFILE { 
     <span class="hljs-keyword">if</span> ( ARGIND &lt; <span class="hljs-number">3</span> ) {          <span class="hljs-comment"># 1, 2 &#xBC88;&#xC9F8; &#xD30C;&#xC77C;&#xC77C; &#xACBD;&#xC6B0;&#xB9CC; &#xC2E4;&#xD589;</span>
-        <span class="hljs-keyword">while</span> ((getline &lt; FILENAME) &gt; <span class="hljs-number">0</span>) a[<span class="hljs-variable">$1</span>] = <span class="hljs-variable">$3</span>
+        <span class="hljs-keyword">while</span> (getline &lt; FILENAME &gt; <span class="hljs-number">0</span>) a[<span class="hljs-variable">$1</span>] = <span class="hljs-variable">$3</span>
         nextfile
     }
 }{
@@ -1076,7 +1076,46 @@ December 2012, Curiosity&apos;s two-year mission was extended indefinitely. As o
 June 26, 2017, Curiosity has been on Mars for 1738 sols (1785 total days)
 ^^^^           ^^^^^^^^^
 since landing on August 6, .......
+</code></pre><h3 id="union">UNION</h3>
+<p>UNION &#xC740; order1 &#xACFC; order2 &#xC758; &#xD56D;&#xBAA9;&#xB4E4;&#xC744; &#xD558;&#xB098;&#xB85C; &#xD569;&#xCE69;&#xB2C8;&#xB2E4;.
+&#xC774;&#xB54C; &#xACF5;&#xD1B5;&#xC73C;&#xB85C; &#xC874;&#xC7AC;&#xD558;&#xB294; banana &#xACFC; strawberry &#xB294; &#xC911;&#xBCF5;&#xC774; &#xC81C;&#xAC70;&#xB429;&#xB2C8;&#xB2E4;.
+&#xB2E4;&#xC74C;&#xC740; union &#xACB0;&#xACFC;&#xC5D0; &#xB300;&#xD574; order1 &#xACFC; order2 &#xC5D0; &#xC874;&#xC7AC; &#xC5EC;&#xBD80;&#xB97C; <code>&quot;O&quot;</code>, <code>&quot;X&quot;</code> &#xB85C; &#xD45C;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ cat order1                       $ cat order2
+apple                              melon
+banana                             cherry
+grape                              banana
+strawberry                         strawberry
+orange                             mango
+                                   tomato
+
+-------------------------------------------------
+
+$ awk <span class="hljs-operator">-f</span> /dev/fd/<span class="hljs-number">3</span> <span class="hljs-number">3</span>&lt;&lt;\EOF order1 order2
+BEGIN { 
+    <span class="hljs-keyword">while</span> (getline &lt; ARGV[<span class="hljs-number">1</span>] &gt; <span class="hljs-number">0</span>) { u[<span class="hljs-variable">$1</span>]; a[<span class="hljs-variable">$1</span>]=<span class="hljs-number">1</span> }    <span class="hljs-comment"># u[$1] &#xB294; union &#xC744; &#xC704;&#xD55C; array</span>
+    <span class="hljs-keyword">while</span> (getline &lt; ARGV[<span class="hljs-number">2</span>] &gt; <span class="hljs-number">0</span>) { u[<span class="hljs-variable">$1</span>]; b[<span class="hljs-variable">$1</span>]=<span class="hljs-number">1</span> }
+} END {
+    <span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;%12s | %s | %s |\n&quot;</span>, <span class="hljs-string">&quot; &quot;</span>, ARGV[<span class="hljs-number">1</span>], ARGV[<span class="hljs-number">2</span>]
+    <span class="hljs-built_in">print</span>  <span class="hljs-string">&quot;--------------------------------&quot;</span>
+    PROCINFO[<span class="hljs-string">&quot;sorted_in&quot;</span>] = <span class="hljs-string">&quot;@ind_str_asc&quot;</span>
+    <span class="hljs-keyword">for</span> ( i <span class="hljs-keyword">in</span> u )
+        <span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;%12s |    %s   |    %s   |\n&quot;</span> , 
+                  i  , ( a[i] ? <span class="hljs-string">&quot;O&quot;</span> : <span class="hljs-string">&quot;X&quot;</span> ) , ( b[i] ? <span class="hljs-string">&quot;O&quot;</span> : <span class="hljs-string">&quot;X&quot;</span> )
+}
+EOF
+             | order1 | order2 |
+--------------------------------
+       apple |    O   |    X   |
+      banana |    O   |    O   |
+      cherry |    X   |    O   |
+       grape |    O   |    X   |
+       mango |    X   |    O   |
+       melon |    X   |    O   |
+      orange |    O   |    X   |
+  strawberry |    O   |    O   |
+      tomato |    X   |    O   |
 </code></pre>
+
                     
                     </section>
                 
