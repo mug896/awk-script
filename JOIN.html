@@ -1092,15 +1092,15 @@ orange                             mango
 
 $ awk <span class="hljs-operator">-f</span> /dev/fd/<span class="hljs-number">3</span> <span class="hljs-number">3</span>&lt;&lt;\EOF order1 order2
 BEGIN { 
-    <span class="hljs-keyword">while</span> (getline &lt; ARGV[<span class="hljs-number">1</span>] &gt; <span class="hljs-number">0</span>) { u[<span class="hljs-variable">$1</span>]; a[<span class="hljs-variable">$1</span>]=<span class="hljs-number">1</span> }    <span class="hljs-comment"># u[$1] &#xB294; union &#xC744; &#xC704;&#xD55C; array</span>
-    <span class="hljs-keyword">while</span> (getline &lt; ARGV[<span class="hljs-number">2</span>] &gt; <span class="hljs-number">0</span>) { u[<span class="hljs-variable">$1</span>]; b[<span class="hljs-variable">$1</span>]=<span class="hljs-number">1</span> }
+    <span class="hljs-keyword">while</span> (getline &lt; ARGV[<span class="hljs-number">1</span>] &gt; <span class="hljs-number">0</span>) { u[<span class="hljs-variable">$1</span>]; o1[<span class="hljs-variable">$1</span>]=<span class="hljs-number">1</span> }    <span class="hljs-comment"># u[$1] &#xB294; union &#xC744; &#xC704;&#xD55C; array</span>
+    <span class="hljs-keyword">while</span> (getline &lt; ARGV[<span class="hljs-number">2</span>] &gt; <span class="hljs-number">0</span>) { u[<span class="hljs-variable">$1</span>]; o2[<span class="hljs-variable">$1</span>]=<span class="hljs-number">1</span> }
 } END {
     <span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;%12s | %s | %s |\n&quot;</span>, <span class="hljs-string">&quot; &quot;</span>, ARGV[<span class="hljs-number">1</span>], ARGV[<span class="hljs-number">2</span>]
     <span class="hljs-built_in">print</span>  <span class="hljs-string">&quot;--------------------------------&quot;</span>
     PROCINFO[<span class="hljs-string">&quot;sorted_in&quot;</span>] = <span class="hljs-string">&quot;@ind_str_asc&quot;</span>
     <span class="hljs-keyword">for</span> ( i <span class="hljs-keyword">in</span> u )
         <span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;%12s |    %s   |    %s   |\n&quot;</span> , 
-                  i  , ( a[i] ? <span class="hljs-string">&quot;O&quot;</span> : <span class="hljs-string">&quot;X&quot;</span> ) , ( b[i] ? <span class="hljs-string">&quot;O&quot;</span> : <span class="hljs-string">&quot;X&quot;</span> )
+                  i  , ( o1[i] ? <span class="hljs-string">&quot;O&quot;</span> : <span class="hljs-string">&quot;X&quot;</span> ) , ( o2[i] ? <span class="hljs-string">&quot;O&quot;</span> : <span class="hljs-string">&quot;X&quot;</span> )
 }
 EOF
              | order1 | order2 |
