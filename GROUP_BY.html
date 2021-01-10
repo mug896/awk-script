@@ -935,6 +935,45 @@ x       x       <span class="hljs-number">1</span>       <span class="hljs-numbe
 p       z       <span class="hljs-number">1</span>       <span class="hljs-number">3</span>       <span class="hljs-number">22</span>
 z       o       <span class="hljs-number">2</span>       <span class="hljs-number">3</span>       <span class="hljs-number">24</span>
 </code></pre>
+<h3 id="union">UNION</h3>
+<p>UNION &#xC740; order1 &#xACFC; order2 &#xC758; &#xD56D;&#xBAA9;&#xB4E4;&#xC744; &#xD558;&#xB098;&#xB85C; &#xD569;&#xCE69;&#xB2C8;&#xB2E4;.
+&#xC774;&#xB54C; &#xACF5;&#xD1B5;&#xC73C;&#xB85C; &#xC874;&#xC7AC;&#xD558;&#xB294; banana &#xC640; strawberry &#xB294; &#xC911;&#xBCF5;&#xC774; &#xC81C;&#xAC70;&#xB429;&#xB2C8;&#xB2E4;.
+&#xB2E4;&#xC74C;&#xC740; union &#xACB0;&#xACFC;&#xC5D0; &#xB300;&#xD574; order1 &#xACFC; order2 &#xC5D0; &#xC874;&#xC7AC; &#xC5EC;&#xBD80;&#xB97C; <code>&quot;O&quot;</code>, <code>&quot;X&quot;</code> &#xB85C; &#xD45C;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ cat order1                       $ cat order2
+apple                              melon
+banana                             cherry
+grape                              banana
+strawberry                         strawberry
+orange                             mango
+                                   tomato
+
+-------------------------------------------------
+
+$ awk <span class="hljs-operator">-f</span> /dev/fd/<span class="hljs-number">3</span> <span class="hljs-number">3</span>&lt;&lt;\EOF order1 order2
+BEGIN { 
+    <span class="hljs-keyword">while</span> (getline &lt; ARGV[<span class="hljs-number">1</span>] &gt; <span class="hljs-number">0</span>) { u[<span class="hljs-variable">$1</span>]; o1[<span class="hljs-variable">$1</span>]=<span class="hljs-number">1</span> }    <span class="hljs-comment"># u[$1] &#xB294; union &#xC744; &#xC704;&#xD55C; array</span>
+    <span class="hljs-keyword">while</span> (getline &lt; ARGV[<span class="hljs-number">2</span>] &gt; <span class="hljs-number">0</span>) { u[<span class="hljs-variable">$1</span>]; o2[<span class="hljs-variable">$1</span>]=<span class="hljs-number">1</span> }
+} END {
+    <span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;%12s | %s | %s |\n&quot;</span>, <span class="hljs-string">&quot; &quot;</span>, ARGV[<span class="hljs-number">1</span>], ARGV[<span class="hljs-number">2</span>]
+    <span class="hljs-built_in">print</span>  <span class="hljs-string">&quot;--------------------------------&quot;</span>
+    PROCINFO[<span class="hljs-string">&quot;sorted_in&quot;</span>] = <span class="hljs-string">&quot;@ind_str_asc&quot;</span>
+    <span class="hljs-keyword">for</span> ( i <span class="hljs-keyword">in</span> u )
+        <span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;%12s |    %s   |    %s   |\n&quot;</span> , 
+                  i  , ( o1[i] ? <span class="hljs-string">&quot;O&quot;</span> : <span class="hljs-string">&quot;X&quot;</span> ) , ( o2[i] ? <span class="hljs-string">&quot;O&quot;</span> : <span class="hljs-string">&quot;X&quot;</span> )
+}
+EOF
+             | order1 | order2 |
+--------------------------------
+       apple |    O   |    X   |
+      banana |    O   |    O   |
+      cherry |    X   |    O   |
+       grape |    O   |    X   |
+       mango |    X   |    O   |
+       melon |    X   |    O   |
+      orange |    O   |    X   |
+  strawberry |    O   |    O   |
+      tomato |    X   |    O   |
+</code></pre>
 
                     
                     </section>
