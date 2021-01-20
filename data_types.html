@@ -917,6 +917,11 @@ $ awk <span class="hljs-string">&apos;BEGIN{ print (substr(12345,1,2)+0 &gt; 111
 $ awk <span class="hljs-string">&apos;BEGIN{ print (12 &gt; 111&quot;&quot;) }&apos;</span> 
 <span class="hljs-number">1</span>
 </code></pre>
+<p>awk &#xB294; eval &#xD568;&#xC218;&#xAC00; &#xC5C6;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC0B0;&#xC220;&#xC2DD;&#xC744; &#xC2A4;&#xD2B8;&#xB9C1;&#xC73C;&#xB85C; &#xC870;&#xD569;&#xD55C; &#xB2E4;&#xC74C; &#xACB0;&#xACFC;&#xB97C; &#xAD6C;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-sh">$ awk <span class="hljs-string">&apos;BEGIN { str = &quot;1 + 2&quot;; str = str &quot; + 3&quot;; print str; print str + 0 }&apos;</span> 
+<span class="hljs-number">1</span> + <span class="hljs-number">2</span> + <span class="hljs-number">3</span>
+<span class="hljs-number">1</span>            <span class="hljs-comment"># &#xACB0;&#xACFC;&#xAC00; 6 &#xC774;&#xB418;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;.</span>
+</code></pre>
 <p><a name="conversion"></a></p>
 <h5 id=""><img src="images/buttons/ofmt.png" alt=""> <img src="images/buttons/convfmt.png" alt=""></h5>
 <p>&#xC18C;&#xC218;&#xB97C; <code>print</code> &#xBB38;&#xC73C;&#xB85C; &#xCD9C;&#xB825;&#xD560; &#xB54C;&#xB294; <code>OFMT</code> &#xD3EC;&#xBA67; &#xAC12;&#xC774; &#xC801;&#xC6A9;&#xB418;&#xACE0; &#xC22B;&#xC790;&#xC5D0;&#xC11C; &#xC2A4;&#xD2B8;&#xB9C1;&#xC73C;&#xB85C; &#xBCC0;&#xACBD;&#xB420; &#xB54C;&#xB294;
