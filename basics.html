@@ -153,16 +153,16 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3" data-path="regexp.html">
+        <li class="chapter " data-level="2.3" data-path="regex.html">
             
                 
-                    <a href="./regexp.html">
+                    <a href="./regex.html">
                 
                         <i class="fa fa-check"></i>
                         
                             <b>2.3.</b>
                         
-                        Regexp
+                        Regex
                     </a>
             
             
@@ -699,7 +699,7 @@
 awk &#xB294; RECORD &#xC640; FIELD &#xB77C;&#xB294; &#xAC1C;&#xB150;&#xC744; &#xC774;&#xC6A9;&#xD574; &#xC785;&#xB825; &#xC2A4;&#xD2B8;&#xB9BC;&#xC73C;&#xB85C;&#xBD80;&#xD130; &#xB370;&#xC774;&#xD130;&#xB97C;
 &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xBD84;&#xB9AC;&#xD568;&#xC73C;&#xB85C;&#xC368; &#xD2B9;&#xC815; &#xD56D;&#xBAA9;&#xC744; &#xC9C0;&#xC815;&#xD558;&#xACE0; &#xCD94;&#xCD9C;&#xD558;&#xAE30; &#xC27D;&#xAC8C; &#xD574;&#xC90D;&#xB2C8;&#xB2E4;.</p>
 <p>&#xB2E4;&#xC74C;&#xC740; <code>df</code> &#xBA85;&#xB839;&#xC758; &#xCD9C;&#xB825;&#xC5D0;&#xC11C; &#xB124; &#xBC88;&#xC9F8; &#xD56D;&#xBAA9; &#xAC12;&#xC744; &#xD45C;&#xC2DC;&#xD558;&#xB294; &#xAC83;&#xC744;  sed &#xC640; awk &#xB97C; &#xBE44;&#xAD50;&#xD55C; &#xAC83;&#xC778;&#xB370;&#xC694;.
-sed &#xC758; &#xACBD;&#xC6B0; &#xB370;&#xC774;&#xD130; &#xC870;&#xC791;&#xC744; regexp &#xC5D0; &#xC758;&#xC874;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; awk &#xBE44;&#xD574; &#xC9C1;&#xAD00;&#xC801;&#xC774;&#xC9C0; &#xBABB;&#xD55C; &#xAC83;&#xC744; &#xC54C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+sed &#xC758; &#xACBD;&#xC6B0; &#xB370;&#xC774;&#xD130; &#xC870;&#xC791;&#xC744; regex &#xC5D0; &#xC758;&#xC874;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; awk &#xBE44;&#xD574; &#xC9C1;&#xAD00;&#xC801;&#xC774;&#xC9C0; &#xBABB;&#xD55C; &#xAC83;&#xC744; &#xC54C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">$ df -h
 Filesystem      Size  Used Avail Use% Mounted on
 udev            <span class="hljs-number">7.8</span>G     <span class="hljs-number">0</span>  <span class="hljs-number">7.8</span>G   <span class="hljs-number">0</span>% /dev
@@ -841,7 +841,7 @@ $ seq <span class="hljs-number">2</span> | awk <span class="hljs-string">&apos;a
 <span class="hljs-number">2</span>
 $ awk <span class="hljs-string">&apos;BEGINFILE{ if (ERRNO) { ... } }&apos;</span> 
 
-<span class="hljs-comment"># regexp &#xB9E4;&#xCE6D;&#xB3C4; &#xCC38;</span>
+<span class="hljs-comment"># regex &#xB9E4;&#xCE6D;&#xB3C4; &#xCC38;</span>
 $ <span class="hljs-built_in">echo</span> foobar | awk <span class="hljs-string">&apos;{ if (/oba/) print 111 }&apos;</span>
 <span class="hljs-number">111</span>
 </code></pre>

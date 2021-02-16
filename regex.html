@@ -15,7 +15,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Regexp | Introduction</title>
+        <title>Regex | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.7">
@@ -60,8 +60,8 @@
         
     <div class="book"
         data-level="2.3"
-        data-chapter-title="Regexp"
-        data-filepath="regexp.md"
+        data-chapter-title="Regex"
+        data-filepath="regex.md"
         data-basepath="."
 
         data-innerlanguage="">
@@ -153,16 +153,16 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.3" data-path="regexp.html">
+        <li class="chapter active" data-level="2.3" data-path="regex.html">
             
                 
-                    <a href="./regexp.html">
+                    <a href="./regex.html">
                 
                         <i class="fa fa-check"></i>
                         
                             <b>2.3.</b>
                         
-                        Regexp
+                        Regex
                     </a>
             
             
@@ -689,13 +689,13 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="regexp">Regexp</h1>
-<p>regexp &#xB9E4;&#xCE6D;&#xC740; <code>~</code> &#xC5F0;&#xC0B0;&#xC790;&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.
-awk &#xC5D0;&#xC11C; regexp &#xB97C; &#xC791;&#xC131;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC740; regexp &#xC0C1;&#xC218; (<code>/.../</code>) &#xC744; &#xC774;&#xC6A9;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xACFC;
+                        <h1 id="regex">Regex</h1>
+<p>regex &#xB9E4;&#xCE6D;&#xC740; <code>~</code> &#xC5F0;&#xC0B0;&#xC790;&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.
+awk &#xC5D0;&#xC11C; regex &#xB97C; &#xC791;&#xC131;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC740; regex &#xC0C1;&#xC218; (<code>/.../</code>) &#xC744; &#xC774;&#xC6A9;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xACFC;
 &#xC2A4;&#xD2B8;&#xB9C1;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xB294; &#xBC29;&#xBC95; &#xB450; &#xAC00;&#xC9C0;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
-&#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; <a href="https://mug896.github.io/sed-stream-editor/regexp.html" target="_blank">extended regular expression</a> &#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBBC0;&#xB85C; 
-regexp &#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; <code>?</code>, <code>+</code>, <code>( )</code>, <code>{ }</code>, <code>|</code> &#xBB38;&#xC790;&#xB4E4;&#xC744; escape &#xD560; &#xD544;&#xC694;&#xAC00; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<h4 id="regexp-&#xC0C1;&#xC218;--&#xB97C;-&#xC774;&#xC6A9;&#xD558;&#xB294;-&#xBC29;&#xBC95;">regexp &#xC0C1;&#xC218; <code>/.../</code> &#xB97C; &#xC774;&#xC6A9;&#xD558;&#xB294; &#xBC29;&#xBC95;</h4>
+&#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; <a href="https://mug896.github.io/sed-stream-editor/regex.html" target="_blank">extended regular expression</a> &#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBBC0;&#xB85C; 
+regex &#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; <code>?</code>, <code>+</code>, <code>( )</code>, <code>{ }</code>, <code>|</code> &#xBB38;&#xC790;&#xB4E4;&#xC744; escape &#xD560; &#xD544;&#xC694;&#xAC00; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h4 id="regex-&#xC0C1;&#xC218;--&#xB97C;-&#xC774;&#xC6A9;&#xD558;&#xB294;-&#xBC29;&#xBC95;">regex &#xC0C1;&#xC218; <code>/.../</code> &#xB97C; &#xC774;&#xC6A9;&#xD558;&#xB294; &#xBC29;&#xBC95;</h4>
 <ul>
 <li><p><code>~</code> &#xC5F0;&#xC0B0;&#xC790;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xACE0; &#xB2E8;&#xB3C5;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB294;&#xB370; &#xADF8;&#xB7F4; &#xACBD;&#xC6B0; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; <code>$0</code> &#xACFC; &#xB9E4;&#xCE6D;&#xD569;&#xB2C8;&#xB2E4;.</p>
 </li>
@@ -703,7 +703,7 @@ regexp &#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; <code>?</code>, <code>+
 </li>
 <li><p><code>/</code> or <code>\</code> &#xBB38;&#xC790;&#xB97C; &#xC2DD;&#xC5D0; &#xC0AC;&#xC6A9;&#xD558;&#xB824;&#xBA74; escape &#xD569;&#xB2C8;&#xB2E4;.</p>
 </li>
-<li><p>regexp &#xC0C1;&#xC218; &#xB77C;&#xACE0;&#xB3C4; &#xD558;&#xACE0; &#xBCC0;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xBABB;&#xD558;&#xB294; &#xB2E8;&#xC810;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<li><p>regex &#xC0C1;&#xC218; &#xB77C;&#xACE0;&#xB3C4; &#xD558;&#xACE0; &#xBCC0;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xBABB;&#xD558;&#xB294; &#xB2E8;&#xC810;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 </li>
 </ul>
 <pre><code class="lang-bash"><span class="hljs-comment"># /.../ &#xC5D0;&#xC11C; &apos;\t&apos; escape &#xBB38;&#xC790;&#xAC00; &#xCC98;&#xB9AC;&#xB418;&#xC5B4; &#xB9E4;&#xCE6D;&#xC774; &#xB41C;&#xB2E4;.</span>
@@ -744,24 +744,24 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;foobar
 </code></pre>
 <h4 id="&#xC2A4;&#xD2B8;&#xB9C1;&#xC744;-&#xC774;&#xC6A9;&#xD558;&#xB294;-&#xBC29;&#xBC95;">&#xC2A4;&#xD2B8;&#xB9C1;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xB294; &#xBC29;&#xBC95;</h4>
 <ul>
-<li><p>&#xC2A4;&#xD2B8;&#xB9C1;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xBA74; regexp &#xC2DD; &#xB0B4;&#xC5D0; &#xBCC0;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xACE0;
-&#xB610;&#xD55C; regexp &#xC2DD; &#xC790;&#xCCB4;&#xB97C; &#xBCC0;&#xC218;&#xC5D0; &#xB300;&#xC785;&#xD574; &#xC0AC;&#xC6A9;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<li><p>&#xC2A4;&#xD2B8;&#xB9C1;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xBA74; regex &#xC2DD; &#xB0B4;&#xC5D0; &#xBCC0;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xACE0;
+&#xB610;&#xD55C; regex &#xC2DD; &#xC790;&#xCCB4;&#xB97C; &#xBCC0;&#xC218;&#xC5D0; &#xB300;&#xC785;&#xD574; &#xC0AC;&#xC6A9;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 </li>
 <li><p>&#xB2E8;&#xB3C5;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC5C6;&#xACE0; &#xD56D;&#xC0C1; <code>~</code> &#xC5F0;&#xC0B0;&#xC790;&#xC640; &#xD568;&#xAED8; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 </li>
-<li><p>&#xC2A4;&#xD2B8;&#xB9C1;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC758; &#xB2E8;&#xC810;&#xC740; regexp &#xC0C1;&#xC218;&#xC5D0; &#xBE44;&#xD574; escape &#xCC98;&#xB9AC;&#xAC00; &#xBCF5;&#xC7A1;&#xD558;&#xB2E4;&#xB294; &#xC810;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<li><p>&#xC2A4;&#xD2B8;&#xB9C1;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC758; &#xB2E8;&#xC810;&#xC740; regex &#xC0C1;&#xC218;&#xC5D0; &#xBE44;&#xD574; escape &#xCC98;&#xB9AC;&#xAC00; &#xBCF5;&#xC7A1;&#xD558;&#xB2E4;&#xB294; &#xC810;&#xC785;&#xB2C8;&#xB2E4;.</p>
 </li>
 </ul>
 <pre><code class="lang-bash"><span class="hljs-comment"># &#xC2A4;&#xD2B8;&#xB9C1;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xBA74; &#xC2DD; &#xB0B4;&#xC5D0;&#xC11C; &#xBCC0;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
 $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;foobar&apos;</span> | awk <span class="hljs-string">&apos;{ var = &quot;ob&quot;; if ( $0 ~ &quot;^fo&quot; var &quot;ar$&quot; ) print }&apos;</span>
 foobar
 
-<span class="hljs-comment"># regexp &#xC2DD; &#xC790;&#xCCB4;&#xB97C; &#xBCC0;&#xC218;&#xC5D0; &#xB123;&#xC5B4; &#xC0AC;&#xC6A9;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
+<span class="hljs-comment"># regex &#xC2DD; &#xC790;&#xCCB4;&#xB97C; &#xBCC0;&#xC218;&#xC5D0; &#xB123;&#xC5B4; &#xC0AC;&#xC6A9;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
 $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;foobar&apos;</span> | awk <span class="hljs-string">&apos;{ regex = &quot;^foobar$&quot;; if ( $0 ~ regex ) print }&apos;</span>
 foobar
 </code></pre>
-<p>&#xB2E4;&#xC74C;&#xC740; &#xC2DD;&#xC744; &#xC791;&#xC131;&#xD560; &#xB54C; regexp &#xC0C1;&#xC218;&#xC640; &#xC2A4;&#xD2B8;&#xB9C1;&#xC758; &#xCC28;&#xC774;&#xC810;&#xC744; &#xBCF4;&#xC5EC;&#xC90D;&#xB2C8;&#xB2E4;.<br>&#xC2A4;&#xD2B8;&#xB9C1;&#xC73C;&#xB85C; &#xC791;&#xC131;&#xD560; &#xB54C;&#xB294; <code>/.../</code> &#xC548;&#xC5D0; &#xB4E4;&#xC5B4;&#xAC00;&#xB294; &#xC2A4;&#xD2B8;&#xB9C1;&#xACFC; &#xB3D9;&#xC77C;&#xD558;&#xAC8C; &#xB418;&#xB3C4;&#xB85D; &#xB9CC;&#xB4E4;&#xC5B4;&#xC900;&#xB2E4;&#xACE0; &#xC0DD;&#xAC01;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-bash"><span class="hljs-comment"># regexp &#xC0C1;&#xC218;&#xB85C; &#xC791;&#xC131;&#xD55C; &#xACBD;&#xC6B0;</span>
+<p>&#xB2E4;&#xC74C;&#xC740; &#xC2DD;&#xC744; &#xC791;&#xC131;&#xD560; &#xB54C; regex &#xC0C1;&#xC218;&#xC640; &#xC2A4;&#xD2B8;&#xB9C1;&#xC758; &#xCC28;&#xC774;&#xC810;&#xC744; &#xBCF4;&#xC5EC;&#xC90D;&#xB2C8;&#xB2E4;.<br>&#xC2A4;&#xD2B8;&#xB9C1;&#xC73C;&#xB85C; &#xC791;&#xC131;&#xD560; &#xB54C;&#xB294; <code>/.../</code> &#xC548;&#xC5D0; &#xB4E4;&#xC5B4;&#xAC00;&#xB294; &#xC2A4;&#xD2B8;&#xB9C1;&#xACFC; &#xB3D9;&#xC77C;&#xD558;&#xAC8C; &#xB418;&#xB3C4;&#xB85D; &#xB9CC;&#xB4E4;&#xC5B4;&#xC900;&#xB2E4;&#xACE0; &#xC0DD;&#xAC01;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># regex &#xC0C1;&#xC218;&#xB85C; &#xC791;&#xC131;&#xD55C; &#xACBD;&#xC6B0;</span>
 $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;&quot;111\222&quot;:&quot;333\444&quot;&apos;</span> | awk -F: <span class="hljs-string">&apos;$1 ~ /&quot;111\\222&quot;/ { print $1 }&apos;</span>
 <span class="hljs-string">&quot;111\222&quot;</span>
 
@@ -808,7 +808,7 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;abc %-
 abcX %-= defX.
 </code></pre>
 <h3 id="&#xB300;-&#xC18C;&#xBB38;&#xC790;-&#xAD6C;&#xBD84;-&#xC5C6;&#xC774;-&#xB9E4;&#xCE6D;&#xD558;&#xAE30;">&#xB300;, &#xC18C;&#xBB38;&#xC790; &#xAD6C;&#xBD84; &#xC5C6;&#xC774; &#xB9E4;&#xCE6D;&#xD558;&#xAE30;</h3>
-<p>regexp &#xB9E4;&#xCE6D;&#xC740; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xB300;, &#xC18C;&#xBB38;&#xC790;&#xB97C; &#xAD6C;&#xBD84;&#xD558;&#xB294;&#xB370;&#xC694;
+<p>regex &#xB9E4;&#xCE6D;&#xC740; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xB300;, &#xC18C;&#xBB38;&#xC790;&#xB97C; &#xAD6C;&#xBD84;&#xD558;&#xB294;&#xB370;&#xC694;
 &#xAD6C;&#xBD84; &#xC5C6;&#xC774; &#xB9E4;&#xCE6D;&#xC744; &#xD558;&#xB824;&#xBA74; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xBC29;&#xBC95;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <ul>
 <li><code>[ ]</code> &#xC744; &#xC774;&#xC6A9;&#xD558;&#xB294; &#xBC29;&#xBC95;</li>

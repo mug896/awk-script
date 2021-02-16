@@ -153,16 +153,16 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3" data-path="regexp.html">
+        <li class="chapter " data-level="2.3" data-path="regex.html">
             
                 
-                    <a href="./regexp.html">
+                    <a href="./regex.html">
                 
                         <i class="fa fa-check"></i>
                         
                             <b>2.3.</b>
                         
-                        Regexp
+                        Regex
                     </a>
             
             
@@ -690,7 +690,7 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="field-&#xBD84;&#xB9AC;">Field &#xBD84;&#xB9AC;</h1>
-<p>Field &#xBD84;&#xB9AC;&#xC5D0;&#xB294; FS &#xB97C; &#xC774;&#xC6A9;&#xD558;&#xB294; &#xAE30;&#xBCF8; &#xBC29;&#xBC95;&#xACFC; FPAT, FIELDWIDTHS &#xB97C; &#xC774;&#xC6A9;&#xD558;&#xB294; &#xBC29;&#xBC95; &#xC138; &#xAC00;&#xC9C0;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>FS &#xC5D0; &#xC124;&#xC815;&#xB418;&#xB294; &#xAC12;&#xC740; &#xBB38;&#xC790;&#xAC00; &#xB450; &#xAC1C; &#xC774;&#xC0C1;&#xC774;&#xBA74; regexp &#xB85C; &#xD574;&#xC11D;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>Field &#xBD84;&#xB9AC;&#xC5D0;&#xB294; FS &#xB97C; &#xC774;&#xC6A9;&#xD558;&#xB294; &#xAE30;&#xBCF8; &#xBC29;&#xBC95;&#xACFC; FPAT, FIELDWIDTHS &#xB97C; &#xC774;&#xC6A9;&#xD558;&#xB294; &#xBC29;&#xBC95; &#xC138; &#xAC00;&#xC9C0;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.<br>FS &#xC5D0; &#xC124;&#xC815;&#xB418;&#xB294; &#xAC12;&#xC740; &#xBB38;&#xC790;&#xAC00; &#xB450; &#xAC1C; &#xC774;&#xC0C1;&#xC774;&#xBA74; regex &#xB85C; &#xD574;&#xC11D;&#xB429;&#xB2C8;&#xB2E4;.</p>
 <p><a name="FS"></a></p>
 <h3 id="&#xB514;&#xD3F4;&#xD2B8;-&#xAC12;&#xC740;-fs---">&#xB514;&#xD3F4;&#xD2B8; &#xAC12;&#xC740; <code>FS = &quot; &quot;</code></h3>
 <p>RS( Record Seperator ) &#xC5D0;&#xC11C;&#xB294; <code>RS=&quot;&quot;</code> &#xAC00; &#xD2B9;&#xBCC4;&#xD788; &#xCC98;&#xB9AC;&#xB41C;&#xB2E4;&#xBA74;
@@ -757,7 +757,7 @@ YYY
 <span class="hljs-number">111</span>
 </code></pre>
 <h4 id="cut-&#xBA85;&#xB839;&#xACFC;-&#xAC19;&#xC774;-fs-&#xAC12;&#xC744;-&#xC2E4;&#xC81C;-space-&#xB85C;-&#xC124;&#xC815;&#xD558;&#xB824;&#xBA74;">cut &#xBA85;&#xB839;&#xACFC; &#xAC19;&#xC774; FS &#xAC12;&#xC744; &#xC2E4;&#xC81C; space &#xB85C; &#xC124;&#xC815;&#xD558;&#xB824;&#xBA74;</h4>
-<p>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; regexp &#xD45C;&#xD604;&#xC2DD; <code>[ ]</code> or <code>( )</code> &#xC744; &#xC774;&#xC6A9;&#xD574; &#xC124;&#xC815;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; regex &#xD45C;&#xD604;&#xC2DD; <code>[ ]</code> or <code>( )</code> &#xC744; &#xC774;&#xC6A9;&#xD574; &#xC124;&#xC815;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash"><span class="hljs-comment"># space &#xC218;&#xC5D0; &#xAD00;&#xACC4;&#xC5C6;&#xC774; &#xD544;&#xB4DC; &#xAC1C;&#xC218;&#xAC00; 4 &#xAC1C;&#xB85C; &#xB098;&#xC628;&#xB2E4;.</span>
 $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;11 22   33      44&apos;</span> | awk <span class="hljs-string">&apos;{ print NF }&apos;</span> FS=<span class="hljs-string">&apos; &apos;</span>
 <span class="hljs-number">4</span>
@@ -830,7 +830,7 @@ Becky) (<span class="hljs-number">555</span>-<span class="hljs-number">7685</spa
 <span class="hljs-variable">$6</span> : a
 <span class="hljs-variable">$7</span> : r
 </code></pre>
-<h3 id="fs-&#xAC12;&#xC5D0;-&#xC0AC;&#xC6A9;&#xB418;&#xB294;---regexp-&#xBB38;&#xC790;">FS &#xAC12;&#xC5D0; &#xC0AC;&#xC6A9;&#xB418;&#xB294; <code>^</code>, <code>$</code> regexp &#xBB38;&#xC790;</h3>
+<h3 id="fs-&#xAC12;&#xC5D0;-&#xC0AC;&#xC6A9;&#xB418;&#xB294;---regex-&#xBB38;&#xC790;">FS &#xAC12;&#xC5D0; &#xC0AC;&#xC6A9;&#xB418;&#xB294; <code>^</code>, <code>$</code> regex &#xBB38;&#xC790;</h3>
 <p>FS &#xC5D0; &#xC0AC;&#xC6A9;&#xB418;&#xB294; <code>^</code>, <code>$</code> &#xBB38;&#xC790;&#xB294; &#xB808;&#xCF54;&#xB4DC;&#xC758; &#xC2DC;&#xC791;&#xACFC; &#xB05D;&#xC744; &#xB098;&#xD0C0;&#xB0C5;&#xB2C8;&#xB2E4;.
 &#xB530;&#xB77C;&#xC11C; &#xB9CC;&#xC57D;&#xC5D0; FS &#xC5D0; <code>^</code> &#xB97C; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;&#xBA74; &#xB808;&#xCF54;&#xB4DC;&#xC758; &#xC2DC;&#xC791; &#xBD80;&#xBD84;&#xC5D0;&#xB9CC; &#xB9E4;&#xCE6D;&#xC774; &#xB418;&#xACE0;
 <code>$</code> &#xB97C; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;&#xBA74; &#xB808;&#xCF54;&#xB4DC;&#xC758; &#xB9C8;&#xC9C0;&#xB9C9; &#xBD80;&#xBD84;&#xC5D0;&#xB9CC; &#xB9E4;&#xCE6D;&#xC774; &#xB418;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.</p>
