@@ -766,6 +766,16 @@ $ awk <span class="hljs-string">&apos;BEGIN { RS=&quot;[^0-9]+&quot;; ORS=&quot;
 <span class="hljs-number">11</span> <span class="hljs-number">22</span> <span class="hljs-number">33</span>
 <span class="hljs-number">5</span>
 <span class="hljs-number">11</span> <span class="hljs-number">22</span> <span class="hljs-number">33</span>  <span class="hljs-number">55</span>
+----------------------------------------------------
+
+$ awk <span class="hljs-string">&apos;{ for (i=5; i&lt;=NF; i++) sum += (2 ^ (i-5)) * 4096 * $i } 
+       END { print sum / 1024 }&apos;</span> /proc/buddyinfo
+<span class="hljs-number">4171104</span>
+
+$ free
+              total        used        free      shared  buff/cache   available
+Mem:       <span class="hljs-number">16301392</span>     <span class="hljs-number">4491600</span>     <span class="hljs-number">4171356</span>      <span class="hljs-number">748976</span>     <span class="hljs-number">7638436</span>    <span class="hljs-number">10723484</span>
+Swap:       <span class="hljs-number">2097148</span>      <span class="hljs-number">513984</span>     <span class="hljs-number">1583164</span>
 </code></pre>
 <h3 id="fs">FS</h3>
 <p>input Field Separator &#xC785;&#xB2C8;&#xB2E4;. 
