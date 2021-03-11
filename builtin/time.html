@@ -726,11 +726,12 @@ $ awk <span class="hljs-string">&apos;BEGIN{ print strftime(&quot;%Y-%m-%d %H:%M
 <pre><code class="lang-bash"><span class="hljs-comment"># 2017&#xB144; 06&#xC6D4; 07&#xC77C; 08&#xC2DC; 09&#xBD84; 10&#xCD08; &#xB85C;&#xBD80;&#xD130; &#xD604;&#xC7AC;&#xAE4C;&#xC9C0;&#xC758; &#xC2DC;&#xAC04; &#xCC28;&#xC774;</span>
 $ awk <span class="hljs-string">&apos;BEGIN { print timediff( systime() - mktime(&quot;2017 6 7 8 9 10&quot;)) }
 function timediff( d ) {
-   return int( d / 86400 ) &quot; &#xC77C; &quot;             \
-   int(( d % 86400 ) / 3600 ) &quot; &#xC2DC;&#xAC04; &quot;        \
-   int((( d % 86400 ) % 3600 ) / 60 ) &quot; &#xBD84; &quot;  \
-   int((( d % 86400 ) % 3600 ) % 60 ) &quot; &#xCD08; &quot; 
-}&apos;</span> 
+    day=86400; hour=3600; minute=60;
+    return int( d / day ) &quot; &#xC77C; &quot; \
+    int(( d % day ) / hour ) &quot; &#xC2DC;&#xAC04; &quot; \
+    int((( d % day ) % hour ) / minute ) &quot; &#xBD84; &quot; \
+    int((( d % day ) % hour ) % minute ) &quot; &#xCD08; &quot; 
+}&apos;</span>
 <span class="hljs-number">323</span> &#xC77C; <span class="hljs-number">2</span> &#xC2DC;&#xAC04; <span class="hljs-number">37</span> &#xBD84; <span class="hljs-number">40</span> &#xCD08;
 </code></pre>
 <h4 id="strftime---format--timestamp--utcflag----">strftime ( [ <em>format</em> [, <em>timestamp</em> [, <em>utc-flag</em> ] ] ] )</h4>
