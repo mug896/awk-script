@@ -816,6 +816,62 @@ parent END      pid:    <span class="hljs-number">16643</span>   var:    <span c
 <li><p><strong>result = fts(pathlist, flags, filedata)</strong></p>
 </li>
 </ul>
+<pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;@load &quot;filefuncs&quot;
+BEGIN { 
+    startdir[0] = &quot;/usr/bin&quot; 
+    res = fts(startdir, FTS_PHYSICAL, fdata)
+    walk_array(fdata, &quot;arr&quot;)
+}
+function walk_array(arr, name,      i)
+{
+    for (i in arr)
+        if (isarray(arr[i]))
+            walk_array(arr[i], (name &quot;[&quot; i &quot;]&quot;))
+        else
+            printf(&quot;%s[%s] = %s\n&quot;, name, i, arr[i])
+}
+&apos;</span>
+. . . .
+arr[bin][lessfile][<span class="hljs-built_in">stat</span>][ctime] = <span class="hljs-number">1603622583</span>
+arr[bin][lessfile][<span class="hljs-built_in">stat</span>][blocks] = <span class="hljs-number">0</span>
+arr[bin][lessfile][<span class="hljs-built_in">stat</span>][nlink] = <span class="hljs-number">1</span>
+arr[bin][lessfile][<span class="hljs-built_in">stat</span>][name] = lessfile
+arr[bin][lessfile][<span class="hljs-built_in">stat</span>][atime] = <span class="hljs-number">1624610476</span>
+arr[bin][lessfile][<span class="hljs-built_in">stat</span>][pmode] = lrwxrwxrwx
+arr[bin][lessfile][<span class="hljs-built_in">stat</span>][size] = <span class="hljs-number">8</span>
+arr[bin][lessfile][<span class="hljs-built_in">stat</span>][uid] = <span class="hljs-number">0</span>
+arr[bin][lessfile][path] = /usr/bin/lessfile     &lt;-----  &#xC5EC;&#xAE30;&#xC11C; isarray() &#xAC00; <span class="hljs-literal">false</span> &#xAC00; &#xB41C;&#xB2E4;.
+arr[bin][traceroute-nanog][<span class="hljs-built_in">stat</span>][blksize] = <span class="hljs-number">4096</span>
+arr[bin][traceroute-nanog][<span class="hljs-built_in">stat</span>][devbsize] = <span class="hljs-number">512</span>
+arr[bin][traceroute-nanog][<span class="hljs-built_in">stat</span>][mtime] = <span class="hljs-number">1472485551</span>
+arr[bin][traceroute-nanog][<span class="hljs-built_in">stat</span>][mode] = <span class="hljs-number">33261</span>
+arr[bin][traceroute-nanog][<span class="hljs-built_in">stat</span>][<span class="hljs-built_in">type</span>] = file
+. . . .
+----------------------------------------------------
+
+<span class="hljs-comment"># &#xB2E4;&#xC74C;&#xC740; /usr &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xB97C; recursive &#xD558;&#xAC8C; &#xAC80;&#xC0C9;&#xD574;&#xC11C; &#xD0C0;&#xC785;&#xC774; file &#xC77C; &#xACBD;&#xC6B0; </span>
+<span class="hljs-comment"># size &#xB97C; &#xBAA8;&#xB450; &#xB354;&#xD574;&#xC11C; &#xCD1D; &#xD569;&#xACC4;&#xB97C; &#xAD6C;&#xD558;&#xB294;&#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</span>
+
+$ awk <span class="hljs-string">&apos;@load &quot;filefuncs&quot; 
+BEGIN { 
+    total_size = 0
+    startdir[0]=&quot;/usr&quot;
+    fts(startdir, FTS_PHYSICAL, fdata)
+    print walk_array(fdata)
+}
+function walk_array(arr,   i)
+{
+    for (i in arr) {
+        if (isarray(arr[i]))
+            walk_array(arr[i])
+        else if (arr[&quot;stat&quot;][&quot;type&quot;] == &quot;file&quot;)     # isarray(arr[i]) &#xAC00; &#xC544;&#xB2C8;&#xB77C;&#xB294;&#xAC83;&#xC740;
+            total_size += arr[&quot;stat&quot;][&quot;size&quot;]       # i &#xAC12;&#xC774; path &#xB77C;&#xB294; &#xC758;&#xBBF8;.
+    }                                               # &#xB530;&#xB77C;&#xC11C; arr &#xB97C; &#xC774;&#xC6A9;&#xD574; arr[&quot;path&quot;]
+    return total_size                               # &#xAC12;&#xC774;&#xB098; arr[&quot;stat&quot;] &#xAC12;&#xC744; &#xAD6C;&#xD560;&#xC218;&#xC788;&#xB2E4;.
+}
+&apos;</span>
+<span class="hljs-number">13392927146</span>
+</code></pre>
 <hr>
 <h2 id="readfile">readfile</h2>
 <p><a href="https://www.gnu.org/software/gawk/manual/html_node/Extension-Sample-Readfile.html" target="_blank">https://www.gnu.org/software/gawk/manual/html_node/Extension-Sample-Readfile.html</a></p>
