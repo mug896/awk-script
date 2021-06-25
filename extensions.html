@@ -863,7 +863,7 @@ function walk_array(arr,   i) {
         if (isarray(arr[i]))
             walk_array(arr[i])
         else if (arr[&quot;stat&quot;][&quot;type&quot;] == &quot;file&quot;)     # isarray(arr[i]) &#xAC00; &#xC544;&#xB2C8;&#xB77C;&#xB294; &#xAC83;&#xC740;
-            total_size += arr[&quot;stat&quot;][&quot;size&quot;]       # i &#xAC12;&#xC774; path &#xB77C;&#xB294; &#xC758;&#xBBF8;.
+            total_size += arr[&quot;stat&quot;][&quot;size&quot;]       # i &#xAC12;&#xC774; &quot;path&quot; &#xB77C;&#xB294; &#xC758;&#xBBF8;.
     }                                               # &#xB530;&#xB77C;&#xC11C; arr &#xB97C; &#xC774;&#xC6A9;&#xD574; arr[&quot;path&quot;]
     return total_size                               # &#xAC12;&#xC774;&#xB098; arr[&quot;stat&quot;] &#xAC12;&#xC744; &#xAD6C;&#xD560;&#xC218;&#xC788;&#xB2E4;.
 }
