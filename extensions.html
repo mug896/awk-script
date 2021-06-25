@@ -819,7 +819,7 @@ parent END      pid:    <span class="hljs-number">16643</span>   var:    <span c
 <pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;@load &quot;filefuncs&quot;
 BEGIN { 
     startdir[0] = &quot;/usr/bin&quot; 
-    res = fts(startdir, FTS_PHYSICAL, fdata)
+    fts(startdir, FTS_PHYSICAL, fdata)
     walk_array(fdata, &quot;arr&quot;)
 }
 function walk_array(arr, name,      i) {
