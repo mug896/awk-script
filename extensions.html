@@ -822,8 +822,7 @@ BEGIN {
     res = fts(startdir, FTS_PHYSICAL, fdata)
     walk_array(fdata, &quot;arr&quot;)
 }
-function walk_array(arr, name,      i)
-{
+function walk_array(arr, name,      i) {
     for (i in arr)
         if (isarray(arr[i]))
             walk_array(arr[i], (name &quot;[&quot; i &quot;]&quot;))
@@ -840,7 +839,7 @@ arr[bin][lessfile][<span class="hljs-built_in">stat</span>][atime] = <span class
 arr[bin][lessfile][<span class="hljs-built_in">stat</span>][pmode] = lrwxrwxrwx
 arr[bin][lessfile][<span class="hljs-built_in">stat</span>][size] = <span class="hljs-number">8</span>
 arr[bin][lessfile][<span class="hljs-built_in">stat</span>][uid] = <span class="hljs-number">0</span>
-arr[bin][lessfile][path] = /usr/bin/lessfile     &lt;-----  &#xC5EC;&#xAE30;&#xC11C; isarray() &#xAC00; <span class="hljs-literal">false</span> &#xAC00; &#xB41C;&#xB2E4;.
+arr[bin][lessfile][path] = /usr/bin/lessfile    &lt;-----  &#xC5EC;&#xAE30;&#xC11C; isarray() &#xAC00; <span class="hljs-literal">false</span> &#xAC00; &#xB41C;&#xB2E4;.
 arr[bin][traceroute-nanog][<span class="hljs-built_in">stat</span>][blksize] = <span class="hljs-number">4096</span>
 arr[bin][traceroute-nanog][<span class="hljs-built_in">stat</span>][devbsize] = <span class="hljs-number">512</span>
 arr[bin][traceroute-nanog][<span class="hljs-built_in">stat</span>][mtime] = <span class="hljs-number">1472485551</span>
@@ -859,12 +858,11 @@ BEGIN {
     fts(startdir, FTS_PHYSICAL, fdata)
     print walk_array(fdata)
 }
-function walk_array(arr,   i)
-{
+function walk_array(arr,   i) {
     for (i in arr) {
         if (isarray(arr[i]))
             walk_array(arr[i])
-        else if (arr[&quot;stat&quot;][&quot;type&quot;] == &quot;file&quot;)     # isarray(arr[i]) &#xAC00; &#xC544;&#xB2C8;&#xB77C;&#xB294;&#xAC83;&#xC740;
+        else if (arr[&quot;stat&quot;][&quot;type&quot;] == &quot;file&quot;)     # isarray(arr[i]) &#xAC00; &#xC544;&#xB2C8;&#xB77C;&#xB294; &#xAC83;&#xC740;
             total_size += arr[&quot;stat&quot;][&quot;size&quot;]       # i &#xAC12;&#xC774; path &#xB77C;&#xB294; &#xC758;&#xBBF8;.
     }                                               # &#xB530;&#xB77C;&#xC11C; arr &#xB97C; &#xC774;&#xC6A9;&#xD574; arr[&quot;path&quot;]
     return total_size                               # &#xAC12;&#xC774;&#xB098; arr[&quot;stat&quot;] &#xAC12;&#xC744; &#xAD6C;&#xD560;&#xC218;&#xC788;&#xB2E4;.
