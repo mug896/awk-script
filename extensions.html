@@ -816,7 +816,9 @@ parent END      pid:    <span class="hljs-number">16643</span>   var:    <span c
 <li><p><strong>result = fts(pathlist, flags, filedata)</strong></p>
 </li>
 </ul>
-<pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;@load &quot;filefuncs&quot;
+<pre><code class="lang-bash"><span class="hljs-comment"># /usr/bin &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xB97C; recursive &#xD558;&#xAC8C; &#xAC80;&#xC0C9;&#xD574;&#xC11C; &#xD30C;&#xC77C;&#xC758; &#xC18D;&#xC131;&#xB4E4;&#xC744; &#xCD9C;&#xB825;&#xD569;&#xB2C8;&#xB2E4;.</span>
+
+$ awk <span class="hljs-string">&apos;@load &quot;filefuncs&quot;
 BEGIN { 
     startdir[0] = &quot;/usr/bin&quot; 
     fts(startdir, FTS_PHYSICAL, fdata)
