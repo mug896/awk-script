@@ -853,7 +853,7 @@ arr[bin][traceroute-nanog][<span class="hljs-built_in">stat</span>][<span class=
 <span class="hljs-comment"># &#xB2E4;&#xC74C;&#xC740; /usr &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xB97C; recursive &#xD558;&#xAC8C; &#xAC80;&#xC0C9;&#xD574;&#xC11C; &#xD0C0;&#xC785;&#xC774; file &#xC77C; &#xACBD;&#xC6B0; </span>
 <span class="hljs-comment"># size &#xB97C; &#xBAA8;&#xB450; &#xB354;&#xD574;&#xC11C; &#xCD1D; &#xD569;&#xACC4;&#xB97C; &#xAD6C;&#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</span>
 
-$ awk <span class="hljs-string">&apos;@load &quot;filefuncs&quot; 
+$ time awk <span class="hljs-string">&apos;@load &quot;filefuncs&quot; 
 BEGIN { 
     total_size = 0
     startdir[0]=&quot;/usr&quot;
@@ -870,7 +870,11 @@ function walk_array(arr,   i) {
     return total_size                               # &#xAC12;&#xC774;&#xB098; arr[&quot;stat&quot;] &#xAC12;&#xC744; &#xAD6C;&#xD560;&#xC218;&#xC788;&#xB2E4;.
 }
 &apos;</span>
-<span class="hljs-number">13392927146</span>
+<span class="hljs-number">13393956522</span>
+
+real    <span class="hljs-number">0</span>m4.<span class="hljs-number">583</span>s
+user    <span class="hljs-number">0</span>m3.<span class="hljs-number">205</span>s
+sys     <span class="hljs-number">0</span>m1.<span class="hljs-number">357</span>s
 </code></pre>
 <hr>
 <h2 id="readfile">readfile</h2>
