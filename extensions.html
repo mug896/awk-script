@@ -895,6 +895,31 @@ contents = readfile(<span class="hljs-string">&quot;/path/to/file&quot;</span>);
 <hr>
 <h2 id="readdir">readdir</h2>
 <p><a href="https://www.gnu.org/software/gawk/manual/html_node/Extension-Sample-Readdir.html" target="_blank">https://www.gnu.org/software/gawk/manual/html_node/Extension-Sample-Readdir.html</a></p>
+<p>&#xC774; &#xBAA8;&#xB4C8;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xBA85;&#xB839; &#xB77C;&#xC778;&#xC758; &#xC778;&#xC218;&#xB098; getline &#xC5D0;&#xC11C; &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xAC00; &#xC0AC;&#xC6A9;&#xB420; &#xACBD;&#xC6B0;
+&#xB0B4;&#xC6A9;&#xC744; &#xC77D;&#xC5B4;&#xB4E4;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ awk -F <span class="hljs-string">&apos;/&apos;</span> <span class="hljs-string">&apos;@load &quot;readdir&quot; 
+{ printf &quot;[type] %s, [inode] %s, [name] %s\n&quot;, $3, $1, $2 }
+&apos;</span> /etc
+. . .
+[<span class="hljs-built_in">type</span>] d, [inode] <span class="hljs-number">12320803</span>, [name] dconf
+[<span class="hljs-built_in">type</span>] d, [inode] <span class="hljs-number">12988233</span>, [name] libvirt
+[<span class="hljs-built_in">type</span>] f, [inode] <span class="hljs-number">12320923</span>, [name] gai.conf
+[<span class="hljs-built_in">type</span>] d, [inode] <span class="hljs-number">12320848</span>, [name] newt
+[<span class="hljs-built_in">type</span>] f, [inode] <span class="hljs-number">12331032</span>, [name] csh.login
+[<span class="hljs-built_in">type</span>] l, [inode] <span class="hljs-number">12330620</span>, [name] os-release
+[<span class="hljs-built_in">type</span>] f, [inode] <span class="hljs-number">12323467</span>, [name] passwd.org
+[<span class="hljs-built_in">type</span>] d, [inode] <span class="hljs-number">12320812</span>, [name] fonts
+[<span class="hljs-built_in">type</span>] d, [inode] <span class="hljs-number">12320829</span>, [name] initramfs-tools
+. . .
+
+<span class="hljs-comment"># getline &#xC0AC;&#xC6A9;&#xC2DC;</span>
+$ awk -F <span class="hljs-string">&apos;/&apos;</span> <span class="hljs-string">&apos;@load &quot;readdir&quot; 
+BEGIN{ 
+    while (getline &lt; &quot;/etc&quot;) 
+        printf &quot;[type] %s, [inode] %s, [name] %s\n&quot;, $3, $1, $2 
+}&apos;</span>
+. . .
+</code></pre>
 <hr>
 <h2 id="ordchr">ordchr</h2>
 <p><a href="https://www.gnu.org/software/gawk/manual/html_node/Extension-Sample-Ord.html" target="_blank">https://www.gnu.org/software/gawk/manual/html_node/Extension-Sample-Ord.html</a></p>
