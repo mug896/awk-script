@@ -856,7 +856,7 @@ arr[bin][traceroute-nanog][<span class="hljs-built_in">stat</span>][<span class=
 $ time awk <span class="hljs-string">&apos;@load &quot;filefuncs&quot; 
 BEGIN { 
     total_size = 0
-    startdir[0]=&quot;/usr&quot;
+    startdir[0] = &quot;/usr&quot;
     fts(startdir, FTS_PHYSICAL, fdata)
     print walk_array(fdata)
 }
