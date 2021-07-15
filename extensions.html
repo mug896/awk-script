@@ -855,26 +855,26 @@ arr[bin][traceroute-nanog][<span class="hljs-built_in">stat</span>][<span class=
 
 $ time awk <span class="hljs-string">&apos;@load &quot;filefuncs&quot; 
 BEGIN { 
-    total_size = 0
     startdir[0] = &quot;/usr&quot;
     fts(startdir, FTS_PHYSICAL, fdata)
     print walk_array(fdata)
 }
-function walk_array(arr,   i) {
+function walk_array(arr,   total_size, i) {
+    total_size = 0
     for (i in arr) {
         if (isarray(arr[i]))
-            walk_array(arr[i])
+            total_size += walk_array(arr[i])
         else if (arr[&quot;stat&quot;][&quot;type&quot;] == &quot;file&quot;)     # isarray(arr[i]) &#xAC00; &#xC544;&#xB2C8;&#xB77C;&#xB294; &#xAC83;&#xC740;
             total_size += arr[&quot;stat&quot;][&quot;size&quot;]       # i &#xAC12;&#xC774; &quot;path&quot; &#xB77C;&#xB294; &#xC758;&#xBBF8;.
     }                                               # &#xB530;&#xB77C;&#xC11C; arr &#xB97C; &#xC774;&#xC6A9;&#xD574; arr[&quot;path&quot;]
     return total_size                               # &#xAC12;&#xC774;&#xB098; arr[&quot;stat&quot;] &#xAC12;&#xC744; &#xAD6C;&#xD560;&#xC218;&#xC788;&#xB2E4;.
 }
 &apos;</span>
-<span class="hljs-number">13393956522</span>
+<span class="hljs-number">13378070502</span>
 
-real    <span class="hljs-number">0</span>m4.<span class="hljs-number">583</span>s
-user    <span class="hljs-number">0</span>m3.<span class="hljs-number">205</span>s
-sys     <span class="hljs-number">0</span>m1.<span class="hljs-number">357</span>s
+real    <span class="hljs-number">0</span>m4.<span class="hljs-number">580</span>s
+user    <span class="hljs-number">0</span>m3.<span class="hljs-number">110</span>s
+sys     <span class="hljs-number">0</span>m1.<span class="hljs-number">456</span>s
 </code></pre>
 <hr>
 <h2 id="readfile">readfile</h2>
