@@ -717,10 +717,10 @@ awk: -:3:           ^ syntax error
 </span></code></pre>
 <p>double quotes &#xC774;&#xBBC0;&#xB85C; escape sequence &#xAC00; &#xCC98;&#xB9AC;&#xB429;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash"><span class="hljs-comment"># $1 == &quot;111\222&quot; &#xC5D0;&#xC11C; &apos;\&apos; &#xAC00; escape &#xBB38;&#xC790;&#xB85C; &#xCC98;&#xB9AC;&#xB418;&#xC5B4; &#xB9E4;&#xCE6D;&#xC774; &#xB418;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;.</span>
-$ <span class="hljs-built_in">printf</span> %s <span class="hljs-string">&apos;111\222,333\444&apos;</span> | awk -F, <span class="hljs-string">&apos;$1 == &quot;111\222&quot; { print $1 }&apos;</span> 
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;111\222,333\444&apos;</span> | awk -F, <span class="hljs-string">&apos;$1 == &quot;111\222&quot; { print $1 }&apos;</span> 
 
 <span class="hljs-comment"># &apos;\&apos; &#xBB38;&#xC790;&#xB97C; &apos;\\&apos; &#xB85C; escape &#xD558;&#xBA74; &#xC815;&#xC0C1;&#xC801;&#xC73C;&#xB85C; &#xB9E4;&#xCE6D;&#xC774; &#xB41C;&#xB2E4;.</span>
-$ <span class="hljs-built_in">printf</span> %s <span class="hljs-string">&apos;111\222,333\444&apos;</span> | awk -F, <span class="hljs-string">&apos;$1 == &quot;111\\222&quot; { print $1 }&apos;</span> 
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;111\222,333\444&apos;</span> | awk -F, <span class="hljs-string">&apos;$1 == &quot;111\\222&quot; { print $1 }&apos;</span> 
 <span class="hljs-number">111</span>\<span class="hljs-number">222</span>
 </code></pre>
 <p>&#xC2A4;&#xD2B8;&#xB9C1; &#xAC12;&#xC740; &#xC0B0;&#xC220;&#xC5F0;&#xC0B0;&#xC5D0;&#xC11C;&#xB294; <code>0</code> &#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.
