@@ -1032,6 +1032,35 @@ $ gawk <span class="hljs-string">&apos;BEGIN {
 <span class="hljs-number">1.3</span>
 <span class="hljs-number">1.4</span>
 </code></pre>
+<p>&#xC22B;&#xC790; <code>1.35</code> &#xC640; <code>6.35</code> &#xB97C; &#xC18C;&#xC218; &#xCCAB;&#xC9F8; &#xC790;&#xB9AC;&#xAE4C;&#xC9C0;&#xB9CC; &#xCD9C;&#xB825;&#xD558;&#xBA74; &#xBC18;&#xC62C;&#xB9BC;&#xC774; &#xB418;&#xBBC0;&#xB85C; &#xACB0;&#xACFC;&#xAC00; &#xAC01;&#xAC01; 
+<code>1.4</code> &#xC640; <code>6.4</code> &#xAC00; &#xB3FC;&#xC57C; &#xD558;&#xB294;&#xB370;&#xC694;. &#xD558;&#xC9C0;&#xB9CC; &#xCD9C;&#xB825;&#xC744; &#xD574;&#xBCF4;&#xBA74; <code>6.35</code> &#xC5D0;&#xC11C;&#xB294; &#xBC18;&#xC62C;&#xB9BC;&#xC774; 
+&#xC77C;&#xC5B4;&#xB098;&#xC9C0; &#xC54A;&#xB294;&#xB370; &#xC774;&#xAC83;&#xC740; <code>6.35</code> &#xB294; &#xC2E4;&#xC81C; <code>6.3499999...</code> &#xAC00; &#xB418;&#xAE30; &#xB54C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;.
+( &#xC774;&#xAC83;&#xC740; python &#xC774;&#xB098; nodejs &#xAC19;&#xC740; &#xB2E4;&#xB978; &#xC5B8;&#xC5B4;&#xB3C4; &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xC785;&#xB2C8;&#xB2E4;.)</p>
+<pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;BEGIN { printf &quot;%.20f\n&quot;, 1.35 }&apos;</span> 
+<span class="hljs-number">1.35000000000000008882</span>
+
+$ awk <span class="hljs-string">&apos;BEGIN { printf &quot;%.20f\n&quot;, 6.35 }&apos;</span>        <span class="hljs-comment"># 6.35 &#xB294; &#xC2E4;&#xC81C; 6.3499999 ...</span>
+<span class="hljs-number">6.34999999999999964473</span>
+
+$ awk <span class="hljs-string">&apos;BEGIN { printf &quot;%.1f\n&quot;, 1.35 }&apos;</span> 
+<span class="hljs-number">1.4</span>
+
+$ awk <span class="hljs-string">&apos;BEGIN { printf &quot;%.1f\n&quot;, 6.35 }&apos;</span>         <span class="hljs-comment"># &#xB530;&#xB77C;&#xC11C; &#xBC18;&#xC62C;&#xB9BC;&#xC774; &#xC548;&#xB41C;&#xB2E4; </span>
+<span class="hljs-number">6.3</span>
+
+$ python3 -c <span class="hljs-string">&apos;print(&quot;%.1f&quot; % 1.35)&apos;</span>
+<span class="hljs-number">1.4</span>
+
+$ python3 -c <span class="hljs-string">&apos;print(&quot;%.1f&quot; % 6.35)&apos;</span>             <span class="hljs-comment"># python &#xB3C4; &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;</span>
+<span class="hljs-number">6.3</span>
+</code></pre>
+<p>&#xC774;&#xB54C;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; <code>-M</code> &#xC635;&#xC158;&#xACFC; <code>ROUNDMODE=U</code> <a href="builtin_variables.html#ROUNDMODE">&#xB77C;&#xC6B4;&#xB4DC;&#xBAA8;&#xB4DC;</a> &#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xC27D;&#xAC8C; &#xD574;&#xACB0;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ awk -M -v ROUNDMODE=U <span class="hljs-string">&apos;BEGIN { printf &quot;%.1f\n&quot;, 1.35 }&apos;</span> 
+<span class="hljs-number">1.4</span>
+
+$ awk -M -v ROUNDMODE=U <span class="hljs-string">&apos;BEGIN { printf &quot;%.1f\n&quot;, 6.35 }&apos;</span> 
+<span class="hljs-number">6.4</span>
+</code></pre>
 <h4 id="errors-accumulate">Errors Accumulate</h4>
 <p>&#xC774;&#xC640; &#xAC19;&#xC740; binary floating point &#xC758; 10 &#xC9C4;&#xC218; &#xC5F0;&#xC0B0;&#xC5D0; &#xB300;&#xD55C; &#xC624;&#xCC28;&#xB294;
 &#xD55C;&#xBC88;&#xC758; &#xC5F0;&#xC0B0;&#xC5D0;&#xC11C;&#xB294; &#xD070; &#xBB38;&#xC81C;&#xAC00; &#xB418;&#xC9C0; &#xC54A;&#xACA0;&#xC9C0;&#xB9CC;
