@@ -934,7 +934,7 @@ orange                             mango
 
 -------------------------------------------------
 
-$ awk <span class="hljs-operator">-f</span> /dev/fd/<span class="hljs-number">3</span> <span class="hljs-number">3</span>&lt;&lt;\EOF order1 order2
+$ awk <span class="hljs-operator">-f</span> - &lt;&lt;\EOF order1 order2
 BEGIN { 
     <span class="hljs-keyword">while</span> (getline &lt; ARGV[<span class="hljs-number">1</span>] &gt; <span class="hljs-number">0</span>) { u[<span class="hljs-variable">$1</span>]; o1[<span class="hljs-variable">$1</span>]=<span class="hljs-number">1</span> }    <span class="hljs-comment"># u[$1] &#xB294; union &#xC744; &#xC704;&#xD55C; array</span>
     <span class="hljs-keyword">while</span> (getline &lt; ARGV[<span class="hljs-number">2</span>] &gt; <span class="hljs-number">0</span>) { u[<span class="hljs-variable">$1</span>]; o2[<span class="hljs-variable">$1</span>]=<span class="hljs-number">1</span> }
