@@ -1164,18 +1164,18 @@ ID &#xAC12;&#xC740; 1 ~ 3 &#xAE4C;&#xC9C0; &#xC774;&#xACE0;, &#xAC01;&#xAC01;&#x
 <p>&#xB3D9;&#xC77C;&#xD55C; &#xD30C;&#xC77C;&#xC744; &#xB2E4;&#xC2DC; &#xC77D;&#xC5B4;&#xB4E4;&#xC5EC;&#xC57C; &#xD560; &#xB54C;&#xB294; &#xBA3C;&#xC800; close &#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">$ awk <span class="hljs-operator">-f</span> - &lt;&lt;\@
 BEGIN { check(<span class="hljs-string">&quot;data&quot;</span>, <span class="hljs-number">1</span>); check(<span class="hljs-string">&quot;data&quot;</span>, <span class="hljs-number">2</span>); check(<span class="hljs-string">&quot;data&quot;</span>, <span class="hljs-number">3</span>) }
-<span class="hljs-keyword">function</span> check(file, id,      a, b) {
+<span class="hljs-keyword">function</span> check(file, id,      a, r) {
     <span class="hljs-keyword">while</span> (getline &lt; file &gt; <span class="hljs-number">0</span>) <span class="hljs-keyword">if</span> (<span class="hljs-variable">$1</span> == id &amp;&amp; <span class="hljs-variable">$3</span> == <span class="hljs-string">&quot;WRITE&quot;</span>) a[<span class="hljs-variable">$2</span>]
     close(file)   <span class="hljs-comment"># &#xD30C;&#xC77C;&#xC744; &#xCC98;&#xC74C;&#xBD80;&#xD130; &#xB2E4;&#xC2DC; &#xC77D;&#xC73C;&#xB824;&#xBA74; close &#xD574;&#xC57C;&#xD55C;&#xB2E4;.</span>
     <span class="hljs-keyword">while</span> (getline &lt; file &gt; <span class="hljs-number">0</span>)
         <span class="hljs-keyword">if</span> (<span class="hljs-variable">$3</span> == <span class="hljs-string">&quot;READ&quot;</span> &amp;&amp; <span class="hljs-variable">$2</span> <span class="hljs-keyword">in</span> a)
             switch (<span class="hljs-variable">$1</span>) {
-                <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>: b[<span class="hljs-number">1</span>]+=<span class="hljs-number">1</span>; <span class="hljs-built_in">break</span>
-                <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>: b[<span class="hljs-number">2</span>]+=<span class="hljs-number">1</span>; <span class="hljs-built_in">break</span>
-                <span class="hljs-keyword">case</span> <span class="hljs-number">3</span>: b[<span class="hljs-number">3</span>]+=<span class="hljs-number">1</span>; <span class="hljs-built_in">break</span>
+                <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>: r[<span class="hljs-number">1</span>]+=<span class="hljs-number">1</span>; <span class="hljs-built_in">break</span>
+                <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>: r[<span class="hljs-number">2</span>]+=<span class="hljs-number">1</span>; <span class="hljs-built_in">break</span>
+                <span class="hljs-keyword">case</span> <span class="hljs-number">3</span>: r[<span class="hljs-number">3</span>]+=<span class="hljs-number">1</span>; <span class="hljs-built_in">break</span>
             }
     close(file)   <span class="hljs-comment"># &#xB2E4;&#xC74C;&#xBC88; &#xD568;&#xC218; &#xD638;&#xCD9C;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB3FC;&#xC57C; &#xD558;&#xBBC0;&#xB85C; close &#xD574;&#xC57C;&#xD55C;&#xB2E4;.</span>
-    <span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;ID %d WRITE = id1: %d, id2: %d, id3: %d\n&quot;</span>, id, b[<span class="hljs-number">1</span>], b[<span class="hljs-number">2</span>], b[<span class="hljs-number">3</span>]
+    <span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;ID %d WRITE = id1: %d, id2: %d, id3: %d\n&quot;</span>, id, r[<span class="hljs-number">1</span>], r[<span class="hljs-number">2</span>], r[<span class="hljs-number">3</span>]
 }
 @
 ID <span class="hljs-number">1</span> WRITE = id1: <span class="hljs-number">1</span>, id2: <span class="hljs-number">0</span>, id3: <span class="hljs-number">1</span>    <span class="hljs-comment"># ID 1 &#xBC88;&#xC774; WRITE &#xD55C;&#xAC83;&#xC744; id1 &#xC774; 1&#xBC88;, id3 &#xC774; 1&#xBC88; &#xC77D;&#xC74C;</span>
