@@ -987,10 +987,20 @@ Amelia     <span class="hljs-number">555</span>-<span class="hljs-number">5553</
 Anthony    <span class="hljs-number">555</span>-<span class="hljs-number">3412</span>
 Becky      <span class="hljs-number">555</span>-<span class="hljs-number">7685</span>
 </code></pre>
-<p>&#xD3EC;&#xBA67; &#xC2A4;&#xD2B8;&#xB9C1;&#xC744; &#xC0DD;&#xB7B5;&#xD574; &#xC0AC;&#xC6A9;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;BEGIN { var = &quot;bar&quot;; printf &quot;foo&quot; var &quot;\n&quot; }&apos;</span> 
+<p>&#xD3EC;&#xBA67; &#xC2A4;&#xD2B8;&#xB9C1;&#xC744; &#xC0DD;&#xB7B5;&#xD574;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xD558;&#xC9C0;&#xB9CC; &#xCD9C;&#xB825;&#xD558;&#xACE0;&#xC790; &#xD558;&#xB294; &#xAC12;&#xC5D0; &#xD3EC;&#xBA67; &#xC9C0;&#xC815;&#xC790;&#xAC00; &#xD3EC;&#xD568;&#xB420; &#xACBD;&#xC6B0; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD560; &#xC218; &#xC788;&#xC73C;&#xB2C8; &#xC8FC;&#xC758;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;BEGIN { str = &quot;bar&quot;; printf &quot;foo&quot; str &quot;\n&quot; }&apos;</span> 
 foobar
-</code></pre>
+
+<span class="hljs-comment"># str &#xBCC0;&#xC218;&#xAC12;&#xC5D0; %s &#xD3EC;&#xBA67; &#xC9C0;&#xC815;&#xC790;&#xAC00; &#xD3EC;&#xD568;&#xB418;&#xC5B4; &#xC624;&#xB958; &#xBC1C;&#xC0DD;.</span>
+$ awk <span class="hljs-string">&apos;BEGIN { str = &quot;foo %s bar&quot;; printf str }&apos;</span> 
+awk: cmd. line:<span class="hljs-number">1</span>: fatal: not enough arguments to satisfy format string
+        `foo %s bar<span class="hljs-string">&apos;
+             ^ ran out for this one
+
+$ awk &apos;</span>BEGIN { str=<span class="hljs-string">&quot;foo %s bar&quot;</span>; <span class="hljs-built_in">printf</span> str, <span class="hljs-number">100</span> }<span class="hljs-string">&apos; 
+foo 100 bar
+</span></code></pre>
 <p>dynamic width and precision</p>
 <pre><code class="lang-bash"><span class="hljs-comment"># &apos;*&apos; &#xBB38;&#xC790;&#xB97C; &#xC774;&#xC6A9;&#xD574; width &#xC640; precision &#xC5D0; &#xBCC0;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB294; &#xAE30;&#xB2A5;&#xC785;&#xB2C8;&#xB2E4;.</span>
 $ awk <span class="hljs-string">&apos;BEGIN{
