@@ -1001,6 +1001,9 @@ awk: cmd. line:<span class="hljs-number">1</span>: fatal: not enough arguments t
 
 $ awk &apos;</span>BEGIN { str = <span class="hljs-string">&quot;foo %s bar&quot;</span>; <span class="hljs-built_in">printf</span> str, <span class="hljs-number">100</span> }<span class="hljs-string">&apos; 
 foo 100 bar
+
+$ awk &apos;</span>BEGIN { str = <span class="hljs-string">&quot;foo %s bar&quot;</span>; <span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;%s&quot;</span>, str }<span class="hljs-string">&apos; 
+foo %s bar
 </span></code></pre>
 <p>dynamic width and precision</p>
 <pre><code class="lang-bash"><span class="hljs-comment"># &apos;*&apos; &#xBB38;&#xC790;&#xB97C; &#xC774;&#xC6A9;&#xD574; width &#xC640; precision &#xC5D0; &#xBCC0;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB294; &#xAE30;&#xB2A5;&#xC785;&#xB2C8;&#xB2E4;.</span>
