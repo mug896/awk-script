@@ -675,7 +675,7 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="escape-sequences">Escape sequences</h1>
-<p>awk &#xB97C; &#xCC98;&#xC74C; &#xC2DC;&#xC791;&#xD560; &#xB54C; &#xB9CE;&#xC774; &#xC2E4;&#xC218;&#xD558;&#xB294; &#xBD80;&#xBD84;&#xC774; FS, RS &#xBCC0;&#xC218;&#xB97C; &#xC124;&#xC815;&#xD560; &#xB54C;
+<p>awk &#xB97C; &#xCC98;&#xC74C; &#xC2DC;&#xC791;&#xD560; &#xB54C; &#xB9CE;&#xC774; &#xC2E4;&#xC218;&#xD558;&#xB294; &#xBD80;&#xBD84;&#xC774; <code>FS</code>, <code>RS</code> &#xBCC0;&#xC218;&#xB97C; &#xC124;&#xC815;&#xD560; &#xB54C;
 &#xC0AC;&#xC6A9;&#xD558;&#xB294; escape sequence &#xBD80;&#xBD84;&#xC785;&#xB2C8;&#xB2E4;.
 awk &#xC5D0;&#xC11C;&#xB294; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xC2A4;&#xD2B8;&#xB9C1;&#xC774; double quotes &#xC548;&#xC5D0;&#xC11C; &#xCC98;&#xB9AC;&#xB429;&#xB2C8;&#xB2E4;.
 &#xC774;&#xAC83;&#xC740; <a href="https://mug896.github.io/bash-shell/escape_sequences.html#compare" target="_blank">shell &#xC5D0; &#xBE44;&#xAD50;&#xD558;&#xBA74;</a>  <code>echo -e &apos;...&apos;</code> ( single quotes ) &#xB85C; &#xCC98;&#xB9AC;&#xB418;&#xB294; &#xAC83;&#xACFC; &#xAC19;&#xC740; &#xAC83;&#xC778;&#xB370;&#xC694;.
@@ -750,14 +750,14 @@ $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;111(22
 </table>
 <p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4; newline &#xC774;&#xB098; tab &#xBB38;&#xC790;&#xB97C; &#xC124;&#xC815;&#xD558;&#xB294; &#xACBD;&#xC6B0;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xB450; &#xAC00;&#xC9C0; &#xD615;&#xD0DC;&#xAC00; &#xBAA8;&#xB450; &#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;.
 &#xCCAB; &#xBC88;&#xC9F8; &#xACBD;&#xC6B0;&#xB294; double quotes &#xC5D0;&#xC11C; escape sequence &#xAC00; &#xCC98;&#xB9AC;&#xB418;&#xC5EC; &#xC9C1;&#xC811; newline, tab &#xBB38;&#xC790;&#xAC00; &#xC804;&#xB2EC;&#xB418;&#xB294; &#xACBD;&#xC6B0;&#xACE0;
-&#xB450; &#xBC88;&#xC9F8;&#xB294; FS &#xAC12;&#xC774; <code>\n</code>, <code>\t</code> &#xC640; &#xAC19;&#xC774; escape sequence &#xD615;&#xD0DC;&#xB85C; &#xC804;&#xB2EC;&#xB429;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-bash">$ awk -F <span class="hljs-string">&apos;\t&apos;</span> <span class="hljs-string">&apos;{ ... }&apos;</span>            <span class="hljs-comment"># &#xCCAB; &#xBC88;&#xC9F8;</span>
+&#xB450; &#xBC88;&#xC9F8;&#xB294; FS &#xAC12;&#xC774; <code>\t</code>, <code>\n</code> &#xC640; &#xAC19;&#xC774; escape sequence &#xD615;&#xD0DC;&#xB85C; &#xC804;&#xB2EC;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ awk -F <span class="hljs-string">&apos;\t&apos;</span> <span class="hljs-string">&apos;{ ... }&apos;</span>            <span class="hljs-comment"># &#xCCAB; &#xBC88;&#xC9F8; OK</span>
 
-$ awk -F <span class="hljs-string">&apos;\\t&apos;</span> <span class="hljs-string">&apos;{ ... }&apos;</span>           <span class="hljs-comment"># &#xB450; &#xBC88;&#xC9F8;</span>
+$ awk -F <span class="hljs-string">&apos;\\t&apos;</span> <span class="hljs-string">&apos;{ ... }&apos;</span>           <span class="hljs-comment"># &#xB450; &#xBC88;&#xC9F8; OK</span>
 
-$ awk <span class="hljs-string">&apos;BEGIN{ FS=&quot;\n&quot; } ...&apos;</span>       <span class="hljs-comment"># &#xC704;&#xC640; &#xB3D9;&#xC77C;</span>
+$ awk <span class="hljs-string">&apos;BEGIN{ FS=&quot;\n&quot; } ...&apos;</span>       <span class="hljs-comment"># OK</span>
 
-$ awk <span class="hljs-string">&apos;BEGIN{ FS=&quot;\\n&quot; } ...&apos;</span>
+$ awk <span class="hljs-string">&apos;BEGIN{ FS=&quot;\\n&quot; } ...&apos;</span>      <span class="hljs-comment"># OK</span>
 </code></pre>
 <h3 id="&#xBCC0;&#xC218;&#xAC12;-&#xC124;&#xC815;&#xC2DC;-escape-sequence-&#xC0AC;&#xC6A9;">&#xBCC0;&#xC218;&#xAC12; &#xC124;&#xC815;&#xC2DC; escape sequence &#xC0AC;&#xC6A9;</h3>
 <p>RS, FS &#xAC19;&#xC740; &#xBCC0;&#xC218;&#xB294; &#xC124;&#xC815;&#xB41C; &#xAC12;&#xC774; &#xBB38;&#xC790;&#xAC00; &#xB450;&#xAC1C; &#xC774;&#xC0C1;&#xC774;&#xBA74; regex &#xB85C; &#xD574;&#xC11D;&#xB429;&#xB2C8;&#xB2E4;.
