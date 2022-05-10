@@ -1166,7 +1166,9 @@ $              <span class="hljs-comment"># OK &#xC815;&#xC0C1; &#xC885;&#xB8CC;
 <pre><code class="lang-bash">$ awk <span class="hljs-operator">-f</span> - &lt;&lt;\@
 BEGIN { check(<span class="hljs-string">&quot;data&quot;</span>, <span class="hljs-number">1</span>); check(<span class="hljs-string">&quot;data&quot;</span>, <span class="hljs-number">2</span>); check(<span class="hljs-string">&quot;data&quot;</span>, <span class="hljs-number">3</span>) }
 <span class="hljs-keyword">function</span> check(file, id,      a, r) {
-    <span class="hljs-keyword">while</span> (getline &lt; file &gt; <span class="hljs-number">0</span>) <span class="hljs-keyword">if</span> (<span class="hljs-variable">$1</span> == id &amp;&amp; <span class="hljs-variable">$3</span> == <span class="hljs-string">&quot;WRITE&quot;</span>) a[<span class="hljs-variable">$2</span>]
+    <span class="hljs-keyword">while</span> (getline &lt; file &gt; <span class="hljs-number">0</span>)
+        <span class="hljs-keyword">if</span> (<span class="hljs-variable">$1</span> == id &amp;&amp; <span class="hljs-variable">$3</span> == <span class="hljs-string">&quot;WRITE&quot;</span>)
+            a[<span class="hljs-variable">$2</span>]
     close(file)   <span class="hljs-comment"># &#xD30C;&#xC77C;&#xC744; &#xCC98;&#xC74C;&#xBD80;&#xD130; &#xB2E4;&#xC2DC; &#xC77D;&#xC73C;&#xB824;&#xBA74; close &#xD574;&#xC57C;&#xD55C;&#xB2E4;.</span>
     <span class="hljs-keyword">while</span> (getline &lt; file &gt; <span class="hljs-number">0</span>)
         <span class="hljs-keyword">if</span> (<span class="hljs-variable">$3</span> == <span class="hljs-string">&quot;READ&quot;</span> &amp;&amp; <span class="hljs-variable">$2</span> <span class="hljs-keyword">in</span> a)
