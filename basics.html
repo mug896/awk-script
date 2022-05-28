@@ -958,19 +958,19 @@ $ awk <span class="hljs-string">&apos;NR == 5, /BBB/&apos;</span> file
 <p>awk &#xB294; &#xCD9C;&#xB825;&#xC5D0; <code>print</code>, <code>printf</code> &#xB450; &#xAC1C;&#xC758; &#xD504;&#xB9B0;&#xD2B8;&#xBB38; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.
 print, printf &#xB294; function &#xC774; &#xC544;&#xB2C8;&#xACE0; statement &#xC785;&#xB2C8;&#xB2E4;. &#xADF8;&#xB7EC;&#xBBC0;&#xB85C; <code>( )</code> &#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xC544;&#xB3C4; &#xB429;&#xB2C8;&#xB2E4;.
 double quotes &#xC5D0;&#xC11C;&#xB294; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; escape &#xBB38;&#xC790;&#xAC00; &#xCC98;&#xB9AC;&#xB429;&#xB2C8;&#xB2E4;.</p>
-<p><code>printf</code> &#xB294; awk &#xC5D0;&#xC11C; &#xD2B9;&#xBCC4;&#xD55C; &#xAE30;&#xB2A5;&#xC774; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;. 
-&#xADF8;&#xB0E5; C &#xC5B8;&#xC5B4;&#xC5D0;&#xC11C;&#xCC98;&#xB7FC; &#xD3EC;&#xBA67;&#xC5D0; &#xB530;&#xB77C;&#xC11C;&#xB9CC; &#xB0B4;&#xC6A9;&#xC744; &#xCD9C;&#xB825;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p><code>printf</code> &#xB294; awk &#xC5D0;&#xC11C; &#xD2B9;&#xBCC4;&#xD55C; &#xAE30;&#xB2A5; &#xC5C6;&#xC774; C &#xC5B8;&#xC5B4;&#xC5D0;&#xC11C;&#xCC98;&#xB7FC; &#xD3EC;&#xBA67;&#xC5D0; &#xB530;&#xB77C;&#xC11C; &#xB0B4;&#xC6A9;&#xC744; &#xCD9C;&#xB825;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <p><a href="https://www.gnu.org/software/gawk/manual/html_node/Format-Modifiers.html" target="_blank">https://www.gnu.org/software/gawk/manual/html_node/Format-Modifiers.html</a>  </p>
-<pre><code class="lang-bash">$ cat file
+<pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;BEGIN { print (100 == 100) (200 == 100) (300 == 100); }&apos;</span> 
+<span class="hljs-number">100</span>
+
+$ awk <span class="hljs-string">&apos;BEGIN { printf &quot;%d\n&quot;, (11 == 11) (22 == 11) (33 == 11); }&apos;</span> 
+<span class="hljs-number">100</span>
+
+$ cat file
 Amelia     <span class="hljs-number">555</span>-<span class="hljs-number">5553</span>
 Anthony    <span class="hljs-number">555</span>-<span class="hljs-number">3412</span>
 Becky      <span class="hljs-number">555</span>-<span class="hljs-number">7685</span>
 
-<span class="hljs-comment"># printf &#xBB38;&#xC740; &#xD3EC;&#xBA67;&#xC5D0; &#xB530;&#xB77C;&#xC11C;&#xB9CC; &#xCD9C;&#xB825;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xB530;&#xB85C; newline &#xC774; &#xBD99;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
-$ awk <span class="hljs-string">&apos;{ printf &quot;%-10s %s&quot;,$1, $2 }&apos;</span> file
-Amelia     <span class="hljs-number">555</span>-<span class="hljs-number">5553</span>Anthony    <span class="hljs-number">555</span>-<span class="hljs-number">3412</span>Becky      <span class="hljs-number">555</span>-<span class="hljs-number">7685</span>
-
-<span class="hljs-comment"># &#xC9C1;&#xC811; newline &#xC744; &#xC368;&#xC918;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</span>
 $ awk <span class="hljs-string">&apos;{ printf &quot;%-10s %s\n&quot;, $1, $2 }&apos;</span> file
 Amelia     <span class="hljs-number">555</span>-<span class="hljs-number">5553</span>
 Anthony    <span class="hljs-number">555</span>-<span class="hljs-number">3412</span>
