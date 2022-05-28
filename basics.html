@@ -960,13 +960,13 @@ print, printf &#xB294; function &#xC774; &#xC544;&#xB2C8;&#xACE0; statement &#xC
 double quotes &#xC5D0;&#xC11C;&#xB294; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; escape &#xBB38;&#xC790;&#xAC00; &#xCC98;&#xB9AC;&#xB429;&#xB2C8;&#xB2E4;.</p>
 <p><code>printf</code> &#xB294; awk &#xC5D0;&#xC11C; &#xD2B9;&#xBCC4;&#xD55C; &#xAE30;&#xB2A5; &#xC5C6;&#xC774; C &#xC5B8;&#xC5B4;&#xC5D0;&#xC11C;&#xCC98;&#xB7FC; &#xD3EC;&#xBA67;&#xC5D0; &#xB530;&#xB77C;&#xC11C; &#xB0B4;&#xC6A9;&#xC744; &#xCD9C;&#xB825;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <p><a href="https://www.gnu.org/software/gawk/manual/html_node/Format-Modifiers.html" target="_blank">https://www.gnu.org/software/gawk/manual/html_node/Format-Modifiers.html</a>  </p>
-<pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;BEGIN { print ( 2 &gt; 1 ) }&apos;</span>      <span class="hljs-comment"># 2 &gt; 1 &#xB294; &#xCC38;&#xC774;&#xBBC0;&#xB85C; &#xCD9C;&#xB825; &#xACB0;&#xACFC;&#xB294; 1</span>
+<pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;BEGIN { print ( 200 &gt; 100 ) }&apos;</span>      <span class="hljs-comment"># 200 &gt; 100 &#xB294; &#xCC38;&#xC774;&#xBBC0;&#xB85C; &#xCD9C;&#xB825; &#xACB0;&#xACFC;&#xB294; 1</span>
 <span class="hljs-number">1</span>
 
-$ awk <span class="hljs-string">&apos;BEGIN { print 2 &gt; 1 }&apos;</span>          <span class="hljs-comment"># &#xB9CC;&#xC57D;&#xC5D0; ( ) &#xAD04;&#xD638;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; </span>
+$ awk <span class="hljs-string">&apos;BEGIN { print 200 &gt; 100 }&apos;</span>          <span class="hljs-comment"># &#xB9CC;&#xC57D;&#xC5D0; ( ) &#xAD04;&#xD638;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; </span>
 
-$ cat <span class="hljs-number">1</span>                                <span class="hljs-comment"># print 2 &#xC758; &#xCD9C;&#xB825;&#xAC12;&#xC774; &#xD30C;&#xC77C; 1 &#xC5D0; &#xC4F0;&#xC5EC;&#xC9C4;&#xB2E4;.</span>
-<span class="hljs-number">2</span>
+$ cat <span class="hljs-number">100</span>                                  <span class="hljs-comment"># print 200 &#xC758; &#xCD9C;&#xB825;&#xAC12;&#xC774; &#xD30C;&#xC77C; 100 &#xC5D0; &#xC4F0;&#xC5EC;&#xC9C4;&#xB2E4;.</span>
+<span class="hljs-number">200</span>
 
 $ awk <span class="hljs-string">&apos;BEGIN { print (100 == 100) (200 == 100) (300 == 100); }&apos;</span> 
 <span class="hljs-number">100</span>
