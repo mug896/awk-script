@@ -692,9 +692,9 @@ $ awk <span class="hljs-string">&apos;BEGIN{ print ( &quot;12&quot; + &quot;3&qu
 
 <span class="hljs-comment"># 12345 &#xB294; &#xC22B;&#xC790;&#xC774;&#xC9C0;&#xB9CC; &#xC2A4;&#xD2B8;&#xB9C1; &#xC5F0;&#xC0B0;&#xC744; &#xD560; &#xC218; &#xC788;&#xB2E4;.</span>
 <span class="hljs-comment"># substr() &#xD568;&#xC218;&#xB85C; &#xC2A4;&#xD2B8;&#xB9C1; &#xC5F0;&#xC0B0;&#xC744; &#xD558;&#xB294; context &#xC774;&#xBBC0;&#xB85C; &#xC22B;&#xC790;&#xAC00; &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xC2A4;&#xD2B8;&#xB9C1;&#xC73C;&#xB85C; &#xBCC0;&#xD658;&#xB41C;&#xB2E4;.</span>
-$ awk <span class="hljs-string">&apos;BEGIN{ print ( substr(12345,1,2) ) }&apos;</span>
+$ awk <span class="hljs-string">&apos;BEGIN{ print ( substr(12345, 1, 2) ) }&apos;</span>
 <span class="hljs-number">12</span>
-$ awk <span class="hljs-string">&apos;BEGIN{ print ( substr(12345,1,2) + 3) }&apos;</span>
+$ awk <span class="hljs-string">&apos;BEGIN{ print ( substr(12345, 1, 2) + 3) }&apos;</span>
 <span class="hljs-number">15</span>
 </code></pre>
 <h3 id="string">String</h3>
@@ -791,7 +791,7 @@ foo                                    foo
 <blockquote>
 <p>&#xC22B;&#xC790;&#xAC00; &#xC2A4;&#xD2B8;&#xB9C1;&#xC73C;&#xB85C; &#xBCC0;&#xACBD;&#xB420; &#xB54C;&#xB294; <code>printf &quot;%s&quot;, &#xC22B;&#xC790;</code> &#xAC00; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
 </blockquote>
-<pre><code class="lang-bash"><span class="hljs-comment"># printf &quot;%s&quot; 123.0  &#xAC12;&#xC740; &quot;123&quot; &#xC774;&#xB418;&#xBBC0;&#xB85C; &#xCC38;&#xC774;&#xB41C;&#xB2E4;.</span>
+<pre><code class="lang-bash"><span class="hljs-comment"># printf &quot;%s&quot;, 123.0  &#xAC12;&#xC740; &quot;123&quot; &#xC774;&#xB418;&#xBBC0;&#xB85C; &#xCC38;&#xC774;&#xB41C;&#xB2E4;.</span>
 $ awk <span class="hljs-string">&apos;BEGIN { print ( 123.0 == &quot;123&quot; ) }&apos;</span> 
 <span class="hljs-number">1</span>
 
@@ -803,7 +803,7 @@ $ awk <span class="hljs-string">&apos;BEGIN{ print (12 &gt; &quot;111&quot;) }&a
 <span class="hljs-number">1</span>
 
 <span class="hljs-comment"># &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xB85C; substr &#xC2A4;&#xD2B8;&#xB9C1; &#xD568;&#xC218;&#xC758; &#xB9AC;&#xD134;&#xAC12;&#xC740; &#xC2A4;&#xD2B8;&#xB9C1;&#xC774;&#xB2E4;.</span>
-$ awk <span class="hljs-string">&apos;BEGIN{ print (substr(12345,1,2) &gt; 111) }&apos;</span>
+$ awk <span class="hljs-string">&apos;BEGIN{ print (substr(12345, 1, 2) &gt; 111) }&apos;</span>
 <span class="hljs-number">1</span>
 </code></pre>
 <h3 id="number">Number</h3>
@@ -890,7 +890,7 @@ $ awk -M <span class="hljs-string">&apos;BEGIN { print 0x66778899aabbccdd + 1 }&
 $ awk <span class="hljs-string">&apos;BEGIN{ print (12 &gt; &quot;111&quot;+0) }&apos;</span> 
 <span class="hljs-number">0</span>
 
-$ awk <span class="hljs-string">&apos;BEGIN{ print (substr(12345,1,2)+0 &gt; 111) }&apos;</span>
+$ awk <span class="hljs-string">&apos;BEGIN{ print (substr(12345, 1, 2)+0 &gt; 111) }&apos;</span>
 <span class="hljs-number">0</span>
 </code></pre>
 <p>&#xC22B;&#xC790;&#xB97C; &#xC2A4;&#xD2B8;&#xB9C1;&#xC73C;&#xB85C; &#xB9CC;&#xB4E4;&#xB824;&#xBA74; <code>&quot;&quot;</code> &#xB85C; concatenation &#xC744; &#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
