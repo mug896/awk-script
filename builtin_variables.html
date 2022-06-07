@@ -690,15 +690,10 @@ total number of input records &#xB97C; &#xB9D0;&#xD569;&#xB2C8;&#xB2E4;.
 NR &#xC640; &#xAC19;&#xC774; &#xACC4;&#xC18D; &#xB204;&#xC801;&#xB418;&#xB294; &#xAC83;&#xC774; &#xC544;&#xB2C8;&#xACE0; &#xD30C;&#xC77C;&#xBCC4; record number &#xC774;&#xBBC0;&#xB85C;
 &#xC785;&#xB825; &#xC2A4;&#xD2B8;&#xB9BC;&#xC774; &#xB2E4;&#xC74C; &#xD30C;&#xC77C;&#xB85C; &#xBCC0;&#xACBD;&#xB420; &#xB54C;&#xB9C8;&#xB2E4; 0 &#xBD80;&#xD130; &#xB2E4;&#xC2DC; &#xC2DC;&#xC791;&#xD569;&#xB2C8;&#xB2E4;.
 &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xB85C; &#xBA54;&#xC778; &#xC785;&#xB825; &#xC2A4;&#xD2B8;&#xB9BC;&#xC5D0;&#xC11C; &#xC77D;&#xC5B4;&#xB4E4;&#xC774;&#xB294; &#xACBD;&#xC6B0;&#xC5D0;&#xB9CC; &#xC801;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-sh">$ cat file1
-aaaaa
-bbbbb
-ccccc
-
-$ cat file2
-ddddd
-eeeee
-fffff
+<pre><code class="lang-sh">$ cat file1                  $ cat file2
+aaaaa                        ddddd
+bbbbb                        eeeee
+ccccc                        fffff
 
 $ awk <span class="hljs-string">&apos;{ printf &quot;NR: %d, FNR: %d\n&quot;, NR, FNR}&apos;</span> file1 file2
 NR: <span class="hljs-number">1</span>, FNR: <span class="hljs-number">1</span>
