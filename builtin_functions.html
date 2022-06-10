@@ -710,7 +710,7 @@ Functions that work with numbers, including <code>int()</code>, <code>sin()</cod
 <p>&#xC544;&#xB798; &#xBD89;&#xC740;&#xC0C9;&#xC73C;&#xB85C; &#xBCF4;&#xC774;&#xB294; 4 &#xBC14;&#xC774;&#xD2B8; &#xAC12;&#xC774; offset &#xC744; &#xAD6C;&#xD560;&#xAC12;&#xC774;&#xACE0; + 24 
 &#xC704;&#xCE58;&#xC758; &#xAC12;&#xC774; &#xD770;&#xC0C9;&#xC73C;&#xB85C; &#xCC98;&#xB9AC;&#xB41C; &#xBD80;&#xBD84;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <blockquote>
-<p>&quot;36 34 2d 6c&quot; &#xAC12;&#xC774; &#xC870;&#xD68C;&#xAC00; &#xC548;&#xB420;&#xACBD;&#xC6B0; hd -v /bin/date &#xCD9C;&#xB825;&#xC5D0;&#xC11C; &#xC784;&#xC758;&#xC758; &#xB2E4;&#xB978; &#xAC12;&#xC744; &#xC0AC;&#xC6A9;&#xD574;&#xB3C4; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>&quot;46 72 65 65&quot; &#xAC12;&#xC774; &#xC870;&#xD68C;&#xAC00; &#xC548;&#xB420;&#xACBD;&#xC6B0; hd -v /bin/date &#xCD9C;&#xB825;&#xC5D0;&#xC11C; &#xC784;&#xC758;&#xC758; &#xB2E4;&#xB978; &#xAC12;&#xC744; &#xC0AC;&#xC6A9;&#xD574;&#xB3C4; &#xB429;&#xB2C8;&#xB2E4;.</p>
 </blockquote>
 <p><img src="images/function_ex.png" alt=""></p>
 <p>awk &#xB294; python &#xC758; <code>chr()</code> &#xB098; <code>ord()</code> &#xAC19;&#xC740; &#xD568;&#xC218;&#xAC00; &#xC5C6;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; 
@@ -729,14 +729,14 @@ $ awk <span class="hljs-string">&apos;BEGIN {
 <p>RS &#xAC12;&#xC744; <code>&quot;^$&quot;</code> &#xB85C; &#xC124;&#xC815;&#xD558;&#xC600;&#xC73C;&#xBBC0;&#xB85C; &#xC804;&#xCCB4; &#xB370;&#xC774;&#xD130;&#xAC00; &#xD558;&#xB098;&#xC758; &#xB808;&#xCF54;&#xB4DC;&#xB85C; &#xC785;&#xB825;&#xC774; &#xB418;&#xACA0;&#xACE0;
 FS &#xAC12;&#xC774; <code>&quot;&quot;</code> &#xC774;&#xBBC0;&#xB85C; &#xAC01;&#xAC01;&#xC758; &#xBC14;&#xC774;&#xD2B8; &#xAC12;&#xC774; &#xD558;&#xB098;&#xC758; &#xD544;&#xB4DC;&#xAC12;&#xACFC; &#xB9E4;&#xCE6D;&#xC774; &#xB429;&#xB2C8;&#xB2E4;.
 &#xB530;&#xB77C;&#xC11C; NF &#xAC12;&#xC740; &#xD30C;&#xC77C; &#xC0AC;&#xC774;&#xC988;&#xC640; &#xAC19;&#xAC8C; &#xB418;&#xACA0;&#xC8E0;.</p>
-<pre><code class="lang-bash">$ awk -b <span class="hljs-operator">-f</span> - &lt;&lt;\EOF val=<span class="hljs-number">0</span>x36342d6c /bin/date
+<pre><code class="lang-bash">$ awk -b <span class="hljs-operator">-f</span> - &lt;&lt;\EOF val=<span class="hljs-number">0</span>x46726565 /bin/date
 BEGIN { 
     RS=<span class="hljs-string">&quot;^$&quot;</span>; FS=<span class="hljs-string">&quot;&quot;</span>
     <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt;= <span class="hljs-number">255</span>; i++) a[ sprintf(<span class="hljs-string">&quot;%c&quot;</span>, i) ] = i
 }{
     <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;file size : &quot;</span> length(<span class="hljs-variable">$0</span>)
 
-    <span class="hljs-comment"># &#xC678;&#xBD80;&#xB85C;&#xBD80;&#xD130; &#xC785;&#xB825;&#xB418;&#xB294; val=0x36342d6c &#xAC12;&#xC740; &#xC2A4;&#xD2B8;&#xB9C1;&#xC774;&#xBBC0;&#xB85C; index &#xD568;&#xC218;&#xB85C;</span>
+    <span class="hljs-comment"># &#xC678;&#xBD80;&#xB85C;&#xBD80;&#xD130; &#xC785;&#xB825;&#xB418;&#xB294; val=0x46726565 &#xAC12;&#xC740; &#xC2A4;&#xD2B8;&#xB9C1;&#xC774;&#xBBC0;&#xB85C; index &#xD568;&#xC218;&#xB85C;</span>
     <span class="hljs-comment"># &#xBC14;&#xC774;&#xB108;&#xB9AC; &#xD30C;&#xC77C; &#xB0B4;&#xC5D0;&#xC11C; &#xBC14;&#xC774;&#xD2B8; &#xAC12;&#xC744; &#xAC80;&#xC0C9;&#xD558;&#xB824;&#xBA74; &#xBA3C;&#xC800; char &#xAC12;&#xC73C;&#xB85C; &#xBCC0;&#xACBD;&#xD569;&#xB2C8;&#xB2E4;.</span>
     patsplit(val, f, /.{<span class="hljs-number">2</span>}/)
     v = sprintf(<span class="hljs-string">&quot;%c%c%c%c&quot;</span>, strtonum(<span class="hljs-string">&quot;0x&quot;</span> f[<span class="hljs-number">2</span>]), strtonum(<span class="hljs-string">&quot;0x&quot;</span> f[<span class="hljs-number">3</span>]), \
@@ -759,9 +759,9 @@ BEGIN {
 EOF
 
 file size : <span class="hljs-number">104960</span>
-value <span class="hljs-number">0</span>x36342d6c found! at : <span class="hljs-number">102577</span> offset
-<span class="hljs-number">4</span> bytes hex value at <span class="hljs-number">102577</span> + <span class="hljs-number">24</span> : <span class="hljs-number">0</span>x65627567
-convert to decimal value : <span class="hljs-number">1735746149</span> (little endian)
+value <span class="hljs-number">0</span>x46726565 found! at : <span class="hljs-number">93521</span> offset
+<span class="hljs-number">4</span> bytes hex value at <span class="hljs-number">93521</span> + <span class="hljs-number">24</span> : <span class="hljs-number">0</span>x2c20496e
+convert to decimal value : <span class="hljs-number">1850286124</span> (little endian)
 </code></pre>
 <p>offset &#xC744; &#xAD6C;&#xD560; &#xB54C; &#xC0AC;&#xC6A9;&#xB418;&#xB294; hex &#xAC12;&#xC774; &#xC678;&#xBD80;&#xB85C;&#xBD80;&#xD130; &#xC2A4;&#xD2B8;&#xB9C1;&#xC73C;&#xB85C; &#xC785;&#xB825;&#xB418;&#xB294; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; &#xAC80;&#xC0C9;&#xC744; &#xC704;&#xD574;
 &#xC2A4;&#xD2B8;&#xB9C1; -&gt; char &#xBCC0;&#xD658;&#xC744; &#xAC70;&#xCCD0;&#xC57C; &#xB418;&#xBBC0;&#xB85C; &#xB2E4;&#xC74C;&#xC740; &#xC9C1;&#xC811; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xB0B4;&#xC5D0;&#xC11C; &#xC124;&#xC815;&#xD574; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.
@@ -774,7 +774,7 @@ BEGIN {
 }{
     <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;file size : &quot;</span> length(<span class="hljs-variable">$0</span>)
 
-    v = <span class="hljs-string">&quot;\x36\x34\x2d\x6c&quot;</span>     <span class="hljs-comment"># &#xC9C1;&#xC811; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xB0B4;&#xC5D0;&#xC11C; &#xAC80;&#xC0C9;&#xD560; &#xBC14;&#xC774;&#xD2B8; &#xAC12;&#xC744; &#xC124;&#xC815;</span>
+    v = <span class="hljs-string">&quot;\x46\x72\x65\x65&quot;</span>     <span class="hljs-comment"># &#xC9C1;&#xC811; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xB0B4;&#xC5D0;&#xC11C; &#xAC80;&#xC0C9;&#xD560; &#xBC14;&#xC774;&#xD2B8; &#xAC12;&#xC744; &#xC124;&#xC815;</span>
 
     patsplit(v, f, /./)
     val = sprintf( <span class="hljs-string">&quot;0x%02x%02x%02x%02x&quot;</span>, a[f[<span class="hljs-number">1</span>]], a[f[<span class="hljs-number">2</span>]], a[f[<span class="hljs-number">3</span>]], a[f[<span class="hljs-number">4</span>]] )
