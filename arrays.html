@@ -993,7 +993,7 @@ function walk_array(arr, name,      i)
 {
     for (i in arr) {
         if (isarray(arr[i]))
-            walk_array(arr[i], (name &quot;[&quot; i &quot;]&quot;))
+            walk_array(arr[i], name &quot;[&quot; i &quot;]&quot;)
         else
             printf(&quot;%s[%s] = %s\n&quot;, name, i, arr[i])
     }
