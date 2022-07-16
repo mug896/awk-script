@@ -7,7 +7,7 @@ BEGIN {
     while ((socket |& getline) > 0) {
         if ( $1 == "GET" ) { 
             print "GET : ", $2 
-            $2 = substr($2,2)
+            $2 = substr($2, 2)
             switch ($2) {
                 case /\.(jpg|gif|png)$/ :
                     sendImage($2)
