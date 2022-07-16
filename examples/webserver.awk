@@ -18,7 +18,7 @@ BEGIN {
         }
     }
 }
-function sendHtml(    a, arr) {
+function sendHtml(     arr) {
     arr["type"] = "text/html"
     arr["content"] = "\
      <HTML>\n\
@@ -34,14 +34,14 @@ function sendHtml(    a, arr) {
 
     send(arr)
 }
-function sendImage(file,     c, a, arr, type) {
+function sendImage(file,     com, st, arr, type) {
     RS="\n"
-    c = "file -b --mime-type '" file "'"
-    c | getline type; close(c)
+    com = "file -b --mime-type '" file "'"
+    com | getline type; close(com)
     RS="\r\n"
     arr["type"] = type
-    stat(file, a)
-    arr["length"] = a["size"]
+    stat(file, st)
+    arr["length"] = st["size"]
     arr["content"] = readfile(file)
     arr["date"] = strftime(datefmt, systime(), 1)
     
