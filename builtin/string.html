@@ -895,12 +895,26 @@ awk <span class="hljs-string">&apos;{
 foo <span class="hljs-number">1</span> <span class="hljs-number">3</span>
 barrr <span class="hljs-number">7</span> <span class="hljs-number">5</span>
 </code></pre>
-<p>&#xD30C;&#xC77C;&#xBA85;&#xACFC; &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xBA85; &#xAD6C;&#xD558;&#xAE30;</p>
-<pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;aaa/bbb/README.md&apos;</span> |  awk <span class="hljs-string">&apos;{print substr($0,match($0,/[^/]+$/))}&apos;</span>
+<p><b>&#xC0AC;&#xC6A9; &#xC608;&#xC81C; )</b></p>
+<pre><code class="lang-bash"><span class="hljs-comment"># &#xD30C;&#xC77C;&#xBA85;&#xACFC; &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xBA85; &#xAD6C;&#xD558;&#xAE30;</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;aaa/bbb/README.md&apos;</span> |  awk <span class="hljs-string">&apos;{print substr($0,match($0,/[^/]+$/))}&apos;</span>
 README.md
 
 $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;aaa/bbb/README.md&apos;</span> |  awk <span class="hljs-string">&apos;{print substr($0,1,match($0,/[^/]+$/)-2)}&apos;</span>
 aaa/bbb
+--------------------------------------------------
+
+<span class="hljs-comment"># regex &#xB9E4;&#xCE6D; &#xC2A4;&#xD2B8;&#xB9C1;&#xC744; &#xAC19;&#xC740; length &#xC758; space &#xB85C; &#xCE58;&#xD658;</span>
+$ cat file
+VBoxManage natnetwork       add --netname &lt;name&gt;
+VBoxManage natnetwork       remove --netname &lt;name&gt;
+VBoxManage natnetwork       modify --netname &lt;name&gt;
+
+$ awk -v str=<span class="hljs-string">&quot;VBoxManage natnetwork&quot;</span> <span class="hljs-string">&apos;
+{ if (match($0, str)){ sub(str, sprintf(&quot;%*s&quot;, RLENGTH,&quot;&quot;)); print }}&apos;</span> file
+                            add --netname &lt;name&gt;
+                            remove --netname &lt;name&gt;
+                            modify --netname &lt;name&gt;
 </code></pre>
 <h4 id="split--string-fields--fieldsep--seps---">split ( <em>string</em>, <em>fields</em> [, <em>fieldsep</em> [, <em>seps</em> ] ] )</h4>
 <p>&#xC544;&#xB798;&#xC640; &#xAC19;&#xC740; str &#xC774; &#xC788;&#xC744; &#xACBD;&#xC6B0; <code>/@[A-Z]+@/</code> &#xB97C; field separator &#xB85C; &#xC7A1;&#xACE0; split &#xD558;&#xAC8C; &#xB418;&#xBA74;
