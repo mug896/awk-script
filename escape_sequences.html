@@ -678,7 +678,6 @@
 <p>awk &#xB97C; &#xCC98;&#xC74C; &#xC2DC;&#xC791;&#xD560; &#xB54C; &#xB9CE;&#xC774; &#xC2E4;&#xC218;&#xD558;&#xB294; &#xBD80;&#xBD84;&#xC774; <code>FS</code>, <code>RS</code> &#xBCC0;&#xC218;&#xB97C; &#xC124;&#xC815;&#xD560; &#xB54C;
 &#xC0AC;&#xC6A9;&#xD558;&#xB294; escape sequence &#xBD80;&#xBD84;&#xC785;&#xB2C8;&#xB2E4;.
 awk &#xC5D0;&#xC11C;&#xB294; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xC2A4;&#xD2B8;&#xB9C1;&#xC774; double quotes &#xC548;&#xC5D0;&#xC11C; &#xCC98;&#xB9AC;&#xB429;&#xB2C8;&#xB2E4;.
-&#xC774;&#xAC83;&#xC740; <a href="https://mug896.github.io/bash-shell/escape_sequences.html#compare" target="_blank">shell &#xC5D0; &#xBE44;&#xAD50;&#xD558;&#xBA74;</a>  <code>echo -e &apos;...&apos;</code> ( single quotes ) &#xB85C; &#xCC98;&#xB9AC;&#xB418;&#xB294; &#xAC83;&#xACFC; &#xAC19;&#xC740; &#xAC83;&#xC778;&#xB370;&#xC694;.
 &#xB530;&#xB77C;&#xC11C; escape &#xD560;&#xB54C; &#xC0AC;&#xC6A9;&#xB418;&#xB294; <code>\</code> &#xBB38;&#xC790;&#xAC00; awk &#xC5D0; &#xC804;&#xB2EC;&#xB418;&#xB824;&#xBA74; <code>\\</code> &#xB450;&#xAC1C;&#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;111(222)333&apos;</span> | awk -F <span class="hljs-string">&apos;\(|\)&apos;</span> <span class="hljs-string">&apos;{print $2}&apos;</span>        <span class="hljs-comment"># wrong</span>
 awk: warning: escape sequence `\(<span class="hljs-string">&apos; treated as plain `(&apos;</span>
