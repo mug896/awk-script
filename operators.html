@@ -1160,7 +1160,7 @@ BEGIN { FS=<span class="hljs-string">&quot;&quot;</span>; token[<span class="hlj
 
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;number&quot;</span> :  
                 <span class="hljs-keyword">if</span> ( token[i-<span class="hljs-number">1</span>][<span class="hljs-string">&quot;type&quot;</span>] == <span class="hljs-string">&quot;number&quot;</span> ) error( <span class="hljs-string">&quot;number after number&quot;</span> )
-                <span class="hljs-keyword">if</span> ( token[i+<span class="hljs-number">1</span>][<span class="hljs-string">&quot;value&quot;</span>] == <span class="hljs-string">&quot;(&quot;</span> ) error( <span class="hljs-string">&quot;parenthesis &apos;(&apos;&quot;</span> )
+                <span class="hljs-keyword">if</span> ( token[i+<span class="hljs-number">1</span>][<span class="hljs-string">&quot;value&quot;</span>] == <span class="hljs-string">&quot;(&quot;</span> ) error( <span class="hljs-string">&quot;&apos;(&apos; after number&quot;</span> )
 
                 <span class="hljs-keyword">if</span> ( token[i+<span class="hljs-number">1</span>][<span class="hljs-string">&quot;value&quot;</span>] == <span class="hljs-string">&quot;^&quot;</span> ) {
                     push( ustack, unary)
@@ -1172,7 +1172,7 @@ BEGIN { FS=<span class="hljs-string">&quot;&quot;</span>; token[<span class="hlj
                 <span class="hljs-built_in">break</span>
 
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;operator&quot;</span> :
-                <span class="hljs-keyword">if</span> ( token[i+<span class="hljs-number">1</span>][<span class="hljs-string">&quot;value&quot;</span>] == <span class="hljs-string">&quot;)&quot;</span> ) error(<span class="hljs-string">&quot;&apos;)&apos; parenthesis after operator&quot;</span>);
+                <span class="hljs-keyword">if</span> ( token[i+<span class="hljs-number">1</span>][<span class="hljs-string">&quot;value&quot;</span>] == <span class="hljs-string">&quot;)&quot;</span> ) error(<span class="hljs-string">&quot;&apos;)&apos; after operator&quot;</span>);
                 <span class="hljs-keyword">if</span> ( i + <span class="hljs-number">1</span> == len ) error(<span class="hljs-string">&quot;end of expression.&quot;</span>);
                 op = token[i][<span class="hljs-string">&quot;value&quot;</span>]
                 <span class="hljs-keyword">if</span> ( i == <span class="hljs-number">0</span> \
@@ -1205,12 +1205,12 @@ BEGIN { FS=<span class="hljs-string">&quot;&quot;</span>; token[<span class="hlj
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;parenthesis&quot;</span> :
                 val = token[i][<span class="hljs-string">&quot;value&quot;</span>]
                 <span class="hljs-keyword">if</span> ( val == <span class="hljs-string">&quot;(&quot;</span> ) {
-                    <span class="hljs-keyword">if</span> ( token[i+<span class="hljs-number">1</span>][<span class="hljs-string">&quot;value&quot;</span>] == <span class="hljs-string">&quot;)&quot;</span> ) error(<span class="hljs-string">&quot;&apos;)&apos; parenthesis after &apos;(&apos;&quot;</span>);
+                    <span class="hljs-keyword">if</span> ( token[i+<span class="hljs-number">1</span>][<span class="hljs-string">&quot;value&quot;</span>] == <span class="hljs-string">&quot;)&quot;</span> ) error(<span class="hljs-string">&quot;&apos;)&apos; after &apos;(&apos;&quot;</span>);
                     push(ostack, val)
                     push(ustack, unary_p)
                     unary_p = <span class="hljs-number">1</span>
                 } <span class="hljs-keyword">else</span> {
-                    <span class="hljs-keyword">if</span> ( token[i+<span class="hljs-number">1</span>][<span class="hljs-string">&quot;value&quot;</span>] == <span class="hljs-string">&quot;(&quot;</span> ) error(<span class="hljs-string">&quot;&apos;(&apos; parenthesis after &apos;)&apos;&quot;</span>);
+                    <span class="hljs-keyword">if</span> ( token[i+<span class="hljs-number">1</span>][<span class="hljs-string">&quot;value&quot;</span>] == <span class="hljs-string">&quot;(&quot;</span> ) error(<span class="hljs-string">&quot;&apos;(&apos; after &apos;)&apos;&quot;</span>);
                     <span class="hljs-keyword">while</span> (val = pop(ostack)) {
                         <span class="hljs-keyword">if</span> ( val == <span class="hljs-string">&quot;(&quot;</span> ) <span class="hljs-built_in">break</span>
                         <span class="hljs-keyword">else</span> calc(val)
