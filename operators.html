@@ -772,7 +772,7 @@ $ gawk <span class="hljs-string">&apos;BEGIN { n = 12; x = 2; r = n &quot;&quot;
 &#xC774;&#xB77C;&#xACE0;&#xB3C4; &#xD558;&#xB294;&#xB370; &#xC5F0;&#xC0B0;&#xC790;&#xB97C; &#xC5F0;&#xC0B0; &#xB300;&#xC0C1;&#xC758; &#xB4A4;&#xC5D0; &#xC4F0;&#xB294; &#xD45C;&#xAE30;&#xBC95;&#xC785;&#xB2C8;&#xB2E4;.
 &#xC774; &#xBC29;&#xC2DD;&#xC740; &#xC218;&#xC2DD;&#xC744; &#xACC4;&#xC0B0;&#xD560; &#xB54C; &#xD2B9;&#xBCC4;&#xD55C; &#xBCC0;&#xD658; &#xC5C6;&#xC774;, &#xC218;&#xC2DD;&#xC744; &#xC55E;&#xC5D0;&#xC11C;&#xBD80;&#xD130; &#xC77D;&#xC5B4; &#xB098;&#xAC00;&#xBA74;&#xC11C; stack &#xC5D0; &#xC800;&#xC7A5;&#xD558;&#xBA74; &#xB41C;&#xB2E4;&#xB294; &#xC7A5;&#xC810;&#xC774; &#xC788;&#xB2E4;. </p>
 </blockquote>
-<pre><code class="lang-bash">$ ./test.sh &lt;&lt;&lt; <span class="hljs-string">&apos;1 + 2 * 3&apos;</span>
+<pre><code class="lang-bash">$ ./parse.sh &lt;&lt;&lt; <span class="hljs-string">&apos;1 + 2 * 3&apos;</span>
 <span class="hljs-number">7</span>
 
 $ cat file              <span class="hljs-comment"># &#xC218;&#xC2DD;&#xC740; &#xACF5;&#xBC31; &#xC5C6;&#xC774; &#xBD99;&#xC5EC; &#xC4F8; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
@@ -785,7 +785,7 @@ $ cat file              <span class="hljs-comment"># &#xC218;&#xC2DD;&#xC740; &#
 <span class="hljs-number">3</span> - -(-( -<span class="hljs-number">10</span> + -<span class="hljs-number">2</span> ))
 <span class="hljs-number">3</span> + -( -<span class="hljs-number">10</span> - -(<span class="hljs-number">3</span>) + -( <span class="hljs-number">3</span> - ( -<span class="hljs-number">10</span> + -<span class="hljs-number">2</span> ) + -<span class="hljs-number">2</span> ))
 
-$ ./test.sh file        <span class="hljs-comment"># &#xB610;&#xB294; cat file | ./test.sh</span>
+$ ./parse.sh file        <span class="hljs-comment"># &#xB610;&#xB294; cat file | ./parse.sh</span>
 <span class="hljs-number">11</span>
 <span class="hljs-number">13</span>
 <span class="hljs-number">20</span>
@@ -991,7 +991,7 @@ $ awk <span class="hljs-string">&apos;BEGIN { print -2 ^ -4 }&apos;</span>    <s
 &#xBA3C;&#xC800; ustack &#xC5D0; &#xBD80;&#xD638;&#xB97C; &#xC800;&#xC7A5;&#xD558;&#xACE0; &#xB098;&#xC911;&#xC5D0; &#xC5F0;&#xC0B0; &#xACB0;&#xACFC;&#xC5D0; &#xB300;&#xD574; &#xBD80;&#xD638;&#xB97C; &#xC801;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">. . .
 
-<span class="hljs-keyword">function</span> result(     i, len, op, pk, val, unary, unary_p) {
+<span class="hljs-keyword">function</span> parse(     i, len, op, pk, val, unary, unary_p) {
     len = length(token)
     unary = <span class="hljs-number">1</span>; unary_p = <span class="hljs-number">1</span>
     <span class="hljs-keyword">for</span> (i=<span class="hljs-number">0</span>; i &lt; len; i++) {
@@ -1057,7 +1057,6 @@ $ awk <span class="hljs-string">&apos;BEGIN { print -2 ^ -4 }&apos;</span>    <s
                 }
         }
     }
-
     len = slen(ostack)                        
     <span class="hljs-keyword">for</span> (i = <span class="hljs-number">1</span>; i &lt;= len; i++) {
         val = pop(ostack)
