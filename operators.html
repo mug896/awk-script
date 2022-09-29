@@ -1219,7 +1219,7 @@ BEGIN { FS=<span class="hljs-string">&quot;&quot;</span>; token[<span class="hlj
                     <span class="hljs-keyword">if</span> ( token[i+<span class="hljs-number">1</span>][<span class="hljs-string">&quot;value&quot;</span>] != <span class="hljs-string">&quot;^&quot;</span> )
                         push(rstack, pop(ustack) * pop(rstack))
                     <span class="hljs-keyword">if</span> ( token[i+<span class="hljs-number">1</span>][<span class="hljs-string">&quot;type&quot;</span>] == <span class="hljs-string">&quot;number&quot;</span>)
-                        error(<span class="hljs-string">&quot;number not allowed.&quot;</span>);
+                        error(<span class="hljs-string">&quot;number after &apos;)&apos;.&quot;</span>);
                 }
         }
     }
