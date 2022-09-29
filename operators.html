@@ -1175,7 +1175,7 @@ BEGIN { FS=<span class="hljs-string">&quot;&quot;</span>; token[<span class="hlj
 
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;operator&quot;</span> :
                 <span class="hljs-keyword">if</span> ( token[i+<span class="hljs-number">1</span>][<span class="hljs-string">&quot;value&quot;</span>] == <span class="hljs-string">&quot;)&quot;</span> ) error(<span class="hljs-string">&quot;&apos;)&apos; after operator&quot;</span>);
-                <span class="hljs-keyword">if</span> ( i + <span class="hljs-number">1</span> == len ) error(<span class="hljs-string">&quot;end of expression.&quot;</span>);
+                <span class="hljs-keyword">if</span> ( i + <span class="hljs-number">1</span> == len ) error(<span class="hljs-string">&quot;early termination.&quot;</span>);
                 op = token[i][<span class="hljs-string">&quot;value&quot;</span>]
                 <span class="hljs-keyword">if</span> ( i == <span class="hljs-number">0</span> \
                     || token[i-<span class="hljs-number">1</span>][<span class="hljs-string">&quot;value&quot;</span>] == <span class="hljs-string">&quot;(&quot;</span> \
