@@ -943,7 +943,7 @@ BEGIN { FS=<span class="hljs-string">&quot;&quot;</span>; token[<span class="hlj
             <span class="hljs-keyword">case</span> /[ \t]/ :
                 <span class="hljs-built_in">break</span>
             default :
-                error( <span class="hljs-string">&quot;wrong character: &quot;</span> <span class="hljs-variable">$i</span>)
+                error( <span class="hljs-string">&quot;tokenize : &apos;&quot;</span> <span class="hljs-variable">$i</span> <span class="hljs-string">&quot;&apos;&quot;</span>)
         }
     }
 }
@@ -1108,7 +1108,7 @@ $ awk <span class="hljs-string">&apos;BEGIN { print -2 ^ -4 }&apos;</span>    <s
             <span class="hljs-keyword">case</span> /[ \t]/ :
                 <span class="hljs-built_in">break</span>
             default :
-                error( <span class="hljs-string">&quot;wrong character: &quot;</span> <span class="hljs-variable">$i</span>)
+                error( <span class="hljs-string">&quot;tokenize : &apos;&quot;</span> <span class="hljs-variable">$i</span> <span class="hljs-string">&quot;&apos;&quot;</span>)
         }
     }
 }
