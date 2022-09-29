@@ -1138,7 +1138,10 @@ $ awk <span class="hljs-string">&apos;BEGIN { a = ( b = ( c = 100 )); print a,b,
 <span class="hljs-number">100</span> <span class="hljs-number">100</span> <span class="hljs-number">100</span>
 </code></pre>
 <h4 id="&#xCD5C;&#xC885;-&#xACB0;&#xACFC;">&#xCD5C;&#xC885; &#xACB0;&#xACFC;</h4>
-<pre><code class="lang-sh">sh$ cat parse.sh
+<pre><code class="lang-sh"><span class="hljs-comment">#</span>
+<span class="hljs-comment"># &#xC2E4;&#xD589;: ./parse.sh &lt;&lt;&lt; &apos;1 + 2 * 3&apos;</span>
+<span class="hljs-comment">#</span>
+sh$ cat parse.sh
 <span class="hljs-comment">#!/usr/bin/env -S gawk -M -f</span>
 
 BEGIN { FS=<span class="hljs-string">&quot;&quot;</span>; token[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>]; ostack[<span class="hljs-number">0</span>]; rstack[<span class="hljs-number">0</span>]; ustack[<span class="hljs-number">0</span>] }
