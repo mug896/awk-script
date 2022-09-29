@@ -1215,7 +1215,7 @@ BEGIN { FS=<span class="hljs-string">&quot;&quot;</span>; token[<span class="hlj
                         <span class="hljs-keyword">if</span> ( val == <span class="hljs-string">&quot;(&quot;</span> ) <span class="hljs-built_in">break</span>
                         <span class="hljs-keyword">else</span> calc(val)
                     }
-                    <span class="hljs-keyword">if</span> ( val != <span class="hljs-string">&quot;(&quot;</span> ) error(<span class="hljs-string">&quot;parentheses missmatched. &apos;)&apos;&quot;</span>)
+                    <span class="hljs-keyword">if</span> ( val != <span class="hljs-string">&quot;(&quot;</span> ) error(<span class="hljs-string">&quot;&apos;)&apos; parentheses missmatched.&quot;</span>)
                     <span class="hljs-keyword">if</span> ( token[i+<span class="hljs-number">1</span>][<span class="hljs-string">&quot;value&quot;</span>] != <span class="hljs-string">&quot;^&quot;</span> )
                         push(rstack, pop(ustack) * pop(rstack))
                     <span class="hljs-keyword">if</span> ( token[i+<span class="hljs-number">1</span>][<span class="hljs-string">&quot;type&quot;</span>] == <span class="hljs-string">&quot;number&quot;</span>)
@@ -1226,7 +1226,7 @@ BEGIN { FS=<span class="hljs-string">&quot;&quot;</span>; token[<span class="hlj
     len = slen(ostack)                        
     <span class="hljs-keyword">for</span> (i = <span class="hljs-number">1</span>; i &lt;= len; i++) {
         val = pop(ostack)
-        <span class="hljs-keyword">if</span> ( val == <span class="hljs-string">&quot;(&quot;</span> ) error(<span class="hljs-string">&quot;parentheses missmatched. &apos;(&apos;&quot;</span>)
+        <span class="hljs-keyword">if</span> ( val == <span class="hljs-string">&quot;(&quot;</span> ) error(<span class="hljs-string">&quot;&apos;(&apos; parentheses missmatched.&quot;</span>)
         calc( val )
     }
     <span class="hljs-built_in">return</span>  pop(rstack)
