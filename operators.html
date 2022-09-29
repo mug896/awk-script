@@ -823,20 +823,18 @@ BEGIN { FS=<span class="hljs-string">&quot;&quot;</span>; token[<span class="hlj
 {
     idx = <span class="hljs-number">0</span>
     tokenize()              <span class="hljs-comment"># &#xB77C;&#xC778; &#xBCC4;&#xB85C; tokenize &#xB97C; &#xD574;&#xC11C;</span>
-    <span class="hljs-built_in">print</span> result()          <span class="hljs-comment"># &#xC5F0;&#xC0B0; &#xACB0;&#xACFC;&#xB97C; &#xCD9C;&#xB825;&#xD569;&#xB2C8;&#xB2E4;.</span>
+    <span class="hljs-built_in">print</span> parse()           <span class="hljs-comment"># &#xC5F0;&#xC0B0; &#xACB0;&#xACFC;&#xB97C; &#xCD9C;&#xB825;&#xD569;&#xB2C8;&#xB2E4;.</span>
 
     delete token            <span class="hljs-comment"># &#xB2E4;&#xC74C; &#xC785;&#xB825; &#xB77C;&#xC778;&#xC744; &#xC704;&#xD55C; &#xCD08;&#xAE30;&#xD654; </span>
 }
 
-<span class="hljs-keyword">function</span> result(     i, len, op, pk, val, unary, unary_p) {
+<span class="hljs-keyword">function</span> parse(     i, len, op, pk, val, unary, unary_p) {
     unary = <span class="hljs-number">1</span>; unary_p = <span class="hljs-number">1</span>    <span class="hljs-comment"># unary &#xC5F0;&#xC0B0;&#xC790; &#xBD80;&#xD638; &#xC124;&#xC815;&#xC744; &#xC704;&#xD55C; &#xBCC0;&#xC218;. _p &#xB294; &#xAD04;&#xD638;&#xC6A9;</span>
     len = length(token)
     <span class="hljs-keyword">for</span> (i=<span class="hljs-number">0</span>; i &lt; len; i++) {
         switch ( token[i][<span class="hljs-string">&quot;name&quot;</span>] ) {
 
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;number&quot;</span> :  
-                <span class="hljs-keyword">if</span> ( token[i-<span class="hljs-number">1</span>][<span class="hljs-string">&quot;name&quot;</span>] == <span class="hljs-string">&quot;number&quot;</span> )  <span class="hljs-comment"># &#xC22B;&#xC790;&#xAC00; &#xC5F0;&#xC774;&#xC5B4; &#xB098;&#xC624;&#xBA74; &#xC624;&#xB958;</span>
-                    error( <span class="hljs-string">&quot;consecutive numbers&quot;</span> )
                 <span class="hljs-comment"># unary &#xAC12;&#xC73C;&#xB85C; &#xBD80;&#xD638;&#xB97C; &#xC124;&#xC815;&#xD574;&#xC11C; rstack &#xC5D0; push &#xD569;&#xB2C8;&#xB2E4;.</span>
                 push(rstack, unary * token[i][<span class="hljs-string">&quot;value&quot;</span>])
                 unary = <span class="hljs-number">1</span>     <span class="hljs-comment"># push &#xD6C4;&#xC5D0;&#xB294; &#xAC12;&#xC744; 1 &#xB85C; reset</span>
@@ -920,6 +918,13 @@ BEGIN { FS=<span class="hljs-string">&quot;&quot;</span>; token[<span class="hlj
     push(rstack, res)       <span class="hljs-comment"># &#xACB0;&#xACFC;&#xB97C; &#xB2E4;&#xC2DC; rstack &#xC73C;&#xB85C; push &#xD569;&#xB2C8;&#xB2E4;.</span>
 }
 
+<span class="hljs-keyword">function</span> error (str) {
+    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;ERROR: &quot;</span> str &gt; <span class="hljs-string">&quot;/dev/stderr&quot;</span>
+    <span class="hljs-built_in">exit</span> <span class="hljs-number">1</span>
+}
+
+<span class="hljs-comment">############   tokenize   ############</span>
+
 <span class="hljs-keyword">function</span> tokenize (      i) {
     <span class="hljs-keyword">for</span> (i = <span class="hljs-number">1</span>; i &lt;= NF; i++) {
         switch (<span class="hljs-variable">$i</span>) {
@@ -950,12 +955,7 @@ BEGIN { FS=<span class="hljs-string">&quot;&quot;</span>; token[<span class="hlj
     <span class="hljs-built_in">return</span> i - <span class="hljs-number">1</span>
 }
 
-<span class="hljs-keyword">function</span> error (str) {
-    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;ERROR: &quot;</span> str &gt; <span class="hljs-string">&quot;/dev/stderr&quot;</span>
-    <span class="hljs-built_in">exit</span> <span class="hljs-number">1</span>
-}
-
-<span class="hljs-comment">############     stack     ############</span>
+<span class="hljs-comment">############   stack   ############</span>
 
 <span class="hljs-keyword">function</span> push(arr, val) {
     arr[ length(arr) ] = val
@@ -990,7 +990,6 @@ $ awk <span class="hljs-string">&apos;BEGIN { print -2 ^ -4 }&apos;</span>    <s
 <p>&#xB530;&#xB77C;&#xC11C; <code>^</code> &#xC5F0;&#xC0B0;&#xC790; &#xC55E;&#xC5D0; &#xC788;&#xB294; &#xC22B;&#xC790;&#xC5D0; &#xBD99;&#xB294; &#xBD80;&#xD638;&#xB294; &#xAD04;&#xD638;&#xC5D0;&#xC11C; &#xBD80;&#xD638;&#xB97C; &#xCC98;&#xB9AC;&#xD560; &#xB54C;&#xCC98;&#xB7FC; 
 &#xBA3C;&#xC800; ustack &#xC5D0; &#xBD80;&#xD638;&#xB97C; &#xC800;&#xC7A5;&#xD558;&#xACE0; &#xB098;&#xC911;&#xC5D0; &#xC5F0;&#xC0B0; &#xACB0;&#xACFC;&#xC5D0; &#xB300;&#xD574; &#xBD80;&#xD638;&#xB97C; &#xC801;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">. . .
-. . .
 
 <span class="hljs-keyword">function</span> result(     i, len, op, pk, val, unary, unary_p) {
     len = length(token)
@@ -999,9 +998,6 @@ $ awk <span class="hljs-string">&apos;BEGIN { print -2 ^ -4 }&apos;</span>    <s
         switch ( token[i][<span class="hljs-string">&quot;name&quot;</span>] ) {
 
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;number&quot;</span> :  
-                <span class="hljs-keyword">if</span> ( token[i-<span class="hljs-number">1</span>][<span class="hljs-string">&quot;name&quot;</span>] == <span class="hljs-string">&quot;number&quot;</span> )
-                    error( <span class="hljs-string">&quot;consecutive numbers&quot;</span> )
-
                 <span class="hljs-keyword">if</span> ( token[i+<span class="hljs-number">1</span>][<span class="hljs-string">&quot;value&quot;</span>] == <span class="hljs-string">&quot;^&quot;</span> ) {     <span class="hljs-comment"># &#xC22B;&#xC790; &#xBC14;&#xB85C; &#xB2E4;&#xC74C; &#xC5F0;&#xC0B0;&#xC790;&#xAC00; &quot;^&quot; &#xC774;&#xBA74;</span>
                     push( ustack, unary)                <span class="hljs-comment"># &#xBD80;&#xD638;&#xB97C; &#xB098;&#xC911;&#xC5D0; &#xC5F0;&#xC0B0; &#xACB0;&#xACFC;&#xC5D0; &#xC124;&#xC815;&#xD574;&#xC57C;</span>
                     push( rstack, token[i][<span class="hljs-string">&quot;value&quot;</span>])    <span class="hljs-comment"># &#xD558;&#xBBC0;&#xB85C; ustack &#xC5D0; push &#xD569;&#xB2C8;&#xB2E4;.</span>
@@ -1119,7 +1115,6 @@ $ awk <span class="hljs-string">&apos;BEGIN { print -2 ^ -4 }&apos;</span>    <s
 }
 
 . . .
-. . .
 </code></pre>
 <p>&#xAC19;&#xC740; &#xC6B0;&#xC120;&#xC21C;&#xC704; &#xC5F0;&#xC0B0;&#xC790;&#xAC00; &#xC5F0;&#xC774;&#xC5B4; &#xC788;&#xC744; &#xACBD;&#xC6B0; &#xC67C;&#xCABD;&#xBD80;&#xD130; &#xACC4;&#xC0B0;&#xD560;&#xC9C0;, &#xC624;&#xB978;&#xCABD;&#xBD80;&#xD130; &#xACC4;&#xC0B0;&#xD560;&#xC9C0;
 &#xC815;&#xD558;&#xB294; &#xAC83;&#xC744; associativity &#xB77C;&#xACE0; &#xD558;&#xB294;&#xB370; <code>^</code> &#xC5F0;&#xC0B0;&#xC790;&#xB294; right associativity &#xC785;&#xB2C8;&#xB2E4;.</p>
@@ -1143,9 +1138,182 @@ $ awk <span class="hljs-string">&apos;BEGIN { a = b = c = 100; print a,b,c }&apo
 $ awk <span class="hljs-string">&apos;BEGIN { a = ( b = ( c = 100 )); print a,b,c }&apos;</span> 
 <span class="hljs-number">100</span> <span class="hljs-number">100</span> <span class="hljs-number">100</span>
 </code></pre>
-<blockquote>
-<p>C &#xC5B8;&#xC5B4;&#xB97C; &#xC774;&#xC6A9;&#xD55C; recursive descent parser &#xC640; LR parser &#xB294; <a href="https://github.com/mug896/arithmetic-parser" target="_blank">&#xC774;&#xACF3;</a> &#xC5D0;&#xC11C; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-</blockquote>
+<h4 id="&#xCD5C;&#xC885;-&#xACB0;&#xACFC;">&#xCD5C;&#xC885; &#xACB0;&#xACFC;</h4>
+<pre><code class="lang-sh">sh$ cat parse.sh
+<span class="hljs-comment">#!/usr/bin/env -S gawk -M -f</span>
+
+BEGIN { FS=<span class="hljs-string">&quot;&quot;</span>; token[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>]; ostack[<span class="hljs-number">0</span>]; rstack[<span class="hljs-number">0</span>]; ustack[<span class="hljs-number">0</span>] }
+
+{
+    idx = <span class="hljs-number">0</span>
+    tokenize()
+    <span class="hljs-built_in">print</span> parse()
+
+    delete token 
+}
+
+<span class="hljs-keyword">function</span> parse(     i, len, op, pk, val, unary, unary_p) {
+    len = length(token)
+    unary = <span class="hljs-number">1</span>; unary_p = <span class="hljs-number">1</span>
+    <span class="hljs-keyword">for</span> (i=<span class="hljs-number">0</span>; i &lt; len; i++) {
+        switch ( token[i][<span class="hljs-string">&quot;type&quot;</span>] ) {
+
+            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;number&quot;</span> :  
+                <span class="hljs-keyword">if</span> ( token[i-<span class="hljs-number">1</span>][<span class="hljs-string">&quot;type&quot;</span>] == <span class="hljs-string">&quot;number&quot;</span> ) error( <span class="hljs-string">&quot;number after number&quot;</span> )
+                <span class="hljs-keyword">if</span> ( token[i+<span class="hljs-number">1</span>][<span class="hljs-string">&quot;value&quot;</span>] == <span class="hljs-string">&quot;(&quot;</span> ) error( <span class="hljs-string">&quot;parenthesis &apos;(&apos;&quot;</span> )
+
+                <span class="hljs-keyword">if</span> ( token[i+<span class="hljs-number">1</span>][<span class="hljs-string">&quot;value&quot;</span>] == <span class="hljs-string">&quot;^&quot;</span> ) {
+                    push( ustack, unary)
+                    push( rstack, token[i][<span class="hljs-string">&quot;value&quot;</span>])
+                } <span class="hljs-keyword">else</span> 
+                    push( rstack, unary * token[i][<span class="hljs-string">&quot;value&quot;</span>])
+
+                unary = <span class="hljs-number">1</span>
+                <span class="hljs-built_in">break</span>
+
+            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;operator&quot;</span> :
+                <span class="hljs-keyword">if</span> ( token[i+<span class="hljs-number">1</span>][<span class="hljs-string">&quot;value&quot;</span>] == <span class="hljs-string">&quot;)&quot;</span> ) error(<span class="hljs-string">&quot;&apos;)&apos; parenthesis after operator&quot;</span>);
+                <span class="hljs-keyword">if</span> ( i + <span class="hljs-number">1</span> == len ) error(<span class="hljs-string">&quot;end of expression.&quot;</span>);
+                op = token[i][<span class="hljs-string">&quot;value&quot;</span>]
+                <span class="hljs-keyword">if</span> ( i == <span class="hljs-number">0</span> \
+                    || token[i-<span class="hljs-number">1</span>][<span class="hljs-string">&quot;value&quot;</span>] == <span class="hljs-string">&quot;(&quot;</span> \
+                    || token[i-<span class="hljs-number">1</span>][<span class="hljs-string">&quot;type&quot;</span>] == <span class="hljs-string">&quot;operator&quot;</span>) 
+                { 
+                    <span class="hljs-keyword">if</span> ( op ~ /*|\/|%|\^/ ) error( <span class="hljs-string">&quot;* / % ^ on unary operator&quot;</span> )
+                    <span class="hljs-keyword">if</span> ( token[i+<span class="hljs-number">1</span>][<span class="hljs-string">&quot;value&quot;</span>] == <span class="hljs-string">&quot;(&quot;</span>) {
+                        unary_p = unary * (op <span class="hljs-number">1</span>)
+                        unary = <span class="hljs-number">1</span>
+                    } 
+                    <span class="hljs-keyword">else</span> unary *= (op <span class="hljs-number">1</span>)
+                    <span class="hljs-built_in">break</span> 
+                }
+                pk = peek(ostack)               
+                <span class="hljs-keyword">if</span> ( pk == <span class="hljs-string">&quot;&quot;</span> || pk == <span class="hljs-string">&quot;(&quot;</span> || op == <span class="hljs-string">&quot;^&quot;</span> ) 
+                     { push(ostack, op); <span class="hljs-built_in">break</span> }   
+
+                <span class="hljs-keyword">if</span> ( op == <span class="hljs-string">&quot;*&quot;</span> || op == <span class="hljs-string">&quot;/&quot;</span> || op == <span class="hljs-string">&quot;%&quot;</span> ) {
+                    <span class="hljs-keyword">while</span>( peek(ostack) ~ /*|\/|%|\^/ ) 
+                        calc( pop(ostack))
+                    push(ostack, op)
+                    <span class="hljs-built_in">break</span>
+                }
+                <span class="hljs-keyword">while</span>( peek(ostack) != <span class="hljs-string">&quot;(&quot;</span> &amp;&amp; slen(ostack) &gt; <span class="hljs-number">0</span> ) 
+                    calc( pop(ostack))
+                push( ostack, op) 
+                <span class="hljs-built_in">break</span>
+
+            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;parenthesis&quot;</span> :
+                val = token[i][<span class="hljs-string">&quot;value&quot;</span>]
+                <span class="hljs-keyword">if</span> ( val == <span class="hljs-string">&quot;(&quot;</span> ) {
+                    <span class="hljs-keyword">if</span> ( token[i+<span class="hljs-number">1</span>][<span class="hljs-string">&quot;value&quot;</span>] == <span class="hljs-string">&quot;)&quot;</span> ) error(<span class="hljs-string">&quot;&apos;)&apos; parenthesis after &apos;(&apos;&quot;</span>);
+                    push(ostack, val)
+                    push(ustack, unary_p)
+                    unary_p = <span class="hljs-number">1</span>
+                } <span class="hljs-keyword">else</span> {
+                    <span class="hljs-keyword">if</span> ( token[i+<span class="hljs-number">1</span>][<span class="hljs-string">&quot;value&quot;</span>] == <span class="hljs-string">&quot;(&quot;</span> ) error(<span class="hljs-string">&quot;&apos;(&apos; parenthesis after &apos;)&apos;&quot;</span>);
+                    <span class="hljs-keyword">while</span> (val = pop(ostack)) {
+                        <span class="hljs-keyword">if</span> ( val == <span class="hljs-string">&quot;(&quot;</span> ) <span class="hljs-built_in">break</span>
+                        <span class="hljs-keyword">else</span> calc(val)
+                    }
+                    <span class="hljs-keyword">if</span> ( val != <span class="hljs-string">&quot;(&quot;</span> ) error(<span class="hljs-string">&quot;parentheses missmatched. &apos;)&apos;&quot;</span>)
+                    <span class="hljs-keyword">if</span> ( token[i+<span class="hljs-number">1</span>][<span class="hljs-string">&quot;value&quot;</span>] != <span class="hljs-string">&quot;^&quot;</span> )
+                        push(rstack, pop(ustack) * pop(rstack))
+                    <span class="hljs-keyword">if</span> ( token[i+<span class="hljs-number">1</span>][<span class="hljs-string">&quot;type&quot;</span>] == <span class="hljs-string">&quot;number&quot;</span>)
+                        error(<span class="hljs-string">&quot;number not allowed.&quot;</span>);
+                }
+        }
+    }
+    len = slen(ostack)                        
+    <span class="hljs-keyword">for</span> (i = <span class="hljs-number">1</span>; i &lt;= len; i++) {
+        val = pop(ostack)
+        <span class="hljs-keyword">if</span> ( val == <span class="hljs-string">&quot;(&quot;</span> ) error(<span class="hljs-string">&quot;parentheses missmatched. &apos;(&apos;&quot;</span>)
+        calc( val )
+    }
+    <span class="hljs-built_in">return</span>  pop(rstack)
+}
+
+<span class="hljs-keyword">function</span> calc (op,      num1, num2, res) {
+    num1 = pop(rstack)
+    num2 = pop(rstack)
+    switch (op) {
+        <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;+&quot;</span> : res = num2 + num1; <span class="hljs-built_in">break</span>
+        <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;-&quot;</span> : res = num2 - num1; <span class="hljs-built_in">break</span>
+        <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;*&quot;</span> : res = num2 * num1; <span class="hljs-built_in">break</span>
+        <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;/&quot;</span> : 
+            <span class="hljs-keyword">if</span> (num1 == <span class="hljs-number">0</span> ) error( <span class="hljs-string">&quot;division by zero&quot;</span> )
+            res = num2 / num1
+            <span class="hljs-built_in">break</span>
+        <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;%&quot;</span> : 
+            <span class="hljs-keyword">if</span> (num1 == <span class="hljs-number">0</span> ) error( <span class="hljs-string">&quot;division by zero&quot;</span> )
+            res = num2 % num1
+            <span class="hljs-built_in">break</span>
+        <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;^&quot;</span> : res = num2 ^ num1
+    }
+    <span class="hljs-keyword">if</span> ( op == <span class="hljs-string">&quot;^&quot;</span> )
+        push(rstack, pop(ustack) * res)
+    <span class="hljs-keyword">else</span>
+        push(rstack, res)
+}
+
+<span class="hljs-keyword">function</span> error (str) {
+    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;Error: &quot;</span> str &gt; <span class="hljs-string">&quot;/dev/stderr&quot;</span>
+    <span class="hljs-built_in">exit</span> <span class="hljs-number">1</span>
+}
+
+<span class="hljs-comment">############   tokenize   ############</span>
+
+<span class="hljs-keyword">function</span> tokenize (      i) {
+    <span class="hljs-keyword">for</span> (i = <span class="hljs-number">1</span>; i &lt;= NF; i++) {
+        switch (<span class="hljs-variable">$i</span>) {
+            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;+&quot;</span> : <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;-&quot;</span> :
+            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;*&quot;</span> : <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;/&quot;</span> :
+            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;%&quot;</span> : <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;^&quot;</span> :
+                token[idx][<span class="hljs-string">&quot;type&quot;</span>] = <span class="hljs-string">&quot;operator&quot;</span>
+                token[idx++][<span class="hljs-string">&quot;value&quot;</span>] = <span class="hljs-variable">$i</span>
+                <span class="hljs-built_in">break</span>
+            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;(&quot;</span> : <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;)&quot;</span> :
+                token[idx][<span class="hljs-string">&quot;type&quot;</span>] = <span class="hljs-string">&quot;parenthesis&quot;</span>
+                token[idx++][<span class="hljs-string">&quot;value&quot;</span>] = <span class="hljs-variable">$i</span>
+                <span class="hljs-built_in">break</span>
+            <span class="hljs-keyword">case</span> /[<span class="hljs-number">0</span>-<span class="hljs-number">9</span>.]/ : 
+                i = t_number(i)
+                <span class="hljs-built_in">break</span>
+            <span class="hljs-keyword">case</span> /[ \t]/ :
+                <span class="hljs-built_in">break</span>
+            default :
+                error( <span class="hljs-string">&quot;wrong character: &quot;</span> <span class="hljs-variable">$i</span>)
+        }
+    }
+}
+
+<span class="hljs-keyword">function</span> t_number (i,      res) {
+    <span class="hljs-keyword">while</span> ( <span class="hljs-variable">$i</span> ~ /[<span class="hljs-number">0</span>-<span class="hljs-number">9</span>.]/ ) res = res $(i++)
+    token[idx][<span class="hljs-string">&quot;type&quot;</span>] = <span class="hljs-string">&quot;number&quot;</span>
+    token[idx++][<span class="hljs-string">&quot;value&quot;</span>] = res
+    <span class="hljs-built_in">return</span> i - <span class="hljs-number">1</span>
+}
+
+<span class="hljs-comment">############   stack   ############</span>
+
+<span class="hljs-keyword">function</span> push (arr, val) {
+    arr[ length(arr) ] = val
+}
+<span class="hljs-keyword">function</span> pop (arr,      ret) {
+    <span class="hljs-keyword">if</span> ( length(arr) &gt; <span class="hljs-number">1</span> ) {
+        ret = arr[ length(arr) - <span class="hljs-number">1</span> ]
+        delete arr[ length(arr) - <span class="hljs-number">1</span> ]
+    }
+    <span class="hljs-built_in">return</span> ret
+}
+<span class="hljs-keyword">function</span> peek (arr,      ret) {
+    <span class="hljs-keyword">if</span> ( length(arr) &gt; <span class="hljs-number">1</span> )
+        ret = arr[ length(arr) - <span class="hljs-number">1</span> ]
+    <span class="hljs-built_in">return</span> ret
+}
+<span class="hljs-keyword">function</span> slen (arr) {
+    <span class="hljs-built_in">return</span> length(arr) - <span class="hljs-number">1</span>
+}
+</code></pre>
 
                     
                     </section>
