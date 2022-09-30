@@ -843,11 +843,8 @@ BEGIN { FS=<span class="hljs-string">&quot;&quot;</span>; token[<span class="hlj
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;operator&quot;</span> :
                 op = token[i][<span class="hljs-string">&quot;value&quot;</span>]
 
-                <span class="hljs-comment"># &#xD604;&#xC7AC; &#xC5F0;&#xC0B0;&#xC790;&#xAC00; &#xCC98;&#xC74C; token &#xC774;&#xAC70;&#xB098; &#xBC14;&#xB85C; &#xC774;&#xC804; token &#xC774;</span>
-                <span class="hljs-comment"># &quot;(&quot; &#xC774;&#xAC70;&#xB098; operator &#xC774;&#xBA74; unary &#xC5F0;&#xC0B0;&#xC790;</span>
-                <span class="hljs-keyword">if</span> ( i == <span class="hljs-number">0</span> \
-                     || token[i-<span class="hljs-number">1</span>][<span class="hljs-string">&quot;value&quot;</span>] == <span class="hljs-string">&quot;(&quot;</span> \
-                     || token[i-<span class="hljs-number">1</span>][<span class="hljs-string">&quot;type&quot;</span>] == <span class="hljs-string">&quot;operator&quot;</span>)
+                <span class="hljs-comment"># &#xD604;&#xC7AC; &#xC5F0;&#xC0B0;&#xC790; &#xBC14;&#xB85C; &#xC774;&#xC804; token &#xC774; &quot;)&quot; &#xC640; &quot;number&quot; &#xAC00; &#xC544;&#xB2C8;&#xBA74; unary &#xC5F0;&#xC0B0;&#xC790;</span>
+                <span class="hljs-keyword">if</span> (token[i-<span class="hljs-number">1</span>][<span class="hljs-string">&quot;value&quot;</span>] != <span class="hljs-string">&quot;)&quot;</span> &amp;&amp; token[i-<span class="hljs-number">1</span>][<span class="hljs-string">&quot;type&quot;</span>] != <span class="hljs-string">&quot;number&quot;</span>)
                 { 
                     <span class="hljs-comment"># unary &#xC5F0;&#xC0B0;&#xC790; &#xC790;&#xB9AC;&#xC5D0; * or / &#xAC00; &#xC624;&#xBA74; &#xC624;&#xB958;</span>
                     <span class="hljs-keyword">if</span> ( op ~ /*|\// ) error( <span class="hljs-string">&quot;* or / on unary operator&quot;</span> )
@@ -1009,9 +1006,7 @@ $ awk <span class="hljs-string">&apos;BEGIN { print -2 ^ -4 }&apos;</span>    <s
 
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;operator&quot;</span> :
                 op = token[i][<span class="hljs-string">&quot;value&quot;</span>]
-                <span class="hljs-keyword">if</span> ( i == <span class="hljs-number">0</span> \
-                    || token[i-<span class="hljs-number">1</span>][<span class="hljs-string">&quot;value&quot;</span>] == <span class="hljs-string">&quot;(&quot;</span> \
-                    || token[i-<span class="hljs-number">1</span>][<span class="hljs-string">&quot;type&quot;</span>] == <span class="hljs-string">&quot;operator&quot;</span>) 
+                <span class="hljs-keyword">if</span> (token[i-<span class="hljs-number">1</span>][<span class="hljs-string">&quot;value&quot;</span>] != <span class="hljs-string">&quot;)&quot;</span> &amp;&amp; token[i-<span class="hljs-number">1</span>][<span class="hljs-string">&quot;type&quot;</span>] != <span class="hljs-string">&quot;number&quot;</span>)
                 { 
                     <span class="hljs-keyword">if</span> ( op ~ /*|\/|%|\^/ ) error( <span class="hljs-string">&quot;* / % ^ on unary operator&quot;</span> )
                     <span class="hljs-keyword">if</span> ( token[i+<span class="hljs-number">1</span>][<span class="hljs-string">&quot;value&quot;</span>] == <span class="hljs-string">&quot;(&quot;</span>) {
@@ -1177,9 +1172,7 @@ BEGIN { FS=<span class="hljs-string">&quot;&quot;</span>; token[<span class="hlj
                 <span class="hljs-keyword">if</span> ( token[i+<span class="hljs-number">1</span>][<span class="hljs-string">&quot;value&quot;</span>] == <span class="hljs-string">&quot;)&quot;</span> ) error(<span class="hljs-string">&quot;&apos;)&apos; after operator&quot;</span>);
                 <span class="hljs-keyword">if</span> ( i + <span class="hljs-number">1</span> == len ) error(<span class="hljs-string">&quot;early termination.&quot;</span>);
                 op = token[i][<span class="hljs-string">&quot;value&quot;</span>]
-                <span class="hljs-keyword">if</span> ( i == <span class="hljs-number">0</span> \
-                    || token[i-<span class="hljs-number">1</span>][<span class="hljs-string">&quot;value&quot;</span>] == <span class="hljs-string">&quot;(&quot;</span> \
-                    || token[i-<span class="hljs-number">1</span>][<span class="hljs-string">&quot;type&quot;</span>] == <span class="hljs-string">&quot;operator&quot;</span>) 
+                <span class="hljs-keyword">if</span> (token[i-<span class="hljs-number">1</span>][<span class="hljs-string">&quot;value&quot;</span>] != <span class="hljs-string">&quot;)&quot;</span> &amp;&amp; token[i-<span class="hljs-number">1</span>][<span class="hljs-string">&quot;type&quot;</span>] != <span class="hljs-string">&quot;number&quot;</span>)
                 { 
                     <span class="hljs-keyword">if</span> ( op ~ /*|\/|%|\^/ ) error( <span class="hljs-string">&quot;&apos;&quot;</span> op <span class="hljs-string">&quot;&apos; operator not allowed.&quot;</span> )
                     <span class="hljs-keyword">if</span> ( token[i+<span class="hljs-number">1</span>][<span class="hljs-string">&quot;value&quot;</span>] == <span class="hljs-string">&quot;(&quot;</span>) {
