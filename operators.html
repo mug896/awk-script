@@ -926,7 +926,6 @@ BEGIN { FS=<span class="hljs-string">&quot;&quot;</span>; token[<span class="hlj
         switch (<span class="hljs-variable">$i</span>) {
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;+&quot;</span> : <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;-&quot;</span> :
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;*&quot;</span> : <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;/&quot;</span> :
-            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;%&quot;</span> : <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;^&quot;</span> :
                 token[idx][<span class="hljs-string">&quot;type&quot;</span>] = <span class="hljs-string">&quot;operator&quot;</span>
                 token[idx++][<span class="hljs-string">&quot;value&quot;</span>] = <span class="hljs-variable">$i</span>
                 <span class="hljs-built_in">break</span>
