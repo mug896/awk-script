@@ -921,11 +921,12 @@ BEGIN { FS=<span class="hljs-string">&quot;&quot;</span>; token[<span class="hlj
 
 <span class="hljs-comment">############   tokenize   ############</span>
 
-<span class="hljs-keyword">function</span> tokenize (      i) {
+<span class="hljs-keyword">function</span> tokenize (      i, num) {
     <span class="hljs-keyword">for</span> (i = <span class="hljs-number">1</span>; i &lt;= NF; i++) {
         switch (<span class="hljs-variable">$i</span>) {
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;+&quot;</span> : <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;-&quot;</span> :
-            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;*&quot;</span> : <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;/&quot;</span> : 
+            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;*&quot;</span> : <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;/&quot;</span> :
+            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;%&quot;</span> : <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;^&quot;</span> :
                 token[idx][<span class="hljs-string">&quot;type&quot;</span>] = <span class="hljs-string">&quot;operator&quot;</span>
                 token[idx++][<span class="hljs-string">&quot;value&quot;</span>] = <span class="hljs-variable">$i</span>
                 <span class="hljs-built_in">break</span>
@@ -934,7 +935,10 @@ BEGIN { FS=<span class="hljs-string">&quot;&quot;</span>; token[<span class="hlj
                 token[idx++][<span class="hljs-string">&quot;value&quot;</span>] = <span class="hljs-variable">$i</span>
                 <span class="hljs-built_in">break</span>
             <span class="hljs-keyword">case</span> /[<span class="hljs-number">0</span>-<span class="hljs-number">9</span>.]/ : 
-                i = t_number(i)
+                <span class="hljs-keyword">while</span> ( <span class="hljs-variable">$i</span> ~ /[<span class="hljs-number">0</span>-<span class="hljs-number">9</span>.]/ ) num = num $(i++)
+                token[idx][<span class="hljs-string">&quot;type&quot;</span>] = <span class="hljs-string">&quot;number&quot;</span>
+                token[idx++][<span class="hljs-string">&quot;value&quot;</span>] = num
+                num=<span class="hljs-string">&quot;&quot;</span>; i--
                 <span class="hljs-built_in">break</span>
             <span class="hljs-keyword">case</span> /[ \t]/ :
                 <span class="hljs-built_in">break</span>
@@ -942,13 +946,6 @@ BEGIN { FS=<span class="hljs-string">&quot;&quot;</span>; token[<span class="hlj
                 error( <span class="hljs-string">&quot;tokenize : &apos;&quot;</span> <span class="hljs-variable">$i</span> <span class="hljs-string">&quot;&apos;&quot;</span>)
         }
     }
-}
-
-<span class="hljs-keyword">function</span> t_number (i,      res) {
-    <span class="hljs-keyword">while</span> ( <span class="hljs-variable">$i</span> ~ /[<span class="hljs-number">0</span>-<span class="hljs-number">9</span>.]/ ) res = res $(i++)
-    token[idx][<span class="hljs-string">&quot;type&quot;</span>] = <span class="hljs-string">&quot;number&quot;</span>
-    token[idx++][<span class="hljs-string">&quot;value&quot;</span>] = res
-    <span class="hljs-built_in">return</span> i - <span class="hljs-number">1</span>
 }
 
 <span class="hljs-comment">############   stack   ############</span>
@@ -1083,7 +1080,7 @@ $ awk <span class="hljs-string">&apos;BEGIN { print -2 ^ -4 }&apos;</span>    <s
         push(rstack, res)
 }
 
-<span class="hljs-keyword">function</span> tokenize (      i) {
+<span class="hljs-keyword">function</span> tokenize (      i, num) {
     <span class="hljs-keyword">for</span> (i = <span class="hljs-number">1</span>; i &lt;= NF; i++) {
         switch (<span class="hljs-variable">$i</span>) {
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;+&quot;</span> : <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;-&quot;</span> :
@@ -1097,7 +1094,10 @@ $ awk <span class="hljs-string">&apos;BEGIN { print -2 ^ -4 }&apos;</span>    <s
                 token[idx++][<span class="hljs-string">&quot;value&quot;</span>] = <span class="hljs-variable">$i</span>
                 <span class="hljs-built_in">break</span>
             <span class="hljs-keyword">case</span> /[<span class="hljs-number">0</span>-<span class="hljs-number">9</span>.]/ : 
-                i = t_number(i)
+                <span class="hljs-keyword">while</span> ( <span class="hljs-variable">$i</span> ~ /[<span class="hljs-number">0</span>-<span class="hljs-number">9</span>.]/ ) num = num $(i++)
+                token[idx][<span class="hljs-string">&quot;type&quot;</span>] = <span class="hljs-string">&quot;number&quot;</span>
+                token[idx++][<span class="hljs-string">&quot;value&quot;</span>] = num
+                num=<span class="hljs-string">&quot;&quot;</span>; i--
                 <span class="hljs-built_in">break</span>
             <span class="hljs-keyword">case</span> /[ \t]/ :
                 <span class="hljs-built_in">break</span>
@@ -1256,7 +1256,7 @@ BEGIN { FS=<span class="hljs-string">&quot;&quot;</span>; token[<span class="hlj
 
 <span class="hljs-comment">############   tokenize   ############</span>
 
-<span class="hljs-keyword">function</span> tokenize (      i) {
+<span class="hljs-keyword">function</span> tokenize (      i, num) {
     <span class="hljs-keyword">for</span> (i = <span class="hljs-number">1</span>; i &lt;= NF; i++) {
         switch (<span class="hljs-variable">$i</span>) {
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;+&quot;</span> : <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;-&quot;</span> :
@@ -1270,7 +1270,10 @@ BEGIN { FS=<span class="hljs-string">&quot;&quot;</span>; token[<span class="hlj
                 token[idx++][<span class="hljs-string">&quot;value&quot;</span>] = <span class="hljs-variable">$i</span>
                 <span class="hljs-built_in">break</span>
             <span class="hljs-keyword">case</span> /[<span class="hljs-number">0</span>-<span class="hljs-number">9</span>.]/ : 
-                i = t_number(i)
+                <span class="hljs-keyword">while</span> ( <span class="hljs-variable">$i</span> ~ /[<span class="hljs-number">0</span>-<span class="hljs-number">9</span>.]/ ) num = num $(i++)
+                token[idx][<span class="hljs-string">&quot;type&quot;</span>] = <span class="hljs-string">&quot;number&quot;</span>
+                token[idx++][<span class="hljs-string">&quot;value&quot;</span>] = num
+                num=<span class="hljs-string">&quot;&quot;</span>; i--
                 <span class="hljs-built_in">break</span>
             <span class="hljs-keyword">case</span> /[ \t]/ :
                 <span class="hljs-built_in">break</span>
@@ -1278,13 +1281,6 @@ BEGIN { FS=<span class="hljs-string">&quot;&quot;</span>; token[<span class="hlj
                 error( <span class="hljs-string">&quot;tokenize : &apos;&quot;</span> <span class="hljs-variable">$i</span> <span class="hljs-string">&quot;&apos;&quot;</span>)
         }
     }
-}
-
-<span class="hljs-keyword">function</span> t_number (i,      res) {
-    <span class="hljs-keyword">while</span> ( <span class="hljs-variable">$i</span> ~ /[<span class="hljs-number">0</span>-<span class="hljs-number">9</span>.]/ ) res = res $(i++)
-    token[idx][<span class="hljs-string">&quot;type&quot;</span>] = <span class="hljs-string">&quot;number&quot;</span>
-    token[idx++][<span class="hljs-string">&quot;value&quot;</span>] = res
-    <span class="hljs-built_in">return</span> i - <span class="hljs-number">1</span>
 }
 
 <span class="hljs-comment">############   stack   ############</span>
