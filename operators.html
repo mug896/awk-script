@@ -842,7 +842,6 @@ BEGIN { FS=<span class="hljs-string">&quot;&quot;</span>; token[<span class="hlj
 
             <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;operator&quot;</span> :
                 op = token[i][<span class="hljs-string">&quot;value&quot;</span>]
-
                 <span class="hljs-comment"># &#xD604;&#xC7AC; &#xC5F0;&#xC0B0;&#xC790; &#xBC14;&#xB85C; &#xC774;&#xC804; token &#xC774; &quot;)&quot; &#xC640; &quot;number&quot; &#xAC00; &#xC544;&#xB2C8;&#xBA74; unary &#xC5F0;&#xC0B0;&#xC790;</span>
                 <span class="hljs-keyword">if</span> (token[i-<span class="hljs-number">1</span>][<span class="hljs-string">&quot;value&quot;</span>] != <span class="hljs-string">&quot;)&quot;</span> &amp;&amp; token[i-<span class="hljs-number">1</span>][<span class="hljs-string">&quot;type&quot;</span>] != <span class="hljs-string">&quot;number&quot;</span>)
                 { 
