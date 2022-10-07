@@ -696,8 +696,7 @@ BBB
 BBB
 ...................................................
 
-<span class="hljs-comment"># select $1 from file </span>
-<span class="hljs-comment">#     group by $1 </span>
+<span class="hljs-comment"># select $1 from file group by $1 </span>
 $ awk <span class="hljs-string">&apos;{ a[$1] } END { for (i in a) print i }&apos;</span> file
 AAA
 CCC
@@ -705,8 +704,7 @@ EEE
 BBB
 DDD
 
-<span class="hljs-comment"># select $1, count($1) from file </span>
-<span class="hljs-comment">#     group by $1 </span>
+<span class="hljs-comment"># select $1, count($1) from file group by $1 </span>
 $ awk <span class="hljs-string">&apos;{ a[$1]++ } END { for (i in a) print i &quot; : &quot; a[i] }&apos;</span> file
 AAA : <span class="hljs-number">1</span>
 CCC : <span class="hljs-number">1</span>
@@ -721,6 +719,11 @@ EEE
 BBB
 CCC
 DDD
+
+<span class="hljs-comment"># select $1, count($1) as c from file group by $1 having c &gt;= 2</span>
+$ awk <span class="hljs-string">&apos;++a[$1] == 2&apos;</span>  file      <span class="hljs-comment"># &#xC911;&#xBCF5;&#xB77C;&#xC778;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB294; &#xB77C;&#xC778;</span>
+DDD
+BBB
 </code></pre>
 <p>&#xB0B1;&#xB9D0; &#xCD9C;&#xD604; &#xBE48;&#xB3C4; &#xACC4;&#xC0B0; &#xD6C4; &#xC815;&#xB82C;&#xD558;&#xAE30;</p>
 <pre><code class="lang-bash"><span class="hljs-comment"># &apos;.&apos; &#xC640; &apos;,&apos; &#xBB38;&#xC790;&#xAC00; &#xB0B1;&#xB9D0;&#xC5D0; &#xD3EC;&#xD568;&#xB418;&#xB294; &#xAC83;&#xC744; &#xBC29;&#xC9C0;&#xD558;&#xAE30; &#xC704;&#xD574; RS &#xB85C; &#xC124;&#xC815;</span>
@@ -792,7 +795,7 @@ cpu0     cpu1     cpu2     cpu3     cpu4     cpu5     cpu6     cpu7
 &#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xB418;&#xB294;&#xB370;&#xC694;.
 <code>count(distinct C)</code> &#xAC00; &#xC0AC;&#xC6A9;&#xB418;&#xC5C8;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; distinct &#xB97C; &#xAD6C;&#xD604;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC785;&#xB825; &#xB54C;&#xB294; <code>a[$1,$2][&quot;C&quot;][$3]</code>, &#xCD9C;&#xB825; &#xB54C;&#xB294; <code>length(a[$1,$2][&quot;C&quot;])</code> &#xAC00; &#xC0AC;&#xC6A9;&#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;.
 &#xB9CC;&#xC57D;&#xC5D0; <code>count(distinct C,D)</code> &#xB97C; &#xD55C;&#xB2E4;&#xACE0; &#xD558;&#xBA74; &#xC785;&#xB825; &#xB54C; <code>a[$1,$2][&quot;C&quot;][$3,$4]</code> &#xB85C; &#xD558;&#xBA74; &#xB418;&#xACA0;&#xC8E0;</p>
-<pre><code class="lang-bash"><span class="hljs-comment"># &#xB370;&#xC774;&#xD130; &#xD30C;&#xC77C;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xB54C;&#xB294; &#xD5E4;&#xB354; &#xBD80;&#xBD84;&#xC740; &#xC81C;&#xC678;&#xD558;&#xC138;&#xC694;</span>
+<pre><code class="lang-bash"><span class="hljs-comment"># awk &#xC5D0;&#xC11C; &#xB370;&#xC774;&#xD130; &#xD30C;&#xC77C;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xB54C;&#xB294; &#xD5E4;&#xB354; &#xBD80;&#xBD84;&#xC740; &#xC81C;&#xC678;&#xD558;&#xC138;&#xC694;</span>
 <span class="hljs-comment">###################### &#xB370;&#xC774;&#xD130; &#xD30C;&#xC77C; &#xB0B4;&#xC6A9; #######################</span>
 A   B   C   D   E
 ----------------------     <span class="hljs-comment">#  x x &#xC640; z o &#xB294; 2&#xBC88;&#xC529; &#xC911;&#xBCF5;&#xB418;&#xACE0; x x &#xB294; C &#xAC12;&#xC774; &#xAC19;&#xACE0; z o &#xB294; &#xB2E4;&#xB974;&#xB2E4;</span>
