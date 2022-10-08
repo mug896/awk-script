@@ -1219,17 +1219,18 @@ BEGIN {
 <span class="hljs-keyword">function</span> push(arr, val) {
     arr[ length(arr) ] = val     <span class="hljs-comment"># push &#xB418;&#xB294; &#xC6D0;&#xC18C;&#xB294; stack[1] &#xBD80;&#xD130; &#xB4E4;&#xC5B4;&#xAC00;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.</span>
 }
-<span class="hljs-keyword">function</span> pop(arr,      ret) {
-    <span class="hljs-keyword">if</span> ( length(arr) &gt; <span class="hljs-number">1</span> ) {
-        ret = arr[ length(arr) - <span class="hljs-number">1</span> ]
-        delete arr[ length(arr) - <span class="hljs-number">1</span> ]
+<span class="hljs-keyword">function</span> pop (arr,      len, ret) {
+    len = length(arr)
+    <span class="hljs-keyword">if</span> ( len &gt; <span class="hljs-number">1</span> ) {
+        ret = arr[ len - <span class="hljs-number">1</span> ]
+        delete arr[ len - <span class="hljs-number">1</span> ]
     }
     <span class="hljs-built_in">return</span> ret
 }
-<span class="hljs-keyword">function</span> peek(arr,      ret) {
-    <span class="hljs-keyword">if</span> ( length(arr) &gt; <span class="hljs-number">1</span> ) {
-        ret = arr[ length(arr) - <span class="hljs-number">1</span> ]
-    }
+<span class="hljs-keyword">function</span> peek (arr,      len, ret) {
+    len = length(arr)
+    <span class="hljs-keyword">if</span> ( len &gt; <span class="hljs-number">1</span> )
+        ret = arr[ len - <span class="hljs-number">1</span> ]
     <span class="hljs-built_in">return</span> ret
 }
 <span class="hljs-keyword">function</span> slen(arr) {
