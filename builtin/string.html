@@ -730,20 +730,20 @@ number of substitutions made : <span class="hljs-number">3</span>
 <pre><code class="lang-bash"><span class="hljs-comment">########################  sub  #########################</span>
 $ awk <span class="hljs-string">&apos;
 BEGIN {
-    str = &quot;foo BOO ZOO&quot;
+    str = &quot;foo BAR ZOO&quot;
     num = sub(/[A-Z]+/, &quot;@&amp;@&quot;, str)
     print str
 }&apos;</span>
-foo @BOO@ ZOO
+foo @BAR@ ZOO
 
 <span class="hljs-comment">########################  gsub  #########################</span>
 $ awk <span class="hljs-string">&apos;
 BEGIN {
-    str = &quot;foo BOO ZOO&quot;
+    str = &quot;foo BAR ZOO&quot;
     num = gsub(/[A-Z]+/, &quot;@&amp;@&quot;, str)
     print str
 }&apos;</span>
-foo @BOO@ @ZOO@
+foo @BAR@ @ZOO@
 </code></pre>
 <p>regex &#xBB38;&#xC790;&#xC778; <code>|</code> &#xB098; <code>&amp;</code> &#xB97C; &#xC77C;&#xBC18; &#xBB38;&#xC790;&#xB85C; &#xC0AC;&#xC6A9;&#xD558;&#xB824;&#xBA74; escape &#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.
 regex &#xC0C1;&#xC218;(<code>/.../</code>) &#xC640; &#xB2EC;&#xB9AC; quotes &#xC5D0;&#xC11C;&#xB294; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; escape sequence &#xAC00; &#xCC98;&#xB9AC;&#xB418;&#xBBC0;&#xB85C;
@@ -775,36 +775,36 @@ gensub &#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; gsub &#xD568;&#xC218;&
 <p><code>how</code> &#xC778;&#xC218;&#xB97C; &#xD1B5;&#xD574;&#xC11C; &#xB9E4;&#xCE6D; &#xBC88;&#xD638;&#xB97C; &#xC9C0;&#xC815;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. ( 1, 2, 3 ... 9, &quot;g&quot; )</p>
 <pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;
 BEGIN {
-    str = &quot;foo BOO ZOO&quot;
+    str = &quot;foo BAR ZOO&quot;
     res = gensub(/[A-Z]+/, &quot;@&amp;@&quot;, 1, str)      # how : 1
     print res
 }&apos;</span>
-foo @BOO@ ZOO
+foo @BAR@ ZOO
 
 $ awk <span class="hljs-string">&apos;
 BEGIN {
-    str = &quot;foo BOO ZOO&quot;
+    str = &quot;foo BAR ZOO&quot;
     res = gensub(/[A-Z]+/, &quot;@&amp;@&quot;, 2, str)      # how : 2
     print res
 }&apos;</span>
-foo BOO @ZOO@
+foo BAR @ZOO@
 
 $ awk <span class="hljs-string">&apos;
 BEGIN {
-    str = &quot;foo BOO ZOO&quot;
+    str = &quot;foo BAR ZOO&quot;
     res = gensub(/[A-Z]+/, &quot;@&amp;@&quot;, &quot;g&quot;, str)    # how : &quot;g&quot;
     print res
 }&apos;</span>
-foo @BOO@ @ZOO@
+foo @BAR@ @ZOO@
 .........................................................
 
 <span class="hljs-comment"># target &#xC2A4;&#xD2B8;&#xB9C1;&#xC774; &#xC8FC;&#xC5B4;&#xC9C0;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; &#xC785;&#xB825;&#xAC12;&#xC73C;&#xB85C;&#xB294; $0 &#xAC00; &#xC0AC;&#xC6A9;&#xB418;&#xC9C0;&#xB9CC;</span>
 <span class="hljs-comment"># &#xCD9C;&#xB825;&#xAC12;&#xC740; $0 &#xC5D0; &#xB300;&#xC785;&#xB418;&#xC9C0; &#xC54A;&#xC73C;&#xBBC0;&#xB85C; &#xC9C1;&#xC811; &#xB300;&#xC785;&#xD574; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</span>
-$ <span class="hljs-built_in">echo</span> foo BOO ZOO | awk <span class="hljs-string">&apos;{
+$ <span class="hljs-built_in">echo</span> foo BAR ZOO | awk <span class="hljs-string">&apos;{
     $0 = gensub(/[A-Z]+/, &quot;@&amp;@&quot;, &quot;g&quot;)
     print
 }&apos;</span>
-foo @BOO@ @ZOO@
+foo @BAR@ @ZOO@
 </code></pre>
 <p><code>( )</code> subexpression &#xC744; &#xC774;&#xC6A9;&#xD55C; back-reference &#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-bash">$ awk <span class="hljs-string">&apos;                                      
