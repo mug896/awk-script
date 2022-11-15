@@ -1054,19 +1054,19 @@ XXXYYYZZZ
 
 <span class="hljs-comment"># OFS &#xC758; &#xAE30;&#xBCF8;&#xAC12;&#xC740; space &#xC785;&#xB2C8;&#xB2E4;.</span>
 <span class="hljs-comment"># ORS &#xC758; &#xAE30;&#xBCF8;&#xAC12;&#xC740; newline &#xC774;&#xBBC0;&#xB85C; &#xB9E4; &#xCD9C;&#xB825;&#xC2DC; &#xB9C8;&#xB2E4; &#xAC1C;&#xD589;&#xC774; &#xB429;&#xB2C8;&#xB2E4;.</span>
-$ awk <span class="hljs-string">&apos;{print $1, $2, $3}&apos;</span> FS=, file
+$ awk <span class="hljs-string">&apos;{print $1,$2,$3}&apos;</span> FS=, file
 AAA BBB CCC
 KKK LLL MMM
 XXX YYY ZZZ
 
 <span class="hljs-comment"># OFS &#xAC12;&#xC744; &apos;:&apos; &#xBB38;&#xC790;&#xB85C; &#xC124;&#xC815;&#xD560; &#xACBD;&#xC6B0;</span>
-$ awk <span class="hljs-string">&apos;{ print $1, $2, $3 }&apos;</span> FS=, OFS=: file
+$ awk <span class="hljs-string">&apos;{ print $1,$2,$3 }&apos;</span> FS=, OFS=: file
 AAA:BBB:CCC
 KKK:LLL:MMM
 XXX:YYY:ZZZ
 
 <span class="hljs-comment"># ORS &#xAC12;&#xC744; &apos;@&apos; &#xBB38;&#xC790;&#xB85C; &#xC124;&#xC815;&#xD560; &#xACBD;&#xC6B0;</span>
-$ awk <span class="hljs-string">&apos;{ print $1, $2, $3 }&apos;</span> FS=, OFS=: ORS=@ file
+$ awk <span class="hljs-string">&apos;{ print $1,$2,$3 }&apos;</span> FS=, OFS=: ORS=@ file
 AAA:BBB:CCC@KKK:LLL:MMM@XXX:YYY:ZZZ@
 
 <span class="hljs-comment"># print &#xBB38;&#xC5D0; &#xC778;&#xC218;&#xB97C; &#xC804;&#xB2EC;&#xD558;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; $0 &#xAC12;&#xC774; &#xCD9C;&#xB825;&#xB429;&#xB2C8;&#xB2E4;.</span>
