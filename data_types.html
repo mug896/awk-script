@@ -906,9 +906,10 @@ $ awk <span class="hljs-string">&apos;BEGIN{ print (12 &gt; 111&quot;&quot;) }&a
 <span class="hljs-number">10</span> + <span class="hljs-number">20</span> + <span class="hljs-number">30</span>
 <span class="hljs-number">10</span>           <span class="hljs-comment"># &#xACB0;&#xACFC;&#xAC00; 60 &#xC774;&#xB418;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;.</span>
 
-$ awk <span class="hljs-string">&apos;BEGIN { str = &quot;10 + 20&quot;; str = str &quot; + 30&quot;
-    &quot;awk \047BEGIN{ print &quot; str &quot; }\047&quot; | getline res     # \047 &#xC740; single quotes
-    print res
+$ awk <span class="hljs-string">&apos;BEGIN { str = &quot;10 + 20&quot;; str = str &quot; + 30&quot;; print eval(str) }
+function eval(arg,     res) {
+    &quot;awk \047BEGIN{ print &quot; arg &quot; }\047&quot; | getline res     # \047 &#xC740; single quotes
+    return res
 }&apos;</span> 
 <span class="hljs-number">60</span>
 
