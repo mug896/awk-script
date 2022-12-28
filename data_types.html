@@ -779,10 +779,11 @@ $ awk <span class="hljs-string">&apos;BEGIN {                         $ awk &apo
     res = sprintf( <span class="hljs-string">&quot;%s&quot;</span>, <span class="hljs-string">&quot;foo&quot;</span> )           res = sprintf( <span class="hljs-string">&quot;%s&quot;</span>, <span class="hljs-string">&quot;foo&quot;</span> )
     <span class="hljs-built_in">print</span> res                              <span class="hljs-built_in">print</span> res
     res += sprintf( <span class="hljs-string">&quot;%s&quot;</span>, <span class="hljs-string">&quot;bar&quot;</span> )          res = res sprintf( <span class="hljs-string">&quot;%s&quot;</span>, <span class="hljs-string">&quot;bar&quot;</span> )
-    <span class="hljs-built_in">print</span> res                              <span class="hljs-built_in">print</span> res
-}<span class="hljs-string">&apos;                                     }&apos;</span>
-foo                                    foo
-<span class="hljs-number">0</span>                                      foobar
+    <span class="hljs-built_in">print</span> res                              <span class="hljs-comment"># res = sprintf( res &quot;%s&quot;, &quot;bar&quot; )   # OK</span>
+}<span class="hljs-string">&apos;                                         print res
+foo                                    }&apos;</span>
+<span class="hljs-number">0</span>                                      foo
+                                       foobar
 </code></pre>
 <h3 id="&#xC22B;&#xC790;&#xC640;-&#xC2A4;&#xD2B8;&#xB9C1;&#xC758;-&#xB4F1;&#xD638;-&#xBD80;&#xB4F1;&#xD638;-&#xC0AC;&#xC6A9;">&#xC22B;&#xC790;&#xC640; &#xC2A4;&#xD2B8;&#xB9C1;&#xC758; &#xB4F1;&#xD638;, &#xBD80;&#xB4F1;&#xD638; &#xC0AC;&#xC6A9;</h3>
 <p>awk &#xC5D0;&#xC11C;&#xB294; &#xC22B;&#xC790; 123 &#xC640; &#xC2A4;&#xD2B8;&#xB9C1; &quot;123&quot; &#xC774; &#xBB38;&#xB9E5;&#xC5D0; &#xB9DE;&#xCD94;&#xC5B4;&#xC11C; &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xD0C0;&#xC785;&#xC774; &#xBCC0;&#xACBD;&#xB418;&#xC9C0;&#xB9CC;
