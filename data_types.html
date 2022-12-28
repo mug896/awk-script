@@ -904,6 +904,16 @@ $ awk <span class="hljs-string">&apos;BEGIN{ print (12 &gt; 111&quot;&quot;) }&a
 <pre><code class="lang-sh">$ awk <span class="hljs-string">&apos;BEGIN { str = &quot;10 + 20&quot;; str = str &quot; + 30&quot;; print str; print str + 0 }&apos;</span> 
 <span class="hljs-number">10</span> + <span class="hljs-number">20</span> + <span class="hljs-number">30</span>
 <span class="hljs-number">10</span>           <span class="hljs-comment"># &#xACB0;&#xACFC;&#xAC00; 60 &#xC774;&#xB418;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;.</span>
+
+$ awk <span class="hljs-string">&apos;BEGIN { str = &quot;10 + 20&quot;; str = str &quot; + 30&quot;
+    &quot;awk \&quot;BEGIN{ print &quot; str &quot; }\&quot;&quot; | getline res
+    print res
+}&apos;</span> 
+<span class="hljs-number">60</span>
+
+$ seq <span class="hljs-operator">-f</span> <span class="hljs-string">&apos;4/%g&apos;</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">9999</span> | paste <span class="hljs-operator">-s</span> <span class="hljs-operator">-d</span> <span class="hljs-string">&apos;-+&apos;</span> |
+    awk <span class="hljs-string">&apos;{ &quot;awk \&quot;BEGIN{ print &quot; $0 &quot; }\&quot;&quot; | getline; print }&apos;</span>
+<span class="hljs-number">3.14139</span>
 </code></pre>
 <p><a name="conversion"></a></p>
 <h5 id=""><img src="images/buttons/ofmt.png" alt=""> <img src="images/buttons/convfmt.png" alt=""></h5>
