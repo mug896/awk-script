@@ -914,6 +914,9 @@ $ awk <span class="hljs-string">&apos;BEGIN { str = &quot;10 + 20&quot;; str = s
 $ seq <span class="hljs-operator">-f</span> <span class="hljs-string">&apos;4/%g&apos;</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">9999</span> | paste <span class="hljs-operator">-s</span> <span class="hljs-operator">-d</span> <span class="hljs-string">&apos;-+&apos;</span> |
     awk <span class="hljs-string">&apos;{ &quot;awk \&quot;BEGIN{ print &quot; $0 &quot; }\&quot;&quot; | getline; print }&apos;</span>
 <span class="hljs-number">3.14139</span>
+
+$ seq <span class="hljs-operator">-f</span> <span class="hljs-string">&apos;4/%g&apos;</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">9999</span> | paste <span class="hljs-operator">-s</span> <span class="hljs-operator">-d</span> <span class="hljs-string">&apos;-+&apos;</span> | perl -lne <span class="hljs-string">&quot;print eval&quot;</span>    <span class="hljs-comment"># perl &#xC5B8;&#xC5B4;</span>
+<span class="hljs-number">3.14139265359179</span>
 </code></pre>
 <p><a name="conversion"></a></p>
 <h5 id=""><img src="images/buttons/ofmt.png" alt=""> <img src="images/buttons/convfmt.png" alt=""></h5>
