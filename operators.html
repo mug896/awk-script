@@ -685,12 +685,24 @@
 </thead>
 <tbody>
 <tr>
+<td><strong>( . . . )</strong></td>
+<td>Grouping.</td>
+</tr>
+<tr>
+<td><strong><code>$</code></strong></td>
+<td>Field reference.</td>
+</tr>
+<tr>
 <td><strong><code>++</code> <code>--</code></strong></td>
 <td>Increment and decrement (prefix and postfix).</td>
 </tr>
 <tr>
-<td><strong><code>^</code></strong></td>
-<td>Power.</td>
+<td><strong><code>^</code></strong> <b><code>**</code></b></td>
+<td>Power. (right to left)</td>
+</tr>
+<tr>
+<td><strong><code>+</code> <code>-</code> <code>!</code></strong></td>
+<td>Unary plus, minus, logical NOT.</td>
 </tr>
 <tr>
 <td><strong><code>*</code> <code>/</code> <code>%</code></strong></td>
@@ -705,12 +717,16 @@
 <td>String concatenation.</td>
 </tr>
 <tr>
-<td><strong><code>&gt;</code> <code>&gt;=</code> <code>&lt;</code> <code>&lt;=</code> <code>==</code> <code>!=</code> <code>~</code> <code>!~</code></strong></td>
-<td>Relational operators.</td>
+<td><strong><code>&lt;</code> <code>&lt;=</code> <code>==</code> <code>!=</code> <code>&gt;</code> <code>&gt;=</code> <code>&gt;&gt;</code></strong> <b><code>| |&amp;</code></b></td>
+<td>Relational and redirection.</td>
 </tr>
 <tr>
-<td><strong><code>!</code></strong></td>
-<td>Negate expression.</td>
+<td><strong><code>~</code> <code>!~</code></strong></td>
+<td>Matching, nonmatching.</td>
+</tr>
+<tr>
+<td><strong><code>in</code></strong></td>
+<td>Array membership.</td>
 </tr>
 <tr>
 <td><strong><code>&amp;&amp;</code></strong></td>
@@ -721,11 +737,18 @@
 <td>Logical OR.</td>
 </tr>
 <tr>
-<td><strong><code>=</code> <code>+=</code> <code>-=</code> <code>*=</code> <code>/=</code> <code>%=</code> <code>^=</code></strong></td>
+<td><strong><code>?:</code></strong></td>
+<td>Conditional. (right to left)</td>
+</tr>
+<tr>
+<td><strong><code>=</code> <code>+=</code> <code>-=</code> <code>*=</code> <code>/=</code> <code>%=</code> <code>^=</code></strong> <b><code>**=</code></b></td>
 <td>Assignment.</td>
 </tr>
 </tbody>
 </table>
+<blockquote>
+<p>The <code>|&amp;</code>, <code>**</code>, and <code>**=</code> operators are not specified by POSIX. For maximum portability, do not use them. </p>
+</blockquote>
 <pre><code class="lang-bash"><span class="hljs-comment"># &apos;^=&apos; &#xB294; power &#xB300;&#xC785; &#xC5F0;&#xC0B0;&#xC790;</span>
 $ awk <span class="hljs-string">&apos;BEGIN { aa = 3; aa ^= 2; print aa }&apos;</span> 
 <span class="hljs-number">9</span>
